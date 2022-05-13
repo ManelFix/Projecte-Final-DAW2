@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap');
+
+html, body{
+    margin: 0em;
+    padding: 0em;
+}
+
+body{
+    background-color: #053F5C;
+}
+
+.framePrincipal{
+    margin: auto;
+    width: 36em;
+    height: 38em;
+    background: rgba(17, 81, 113, 0.78);
+    border-radius: 10px;
+    margin-top: 70px;
+}
+
+.divLogo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.framePrincipal h1{
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-size: 2.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 15px;
+}
+
+.frameSecundari{
+    margin: auto;
+    width: 27em;
+    height: 10.2em;
+    background: #08577E;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+
+.divUserBorder{
+    border-bottom: 2px solid rgba(5, 63, 92, 0.7);
+    padding-bottom: 17px;
+}
+
+.iconesLoginRegister{
+    font-size: 2em;
+    color: white;
+    margin-left: 25px;
+    margin-top: 20px;
+    padding-right: 13px;
+    border-right: 2px solid rgba(5, 63, 92, 0.5);
+}
+
+.amagarLabel{
+    display: none;
+}
+
+.css_inputsLogReg{
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.4em;
+    margin-left: 10px;
+    position: relative;
+    bottom: 6px;
+    font-family: 'Inter', sans-serif;
+}
+
+.css_inputsLogReg::placeholder{
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.titolNoCompte{
+    color: white;
+    font-size: 1.2em;
+    font-family: 'Inter', sans-serif;
+    margin-left: 75px;
+}
+
+.titolNoCompte a{
+    cursor: pointer;
+    text-decoration: none;
+    color: #429EBD;
+}
+
+.ibtnEnviar{
+    background: #F7AD19;
+    border-radius: 25px;
+    padding: 0.8em;
+    padding-right: 7em;
+    padding-left: 7em;
+    margin: auto;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 1.4em;
+    text-align: center;
+    display: block;
+    margin-top: 40px;
+}
+
+.ibtnEnviar:hover{
+    transition: 1s;
+    opacity: 0.6;
+}
+
+/* Web Register */
+
+.framePrincipal2{
+    margin: auto;
+    width: 36em;
+    height: 48em;
+    background: rgba(17, 81, 113, 0.78);
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+.framePrincipal2 h1{
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-size: 2.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 15px;
+}
+
+.frameSecundari2{
+    height: 20.5em;
+    margin: auto;
+    width: 27em;
+    background: #08577E;
+    border-radius: 15px;
+    margin-top: 30px;
+}
