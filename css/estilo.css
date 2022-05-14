@@ -1,20 +1,18 @@
-<<<<<<< HEAD
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap');
-=======
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@500&family=Poppins&display=swap');
->>>>>>> fdd7c5b (Login + Register + Plana principal (en development))
 
 html, body{
     margin: 0em;
     padding: 0em;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: #053F5C;
 }
 
-<<<<<<< HEAD
-=======
 /* Web Principal */
 
 .headerPrincipal{
@@ -27,7 +25,7 @@ body{
     background-color: #053F5C;
     border: none;
     padding-bottom: 9px;
-    box-shadow: 0px 7px 27px rgb(1 0 4 / 25%);
+    box-shadow: 0px 7px 50px rgb(1 0 4 / 25%);
 }
 
 .divLogoPrincipal{
@@ -89,7 +87,7 @@ body{
     text-align: center;
 }
 
-.botonsIR:hover{
+.botonsIR:hover, .botonsIR:focus{
     text-decoration: none;
     color: white;
 }
@@ -153,7 +151,8 @@ body{
     text-align: center;
     margin-top: 200px;
     color: white;
-    font-family: 'Poppins', sans-serif;}
+    font-family: 'Poppins', sans-serif;
+}
 
 .divMain h1{
     font-size: 4.5em;
@@ -224,17 +223,210 @@ body{
     height: 100%;
 }
 
+.seccioMostra{
+    margin-left: 190px; 
+   
+}
+
+.divMostra{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.divMostra h2{
+    color: #9FE7F5;
+    font-family: 'Inter', sans-serif;
+    font-size: 2.8em;
+    margin-right: 80px;
+}
+
+.divMostra p{
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1em;
+    margin-right: 100px;
+}
+
+.seccioPlans{
+    margin-left: 190px; 
+    margin-top: 100px;
+    /* Treure el margin-left per fer responsive  */
+}
+
+.divPlans{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.divPlans h2{
+    color: #9FE7F5;
+    font-family: 'Inter', sans-serif;
+    font-size: 2.8em;
+    margin-right: 100px;
+}
+
+.divPlans p{
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1em;
+    margin-right: 115px;
+
+}
+
 .pla1{
     background-color: white;
     border-radius: 10px;
     box-shadow: 1px 3px 3px 1px black;
     height: auto;
+    width: 80%;
+    background-color: #9FE7F5;
+    padding-bottom: 11px;
+}
+
+.textProva{
+    background-color: #429EBD;
+    font-family: 'Inter', sans-serif;
+    border-radius: 5px;
+    margin-left: 10px;
+    color: white;
+    padding: 0.5em;
+    width: 13.5em;
+    font-weight: bold;
+    position: relative;
+    top: 10px;
+    margin-bottom: 40px;
+}
+
+.pla1 h3{
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    font-size: 2em;
+    margin-left: 10px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.textPreu{
+    margin-left: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.pla1 hr{
+    align-self: stretch;
+    background-color: rgb(187, 183, 183);
+    width: 25em;
+    text-align: left;
+    border: none; 
+    height: 0.12em; 
+}
+
+.divAventatges{
+    margin-left: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.iconaVentatges{
+    font-size: 1.7em;
+    margin-top: -0.5px;
+}
+
+.divAventatges p{
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    width: 90%;
+}
+
+.btnPremium{
+    display: block;
+    margin: auto;
+    padding: 0.5em;
+    padding-right: 5em;
+    padding-left: 5em;
+    border-radius: 45px;
+    background-color: #F7AD19;
+    margin-top: 50px;
+    height: auto;
+}
+
+.seccioContacte{
+    margin-top: 120px;
+}
+
+.divContacte{
+    border-radius: 11px;
+    background-color: #A5DAF1;
+    height: auto;
+    width: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.formulariContacte{
+    margin: auto;
+
+}
+
+.formulariContacte input{
+    width: auto;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.sec1{
+    width: 230px !important;
+}
+
+.formulariContacte textarea{
+    display: block;
+    margin: auto;
+}
+
+
+
+footer{
+    text-align: center;
+    margin-top: 70px;
+}
+
+.iconesFooter{
+    display: inline-block;
+    color: #9FE7F5;
+    font-size: 2em;
+    margin-right: 20px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+footer span:hover{
+    transition: 1s;
+    color: #F7AD19;
+}
+
+footer p{
+    color: white;
+    font-size: 1.1em;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 22px;
+}
+
+footer span{
+    color: #429EBD;
 }
 
 
 /* Web Login */
 
->>>>>>> fdd7c5b (Login + Register + Plana principal (en development))
 .framePrincipal{
     margin: auto;
     width: 36em;

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../css/estilo.css">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="shortcut icon" href="../img/logo.svg" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>SoundBOX</title>
 </head>
 <body>
@@ -26,9 +28,9 @@
                 </div>
                 <div class="collapse navbar-collapse navbar-right menu" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="responsiveLiSob"><a href="#sobremi">Plans</a></li>
-                        <li class="responsiveLiExp"><a href="#experiencia">Catàleg</a></li>
-                        <li><a href="#contacto">Contacte</a></li>
+                        <li class="responsiveLiSob"><a href="#plans">Plans</a></li>
+                        <li class="responsiveLiExp"><a href="#mostra">Mostra</a></li>
+                        <li><a href="#contacte">Contacte</a></li>
                         <div class="divBotonsNav">
                             <a href="login.html" class="botonsIR estilbtnLogin">Iniciar sessió</a>
                             <a href="register.html" class="botonsIR btnRegistrat estilbtnLogin2">Registrat ja</a>
@@ -44,34 +46,98 @@
             <div class="col-md-12 col-sm-12 col-xs-12 divMain">
                 <h1>SoundBOX, on la música no té límits</h1>
                 <h2>En SoundBOX trobaràs una gran varietat de música sense copyright</h2>
-                <button class="btnInici btnEscl">Escolta'ns</button>
+                <a href="#mostra"><button class="btnInici btnEscl">Escolta'ns</button></a>
             </div>
         </div>
     </section>
 
-    <section class="container" style="height: 1000px">
+    <section id="mostra" class="container seccioMostra" data-aos="fade-down">
         <div class="row">
-            <div class="col-md-4 col-sm-12 col-xs-12">
+            <div class="col-md-12 col-sm-12 col-xs-12 divMostra">
+                <h2>Mostra del Catàleg</h2>
+                <p>Aquí una mostra d'algunes de les cançons que disposem en el nostre cataleg</p>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <!-- Musica -->
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <!-- Musica -->
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <!-- Musica -->
+            </div>
+        </div>
+    </section>
+
+    <section id="plans" class="container seccioPlans" data-aos="fade-down">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 divPlans">
+                <h2>Plans Prèmium</h2>
+                <p>El nostre servei és gratuït, però amb els nostres plans prèmium pots gaudir d'una millor experiència</p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="pla1">
-                    <p>Prova gratuïta de 30 dies</p>
-                    <h3>Pla Premium Mensual</h3>
-                    <p>Per només 5.99€ al més</p>
+                    <p class="textProva">Prova gratuïta de 30 dies</p>
+                    <h3>Pla Prèmium Mensual</h3>
+                    <p class="textPreu">Per només 5.99€ al més</p>
                     <hr>
-                    <div>
-                        <!--Ventatges-->
+                    <div class="divAventatges">
+                        <span class='bx bx-chevron-right iconaVentatges'></span>
+                        <p>Escolta de forma completa les cançons prèmium</p>
+                        <span class='bx bx-chevron-right iconaVentatges'></span>
+                        <p>Escolta de forma completa les cançons prèmium</p>
                     </div>
-                    <button></button>
+                    <button class="botonsIR estilbtnLogin btnPremium">SOLICITAR</button>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-12 col-xs-12">
-
-            </div>
-            <div class="col-md-4 col-sm-12 col-xs-12">
-
+            <div class="col-lg-6 col-md-7 col-sm-12 col-xs-12">
+                <div class="pla1">
+                    <p class="textProva">Prova gratuïta de 30 dies</p>
+                    <h3>Pla Prèmium Anual</h3>
+                    <p class="textPreu">Per només 59.99€ al any</p>
+                    <hr>
+                    <div class="divAventatges">
+                        <span class='bx bx-chevron-right iconaVentatges'></span>
+                        <p>Escolta de forma completa les cançons prèmium</p>
+                        <span class='bx bx-chevron-right iconaVentatges'></span>
+                        <p>Escolta de forma completa les cançons prèmium</p>
+                    </div>
+                    <button class="botonsIR estilbtnLogin btnPremium">SOLICITAR</button>
+                </div>
             </div>
         </div>
     </section>
-    
+
+    <section id="contacte" class="container seccioContacte" data-aos="fade-down">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 divMostra">
+                <h2>Alguna pregunta?</h2>
+                <p>Omple el següent formulari en cas de voler-te posar en contacte amb nosaltres</p>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 divContacte">
+               <form method="post" class="formulariContacte">
+                    <input type="text" placeholder="Nom" class="form-control sec1">
+                    <input type="text" placeholder="Cognom" class="form-control sec1">
+                    <br>
+                    <input type="text" placeholder="Correu" class="form-control sec2">
+                    <input type="text" placeholder="Telefon" class="form-control sec2">
+                    <textarea name="" id="" cols="53" rows="5"></textarea>
+                    <button class="botonsIR estilbtnLogin">Enviar</button>
+               </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span class='bx bxl-twitter iconesFooter'></span>
+        <span class='bx bxl-facebook-square iconesFooter'></span>
+        <span class='bx bxl-instagram iconesFooter'></span>
+        <span class='bx bxl-gmail iconesFooter'></span>
+        <p>Copyright &copy; 2022 - <span>SoundBOX</span></p>
+    </footer>
+    <script>
+        AOS.init();
+    </script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <script src="../js/bootstrap.js" crossorigin="anonymous"></script>
