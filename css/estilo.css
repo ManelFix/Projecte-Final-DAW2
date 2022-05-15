@@ -238,26 +238,24 @@ body{
     color: #9FE7F5;
     font-family: 'Inter', sans-serif;
     font-size: 2.8em;
-    margin-right: 80px;
 }
 
 .divMostra p{
     color: white;
     font-family: 'Inter', sans-serif;
     font-size: 1.1em;
-    margin-right: 100px;
+    margin-right: 10px;
 }
 
 .seccioPlans{
-    margin-left: 190px; 
-    margin-top: 100px;
-    /* Treure el margin-left per fer responsive  */
+    margin-top: 150px;
 }
 
 .divPlans{
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-left: 50px;
 }
 
 .divPlans h2{
@@ -280,9 +278,17 @@ body{
     border-radius: 10px;
     box-shadow: 1px 3px 3px 1px black;
     height: auto;
-    width: 80%;
-    background-color: #9FE7F5;
+    background-color: #dd5105;;
     padding-bottom: 11px;
+    color: white;
+}
+
+.colPla1{
+    background-color: #705DEC;
+}
+
+.colPla2{
+    background-color: #7e57c0;
 }
 
 .textProva{
@@ -297,6 +303,10 @@ body{
     position: relative;
     top: 10px;
     margin-bottom: 40px;
+}
+
+.textAmplada{
+    width: 15em;
 }
 
 .pla1 h3{
@@ -318,10 +328,14 @@ body{
 .pla1 hr{
     align-self: stretch;
     background-color: rgb(187, 183, 183);
-    width: 25em;
+    width: 20em;
     text-align: left;
     border: none; 
     height: 0.12em; 
+}
+
+.pla1 a{
+    text-decoration: none;
 }
 
 .divAventatges{
@@ -341,7 +355,6 @@ body{
 .divAventatges p{
     font-family: 'Inter', sans-serif;
     font-size: 1em;
-    font-weight: bold;
     width: 90%;
 }
 
@@ -361,42 +374,120 @@ body{
     margin-top: 120px;
 }
 
-.divContacte{
-    border-radius: 11px;
-    background-color: #A5DAF1;
-    height: auto;
-    width: auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
+.divPregunta{
     text-align: center;
-}
-
-.formulariContacte{
-    margin: auto;
-
-}
-
-.formulariContacte input{
-    width: auto;
-    display: inline-block;
+    margin-top: 20px;
     margin-bottom: 20px;
-    font-size: 1.2em;
 }
 
-.sec1{
-    width: 230px !important;
+.divPregunta h2{
+    color: #9FE7F5;
+    font-family: 'Inter', sans-serif;
+    font-size: 2.8em;
 }
 
-.formulariContacte textarea{
+.divPregunta p{
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1em;
+}
+
+.divContacte {
+    width: 460px;
+    height: auto;
+    margin: 80px auto;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    background-color: #9FE7F5;
+    padding-left: 30px;
+    float: inherit;
+    display: flex;
+    font-family: 'Inter', sans-serif;
+
+}
+
+.estilInput input {
+    background-color: #fbfbfb;
+    width: 408px;
+    height: 40px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ab4493;
+    margin-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.estilInput textarea {
+    background-color: #fbfbfb;
+    width: 405px;
+    height: 150px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ab4493;
+    margin-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    padding-top: 15px;
+    resize: vertical;
+}
+
+.estilInput label {
     display: block;
-    margin: auto;
+    float: center;
 }
 
+.btnFormulari {
+    height: 45px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    background-color: #F7AD19;
+    border-color: #F7AD19;
+    border-style: solid;
+    border-radius: 10px;
+    width: 420px;
+    cursor: pointer;
+}
 
+.btnFormulari p {
+    color: #fff;
+    margin-top: 9px;
+}
+
+.btnFormulari:hover{
+    transition: 1s;
+    opacity: 0.8;
+}
+
+.estilInput span {
+    color: #ab4493;
+}
+
+.avis {
+    font-size: 13px;
+    color: #0e0e0e;
+}
+
+.avis span {
+    color: #ab4493;    
+}
+
+.seccioContacte input:focus {
+    outline: 0;
+    border: 1px solid #97d848;
+}
+
+.seccioContacte textarea:focus {
+    outline: 0;
+    border: 1px solid #97d848;
+}
 
 footer{
     text-align: center;
-    margin-top: 70px;
 }
 
 .iconesFooter{
