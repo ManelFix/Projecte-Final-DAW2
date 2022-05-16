@@ -19300,7 +19300,6 @@ input:focus {
 /* Typography */
 body {
   font-size: 1rem;
-  font-family: 'Poppins', sans-serif !important;
   font-weight: initial;
   line-height: normal;
   -webkit-font-smoothing: antialiased;
@@ -19558,7 +19557,6 @@ pre {
 code {
   padding: 5px;
   color: #FF4747;
-  font-family: 'Poppins', sans-serif;
   font-weight: 300;
   font-size: 0.875rem;
   border-radius: 4px;
@@ -19573,7 +19571,6 @@ code {
   -webkit-transition: all 0.25s ease;
   -ms-transition: all 0.25s ease;
   font-size: calc(0.875rem - 0.05rem);
-  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
@@ -23617,7 +23614,6 @@ dl li {
   padding-left: 0;
   position: relative;
   margin-bottom: 0;
-  font-family: 'Poppins', sans-serif;
 }
 
 .icon-data-list li {
@@ -24412,7 +24408,6 @@ dl li {
 }
 
 .preview-list .preview-item .preview-item-content p .content-category {
-  font-family: 'Poppins', sans-serif;
   padding-right: 15px;
   border-right: 1px solid #CED4DA;
 }
@@ -26268,7 +26263,6 @@ table.dataTable tbody td.select-checkbox:after {
 
 .datepicker.datepicker-dropdown .datepicker-days table.table-condensed thead tr th.dow,
 .datepicker.datepicker-inline .datepicker-days table.table-condensed thead tr th.dow {
-  font-family: 'Poppins', sans-serif;
   color: #1F1F1F;
   font-size: 0.875rem;
   font-weight: initial;
@@ -28397,7 +28391,6 @@ div.tagsinput span.tag a {
 .sidebar {
   min-height: calc(100vh - 60px);
   background: #fff;
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   padding: 0;
   width: 235px;
@@ -28549,7 +28542,13 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav:not(.sub-menu) > .nav-item {
-  margin-top: .2rem;
+  margin-top: .5rem;
+  border-radius: 5px;
+}
+
+.sidebar .nav:not(.sub-menu) > .nav-item:hover {
+  background-color: #053F5C;
+  border-radius: 5px;
 }
 
 .sidebar .nav:not(.sub-menu) > .nav-item > .nav-link {
@@ -28933,9 +28932,12 @@ div.tagsinput span.tag a {
 }
 
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile img {
-  width: 40px;
-  height: 40px;
+  height: 46px;
   border-radius: 100%;
+  width: 64px;
+  position: relative;
+  left: 15px;
+  margin-top: 0px;
 }
 
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile.dropdown .dropdown-toggle:after {
@@ -28964,8 +28966,8 @@ div.tagsinput span.tag a {
 
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item {
   margin-bottom: 0;
-  padding: 0.687rem 1.562rem;
   cursor: pointer;
+  color: black;
 }
 
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item i {
@@ -30286,7 +30288,6 @@ div.tagsinput span.tag a {
 .settings-panel .settings-heading {
   padding: 16px 0 13px 35px;
   font-size: 0.875rem;
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   line-height: 1;
   color: rgba(0, 0, 0, 0.9);
@@ -30481,7 +30482,6 @@ div.tagsinput span.tag a {
 }
 
 .settings-panel .events p {
-  font-family: 'Poppins', sans-serif;
   font-weight: 400;
 }
 
