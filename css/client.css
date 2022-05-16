@@ -1,0 +1,59 @@
+
+.menuFons{
+    background-color: #121216 !important;
+    box-shadow: 0px 5px 6px -5px #cdd1e1;
+}
+
+.noFonsColor{
+    background: none !important;
+}
+
+.sidebarColorFons{
+    background-color: #191922;
+}
+
+.inputBuscar{
+    margin-top: 7px;
+    color: white !important;
+}
+
+.inputBuscar::placeholder{
+    color: white !important;
+}
+
+.iconePerfil{
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.colIcone{
+    color: white;
+}
+
+.estilIcones{
+    color: white;
+    font-size: 1.5em;
+}
+
+.efecteHoverMenu:hover > span{
+    color: #F7AD19 !important;
+}
+
+.mainCFons{
+    background-color: #121216;
+}
+
+.textSidebar{
+    color: #429EBD !important;
+}
+
+.midaIcones{
+    font-size: 1.55em;
+}
+
+
+.txtopcionsUser{
+    margin-top: 7px;
+    margin-left: 10px;
+    font-size: 1.08em;
+}
