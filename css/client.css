@@ -22,7 +22,7 @@
     color: white !important;
 }
 
-.colIcone{
+.colIcona{
     color: white;
 }
 
@@ -56,7 +56,7 @@
     font-size: 1.55em;
 }
 
-.iconeFlecheta{
+.iconaFlecheta{
     margin-left: auto;
     margin-right: 0;
 }
@@ -68,7 +68,7 @@
     font-family: 'Nunito', sans-serif;
 }
 
-.espaiIconeText{
+.espaiIconaText{
     margin-right: 15px;
 }
 
@@ -147,7 +147,7 @@
     cursor: pointer;
 }
 
-.iconeAccio{
+.iconaAccio{
     color: #212529;
 }
 

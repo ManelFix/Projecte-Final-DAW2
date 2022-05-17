@@ -9,7 +9,7 @@
     <script src="../js/iniciar_sesion.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="shortcut icon" href="../img/logo.svg" type="image/x-icon">
-    <title>Login</title>
+    <title>SoundBOX</title>
 </head>
 <body>
     <section class="framePrincipal">

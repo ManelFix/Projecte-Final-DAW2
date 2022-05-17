@@ -833,3 +833,34 @@ footer span{
 /* FIN BARRA DURACIÓN / BARRA VOLUMEN */
 
 /* FIN AUDIO PLAYER */
+
+/* Web Afegir Canço */
+
+.extraModNoPremium{
+    height: auto;
+    margin-bottom: 20px;
+    padding-bottom: 25px;
+}
+
+.extraModificacionsNoPremium{
+    height: auto;
+    padding-bottom: 10px;
+}
+
+.iconaImatge{
+    width: 1.55em;
+    height:0.9em;
+    padding-right: 0px;
+}
+
+.css_inputFile{
+    font-size: 1.2em;
+    width: 17em;
+    display: inline-block !important;
+    vertical-align: bottom;
+    bottom: 1px;
+}
+
+.css_inputsLogReg option{
+    color: black;
+}

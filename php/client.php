@@ -17,19 +17,19 @@
   <div class="container-scroller">
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row menuFons">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center noFonsColor">
-        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="../img/logo.svg" class="mr-2" alt="logoSoundBOX"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="../img/logo.svg" alt="logoSoundBOX"/></a>
+        <a class="navbar-brand brand-logo mr-5"><img src="../img/logo.svg" class="mr-2" alt="logoSoundBOX"/></a>
+        <a class="navbar-brand brand-logo-mini"><img src="../img/logo.svg" alt="logoSoundBOX"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end noFonsColor">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-          <span class="icon-menu colIcone"></span>
+          <span class="icon-menu colIcona"></span>
         </button>
         <ul class="navbar-nav mr-lg-2">
           <li class="nav-item nav-search d-none d-lg-block">
             <div class="input-group">
               <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
                 <span class="input-group-text" id="search">
-                  <span class="icon-search colIcone iconaLupa"></span>
+                  <span class="icon-search colIcona iconaLupa"></span>
                 </span>
               </div>
               <input type="text" class="form-control inputBuscar" id="navbar-search-input" placeholder="Buscar" aria-label="search" aria-describedby="search">
@@ -39,15 +39,15 @@
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="../img/defaultUser.svg" class="colIcone" alt="profile"/>
+              <img src="../img/defaultUser.svg" class="colIcona" alt="profile"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
-                <span class='bx bx-cog text-primary colIcone midaIcones'></span>
+                <span class='bx bx-cog text-primary colIcona midaIcones'></span>
                 <p class="txtOpcionsUser">Configuració del compte</p>
               </a>
               <a class="dropdown-item">
-                <span class='bx bxs-medal text-primary colIcone midaIcones'></span>
+                <span class='bx bxs-medal text-primary colIcona midaIcones'></span>
                 <p class="txtOpcionsUser">Subscripció</p>
               </a>
               <a class="dropdown-item">
@@ -58,7 +58,7 @@
           </li>
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-          <span class="icon-menu colIcone"></span>
+          <span class="icon-menu colIcona"></span>
         </button>
       </div>
     </nav>
@@ -67,33 +67,33 @@
         <ul class="nav">
           <li class="nav-item">
             <a class="nav-link efecteHoverMenu active" href="index.html">
-              <span class='bx bx-music estilIcones espaiIconeText'></span>
+              <span class='bx bx-music estilIcones'></span>
               <span class="menu-title textSidebar">La meva música</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link efecteHoverMenu" href="index.html">
-              <span class='bx bx-book-open estilIcones espaiIconeText iconPers'></span>
+              <span class='bx bx-book-open estilIcones iconPers'></span>
               <span class="menu-title textSidebar">Explora</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link efecteHoverMenu" href="index.html">
-              <span class='bx bx-heart estilIcones espaiIconeText iconPers'></span>
+              <span class='bx bx-heart estilIcones iconPers'></span>
               <span class="menu-title textSidebar">M'agrada</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link efecteHoverMenu" href="index.html">
-              <img src="../img/iconeArtist.svg" class="iconaArtista estilIcones espaiIconeText iconPers" alt="iconeArtista">
+              <img src="../img/iconaArtist.svg" class="iconaArtista estilIcones iconPers" alt="iconaArtista">
               <span class="menu-title textSidebar">Artistes</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link efecteHoverMenu" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <span class='bx bxs-playlist estilIcones espaiIconeText'></span>
+              <span class='bx bxs-playlist estilIcones'></span>
               <span class="menu-title textSidebar textNav">Playlist</span>
-              <span class='bx bx-chevron-right estilIcones textNav iconeFlecheta'></span>
+              <span class='bx bx-chevron-right estilIcones textNav iconaFlecheta'></span>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
@@ -116,7 +116,7 @@
                 <div class="col-12 col-xl-4">
                  <div class="justify-content-end d-flex">
                   <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
-                    <a id="dropdownMenuDate2" href="afegirMusica.php" class="btn btn-sm btn-light btnAfegirC">Afegir cançó</a>
+                    <a id="dropdownMenuDate2" href="afegirMusicaNoPremium.php" class="btn btn-sm btn-light btnAfegirC">Afegir cançó</a>
                   </div>
                  </div>
                 </div>
@@ -162,19 +162,19 @@
                           <td>16/05/2022</td>
                           <td class="nav-item nav-profile dropdown">
                             <a href="#" data-toggle="dropdown" id="profileDropdown">
-                              <span class='bx bx-dots-vertical-rounded iconeAccio'></span>
+                              <span class='bx bx-dots-vertical-rounded iconaAccio'></span>
                             </a>
                             <div class="dropdown-menu menuAccio">
                               <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-trash text-primary colIcone midaIcones'></span>
+                                <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
                                 <p class="txtOpcionsUser">Eliminar</p>
                               </a>
                               <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-download text-primary colIcone midaIcones'></span>
+                                <span class='bx bxs-download text-primary colIcona midaIcones'></span>
                                 <p class="txtOpcionsUser">Descarregar?</p>
                               </a>
                               <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bx-play-circle text-primary colIcone midaIcones'></span>
+                                <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
                                 <p class="txtOpcionsUser">Reproduïr?</p>
                               </a>
                             </div>
@@ -188,19 +188,19 @@
                           <td>16/05/2022</td>
                           <td class="nav-item nav-profile dropdown">
                             <a href="#" data-toggle="dropdown" id="profileDropdown">
-                              <span class='bx bx-dots-vertical-rounded iconeAccio'></span>
+                              <span class='bx bx-dots-vertical-rounded iconaAccio'></span>
                             </a>
                             <div class="dropdown-menu menuAccio">
                               <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-trash text-primary colIcone midaIcones'></span>
+                                <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
                                 <p class="txtOpcionsUser">Eliminar</p>
                               </a>
                               <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-download text-primary colIcone midaIcones'></span>
+                                <span class='bx bxs-download text-primary colIcona midaIcones'></span>
                                 <p class="txtOpcionsUser">Descarregar?</p>
                               </a>
                               <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bx-play-circle text-primary colIcone midaIcones'></span>
+                                <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
                                 <p class="txtOpcionsUser">Reproduïr?</p>
                               </a>
                             </div>
@@ -214,19 +214,19 @@
                           <td>16/05/2022</td>
                           <td class="nav-item nav-profile dropdown">
                             <a href="#" data-toggle="dropdown" id="profileDropdown">
-                              <span class='bx bx-dots-vertical-rounded iconeAccio'></span>
+                              <span class='bx bx-dots-vertical-rounded iconaAccio'></span>
                             </a>
                             <div class="dropdown-menu menuAccio">
                               <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-trash text-primary colIcone midaIcones'></span>
+                                <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
                                 <p class="txtOpcionsUser">Eliminar</p>
                               </a>
                               <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-download text-primary colIcone midaIcones'></span>
+                                <span class='bx bxs-download text-primary colIcona midaIcones'></span>
                                 <p class="txtOpcionsUser">Descarregar?</p>
                               </a>
                               <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bx-play-circle text-primary colIcone midaIcones'></span>
+                                <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
                                 <p class="txtOpcionsUser">Reproduïr?</p>
                               </a>
                             </div>
@@ -240,19 +240,19 @@
                           <td>16/05/2022</td>
                           <td class="nav-item nav-profile dropdown">
                               <a href="#" data-toggle="dropdown" id="profileDropdown">
-                                <span class='bx bx-dots-vertical-rounded iconeAccio'></span>
+                                <span class='bx bx-dots-vertical-rounded iconaAccio'></span>
                               </a>
                               <div class="dropdown-menu menuAccio">
                                 <a class="dropdown-item opcioMenuAccio">
-                                  <span class='bx bxs-trash text-primary colIcone midaIcones'></span>
+                                  <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
                                   <p class="txtOpcionsUser">Eliminar</p>
                                 </a>
                                 <a class="dropdown-item opcioMenuAccio">
-                                  <span class='bx bxs-download text-primary colIcone midaIcones'></span>
+                                  <span class='bx bxs-download text-primary colIcona midaIcones'></span>
                                   <p class="txtOpcionsUser">Descarregar?</p>
                                 </a>
                                 <a class="dropdown-item opcioMenuAccio">
-                                  <span class='bx bx-play-circle text-primary colIcone midaIcones'></span>
+                                  <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
                                   <p class="txtOpcionsUser">Reproduïr?</p>
                                 </a>
                               </div>
