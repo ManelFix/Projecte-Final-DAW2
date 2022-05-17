@@ -46,8 +46,9 @@ body{
     float: right;
 }
 
-.menu ul li:hover{
-    color: orange;
+.menu ul li a:hover{
+    transition: 1s;
+    color: #429EBD !important;
 }
 
 .divBotonsNav{
@@ -460,6 +461,7 @@ body{
 .btnFormulari p {
     color: #fff;
     margin-top: 9px;
+    font-family: 'Inter', sans-serif;
 }
 
 .btnFormulari:hover{

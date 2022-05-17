@@ -24,6 +24,11 @@ if($fila["contador"]==0){
     
     $fila = mysqli_fetch_assoc($res);
     if($fila["cont"]==0){
+
+        $img_pred = null;
+        $tipus_pred = null;
+        $normal_pred = null;
+        
         $sql="INSERT INTO usuari (nom_usuari, contrasenya, email, ban, admin) VALUES ('$user','$passwrd','$word[1]',0,0)";
 
         $res=mysqli_query($connexio, $sql);
@@ -32,9 +37,7 @@ if($fila["contador"]==0){
     }else{
         echo 2;
     }
-    $img_pred = null;
-    $tipus_pred = null;
-    $normal_pred = null;
+
 
 }else if($fila["contador"]>0){
     echo 1;

@@ -30,7 +30,7 @@
                     <input id="contrasenya" type="password" name="passwL" placeholder="Contrasenya" class="css_inputsLogReg">
                 </div>
             </div>
-            <h2 class="titolNoCompte">No tens un compte creat? <a href="register.html">Registrat</a></h2>
+            <h2 class="titolNoCompte">No tens un compte creat? <a href="register.php">Registrat</a></h2>
             <input id="btnLogin" type="button" value="Login" name="ferLogin" class="ibtnEnviar" onclick="iniciar_sesion()">       
         </form>
     </section>

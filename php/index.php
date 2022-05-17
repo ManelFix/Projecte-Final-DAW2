@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/estilo.css">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/logo.svg" type="image/x-icon">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>SoundBOX</title>
@@ -24,7 +24,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <img src="img/logo.svg" alt="logoSoundBox">
+                    <img src="../img/logo.svg" alt="logoSoundBox">
                 </div>
                 <div class="collapse navbar-collapse navbar-right menu" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
@@ -32,8 +32,8 @@
                         <li class="responsiveLiSob"><a href="#plans">Plans</a></li>
                         <li><a href="#contacte">Contacte</a></li>
                         <div class="divBotonsNav">
-                            <a href="php/login.php" class="botonsIR estilbtnLogin">Iniciar sessió</a>
-                            <a href="php/register.php" class="botonsIR btnRegistrat estilbtnLogin2">Registrat ja</a>
+                            <a href="login.php" class="botonsIR estilbtnLogin">Iniciar sessió</a>
+                            <a href="register.php" class="botonsIR btnRegistrat estilbtnLogin2">Registrat ja</a>
                         </div>
                     </ul>
                 </div>
@@ -89,7 +89,7 @@
                         <span class='bx bx-chevron-right iconaVentatges'></span>
                         <p>Segueix a usuaris i vota les teves cançons preferides</p>
                         <span class='bx bx-chevron-right iconaVentatges'></span>
-                        <p>Escolta totes les cançons prèmium</p>
+                        <p>Escolta de forma completa les cançons prèmium</p>
                         <span class='bx bx-chevron-right iconaVentatges'></span>
                         <p>Accedeix a la categoria prèmium</p>
                         <span class='bx bx-chevron-right iconaVentatges'></span>
@@ -112,7 +112,7 @@
                         <span class='bx bx-chevron-right iconaVentatges'></span>
                         <p>Segueix a usuaris i vota les teves cançons preferides</p>
                         <span class='bx bx-chevron-right iconaVentatges'></span>
-                        <p>Escolta totes les cançons prèmium</p>
+                        <p>Escolta de forma completa les cançons prèmium</p>
                         <span class='bx bx-chevron-right iconaVentatges'></span>
                         <p>Accedeix a la categoria prèmium</p>
                         <span class='bx bx-chevron-right iconaVentatges'></span>
@@ -135,7 +135,7 @@
                         <span class='bx bx-chevron-right iconaVentatges'></span>
                         <p>Segueix a usuaris i vota les teves cançons preferides</p>
                     </div>
-                    <a href="php/register.php"><button class="botonsIR estilbtnLogin btnPremium">REGISTRAT JA</button></a>
+                    <a href="register.php"><button class="botonsIR estilbtnLogin btnPremium">REGISTRAT JA</button></a>
                 </div>
             </div>
         </div>
@@ -174,7 +174,7 @@
                     </p>
                     <p class="estilInput">
                         <label for="missatgeI">Missatge
-                            <span>*</span>
+                            <span class="obligatorio">*</span>
                         </label>
                         <textarea name="missatgeInici" id="missatgeI"  placeholder="Deixa aquí el teu comentari..." required></textarea>
                     </p>
@@ -201,6 +201,6 @@
     </script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.js" crossorigin="anonymous"></script>
+    <script src="../js/bootstrap.js" crossorigin="anonymous"></script>
 </body>
 </html>
