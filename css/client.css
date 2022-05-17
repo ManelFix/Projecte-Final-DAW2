@@ -38,6 +38,7 @@
 
 .mainCFons{
     background-color: #121216;
+    padding-bottom: 0.375rem;
 }
 
 .textSidebar{
@@ -64,7 +65,7 @@
     margin-top: 7px;
     margin-left: 10px;
     font-size: 1.08em;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 .espaiIconeText{
@@ -73,4 +74,95 @@
 
 .iconPers{
     margin-top: 2px;
+}
+
+.iconaArtista{
+    width: 1.1em;
+}
+
+.active{
+    background-color: #053F5C;
+}
+
+.textIniciClient{
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.btnAfegirC{
+    background-color: #F7AD19;
+    border-color: #F7AD19;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1em !important;
+    border-radius: 10px !important;
+    padding-bottom: 0.7em;
+    padding-top: 0.7em;
+    padding-right: 1.2em;
+    padding-left: 1.2em;
+}
+
+.divPublicitat{
+    background-color: #053F5C !important;
+    height: 6em;
+    border-radius: 10px;
+}
+
+.divPublicitat:hover{
+    background-color: #053F5C !important;
+}
+
+.divTextPubli{
+    margin: auto;
+    font-family: 'Inter', sans-serif;
+}
+
+.divTaulaMusica{
+    border-radius: 10px;
+
+}
+
+.divTaulaMusicaPrin{
+    border-radius: 15px;
+    border: 1px solid rgba(224, 231, 237, 1);
+}
+
+.tablaMisCanciones thead{
+    font-family: 'Inter', sans-serif;
+    background-color: antiquewhite;
+}
+
+.tablaMisCanciones thead tr th{
+    font-weight: bold;
+}
+
+.tablaMisCanciones tbody tr td{
+    font-family: 'Inter', sans-serif;
+    text-align: left;
+    font-size: 0.9em;
+}
+
+.tablaMisCanciones tbody tr td span{
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+.iconeAccio{
+    color: #212529;
+}
+
+.menuAccio{
+    top: -10px !important;
+}
+
+.opcioMenuAccio{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    cursor: pointer;
+}
+
+.opcioMenuAccio:active{
+    
 }

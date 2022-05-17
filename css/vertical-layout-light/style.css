@@ -11816,7 +11816,6 @@ input[type="button"].btn-block {
 }
 
 .dropdown-item.active, .dropdown-item:active {
-  color: #fff;
   text-decoration: none;
   background-color: #007bff;
 }
@@ -19564,7 +19563,6 @@ code {
 
 /* Footer */
 .footer {
-  background: #F5F7FF;
   padding: 30px 2.45rem;
   transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
@@ -19572,12 +19570,14 @@ code {
   -ms-transition: all 0.25s ease;
   font-size: calc(0.875rem - 0.05rem);
   font-weight: 400;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-top: 1px solid rgb(255 255 255 / 13%);
+  font-family: 'Inter', sans-serif;
 }
 
-.footer a {
-  color: #4B49AC;
-  font-size: inherit;
+.footer span {
+  color: #9FE7F5;
+  font-size: 1.08em;
+
 }
 
 @media (max-width: 991px) {
@@ -28562,7 +28562,7 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav:not(.sub-menu) > .nav-item.active {
-  background: #4B49AC;
+  background: #429EBD;
 }
 
 .sidebar .nav.sub-menu {
