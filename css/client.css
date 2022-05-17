@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Nunito&family=Open+Sans:wght@500&family=Poppins&display=swap');
 
 .menuFons{
     background-color: #121216 !important;
-    box-shadow: 0px 5px 6px -5px #cdd1e1;
+    box-shadow: 0px 5px 6px -5px #2b3147;
 }
 
 .noFonsColor{
@@ -13,30 +14,26 @@
 }
 
 .inputBuscar{
-    margin-top: 7px;
     color: white !important;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .inputBuscar::placeholder{
     color: white !important;
 }
 
-.iconePerfil{
-    font-size: 1.5em;
-    margin-top: 10px;
-}
-
 .colIcone{
     color: white;
 }
 
-.estilIcones{
-    color: white;
-    font-size: 1.5em;
+.iconaLupa{
+    font-size: 1.4em;
+    margin-right: 5px;
 }
 
-.efecteHoverMenu:hover > span{
-    color: #F7AD19 !important;
+.estilIcones{
+    color: white;
+    font-size: 1.6em;
 }
 
 .mainCFons{
@@ -44,16 +41,36 @@
 }
 
 .textSidebar{
-    color: #429EBD !important;
+    color: #9FE7F5 !important;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+    font-size: 1.2em !important;
+}
+
+.textNav{
+    margin-top: 3px;
 }
 
 .midaIcones{
     font-size: 1.55em;
 }
 
+.iconeFlecheta{
+    margin-left: auto;
+    margin-right: 0;
+}
 
-.txtopcionsUser{
+.txtOpcionsUser{
     margin-top: 7px;
     margin-left: 10px;
     font-size: 1.08em;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.espaiIconeText{
+    margin-right: 15px;
+}
+
+.iconPers{
+    margin-top: 2px;
 }
