@@ -382,59 +382,59 @@ body{
     height: auto;
     margin: 80px auto;
     border-radius: 10px;
-    padding-top: 30px;
     padding-bottom: 20px;
-    background-color: #9FE7F5;
-    padding-left: 30px;
+    background-color: rgba(17, 81, 113, 0.78);
     float: inherit;
     display: flex;
     font-family: 'Inter', sans-serif;
+    padding: 30px;
+}
 
+.divContacte form {
+    width: 100%;
+}
+
+.divContacte form > * {
+    color: #9FE7F5;
 }
 
 .estilInput input {
-    background-color: #fbfbfb;
-    width: 408px;
+    background-color: transparent;
+    width: 100%;
     height: 40px;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #ab4493;
-    margin-top: 10px;
+    border: none;
+    border-bottom: solid 1px #ab4493;
     padding-left: 10px;
-    margin-bottom: 20px;
+    margin: 10px auto 20px auto;
 }
 
 .estilInput textarea {
-    background-color: #fbfbfb;
-    width: 405px;
-    height: 150px;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #ab4493;
-    margin-top: 10px;
+    background-color: transparent;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-bottom: solid 1px #ab4493;
     padding-left: 10px;
-    margin-bottom: 20px;
+    margin: 10px auto 20px auto;
     padding-top: 15px;
-    resize: vertical;
+    resize: none;
 }
 
 .estilInput label {
+    color: #fff;
     display: block;
     float: center;
 }
 
 .btnFormulari {
     height: 45px;
-    margin-bottom: 20px;
-    margin-top: 10px;
+    margin: 10px auto 20px auto;
     text-transform: uppercase;
     background-color: #F7AD19;
     border-color: #F7AD19;
     border-style: solid;
     border-radius: 10px;
-    width: 420px;
+    width: 100%;
     cursor: pointer;
 }
 
@@ -641,3 +641,175 @@ footer span{
     border-radius: 15px;
     margin-top: 30px;
 }
+
+
+/* AUDIO PLAYER */
+#audio-player-container {
+  width: 70%;
+  margin: 25px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #053F5C;
+}
+
+#audio-player-container > * {
+  display: inline-block;
+  color: #fff;
+  vertical-align: bottom;
+}
+
+#audio-player-container > span, #audio-player-container > button {
+  margin: 10px 0;
+}
+.play-button-outer {
+  position:  relative;
+  width: 3em;
+  height: 3em;
+  background: #F7AD19;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.play-button {
+  top: 16%;
+  left: 16%;
+  position: absolute;
+  background: transparent;
+  border: none;
+}
+
+#play-icon {
+  color: #fff;
+  width: 30px;
+  height: 30px;
+}
+
+.play-button-outer:hover #play-icon{
+  color: #053F5C;
+}
+
+#mute-button, #like-button {
+  background: transparent;
+  border: none;
+}
+
+#mute-button > #mute-icon:hover, #like-button > #like-icon:hover {
+  color: #F7AD19;
+}
+
+/* BARRA DURACIÓN / BARRA VOLUMEN */
+#seek-slider {
+  height: 19px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 60%;
+  background: #053F5C;
+  border-radius: 5px;
+}
+
+#volume-slider {
+  height: 19px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  background: #053F5C;
+  border-radius: 5px;
+  margin-left: 15px;
+}
+
+#seek-slider:focus, #volume-slider:focus {
+  outline: none;
+}
+
+#seek-slider::-webkit-slider-runnable-track, #volume-slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: #F7AD19;
+  border-radius: 5px;
+}
+
+#seek-slider::-webkit-slider-thumb, #volume-slider::-webkit-slider-thumb {
+  height: 10px;
+  width: 0px;
+  border-radius: 25px;
+  background: #000000;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -1.5px;
+}
+
+#seek-slider:focus::-webkit-slider-runnable-track, #volume-slider:focus::-webkit-slider-runnable-track {
+  background: #F7AD19;
+}
+
+#seek-slider::-moz-range-track, #volume-slider::-moz-range-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: #fff;
+  border-radius: 5px;
+}
+
+#seek-slider::-moz-range-thumb, #volume-slider::-moz-range-thumb {
+  border: none;
+  height: 10px;
+  width: 0px;
+  border-radius: 25px;
+  background: #F7AD19;
+  cursor: pointer;
+}
+
+#seek-slider::-moz-range-progress, #volume-slider::-moz-range-progress {
+  height: 10px;
+  width: 100%;
+  background-color: #F7AD19; 
+  border-radius: 5px;
+}
+
+#seek-slider::-ms-track, #volume-slider::-ms-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+#seek-slider::-ms-fill-lower, #volume-slider::-ms-fill-lower {
+  background: #F7AD19;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000000;
+}
+
+#seek-slider::-ms-fill-upper, #volume-slider::-ms-fill-upper {
+  background: #fff;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000000;
+}
+
+#seek-slider::-ms-thumb, #volume-slider::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 10px;
+  width: 0px;
+  border-radius: 50%;
+  background: #000000;
+  cursor: pointer;
+}
+
+#seek-slider:focus::-ms-fill-lower, #volume-slider:focus::-ms-fill-lower {
+  background: #F7AD19;
+}
+
+#seek-slider:focus::-ms-fill-upper, #volume-slider:focus::-ms-fill-upper {
+  background: #fff;
+}
+/* FIN BARRA DURACIÓN / BARRA VOLUMEN */
+
+/* FIN AUDIO PLAYER */
