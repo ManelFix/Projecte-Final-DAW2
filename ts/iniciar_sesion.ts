@@ -1,8 +1,12 @@
 
-function iniciar_sesion(usr:any,passwrd:any) {
+function iniciar_sesion() {
 
-    var usuario = usr;
-    var contrasenya = passwrd;
+    var nombre = document.getElementById("usuari").value;
+    var contrasenya = document.getElementById("contrasenya").value;
+
+    var user = [nombre,contrasenya];
+
+    if (nombre != "" && contrasenya != "") {
 
     var xmlhttp:any;
     if (window.XMLHttpRequest) {
@@ -13,17 +17,26 @@ function iniciar_sesion(usr:any,passwrd:any) {
     }
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-            var select = xmlhttp.responseXML;
+            var select = xmlhttp.responseText;
+                console.log(select);
+                
             if(select == 0){
                 alert("Usuario o contrasenyas incorrectos");
+
             }else if(select == 1){
+
                 location.href="../php/client.html";
+            }else if(select == 2){
+
+                location.href="../php/admin.html";
             }
         }
     };
-    xmlhttp.open("GET", "../php/controlador/iniciar_sesion.php", true);
-    xmlhttp.send();
+    xmlhttp.open("POST", "../php/controlador/iniciar_sesion.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("word=" + user);
+    } else {
+        alert("El usuario y contrasenya no pueden estar vacios");
+    }
 
 }
-
-export {iniciar_sesion};

@@ -1,6 +1,7 @@
 <?php
 
 function sql(){
+    
     $servidor="localhost"; 
     $usuari="root"; 
     $clau="";  

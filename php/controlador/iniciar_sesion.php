@@ -1,5 +1,4 @@
 <?php
-
 include("BBDD.php");
 
 $connexio=sql();
@@ -8,7 +7,9 @@ header("Content-Type: application/xml");
 
 $word = explode(",",$_POST["word"]);
 
-$sql="SELECT COUNT(*) as contador FROM usuari WHERE nom_usuari = $word[0] AND contrasenya = $word[1]";
+// $passwrd = md5($word[1]);
+
+$sql="SELECT COUNT(*) as contador FROM usuari WHERE nom_usuari = '$word[0]' AND contrasenya = '$word[1]'";
 
 $res=mysqli_query($connexio, $sql);
 
@@ -24,7 +25,7 @@ echo 0;
     $fila = mysqli_fetch_assoc($res);
     session_start();
 
-    if($_SESSION["admin"]==1){
+    if($fila["admin"]==1){
         $_SESSION["ses_id"]=$fila["id_usuari"];
         $_SESSION["admin"]= 1;
         echo 2;
@@ -32,8 +33,6 @@ echo 0;
         $_SESSION["ses_id"]=$fila["id_usuari"];
         echo 1;
     }
-
-
 }
 ?>
 
