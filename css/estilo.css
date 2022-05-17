@@ -406,6 +406,14 @@ body{
     border-bottom: solid 1px #ab4493;
     padding-left: 10px;
     margin: 10px auto 20px auto;
+    font-family: 'Inter', sans-serif;
+    color: #9FE7F5;
+}
+
+.estilInput input::placeholder{
+    color: #9FE7F5;
+    font-family: 'Inter', sans-serif;
+
 }
 
 .estilInput textarea {
@@ -418,12 +426,23 @@ body{
     margin: 10px auto 20px auto;
     padding-top: 15px;
     resize: none;
+    font-family: 'Inter', sans-serif;
+    color: #9FE7F5;
+}
+
+.estilInput textarea::placeholder{
+    font-family: 'Inter', sans-serif;
+    color: #9FE7F5;
 }
 
 .estilInput label {
-    color: #fff;
+    color: #9FE7F5;
     display: block;
     float: center;
+}
+
+.estilInput label span{
+    color: #F7AD19;
 }
 
 .btnFormulari {
@@ -458,7 +477,7 @@ body{
 }
 
 .avis span {
-    color: #ab4493;    
+    color: #F7AD19;    
 }
 
 .seccioContacte input:focus {
