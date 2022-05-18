@@ -10,6 +10,9 @@
     <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>SoundBOX</title>
 </head>
 <body>
@@ -40,6 +43,32 @@
             </div>
         </nav>
     </header>
+    
+    <!-- Reproductor fixed bottom -->
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="audio-player-container">
+            <audio src="audio1.mp3" preload="metadata" id="audio-1"></audio>
+            <div class="info-canco">
+                <p class="artista">Artista</p>
+                <span> - </span>
+                <p class="titol">Título</p>
+            </div>
+            <div class="reproductor">
+                <div class="play-button play" id="play" onclick="play(1)">
+                    <span class="bar bar-1"></span>
+                    <span class="bar bar-2"></span>             
+                </div>
+                <span id="current-time">0:00</span>
+                <input type="range" id="seek-slider" max="100" value="0">
+                <span id="duration">0:00</span>
+                <input type="range" id="volume-slider" max="100" value="50">
+                <button class="mute-button unmuted" id="mute"><i class="fa-solid fa-volume-high mute-icon"></i></button>
+                <button class="like-button"><i class="fa-solid fa-thumbs-up like-icon"></i></button>
+                <button class="add-button"><i class="fa-solid fa-plus add-icon"></i></button>
+            </div>
+        </div>
+    </div>
+    <!-- FIN Reproductor fixed bottom -->
     
     <section class="container imatgeFons">
         <div class="row">
@@ -89,7 +118,7 @@
                         <span class='bx bx-chevron-right iconaVentatges'></span>
                         <p>Segueix a usuaris i vota les teves cançons preferides</p>
                         <span class='bx bx-chevron-right iconaVentatges'></span>
-                        <p>Escolta totes les cançons prèmium</p>
+                        <p>Escolta de forma completa les cançons prèmium</p>
                         <span class='bx bx-chevron-right iconaVentatges'></span>
                         <p>Accedeix a la categoria prèmium</p>
                         <span class='bx bx-chevron-right iconaVentatges'></span>
@@ -112,7 +141,7 @@
                         <span class='bx bx-chevron-right iconaVentatges'></span>
                         <p>Segueix a usuaris i vota les teves cançons preferides</p>
                         <span class='bx bx-chevron-right iconaVentatges'></span>
-                        <p>Escolta totes les cançons prèmium</p>
+                        <p>Escolta de forma completa les cançons prèmium</p>
                         <span class='bx bx-chevron-right iconaVentatges'></span>
                         <p>Accedeix a la categoria prèmium</p>
                         <span class='bx bx-chevron-right iconaVentatges'></span>
@@ -135,7 +164,7 @@
                         <span class='bx bx-chevron-right iconaVentatges'></span>
                         <p>Segueix a usuaris i vota les teves cançons preferides</p>
                     </div>
-                    <a href="php/register.php"><button class="botonsIR estilbtnLogin btnPremium">REGISTRAT JA</button></a>
+                    <a href="php/register.php"><button class="botonsIR estilbtnLogin btnPremium btnGratuit">REGISTRAT JA</button></a>
                 </div>
             </div>
         </div>
@@ -174,7 +203,7 @@
                     </p>
                     <p class="estilInput">
                         <label for="missatgeI">Missatge
-                            <span>*</span>
+                            <span class="obligatorio">*</span>
                         </label>
                         <textarea name="missatgeInici" id="missatgeI"  placeholder="Deixa aquí el teu comentari..." required></textarea>
                     </p>
@@ -202,5 +231,6 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <script src="js/bootstrap.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/audioplayer.js" crossorigin="anonymous"></script>
 </body>
 </html>

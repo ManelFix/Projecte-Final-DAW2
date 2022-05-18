@@ -15,6 +15,10 @@ body{
 
 /* Web Principal */
 
+.btnMenuResponsive{
+    margin-right: 15px;
+}
+
 .headerPrincipal{
     width: 100%;
     position: fixed;
@@ -34,7 +38,6 @@ body{
     margin-left: 20px;
 }
 
-
 .menu ul li{
    margin-top: 6px;
 }
@@ -42,7 +45,7 @@ body{
 .menu ul li a{
     color: white !important;
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.2em;
+    font-size: 1.1em;
     float: right;
 }
 
@@ -218,11 +221,12 @@ body{
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-left: -20px;
 }
 
 .divMostra h2{
     color: #9FE7F5;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 2.8em;
 }
 
@@ -246,7 +250,7 @@ body{
 
 .divPlans h2{
     color: #9FE7F5;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 2.8em;
     margin-right: 100px;
 }
@@ -263,10 +267,11 @@ body{
     background-color: white;
     border-radius: 10px;
     box-shadow: 1px 3px 3px 1px black;
-    height: auto;
+    height: 38em;
     background-color: #dd5105;;
-    padding-bottom: 11px;
+    padding-bottom: 20px;
     color: white;
+
 }
 
 .colPla1{
@@ -356,6 +361,10 @@ body{
     height: auto;
 }
 
+.btnGratuit{
+    margin-top: 160px;
+}
+
 .seccioContacte{
     margin-top: 120px;
 }
@@ -368,7 +377,7 @@ body{
 
 .divPregunta h2{
     color: #9FE7F5;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 2.8em;
 }
 
@@ -556,10 +565,11 @@ footer span{
 .frameSecundari{
     margin: auto;
     width: 27em;
-    height: 10.2em;
+    height: auto;
     background: #08577E;
     border-radius: 15px;
     margin-top: 30px;
+    padding-bottom: 15px;
 }
 
 .divUserBorder{
@@ -585,7 +595,7 @@ footer span{
     background-color: transparent;
     border: none;
     color: white;
-    font-size: 1.4em;
+    font-size: 1.1em;
     margin-left: 10px;
     position: relative;
     bottom: 6px;
@@ -599,7 +609,7 @@ footer span{
 
 .titolNoCompte{
     color: white;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-family: 'Inter', sans-serif;
     margin-left: 75px;
 }
@@ -664,76 +674,114 @@ footer span{
 }
 
 /* AUDIO PLAYER */
-#audio-player-container {
-  width: 70%;
-  margin: 25px;
-  padding: 10px;
-  border-radius: 10px;
-  background: #053F5C;
+.audio-player-container {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    padding: 10px;
+    background: #053F5C;
+    overflow-x: hidden;
+    box-shadow: 1px 1px 50px -20px black;
+    color: #fff;
 }
 
-#audio-player-container > * {
-  display: inline-block;
-  color: #fff;
-  vertical-align: bottom;
+.audio-player-container > .reproductor > * {
+    display: inline-block !important;
+    color: #fff;
+    vertical-align: bottom;
 }
 
-#audio-player-container > span, #audio-player-container > button {
-  margin: 10px 0;
+.audio-player-container > .reproductor {
+    display: block !important;
+    width: 85%;
+    margin: 0 auto;
 }
-.play-button-outer {
-  position:  relative;
-  width: 3em;
-  height: 3em;
-  background: #F7AD19;
-  cursor: pointer;
-  border-radius: 50%;
+
+.info-canco {
+    display: block !important;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.info-canco > * {
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.info-canco span {
+    margin: 0 5px;
+}
+
+.audio-player-container > span, .audio-player-container > button {
+  margin: 10px;
 }
 
 .play-button {
-  top: 16%;
-  left: 16%;
-  position: absolute;
+    position: relative;
+    width: 38px;
+    height: 40px;
+    cursor: pointer;
+    transition: border 0.1s ease-in-out;
+}
+    
+.bar {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 3px;
+    height: 20px;
+    border-radius: 3px;
+    background-color: white;
+    transform-origin: center;
+    transition: transform 0.4s ease-in-out, background 0.1s ease-in-out;
+}
+    
+.pause > .bar-1 {
+    transform: translateX(13px) translateY(-2px) rotate(0deg);
+}
+
+.pause > .bar-2 {
+    transform: translateX(21px) translateY(-2px) rotate(0deg);
+}
+    
+.play > .bar-1 {
+    transform: translateX(18px) translateY(-6px) rotate(-55deg);
+}
+
+.play > .bar-2 {
+    transform: translateX(18px) translateY(4px) rotate(-125deg);
+}
+
+
+.mute-button, .like-button, .add-button {
   background: transparent;
   border: none;
+  margin-left: 5px !important;
+  font-size: 16px;
 }
 
-#play-icon {
-  color: #fff;
-  width: 30px;
-  height: 30px;
-}
-
-.play-button-outer:hover #play-icon{
-  color: #053F5C;
-}
-
-#mute-button, #like-button {
-  background: transparent;
-  border: none;
-}
-
-#mute-button > #mute-icon:hover, #like-button > #like-icon:hover {
+.mute-button > .mute-icon:hover, .like-button > .like-icon:hover, .add-button > .add-icon:hover {
   color: #F7AD19;
 }
 
 /* BARRA DURACIÓN / BARRA VOLUMEN */
 #seek-slider {
-  height: 19px;
   -webkit-appearance: none;
-  margin: 10px 0;
-  width: 60%;
+  margin: 12px 0;
+  width: 50% !important;
   background: #053F5C;
   border-radius: 5px;
 }
 
 #volume-slider {
-  height: 19px;
   -webkit-appearance: none;
-  margin: 10px 0;
+  margin: 12px 0;
   background: #053F5C;
   border-radius: 5px;
-  margin-left: 15px;
+  width: 14% !important;
 }
 
 #seek-slider:focus, #volume-slider:focus {
@@ -742,7 +790,7 @@ footer span{
 
 #seek-slider::-webkit-slider-runnable-track, #volume-slider::-webkit-slider-runnable-track {
   width: 100%;
-  height: 10px;
+  height: 8px;
   cursor: pointer;
   animate: 0.2s;
   background: #F7AD19;
@@ -750,7 +798,7 @@ footer span{
 }
 
 #seek-slider::-webkit-slider-thumb, #volume-slider::-webkit-slider-thumb {
-  height: 10px;
+  height: 8px;
   width: 0px;
   border-radius: 25px;
   background: #000000;
@@ -765,7 +813,7 @@ footer span{
 
 #seek-slider::-moz-range-track, #volume-slider::-moz-range-track {
   width: 100%;
-  height: 10px;
+  height: 8px;
   cursor: pointer;
   animate: 0.2s;
   background: #fff;
@@ -774,7 +822,7 @@ footer span{
 
 #seek-slider::-moz-range-thumb, #volume-slider::-moz-range-thumb {
   border: none;
-  height: 10px;
+  height: 8px;
   width: 0px;
   border-radius: 25px;
   background: #F7AD19;
@@ -782,7 +830,7 @@ footer span{
 }
 
 #seek-slider::-moz-range-progress, #volume-slider::-moz-range-progress {
-  height: 10px;
+  height: 8px;
   width: 100%;
   background-color: #F7AD19; 
   border-radius: 5px;
@@ -790,9 +838,8 @@ footer span{
 
 #seek-slider::-ms-track, #volume-slider::-ms-track {
   width: 100%;
-  height: 10px;
+  height: 8px;
   cursor: pointer;
-  animate: 0.2s;
   background: transparent;
   border-color: transparent;
   color: transparent;
@@ -816,7 +863,7 @@ footer span{
   margin-top: 1px;
   box-shadow: 1px 1px 1px #000000;
   border: 1px solid #000000;
-  height: 10px;
+  height: 8px;
   width: 0px;
   border-radius: 50%;
   background: #000000;
@@ -833,6 +880,22 @@ footer span{
 /* FIN BARRA DURACIÓN / BARRA VOLUMEN */
 
 /* FIN AUDIO PLAYER */
+
+.escoltaMes {
+    text-align: center;
+}
+
+.btnEscoltaMes {
+    height: 45px;
+    margin: 10px auto 20px auto;
+    text-transform: uppercase;
+    background-color: #F7AD19;
+    border-color: #F7AD19;
+    border-style: solid;
+    border-radius: 10px;
+    width: 300px;
+    cursor: pointer;
+}
 
 /* Web Afegir Canço */
 
@@ -851,6 +914,7 @@ footer span{
     width: 1.55em;
     height:0.9em;
     padding-right: 0px;
+    vertical-align: middle;
 }
 
 .css_inputFile{
@@ -863,4 +927,60 @@ footer span{
 
 .css_inputsLogReg option{
     color: black;
+}
+
+.labelFile {
+    background-color: #429EBD;
+    color: white;
+    padding: 0.4rem;
+    font-family: 'Inter', sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    position: relative;
+    top: 10px;
+    font-weight: normal;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
+  
+#file-chosen{
+    margin-left: 0.3rem;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    position: relative;
+    top: 10px;
+}
+
+.divFinal{
+    margin-bottom: 10px;
+}
+
+/* Web Crear Playlist */
+
+.espaiPlaylist{
+    height: auto;
+    padding-bottom: 45px;
+}
+
+.divHome{
+    margin-left: 20px;
+    position: absolute;
+    top: 17px;
+}
+
+.divHome a{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.divHome span{
+    font-size: 1.6em;
+    margin-right: 10px;
+    font-family: 'Inter', sans-serif;
+}
+
+.divHome a:hover{
+    transition: 0.5s;
 }

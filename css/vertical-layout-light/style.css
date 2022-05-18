@@ -28515,7 +28515,7 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav .nav-item.active > .nav-link {
-  background: #4B49AC;
+  background: #053F5C;
   position: relative;
 }
 
@@ -28562,7 +28562,7 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav:not(.sub-menu) > .nav-item.active {
-  background: #429EBD;
+  background: #053F5C;
 }
 
 .sidebar .nav.sub-menu {
@@ -28636,7 +28636,7 @@ div.tagsinput span.tag a {
 }
 
 .sidebar-dark .sidebar .nav .nav-item.active > .nav-link {
-  background: #4B49AC;
+  background: #053F5C;
 }
 
 .sidebar-dark .sidebar .nav .nav-item.active > .nav-link .menu-title,
