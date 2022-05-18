@@ -78,30 +78,37 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link efecteHoverMenu" href="index.html">
+            <a class="nav-link efecteHoverMenu" href="magrada.php">
               <span class='bx bx-heart estilIcones iconPers'></span>
               <span class="menu-title textSidebar">M'agrada</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link efecteHoverMenu" href="index.html">
+            <a class="nav-link efecteHoverMenu" href="artistes.php">
               <img src="../img/iconaArtist.svg" class="iconaArtista estilIcones iconPers" alt="iconaArtista">
               <span class="menu-title textSidebar">Artistes</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link efecteHoverMenu" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link efecteHoverMenu" href="crearPlaylist.php">
               <span class='bx bxs-playlist estilIcones'></span>
-              <span class="menu-title textSidebar textNav">Playlist</span>
-              <span class='bx bx-chevron-right estilIcones textNav iconaFlecheta'></span>
+              <span class="menu-title textSidebar textNav">Crear playlist</span>
             </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="client_admin/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="client_admin/ui-features/dropdowns.html">Dropdowns</a></li>
-                <li class="nav-item"> <a class="nav-link" href="client_admin/ui-features/typography.html">Typography</a></li>
-              </ul>
-            </div>
+          </li>
+          <li class="nav-item">
+            <a href="" class="linkPlaylist">
+              <p class="textSidebar textNav textPlaylist">Playlist 1</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="linkPlaylist">
+              <p class="textSidebar textNav textPlaylist">Playlist 2</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="linkPlaylist">
+              <p class="textSidebar textNav textPlaylist">Playlist 3</p>
+            </a>
           </li>
         </ul>
       </nav>
@@ -143,6 +150,252 @@
             <div class="col-md-3 grid-margin stretch-card">
               <div class="card divCategoria">
                 <div class="card-body imatgeMusica cat1">
+                  <h5 class="card-title">Cançó 1</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                      <span class='bx bx-play-circle'></span>
+                      <span class='bx bxs-download'></span>
+                      <div class="nav-item nav-profile dropdown">
+                        <a href="#" data-toggle="dropdown" id="profileDropdown">
+                          <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
+                        </a>
+                        <div class="dropdown-menu menuAccio">
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-like text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">M'agrada</p>
+                          </a>
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">Afegir a la playlist</p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card">
+              <div class="card divCategoria">
+                <div class="card-body imatgeMusica cat2">
+                  <h5 class="card-title">Cançó 2</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                      <span class='bx bx-play-circle'></span>
+                      <span class='bx bxs-download'></span>
+                      <div class="nav-item nav-profile dropdown">
+                        <a href="#" data-toggle="dropdown" id="profileDropdown">
+                          <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
+                        </a>
+                        <div class="dropdown-menu menuAccio">
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-like text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">M'agrada</p>
+                          </a>
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">Afegir a la playlist</p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card">
+              <div class="card divCategoria">
+                <div class="card-body imatgeMusica cat3">
+                  <h5 class="card-title">Cançó 3</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                      <span class='bx bx-play-circle'></span>
+                      <span class='bx bxs-download'></span>
+                      <div class="nav-item nav-profile dropdown">
+                        <a href="#" data-toggle="dropdown" id="profileDropdown">
+                          <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
+                        </a>
+                        <div class="dropdown-menu menuAccio">
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-like text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">M'agrada</p>
+                          </a>
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">Afegir a la playlist</p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card">
+              <div class="card divCategoria">
+                <div class="card-body imatgeMusica cat4">
+                  <h5 class="card-title">Cançó 4</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                      <span class='bx bx-play-circle'></span>
+                      <span class='bx bxs-download'></span>
+                      <div class="nav-item nav-profile dropdown">
+                        <a href="#" data-toggle="dropdown" id="profileDropdown">
+                          <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
+                        </a>
+                        <div class="dropdown-menu menuAccio">
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-like text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">M'agrada</p>
+                          </a>
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">Afegir a la playlist</p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 grid-margin modificarGridMargin">
+              <div class="row">
+                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                  <h4 id="nomCategoria" class="musicaTexts">Cançons premium de *nomCategoria*</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+          <div class="col-md-3 grid-margin stretch-card">
+              <div class="card divCategoria">
+                <div class="card-body imatgeMusica cat1">
+                  <h5 class="card-title">Cançó 1</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                      <span class='bx bx-play-circle'></span>
+                      <span class='bx bxs-download'></span>
+                      <div class="nav-item nav-profile dropdown">
+                        <a href="#" data-toggle="dropdown" id="profileDropdown">
+                          <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
+                        </a>
+                        <div class="dropdown-menu menuAccio">
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-like text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">M'agrada</p>
+                          </a>
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">Afegir a la playlist</p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card">
+              <div class="card divCategoria">
+                <div class="card-body imatgeMusica cat2">
+                  <h5 class="card-title">Cançó 2</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                      <span class='bx bx-play-circle'></span>
+                      <span class='bx bxs-download'></span>
+                      <div class="nav-item nav-profile dropdown">
+                        <a href="#" data-toggle="dropdown" id="profileDropdown">
+                          <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
+                        </a>
+                        <div class="dropdown-menu menuAccio">
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-like text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">M'agrada</p>
+                          </a>
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">Afegir a la playlist</p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card">
+              <div class="card divCategoria">
+                <div class="card-body imatgeMusica cat3">
+                  <h5 class="card-title">Cançó 3</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                      <span class='bx bx-play-circle'></span>
+                      <span class='bx bxs-download'></span>
+                      <div class="nav-item nav-profile dropdown">
+                        <a href="#" data-toggle="dropdown" id="profileDropdown">
+                          <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
+                        </a>
+                        <div class="dropdown-menu menuAccio">
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-like text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">M'agrada</p>
+                          </a>
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">Afegir a la playlist</p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card">
+              <div class="card divCategoria">
+                <div class="card-body imatgeMusica cat4">
+                  <h5 class="card-title">Cançó 4</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                      <span class='bx bx-play-circle'></span>
+                      <span class='bx bxs-download'></span>
+                      <div class="nav-item nav-profile dropdown">
+                        <a href="#" data-toggle="dropdown" id="profileDropdown">
+                          <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
+                        </a>
+                        <div class="dropdown-menu menuAccio">
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-like text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">M'agrada</p>
+                          </a>
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">Afegir a la playlist</p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 grid-margin modificarGridMargin">
+              <div class="row">
+                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                  <h4 id="nomCategoria" class="musicaTexts">Totes les cançons de *nomCategoria*</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+          <div class="col-md-3 grid-margin stretch-card">
+              <div class="card divCategoria">
+                <div class="card-body imatgeMusica cat1">
                   <h5 class="card-title">Canço 1</h5>
                   <div class="media divMedia">
                     <div class="media-body zonaBotonsMusica">
@@ -172,6 +425,27 @@
               <div class="card divCategoria">
                 <div class="card-body imatgeMusica cat2">
                   <h5 class="card-title">Canço 2</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                      <span class='bx bx-play-circle'></span>
+                      <span class='bx bxs-download'></span>
+                      <div class="nav-item nav-profile dropdown">
+                        <a href="#" data-toggle="dropdown" id="profileDropdown">
+                          <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
+                        </a>
+                        <div class="dropdown-menu menuAccio">
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-like text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">M'agrada</p>
+                          </a>
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">Afegir a la playlist</p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -179,6 +453,27 @@
               <div class="card divCategoria">
                 <div class="card-body imatgeMusica cat3">
                   <h5 class="card-title">Canço 3</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                      <span class='bx bx-play-circle'></span>
+                      <span class='bx bxs-download'></span>
+                      <div class="nav-item nav-profile dropdown">
+                        <a href="#" data-toggle="dropdown" id="profileDropdown">
+                          <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
+                        </a>
+                        <div class="dropdown-menu menuAccio">
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-like text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">M'agrada</p>
+                          </a>
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">Afegir a la playlist</p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -186,84 +481,27 @@
               <div class="card divCategoria">
                 <div class="card-body imatgeMusica cat4">
                   <h5 class="card-title">Canço 4</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 grid-margin modificarGridMargin">
-              <div class="row">
-                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h4 id="nomCategoria" class="musicaTexts">Cançons premium de *nomCategoria*</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat1">
-                  <h5 class="card-title">Canço 1</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat2">
-                  <h5 class="card-title">Canço 2</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat3">
-                  <h5 class="card-title">Canço 3</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat4">
-                  <h5 class="card-title">Canço 4</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 grid-margin modificarGridMargin">
-              <div class="row">
-                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h4 id="nomCategoria" class="musicaTexts">Totes les cançons de *nomCategoria*</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat1">
-                  <h5 class="card-title">Canço 1</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat2">
-                  <h5 class="card-title">Canço 2</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat3">
-                  <h5 class="card-title">Canço 3</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat4">
-                  <h5 class="card-title">Canço 4</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                      <span class='bx bx-play-circle'></span>
+                      <span class='bx bxs-download'></span>
+                      <div class="nav-item nav-profile dropdown">
+                        <a href="#" data-toggle="dropdown" id="profileDropdown">
+                          <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
+                        </a>
+                        <div class="dropdown-menu menuAccio">
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-like text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">M'agrada</p>
+                          </a>
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">Afegir a la playlist</p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -284,7 +522,7 @@
           </div>
           <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022. SoundBOX - Tots els drets reservats.</span>
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022. <span>SoundBOX</span> - Tots els drets reservats.</span>
             </div>
           </footer>
         </div>

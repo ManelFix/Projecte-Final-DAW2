@@ -38,7 +38,6 @@ body{
     margin-left: 20px;
 }
 
-
 .menu ul li{
    margin-top: 6px;
 }
@@ -566,10 +565,11 @@ footer span{
 .frameSecundari{
     margin: auto;
     width: 27em;
-    height: 10.2em;
+    height: auto;
     background: #08577E;
     border-radius: 15px;
     margin-top: 30px;
+    padding-bottom: 15px;
 }
 
 .divUserBorder{
@@ -932,14 +932,14 @@ footer span{
 .labelFile {
     background-color: #429EBD;
     color: white;
-    padding: 0.7rem;
+    padding: 0.4rem;
     font-family: 'Inter', sans-serif;
     border-radius: 0.3rem;
     cursor: pointer;
     position: relative;
     top: 10px;
     font-weight: normal;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin-left: 1rem;
 }
   
@@ -953,4 +953,34 @@ footer span{
 
 .divFinal{
     margin-bottom: 10px;
+}
+
+/* Web Crear Playlist */
+
+.espaiPlaylist{
+    height: auto;
+    padding-bottom: 45px;
+}
+
+.divHome{
+    margin-left: 20px;
+    position: absolute;
+    top: 17px;
+}
+
+.divHome a{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.divHome span{
+    font-size: 1.6em;
+    margin-right: 10px;
+    font-family: 'Inter', sans-serif;
+}
+
+.divHome a:hover{
+    transition: 0.5s;
 }

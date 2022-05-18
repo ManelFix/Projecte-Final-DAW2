@@ -78,30 +78,37 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link efecteHoverMenu" href="index.html">
+            <a class="nav-link efecteHoverMenu" href="magrada.php">
               <span class='bx bx-heart estilIcones iconPers'></span>
               <span class="menu-title textSidebar">M'agrada</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link efecteHoverMenu" href="index.html">
+            <a class="nav-link efecteHoverMenu" href="artistes.php">
               <img src="../img/iconaArtist.svg" class="iconaArtista estilIcones iconPers" alt="iconaArtista">
               <span class="menu-title textSidebar">Artistes</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link efecteHoverMenu" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link efecteHoverMenu" href="crearPlaylist.php">
               <span class='bx bxs-playlist estilIcones'></span>
-              <span class="menu-title textSidebar textNav">Playlist</span>
-              <span class='bx bx-chevron-right estilIcones textNav iconaFlecheta'></span>
+              <span class="menu-title textSidebar textNav">Crear playlist</span>
             </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="client_admin/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="client_admin/ui-features/dropdowns.html">Dropdowns</a></li>
-                <li class="nav-item"> <a class="nav-link" href="client_admin/ui-features/typography.html">Typography</a></li>
-              </ul>
-            </div>
+          </li>
+          <li class="nav-item">
+            <a href="" class="linkPlaylist">
+              <p class="textSidebar textNav textPlaylist">Playlist 1</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="linkPlaylist">
+              <p class="textSidebar textNav textPlaylist">Playlist 2</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="linkPlaylist">
+              <p class="textSidebar textNav textPlaylist">Playlist 3</p>
+            </a>
           </li>
         </ul>
       </nav>
@@ -134,7 +141,7 @@
             <div class="col-md-3 grid-margin stretch-card">
               <div class="card divCategoria" onclick="anarAMusica();"> <!--Donar funcionalitat al onclick que redirecciona a musica.php-->
                 <div class="card-body imatgeCategoria cat1">
-                  <h4 class="card-title">POP</h4>
+                  <h4 class="card-title">Pop</h4>
                 </div>
               </div>
             </div>
@@ -232,7 +239,7 @@
           </div>
           <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022. SoundBOX - Tots els drets reservats.</span>
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022. <span>SoundBOX</span> - Tots els drets reservats.</span>
             </div>
           </footer>
         </div>

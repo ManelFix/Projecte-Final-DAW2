@@ -12,6 +12,9 @@
     <title>SoundBOX</title>
 </head>
 <body>
+    <div class="divHome">
+        <a class="btn btn-primary" href="../index.php"><span class='bx bx-home'></span>Tornar enrere</a>
+    </div>
     <section class="framePrincipal2">
         <div class="divLogo">
            <img src="../img/logo.svg" alt="logoSoundBOX">

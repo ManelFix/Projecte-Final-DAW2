@@ -11,6 +11,9 @@
     <title>SoundBOX</title>
 </head>
 <body>
+    <div class="divHome">
+        <a class="btn btn-primary" href="javascript: history.go(-1)"><span class='bx bx-home'></span>Tornar enrere</a>
+    </div>
     <section class="framePrincipal2 extraModNoPremium">
         <div class="divLogo">
            <img src="../img/logo.svg" alt="logoSoundBOX">
@@ -74,7 +77,7 @@
                     <span id="file-chosen">Cap fitxer introduït</span>
                 </div>
             </div>
-            <input id="btnRegister" type="button" value="Afegir" name="ferRegister" class="ibtnEnviar" onclick="registrar()">            
+            <input id="btnRegister" type="button" value="Afegir" name="ferRegister" class="ibtnEnviar" onclick="">            
         </form>
     </section>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>

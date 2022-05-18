@@ -66,7 +66,7 @@
       <nav class="sidebar sidebar-offcanvas sidebarColorFons" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link efecteHoverMenu active" href="mevaMusica.php">
+            <a class="nav-link efecteHoverMenu" href="mevaMusica.php">
               <span class='bx bx-music estilIcones'></span>
               <span class="menu-title textSidebar">La meva música</span>
             </a>
@@ -78,7 +78,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link efecteHoverMenu" href="magrada.php">
+            <a class="nav-link efecteHoverMenu active" href="magrada.php">
               <span class='bx bx-heart estilIcones iconPers'></span>
               <span class="menu-title textSidebar">M'agrada</span>
             </a>
@@ -118,14 +118,7 @@
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h3 class="textIniciClient">Les meves cançons</h3>
-                </div>
-                <div class="col-12 col-xl-4">
-                 <div class="justify-content-end d-flex">
-                  <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
-                    <a id="dropdownMenuDate2" href="afegirMusicaNoPremium.php" class="btn btn-sm btn-light btnAfegirC">Afegir cançó</a>
-                  </div>
-                 </div>
+                  <h3 id="nomCategoria" class="textIniciClient">*Nom de la playlist*</h3>
                 </div>
               </div>
             </div>
@@ -145,128 +138,114 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card divTaulaMusica">
-                <div class="card-body">
-                  <div class="table-responsive divTaulaMusicaPrin">
-                    <table class="table tablaMisCanciones">
-                      <thead>
-                        <tr>
-                          <th>Cançó</th>
-                          <th>Gènere</th>
-                          <th>Estat d'ànim</th>
-                          <th>Duració</th>
-                          <th>Data d'afegiment</th>
-                          <th>Acció</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="py-1 font-weight-bold">Enough</td>
-                          <td>Pop</td>
-                          <td>Dramàtic</td>
-                          <td>2:10</td>
-                          <td>16/05/2022</td>
-                          <td class="nav-item nav-profile dropdown">
-                            <a href="#" data-toggle="dropdown" id="profileDropdown">
-                              <span class='bx bx-dots-vertical-rounded iconaAccio'></span>
-                            </a>
-                            <div class="dropdown-menu menuAccio">
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Eliminar</p>
-                              </a>
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-download text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Descarregar?</p>
-                              </a>
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Reproduïr?</p>
-                              </a>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1 font-weight-bold">Enough</td>
-                          <td>Pop</td>
-                          <td>Dramàtic</td>
-                          <td>2:10</td>
-                          <td>16/05/2022</td>
-                          <td class="nav-item nav-profile dropdown">
-                            <a href="#" data-toggle="dropdown" id="profileDropdown">
-                              <span class='bx bx-dots-vertical-rounded iconaAccio'></span>
-                            </a>
-                            <div class="dropdown-menu menuAccio">
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Eliminar</p>
-                              </a>
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-download text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Descarregar?</p>
-                              </a>
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Reproduïr?</p>
-                              </a>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1 font-weight-bold">Enough</td>
-                          <td>Pop</td>
-                          <td>Dramàtic</td>
-                          <td>2:10</td>
-                          <td>16/05/2022</td>
-                          <td class="nav-item nav-profile dropdown">
-                            <a href="#" data-toggle="dropdown" id="profileDropdown">
-                              <span class='bx bx-dots-vertical-rounded iconaAccio'></span>
-                            </a>
-                            <div class="dropdown-menu menuAccio">
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Eliminar</p>
-                              </a>
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-download text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Descarregar?</p>
-                              </a>
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Reproduïr?</p>
-                              </a>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1 font-weight-bold">Enough</td>
-                          <td>Pop</td>
-                          <td>Dramàtic</td>
-                          <td>2:10</td>
-                          <td>16/05/2022</td>
-                          <td class="nav-item nav-profile dropdown">
-                              <a href="#" data-toggle="dropdown" id="profileDropdown">
-                                <span class='bx bx-dots-vertical-rounded iconaAccio'></span>
-                              </a>
-                              <div class="dropdown-menu menuAccio">
-                                <a class="dropdown-item opcioMenuAccio">
-                                  <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
-                                  <p class="txtOpcionsUser">Eliminar</p>
-                                </a>
-                                <a class="dropdown-item opcioMenuAccio">
-                                  <span class='bx bxs-download text-primary colIcona midaIcones'></span>
-                                  <p class="txtOpcionsUser">Descarregar?</p>
-                                </a>
-                                <a class="dropdown-item opcioMenuAccio">
-                                  <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
-                                  <p class="txtOpcionsUser">Reproduïr?</p>
-                                </a>
-                              </div>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+            <div class="col-md-3 grid-margin stretch-card">
+              <div class="card divCategoria">
+                <div class="card-body imatgeMusica cat1">
+                  <h5 class="card-title">Cançó 1</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                      <span class='bx bx-play-circle'></span>
+                      <span class='bx bxs-download'></span>
+                      <div class="nav-item nav-profile dropdown">
+                        <a href="#" data-toggle="dropdown" id="profileDropdown">
+                          <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
+                        </a>
+                        <div class="dropdown-menu menuAccio">
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-like text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">M'agrada</p>
+                          </a>
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">Eliminar de la playlist</p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card">
+              <div class="card divCategoria">
+                <div class="card-body imatgeMusica cat2">
+                  <h5 class="card-title">Cançó 2</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                      <span class='bx bx-play-circle'></span>
+                      <span class='bx bxs-download'></span>
+                      <div class="nav-item nav-profile dropdown">
+                        <a href="#" data-toggle="dropdown" id="profileDropdown">
+                          <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
+                        </a>
+                        <div class="dropdown-menu menuAccio">
+                          <a class="dropdown-item opcioMenuAccio">
+                          <span class='bx bx-like text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">M'agrada</p>
+                          </a>
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">Eliminar de la playlist</p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card">
+              <div class="card divCategoria">
+                <div class="card-body imatgeMusica cat3">
+                  <h5 class="card-title">Cançó 3</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                      <span class='bx bx-play-circle'></span>
+                      <span class='bx bxs-download'></span>
+                      <div class="nav-item nav-profile dropdown">
+                        <a href="#" data-toggle="dropdown" id="profileDropdown">
+                          <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
+                        </a>
+                        <div class="dropdown-menu menuAccio">
+                          <a class="dropdown-item opcioMenuAccio">
+                          <span class='bx bx-like text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">M'agrada</p>
+                          </a>
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">Eliminar de la playlist</p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card">
+              <div class="card divCategoria">
+                <div class="card-body imatgeMusica cat4">
+                  <h5 class="card-title">Cançó 4</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                      <span class='bx bx-play-circle'></span>
+                      <span class='bx bxs-download'></span>
+                      <div class="nav-item nav-profile dropdown">
+                        <a href="#" data-toggle="dropdown" id="profileDropdown">
+                          <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
+                        </a>
+                        <div class="dropdown-menu menuAccio">
+                          <a class="dropdown-item opcioMenuAccio">
+                          <span class='bx bx-like text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">M'agrada</p>
+                          </a>
+                          <a class="dropdown-item opcioMenuAccio">
+                            <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
+                            <p class="txtOpcionsUser">Eliminar de la playlist</p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -298,9 +277,8 @@
   <script src="../js/client/template.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-  <script src="../js/bootstrap.js" crossorigin="anonymous"></script>
   <script src="../js/client/off-canvas.js"></script>
-
+  <script src="../js/bootstrap.js" crossorigin="anonymous"></script>
 </body>
 </html>
 

@@ -88,6 +88,7 @@
 .textIniciClient{
     color: white;
     font-family: 'Inter', sans-serif;
+    font-size: 1.8em;
 }
 
 .btnAfegirC{
@@ -243,7 +244,7 @@
 .musicaTexts{
     color: white;
     font-family: 'Inter', sans-serif;
-    font-size: 1.3em;
+    font-size: 1.4em;
 }
 
 .modificarGridMargin{
@@ -298,4 +299,53 @@
 
 .iconaExtrMusic{
     margin-left: 8px !important;
+}
+
+.aut{
+    background-image: url('../img/provarArtista.svg');
+}
+
+.imatgeArtista{
+    border-radius: 10px;
+    padding: 4.4rem !important;
+    background-size: 56%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid white;
+}
+
+.imatgeArtista h5{
+    font-weight: bold !important;
+    color: white !important;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1em !important;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.linkPlaylist{
+    text-decoration: none !important;
+}
+
+.sidebar .nav:not(.sub-menu) > .nav-item:hover {
+    background-color: #0a323f;
+    border-radius: 5px;
+}
+
+.textPlaylist{
+    margin-top: 10px;
+    margin-left: 1em;
+    color: #429EBD !important;
+    font-size: 1.1em !important;
+}
+
+.divPlaylist{
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.divPlaylist:hover{
+    transition: all 0.5s ease-in-out;
+    opacity: 0.7;
 }

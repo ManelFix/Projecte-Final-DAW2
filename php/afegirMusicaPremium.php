@@ -11,6 +11,9 @@
     <title>SoundBOX</title>
 </head>
 <body>
+    <div class="divHome">
+        <a class="btn btn-primary" href="javascript: history.go(-1)"><span class='bx bx-home'></span>Tornar enrere</a>
+    </div>
     <section class="framePrincipal2 extraModNoPremium">
         <div class="divLogo">
            <img src="../img/logo.svg" alt="logoSoundBOX">
