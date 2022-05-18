@@ -27,13 +27,34 @@
                     <span class='bx bx-radio iconesLoginRegister'></span>
                     <label for="iGenere" class="amagarLabel"></label>
                     <select name="genereAfegir" id="iGenere" class="css_inputsLogReg">
-                        <option>Donar funcionalitat</option>
+                        <option selected disabled>Selecciona el Gènere</option>
+                        <option value="pop">Pop</option>
+                        <option value="rock">Rock</option>
+                        <option value="ambient">Ambient</option>
+                        <option value="metal">Metal</option>
+                        <option value="punk">Punk</option>
+                        <option value="soul">Soul</option>
+                        <option value="jazz">Jazz</option>
+                        <option value="classica">Clàssica</option>
+                        <option value="electronica">Electrònica</option>
+                        <option value="indie">Indie</option>
+                        <option value="infantil">Infantil</option>
                     </select>
                 </div>
                 <div class="divUserBorder">
                     <span class='bx bx-happy iconesLoginRegister'></span>
                     <label for="iEstatAnim" class="amagarLabel"></label>
-                    <input id="iEstatAnim" type="text" name="estatAnimAfegir" placeholder="Estat d'ànim" class="css_inputsLogReg">
+                    <select name="estatAnimAfegir" id="iEstatAnim" class="css_inputsLogReg">
+                        <option selected disabled>Selecciona l'Estat d'ànim</option>
+                        <option value="alegre">Alegre</option>
+                        <option value="poderos">Poderós</option>
+                        <option value="trist">Trist</option>
+                        <option value="tranquil">Tranquil</option>
+                        <option value="enfadat">Enfadat</option>
+                        <option value="dramatic">Dramàtic</option>
+                        <option value="suspens">Suspens</option>
+                        <option value="epic">Èpic</option>
+                    </select>
                 </div>
                 <div class="divUserBorder">
                     <span class='bx bx-time-five iconesLoginRegister'></span>
@@ -45,10 +66,12 @@
                     <label for="iArtista" class="amagarLabel"></label>
                     <input id="iArtista" type="text" name="artistaAfegir" placeholder="Artista" class="css_inputsLogReg">
                 </div>
-                <div>
+                <div class="divFinal">
                     <img src="../img/iconaCarpetaMusica.svg" alt="iconaCarpetaMusica" class="iconesLoginRegister iconaImatge">
                     <label for="iFitxer" class="amagarLabel"></label>
-                    <input id="iFitxer" type="file" name="arxiuAfegir" accept="audio/*" class="css_inputsLogReg css_inputFile">
+                    <input type="file" id="iFitxer" name="arxiuAfegir" accept="audio/*" class="hidden"/>
+                    <label for="iFitxer" class="labelFile">Escolleix el fitxer</label>
+                    <span id="file-chosen">Cap fitxer introduït</span>
                 </div>
             </div>
             <input id="btnRegister" type="button" value="Afegir" name="ferRegister" class="ibtnEnviar" onclick="registrar()">            
@@ -57,5 +80,6 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <script src="../js/bootstrap.js" crossorigin="anonymous"></script>
+    <script src="../js/botonFile.js" crossorigin="anonymous"></script>
 </body>
 </html>

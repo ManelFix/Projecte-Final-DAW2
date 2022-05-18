@@ -14,10 +14,10 @@
 </head>
 <body>
     <header class="headerPrincipal">
-        <nav class="navbar navbar-fixed-top navbar-inverse">
+        <nav class="navbar navbar-fixed-top navbar-inverse ">
             <div class="container divLogoPrincipal">
                 <div class="navbar-header">
-                    <button id="btnMenuResponsive" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    <button id="btnMenuResponsive" type="button" class="navbar-toggle collapsed btnMenuResponsive" data-toggle="collapse"
                         data-target="#bs-example-navbar-collapse-1" aria-expanded="false" onclick="comprovarBoton();">
                         <span class="sr-only">Navegació</span>
                         <span class="icon-bar"></span>

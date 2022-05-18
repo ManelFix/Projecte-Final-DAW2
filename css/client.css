@@ -34,6 +34,7 @@
 .estilIcones{
     color: white;
     font-size: 1.6em;
+    margin-right: 10px;
 }
 
 .mainCFons{
@@ -149,6 +150,7 @@
 
 .iconaAccio{
     color: #212529;
+    margin-left: 6px;
 }
 
 .menuAccio{
@@ -163,6 +165,137 @@
     cursor: pointer;
 }
 
-.opcioMenuAccio:active{
+.divCategoria{
+    background-color: transparent;
+}
+
+.imatgeCategoria{
+    border-radius: 10px;
+    padding: 3.1rem !important;
+    background-size: 101%;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.imatgeCategoria:hover{
+    transition: all 0.5s ease-in-out;
+    opacity: 0.8;
+}
+
+.cat1{
+    background-image: url('../img/categories/categoriaPop.jpg');
+}
+
+.cat2{
+    background-image: url('../img/categories/categoriaRock.jpg');
+}
+
+.cat3{
+    background-image: url('../img/categories/categoriaAmbient.jpg');
+}
+
+.cat4{
+    background-image: url('../img/categories/categoriaMetal.jpg');
+}
+
+.cat5{
+    background-image: url('../img/categories/categoriaPunk.jpg');
+}
+
+.cat6{
+    background-image: url('../img/categories/categoriaSoul.jpg');
+}
+
+.cat7{
+    background-image: url('../img/categories/categoriaJazz.jpg');
+}
+
+.cat8{
+    background-image: url('../img/categories/categoriaClassica.jpg');
+}
+
+.cat9{
+    background-image: url('../img/categories/categoriaElectronica.jpg');
+}
+
+.cat10{
+    background-image: url('../img/categories/categoriaIndie.jpg');
+}
+
+.cat11{
+    background-image: url('../img/categories/categoriaInfantil.jpg');
+}
+
+.cat12{
+    background-image: url('../img/categories/categoriaPremium.jpg');
+}
+
+.imatgeCategoria h4{
+    font-weight: bold !important;
+    color: white !important;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.6em !important;
+    text-align: center;
+}
+
+.musicaTexts{
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3em;
+}
+
+.modificarGridMargin{
+    margin-bottom: 1rem !important;
+}
+
+.imatgeMusica{
+    border-radius: 10px;
+    padding: 3.1rem !important;
+    background-size: 101%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.5s ease-in-out;
+}
+
+.imatgeMusica h5{
+    font-weight: bold !important;
+    color: white !important;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.6em !important;
+    text-align: center;
+}
+
+.zonaBotonsMusica{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: center;
     
+}
+
+.divMedia{
+    color: white;
+    position: absolute;
+    right: 2px;
+    bottom: 10px;
+}
+
+.zonaBotonsMusica span{
+    font-size: 1.8em;
+    cursor: pointer;
+    margin-left: 15px;
+    color: white;
+    transition: all 0.5s;
+}
+
+.zonaBotonsMusica span:hover{
+    transition: all 0.5s;
+    color: #053F5C;
+}
+
+.iconaExtrMusic{
+    margin-left: 8px !important;
 }

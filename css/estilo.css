@@ -15,6 +15,10 @@ body{
 
 /* Web Principal */
 
+.btnMenuResponsive{
+    margin-right: 15px;
+}
+
 .headerPrincipal{
     width: 100%;
     position: fixed;
@@ -851,6 +855,7 @@ footer span{
     width: 1.55em;
     height:0.9em;
     padding-right: 0px;
+    vertical-align: middle;
 }
 
 .css_inputFile{
@@ -863,4 +868,30 @@ footer span{
 
 .css_inputsLogReg option{
     color: black;
+}
+
+.labelFile {
+    background-color: #429EBD;
+    color: white;
+    padding: 0.7rem;
+    font-family: 'Inter', sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    position: relative;
+    top: 10px;
+    font-weight: normal;
+    font-size: 1.6rem;
+    margin-left: 1rem;
+}
+  
+#file-chosen{
+    margin-left: 0.3rem;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    position: relative;
+    top: 10px;
+}
+
+.divFinal{
+    margin-bottom: 10px;
 }
