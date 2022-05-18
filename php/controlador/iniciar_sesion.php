@@ -1,4 +1,5 @@
 <?php
+
 include("BBDD.php");
 
 $connexio=sql();
@@ -9,8 +10,6 @@ $word = explode(",",$_POST["word"]);
 
 $passwrd = md5($word[1]);
 $user = md5($word[0]);
-
-// $passwrd = md5($word[1]);
 
 $sql="SELECT COUNT(*) as contador FROM usuari WHERE nom_usuari = '$user' AND contrasenya = '$passwrd'";
 
@@ -30,13 +29,12 @@ echo 0;
 
     if($fila["admin"]==1){
         $_SESSION["ses_id"]=$fila["id_usuari"];
+        $_SESSION["ban"]=0;
         $_SESSION["admin"]= 1;
-        echo 2;
     }else{
         $_SESSION["ses_id"]=$fila["id_usuari"];
         $_SESSION["ban"]=$fila["ban"];
         $_SESSION["premium"]=$fila["premium"];
-        echo 1;
     }
 }
 ?>
