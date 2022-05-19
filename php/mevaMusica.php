@@ -156,7 +156,7 @@
                           <th>Gènere</th>
                           <th>Estat d'ànim</th>
                           <th>Duració</th>
-                          <th>Data d'afegiment</th>
+                          <th>Data d'incorporació</th>
                           <th>Acció</th>
                         </tr>
                       </thead>

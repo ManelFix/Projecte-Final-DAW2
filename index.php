@@ -47,7 +47,7 @@
     <!-- Reproductor fixed bottom -->
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="audio-player-container">
-            <audio src="audio1.mp3" preload="metadata" id="audio-1"></audio>
+            <audio src="../audio1.mp3" preload="metadata" id="audio-1"></audio>
             <div class="info-canco">
                 <p class="artista">Artista</p>
                 <span> - </span>
