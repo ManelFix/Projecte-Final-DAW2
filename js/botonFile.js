@@ -10,4 +10,4 @@ actualBtn.addEventListener('change', function(){
     fileChosen.textContent = "Fitxer introduït";
   }
 
-})
+});

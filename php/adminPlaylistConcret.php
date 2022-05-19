@@ -39,17 +39,9 @@
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="../img/defaultUser.svg" class="colIcona" alt="profile"/>
+              <img src="../img/defaultUser.svg" class="colIcona" alt="profile"/> <!-- Modificar la imatge a una d'administrador !-->
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item" href="configuracioUser.php">
-                <span class='bx bx-cog text-primary colIcona midaIcones'></span>
-                <p class="txtOpcionsUser">Configuració del compte</p>
-              </a>
-              <a class="dropdown-item" href="subscripcio.php">
-                <span class='bx bxs-medal text-primary colIcona midaIcones'></span>
-                <p class="txtOpcionsUser">Subscripció</p>
-              </a>
               <a class="dropdown-item">
                 <span class='bx bx-exit text-primary midaIcones'></span>
                 <p class="txtOpcionsUser">Tancar sessió</p>
@@ -66,48 +58,21 @@
       <nav class="sidebar sidebar-offcanvas sidebarColorFons" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link efecteHoverMenu" href="mevaMusica.php">
-              <span class='bx bx-music estilIcones'></span>
-              <span class="menu-title textSidebar">La meva música</span>
+            <a class="nav-link efecteHoverMenu" href="adminUsuaris.php">
+              <span class='bx bx-user-circle estilIcones'></span>
+              <span class="menu-title textSidebar">Usuaris</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link efecteHoverMenu" href="explora.php">
-              <span class='bx bx-book-open estilIcones iconPers'></span>
-              <span class="menu-title textSidebar">Explora</span>
+            <a class="nav-link efecteHoverMenu" href="adminMusica.php">
+            <span class='bx bx-music estilIcones'></span>
+              <span class="menu-title textSidebar">Cançons</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link efecteHoverMenu" href="magrada.php">
-              <span class='bx bx-heart estilIcones iconPers'></span>
-              <span class="menu-title textSidebar">M'agrada</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link efecteHoverMenu" href="artistes.php">
-              <img src="../img/iconaArtist.svg" class="iconaArtista estilIcones iconPers" alt="iconaArtista">
-              <span class="menu-title textSidebar">Artistes</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link efecteHoverMenu" href="crearPlaylist.php">
+            <a class="nav-link efecteHoverMenu active" href="adminPlaylist.php">
               <span class='bx bxs-playlist estilIcones'></span>
-              <span class="menu-title textSidebar textNav">Crear playlist</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="linkPlaylist">
-              <p class="textSidebar textNav textPlaylist">Playlist 1</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="linkPlaylist">
-              <p class="textSidebar textNav textPlaylist">Playlist 2</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="linkPlaylist">
-              <p class="textSidebar textNav textPlaylist">Playlist 3</p>
+              <span class="menu-title textSidebar">Playlists</span>
             </a>
           </li>
         </ul>
@@ -118,28 +83,7 @@
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h3 id="nomCategoria" class="textIniciClient">*Nom de la playlist*</h3>
-                </div>
-                <div class="col-12 col-xl-4">
-                 <div class="justify-content-end d-flex">
-                  <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
-                    <a id="dropdownMenuDate2" href="afegirMusicaNoPremium.php" class="btn btn-sm btn-light btnAfegirC">Eliminar playlist</a>
-                  </div>
-                 </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 grid-margin transparent">
-              <div class="row">
-                <div class="col-md-12 mb-12 stretch-card transparent">
-                  <div class="card card-tale divPublicitat">
-                    <div class="card-body divTextPubli">
-                      <p class="fs-30 mb-4 text-center font-weight-bold">PUBLICITAT</p>
-                      <p class="mb-2">Vols aparèixer aquí? Envia'ns un correu a ****</p>
-                    </div>
-                  </div>
+                  <h3 class="textIniciClient">*Nom playlist*</h3>
                 </div>
               </div>
             </div>
@@ -175,11 +119,7 @@
                               <a class="dropdown-item opcioMenuAccio">
                                 <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
                                 <p class="txtOpcionsUser">Eliminar</p>
-                              </a>
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-download text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Descarregar</p>
-                              </a>
+                              </a>                            
                               <a class="dropdown-item opcioMenuAccio">
                                 <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
                                 <p class="txtOpcionsUser">Reproduïr</p>
@@ -201,11 +141,7 @@
                               <a class="dropdown-item opcioMenuAccio">
                                 <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
                                 <p class="txtOpcionsUser">Eliminar</p>
-                              </a>
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-download text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Descarregar?</p>
-                              </a>
+                              </a>                            
                               <a class="dropdown-item opcioMenuAccio">
                                 <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
                                 <p class="txtOpcionsUser">Reproduïr?</p>
@@ -227,10 +163,6 @@
                               <a class="dropdown-item opcioMenuAccio">
                                 <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
                                 <p class="txtOpcionsUser">Eliminar</p>
-                              </a>
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-download text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Descarregar</p>
                               </a>
                               <a class="dropdown-item opcioMenuAccio">
                                 <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
@@ -255,10 +187,6 @@
                                   <p class="txtOpcionsUser">Eliminar</p>
                                 </a>
                                 <a class="dropdown-item opcioMenuAccio">
-                                  <span class='bx bxs-download text-primary colIcona midaIcones'></span>
-                                  <p class="txtOpcionsUser">Descarregar</p>
-                                </a>
-                                <a class="dropdown-item opcioMenuAccio">
                                   <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
                                   <p class="txtOpcionsUser">Reproduïr</p>
                                 </a>
@@ -272,21 +200,7 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-12 grid-margin transparent">
-              <div class="row">
-                <div class="col-md-12 mb-12 stretch-card transparent">
-                  <div class="card card-tale divPublicitat">
-                    <div class="card-body divTextPubli">
-                      <p class="fs-30 mb-4 text-center font-weight-bold">PUBLICITAT</p>
-                      <p class="mb-2">Vols aparèixer aquí? Envia'ns un correu a ****</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <footer class="footer">
+          <footer class="footer footerAdminUsuaris">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
               <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022. <span>SoundBOX</span> - Tots els drets reservats.</span>
             </div>
@@ -298,8 +212,9 @@
   <script src="../js/client/template.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-  <script src="../js/client/off-canvas.js"></script>
   <script src="../js/bootstrap.js" crossorigin="anonymous"></script>
+  <script src="../js/client/off-canvas.js"></script>
+
 </body>
 </html>
 

@@ -154,7 +154,7 @@
                   <div class="media divMedia">
                     <div class="media-body zonaBotonsMusica">
                       <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download'></span>
+                      <span class='bx bxs-download botonDescarrega'></span>
                       <div class="nav-item nav-profile dropdown">
                         <a href="#" data-toggle="dropdown" id="profileDropdown">
                           <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
@@ -182,7 +182,7 @@
                   <div class="media divMedia">
                     <div class="media-body zonaBotonsMusica">
                       <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download'></span>
+                      <span class='bx bxs-download botonDescarrega'></span>
                       <div class="nav-item nav-profile dropdown">
                         <a href="#" data-toggle="dropdown" id="profileDropdown">
                           <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
@@ -210,7 +210,7 @@
                   <div class="media divMedia">
                     <div class="media-body zonaBotonsMusica">
                       <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download'></span>
+                      <span class='bx bxs-download botonDescarrega'></span>
                       <div class="nav-item nav-profile dropdown">
                         <a href="#" data-toggle="dropdown" id="profileDropdown">
                           <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
@@ -238,7 +238,7 @@
                   <div class="media divMedia">
                     <div class="media-body zonaBotonsMusica">
                       <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download'></span>
+                      <span class='bx bxs-download botonDescarrega'></span>
                       <div class="nav-item nav-profile dropdown">
                         <a href="#" data-toggle="dropdown" id="profileDropdown">
                           <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>

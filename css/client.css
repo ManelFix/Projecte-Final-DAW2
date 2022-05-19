@@ -294,7 +294,6 @@
 .zonaBotonsMusica span{
     font-size: 1.8em;
     cursor: pointer;
-    margin-left: 15px;
     color: white;
     transition: all 0.5s;
 }
@@ -319,7 +318,7 @@
 
 .imatgeArtista img{
     width: auto;
-    max-width: 158px;
+    max-width: 156px;
 }
 
 .imatgeArtista h5{
@@ -376,6 +375,10 @@
 .divConfig{
     width: 0px !important;
     min-width: 0px !important;
+}
+
+.extraClaseFitxer{
+    padding-bottom: 4px !important;
 }
 
 .imatgePerfil{
@@ -445,7 +448,7 @@
     font-size: 1.2em !important;
     display: block;
     position: relative;
-    right: 6px;
+    right: 13px;
 }
 
 .divCentrarSubscripcio{
@@ -475,4 +478,12 @@
     position: absolute;
     bottom: 0px;
     width: 80%;
+}
+
+.botonDescarrega{
+    margin-left: 11px;
+}
+
+.footerAdminUsuaris{
+    margin-top: 76px;
 }

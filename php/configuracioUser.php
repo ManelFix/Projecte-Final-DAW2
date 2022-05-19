@@ -144,12 +144,11 @@
               <div class="justify-content-end d-flex">
                 <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
                   <form method="post" enctype="multipart/form-data">
-                    <label for="iFitxer" class="amagarLabel"></label>
-                    <button class="contenedor-btn-file bordeado">
-                      Selecciona una imatge 
-                      <label for="btn-file"></label>
-                      <input type="file" id="btn-file">
-                    </button>
+                    <div id="fitxerU" class="contenedor-btn-file bordeado extraClaseFitxer">
+                      <p id="textModificar">Selecciona una imatge</p> 
+                      <label for="btnNouFitxer"></label>
+                      <input type="file" id="btnNouFitxer" accept="image/*">
+                    </div>
                     <input type="button" id="modificarI" name="modImatge" value="Modificar imatge" class="btn btn-sm btn-light btnAfegirC btnPujarImg"/>
                   </form>
                 </div>
@@ -170,7 +169,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
   <script src="../js/bootstrap.js" crossorigin="anonymous"></script>
   <script src="../js/client/off-canvas.js"></script>
-  <script src="../js/botonFile.js" crossorigin="anonymous"></script>
+  <script src="../js/btnFilePerfil.js" crossorigin="anonymous"></script>
 
 </body>
 </html>

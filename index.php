@@ -15,7 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>SoundBOX</title>
 </head>
-<body>
+<body class="bodyPrincipal">
     <header class="headerPrincipal">
         <nav class="navbar navbar-fixed-top navbar-inverse">
             <div class="container divLogoPrincipal">
@@ -86,14 +86,17 @@
                 <h2>Mostra del Catàleg</h2>
                 <p>Aquí una mostra d'algunes de les cançons que disposem en el nostre cataleg</p>
             </div>
-            <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <!-- Musica -->
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <!-- Musica -->
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
                 <!-- Musica -->
             </div>
             <div class="col-md-12 col-sm-12 col-xs-12">
-                <!-- Musica -->
-            </div>
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <!-- Musica -->
+                <button class="botonsIR estilbtnLogin btnPremium btnCatalegPrincipal" onclick="anarCatalegNoRegistrat();">Explora més cançons</button>
             </div>
         </div>
     </section>

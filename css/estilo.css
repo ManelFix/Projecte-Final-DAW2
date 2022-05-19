@@ -15,6 +15,10 @@ body{
 
 /* Web Principal */
 
+.bodyPrincipal{
+    margin-bottom: 90px;
+}
+
 .btnMenuResponsive{
     margin-right: 15px;
 }
@@ -235,6 +239,13 @@ body{
     font-family: 'Inter', sans-serif;
     font-size: 1.1em;
     margin-right: 10px;
+}
+
+.btnCatalegPrincipal{
+    margin-left: 411px !important;
+    padding-right: 2em !important;
+    padding-left: 2em !important;
+    border-radius: 8px !important;
 }
 
 .seccioPlans{

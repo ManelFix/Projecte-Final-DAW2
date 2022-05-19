@@ -193,7 +193,7 @@
                   <h5 class="card-title">Artista</h5>
                   <div class="media divMedia">
                     <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-user-x' ></span>
+                      <span class='bx bx-user-x'></span>
                     </div>
                   </div>
                 </div>

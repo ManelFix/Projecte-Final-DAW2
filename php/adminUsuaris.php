@@ -59,19 +59,19 @@
         <ul class="nav">
           <li class="nav-item">
             <a class="nav-link efecteHoverMenu active" href="adminUsuaris.php">
-              <span class='bx bx-music estilIcones'></span>
+              <span class='bx bx-user-circle estilIcones'></span>
               <span class="menu-title textSidebar">Usuaris</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link efecteHoverMenu" href="adminMusica.php">
-              <span class='bx bx-book-open estilIcones iconPers'></span>
+            <span class='bx bx-music estilIcones'></span>
               <span class="menu-title textSidebar">Cançons</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link efecteHoverMenu" href="adminPlaylist.php">
-              <span class='bx bx-heart estilIcones iconPers'></span>
+              <span class='bx bxs-playlist estilIcones'></span>
               <span class="menu-title textSidebar">Playlists</span>
             </a>
           </li>
@@ -96,115 +96,73 @@
                     <table class="table tablaMisCanciones">
                       <thead>
                         <tr>
-                          <th>Cançó</th>
-                          <th>Gènere</th>
-                          <th>Estat d'ànim</th>
-                          <th>Duració</th>
-                          <th>Data d'incorporació</th>
+                          <th>Usuari</th>
+                          <th>Email</th>
+                          <th>Tipus</th>
                           <th>Acció</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td class="py-1 font-weight-bold">Enough</td>
-                          <td>Pop</td>
-                          <td>Dramàtic</td>
-                          <td>2:10</td>
-                          <td>16/05/2022</td>
+                          <td class="py-1 font-weight-bold">Josep</td>
+                          <td>josep@gmail.com</td>
+                          <td>No prèmium</td>
                           <td class="nav-item nav-profile dropdown">
                             <a href="#" data-toggle="dropdown" id="profileDropdown">
                               <span class='bx bx-dots-vertical-rounded iconaAccio'></span>
                             </a>
                             <div class="dropdown-menu menuAccio">
                               <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Eliminar</p>
-                              </a>
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-download text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Descarregar?</p>
-                              </a>
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Reproduïr?</p>
+                                <span class='bx bxs-shield-x text-primary colIcona midaIcones'></span>
+                                <p class="txtOpcionsUser">Banejar</p>
                               </a>
                             </div>
                           </td>
                         </tr>
                         <tr>
-                          <td class="py-1 font-weight-bold">Enough</td>
-                          <td>Pop</td>
-                          <td>Dramàtic</td>
-                          <td>2:10</td>
-                          <td>16/05/2022</td>
+                          <td class="py-1 font-weight-bold">Mapabu</td>
+                          <td>mapabu@gmail.com</td>
+                          <td>No prèmium</td>
                           <td class="nav-item nav-profile dropdown">
                             <a href="#" data-toggle="dropdown" id="profileDropdown">
                               <span class='bx bx-dots-vertical-rounded iconaAccio'></span>
                             </a>
                             <div class="dropdown-menu menuAccio">
                               <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Eliminar</p>
-                              </a>
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-download text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Descarregar?</p>
-                              </a>
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Reproduïr?</p>
+                                <span class='bx bxs-shield-x text-primary colIcona midaIcones'></span>
+                                <p class="txtOpcionsUser">Banejar</p>
                               </a>
                             </div>
                           </td>
                         </tr>
                         <tr>
-                          <td class="py-1 font-weight-bold">Enough</td>
-                          <td>Pop</td>
-                          <td>Dramàtic</td>
-                          <td>2:10</td>
-                          <td>16/05/2022</td>
+                          <td class="py-1 font-weight-bold">Xavi</td>
+                          <td>xavi@gmail.com</td>
+                          <td>Prèmium</td>
                           <td class="nav-item nav-profile dropdown">
                             <a href="#" data-toggle="dropdown" id="profileDropdown">
                               <span class='bx bx-dots-vertical-rounded iconaAccio'></span>
                             </a>
                             <div class="dropdown-menu menuAccio">
                               <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Eliminar</p>
-                              </a>
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-download text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Descarregar?</p>
-                              </a>
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Reproduïr?</p>
+                                <span class='bx bxs-shield-x text-primary colIcona midaIcones'></span>
+                                <p class="txtOpcionsUser">Banejar</p>
                               </a>
                             </div>
                           </td>
                         </tr>
                         <tr>
-                          <td class="py-1 font-weight-bold">Enough</td>
-                          <td>Pop</td>
-                          <td>Dramàtic</td>
-                          <td>2:10</td>
-                          <td>16/05/2022</td>
+                          <td class="py-1 font-weight-bold">Iván</td>
+                          <td>ivan@gmail.com</td>
+                          <td>Prèmium</td>
                           <td class="nav-item nav-profile dropdown">
                               <a href="#" data-toggle="dropdown" id="profileDropdown">
                                 <span class='bx bx-dots-vertical-rounded iconaAccio'></span>
                               </a>
                               <div class="dropdown-menu menuAccio">
                                 <a class="dropdown-item opcioMenuAccio">
-                                  <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
-                                  <p class="txtOpcionsUser">Eliminar</p>
-                                </a>
-                                <a class="dropdown-item opcioMenuAccio">
-                                  <span class='bx bxs-download text-primary colIcona midaIcones'></span>
-                                  <p class="txtOpcionsUser">Descarregar?</p>
-                                </a>
-                                <a class="dropdown-item opcioMenuAccio">
-                                  <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
-                                  <p class="txtOpcionsUser">Reproduïr?</p>
+                                  <span class='bx bxs-shield-x text-primary colIcona midaIcones'></span>
+                                  <p class="txtOpcionsUser">Banejar</p>
                                 </a>
                               </div>
                           </td>
@@ -216,7 +174,7 @@
               </div>
             </div>
           </div>
-          <footer class="footer">
+          <footer class="footer footerAdminUsuaris">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
               <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022. <span>SoundBOX</span> - Tots els drets reservats.</span>
             </div>
