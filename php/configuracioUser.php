@@ -42,11 +42,11 @@
               <img src="../img/defaultUser.svg" class="colIcona" alt="profile"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="configuracioUser.php">
                 <span class='bx bx-cog text-primary colIcona midaIcones'></span>
                 <p class="txtOpcionsUser">Configuració del compte</p>
               </a>
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="subscripcio.php">
                 <span class='bx bxs-medal text-primary colIcona midaIcones'></span>
                 <p class="txtOpcionsUser">Subscripció</p>
               </a>
@@ -66,7 +66,7 @@
       <nav class="sidebar sidebar-offcanvas sidebarColorFons" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link efecteHoverMenu active" href="mevaMusica.php">
+            <a class="nav-link efecteHoverMenu" href="mevaMusica.php">
               <span class='bx bx-music estilIcones'></span>
               <span class="menu-title textSidebar">La meva música</span>
             </a>
@@ -156,7 +156,7 @@
               </div>
             </div>
           </div>
-          <footer class="footer">
+          <footer class="footer footerFix">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
               <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022. <span>SoundBOX</span> - Tots els drets reservats.</span>
             </div>

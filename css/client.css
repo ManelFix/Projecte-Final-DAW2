@@ -447,13 +447,31 @@
     right: 6px;
 }
 
+.divCentrarSubscripcio{
+    margin-bottom: 5px !important;
+}
+
+.imatgeSubscripcio{
+    border: none;
+}
+
+.imatgeSubscripcio img{
+    width: 160px;
+}
+
 .divSubscripcio h4{
     color: white;
     font-family: 'Inter', sans-serif;
     font-size: 1.3em;
-    margin-right: 55px;
+    margin-right: 39px;
 }
 
 .divSubscripcio span{
     color: #F7AD19;
+}
+
+.footerFix{
+    position: absolute;
+    bottom: 0px;
+    width: 80%;
 }
