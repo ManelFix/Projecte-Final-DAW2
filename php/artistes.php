@@ -149,7 +149,8 @@
           <div class="row">
             <div class="col-md-3 grid-margin stretch-card">
               <div class="card divCategoria">
-                <div class="card-body imatgeArtista aut">
+                <div class="card-body imatgeArtista">
+                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
                   <h5 class="card-title">Artista</h5>
                   <div class="media divMedia">
                     <div class="media-body zonaBotonsMusica">
@@ -161,7 +162,8 @@
             </div>
             <div class="col-md-3 grid-margin stretch-card">
               <div class="card divCategoria">
-                <div class="card-body imatgeArtista aut">
+                <div class="card-body imatgeArtista">
+                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
                   <h5 class="card-title">Artista</h5>
                   <div class="media divMedia">
                     <div class="media-body zonaBotonsMusica">
@@ -173,7 +175,8 @@
             </div>
             <div class="col-md-3 grid-margin stretch-card">
               <div class="card divCategoria">
-                <div class="card-body imatgeArtista aut">
+                <div class="card-body imatgeArtista">
+                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
                   <h5 class="card-title">Artista</h5>
                   <div class="media divMedia">
                     <div class="media-body zonaBotonsMusica">
@@ -185,7 +188,8 @@
             </div>
             <div class="col-md-3 grid-margin stretch-card">
               <div class="card divCategoria">
-                <div class="card-body imatgeArtista aut">
+                <div class="card-body imatgeArtista">
+                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
                   <h5 class="card-title">Artista</h5>
                   <div class="media divMedia">
                     <div class="media-body zonaBotonsMusica">
@@ -208,7 +212,8 @@
           <div class="row">
             <div class="col-md-3 grid-margin stretch-card">
               <div class="card divCategoria">
-                <div class="card-body imatgeArtista aut">
+                <div class="card-body imatgeArtista">
+                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
                   <h5 class="card-title">Artista</h5>
                   <div class="media divMedia">
                     <div class="media-body zonaBotonsMusica">
@@ -220,7 +225,8 @@
             </div>
             <div class="col-md-3 grid-margin stretch-card">
               <div class="card divCategoria">
-                <div class="card-body imatgeArtista aut">
+                <div class="card-body imatgeArtista">
+                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
                   <h5 class="card-title">Artista</h5>
                   <div class="media divMedia">
                     <div class="media-body zonaBotonsMusica">
@@ -232,7 +238,8 @@
             </div>
             <div class="col-md-3 grid-margin stretch-card">
               <div class="card divCategoria">
-                <div class="card-body imatgeArtista aut">
+                <div class="card-body imatgeArtista">
+                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
                   <h5 class="card-title">Artista</h5>
                   <div class="media divMedia">
                     <div class="media-body zonaBotonsMusica">
@@ -244,7 +251,8 @@
             </div>
             <div class="col-md-3 grid-margin stretch-card">
               <div class="card divCategoria">
-                <div class="card-body imatgeArtista aut">
+                <div class="card-body imatgeArtista">
+                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
                   <h5 class="card-title">Artista</h5>
                   <div class="media divMedia">
                     <div class="media-body zonaBotonsMusica">

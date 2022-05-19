@@ -609,9 +609,10 @@ footer span{
 
 .titolNoCompte{
     color: white;
-    font-size: 1.1em;
+    font-size: 1.1em !important;
     font-family: 'Inter', sans-serif;
     margin-left: 75px;
+    text-align: left !important;
 }
 
 .titolNoCompte a{
