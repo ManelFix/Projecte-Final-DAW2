@@ -5,6 +5,7 @@ if (isset($_SESSION['ses_id'])) {
 ?>
     <!DOCTYPE html>
     <html lang="es">
+
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -148,7 +149,7 @@ if (isset($_SESSION['ses_id'])) {
                 </div>
               </div>
               <div class="row">
-                
+
               </div>
               <div class="row">
                 <div class="col-md-12 mb-12 stretch-card transparent">
@@ -245,4 +246,11 @@ if (isset($_SESSION['ses_id'])) {
     </body>
 
     </html>
-
+<?php
+  } else {
+    header('Location: .php');
+  }
+} else {
+  header('Location: login.php');
+}
+?>

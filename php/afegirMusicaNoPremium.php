@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(isset($_SESSION['ses_id'])){
+    if($_SESSION["ban"]==0){
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -88,9 +94,7 @@
 </html>
 <?php
 
-session_start();
-if(isset($_SESSION['ses_id'])){
-    if($_SESSION["ban"]==0){
+
 }else{
         header('Location: .php');
     }
