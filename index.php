@@ -223,7 +223,7 @@
 
     <footer>
         <a href="https://twitter.com/SoundBoxDAW"><span class='bx bxl-twitter iconesFooter'></span></a>
-        <a><span class='bx bxl-facebook-square iconesFooter'></span></a>
+        <a href="https://www.facebook.com/SoundBox-100623886002713"><span class='bx bxl-facebook-square iconesFooter'></span></a>
         <a href="https://www.instagram.com/soundboxdaw2/"><span class='bx bxl-instagram iconesFooter'></span></a>
         <a href="mailto:soundboxdaw2@gmail.com"><span class='bx bxl-gmail iconesFooter'></span></a>
         <p>Copyright &copy; 2022 - <span>SoundBOX</span></p>

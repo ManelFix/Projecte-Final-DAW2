@@ -40,7 +40,7 @@
                 <div>
                     <span class='bx bx-lock-alt iconesLoginRegister'></span>
                     <label for="repContrasenya" class="amagarLabel"></label>
-                    <input id="repContrasenya" type="password" name="repPasswR" placeholder="Repetir contrasenya" class="css_inputsLogReg">
+                    <input id="repContrasenya" type="password" name="repPasswR" placeholder="Repetir contrasenya" class="css_inputsLogReg" onkeydown="enterButton(event)">
                 </div>
             </div>
             <h2 class="titolNoCompte">Ja tens un compte creat? <a href="login.php">Inicia sessió</a></h2>

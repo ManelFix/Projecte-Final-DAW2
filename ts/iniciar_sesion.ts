@@ -1,4 +1,11 @@
 
+function enterButton(event:any){
+    if (event.keyCode == 13) {
+        event.returnValue = false;
+        document.getElementById("btnLogin")?.click();
+    }
+}
+
 function iniciar_sesion() {
 
     var nombre = document.getElementById("usuari").value;

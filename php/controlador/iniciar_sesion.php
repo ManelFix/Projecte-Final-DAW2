@@ -11,7 +11,7 @@ $word = explode(",",$_POST["word"]);
 $passwrd = md5($word[1]);
 $user = md5($word[0]);
 
-$sql="SELECT COUNT(*) as contador FROM usuari WHERE nom_usuari = '$word[0]' AND contrasenya = '$passwrd'";
+$sql="SELECT COUNT(*) as contador FROM usuari WHERE nom_usuari = '$user' AND contrasenya = '$passwrd'";
 
 $res=mysqli_query($connexio, $sql);
 
