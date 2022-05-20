@@ -9,6 +9,7 @@ header("Content-Type: application/xml");
 $word = explode(",",$_POST["word"]);
 
 $passwrd = md5($word[1]);
+$user = md5($word[0]);
 
 $sql="SELECT COUNT(*) as contador FROM usuari WHERE nom_usuari = '$word[0]' AND contrasenya = '$passwrd'";
 
@@ -19,7 +20,7 @@ $fila = mysqli_fetch_assoc($res);
 if($fila["contador"]==0){
 echo 0;
 }else if($fila["contador"]==1){
-    $sql="SELECT id_usuari,ban,premium admin FROM usuari WHERE nom_usuari = '$word[0]' AND contrasenya = '$passwrd'";
+    $sql="SELECT id_usuari,ban,premium admin FROM usuari WHERE nom_usuari = '$user' AND contrasenya = '$passwrd'";
 
     $res=mysqli_query($connexio, $sql);
 

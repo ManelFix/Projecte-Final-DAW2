@@ -20,7 +20,7 @@
            <img src="../img/logo.svg" alt="logoSoundBOX">
         </div>
         <h1 class="titolBanejat">Ho sentim!</h1>
-        <h2>El teu compte està bloquejat, així que no pots pujar cançons, si creus que es deu a un error envia'ns un correu a soundboxdaw2@gmail.com</h2>
+        <h2>El teu compte està bloquejat, així que no pots pujar cançons, si creus que es deu a un error envia'ns un correu a <span class="correuConcret">soundboxdaw2@gmail.com</span></h2>
         <h3>Administració <span>@SoundBOX</span></h3>
     </section>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
