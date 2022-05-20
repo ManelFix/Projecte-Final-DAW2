@@ -10,7 +10,6 @@ $word = explode(",",$_POST["word"]);
 
 $passwrd = md5($word[1]);
 
-
 $sql="SELECT COUNT(*) as contador FROM usuari WHERE nom_usuari = '$word[0]' AND contrasenya = '$passwrd'";
 
 $res=mysqli_query($connexio, $sql);
