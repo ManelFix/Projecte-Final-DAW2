@@ -137,7 +137,7 @@
                   <div class="card card-tale divPublicitat">
                     <div class="card-body divTextPubli">
                       <p class="fs-30 mb-4 text-center font-weight-bold">PUBLICITAT</p>
-                      <p class="mb-2">Vols aparèixer aquí? Envia'ns un correu a ****</p>
+                      <p class="mb-2">Vols aparèixer aquí? Envia'ns un correu a soundboxdaw2@gmail.com</p>
                     </div>
                   </div>
                 </div>
@@ -279,7 +279,7 @@
                   <div class="card card-tale divPublicitat">
                     <div class="card-body divTextPubli">
                       <p class="fs-30 mb-4 text-center font-weight-bold">PUBLICITAT</p>
-                      <p class="mb-2">Vols aparèixer aquí? Envia'ns un correu a ****</p>
+                      <p class="mb-2">Vols aparèixer aquí? Envia'ns un correu a soundboxdaw2@gmail.com</p>
                     </div>
                   </div>
                 </div>

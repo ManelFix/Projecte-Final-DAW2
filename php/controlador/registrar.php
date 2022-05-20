@@ -8,7 +8,7 @@ header("Content-Type: application/xml");
 $word = explode(",",$_POST["word"]);
 
 $passwrd = md5($word[2]);
-$user = md5($word[0]);
+$user = md5($word[1]);
 
 $sql="SELECT COUNT(*) as contador FROM usuari WHERE nom_usuari = '$user'";
 
