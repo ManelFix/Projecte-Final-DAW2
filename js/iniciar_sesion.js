@@ -26,10 +26,10 @@ function iniciar_sesion() {
                     alert("Usuario o contrasenyas incorrectos");
                 }
                 else if (select == 1) {
-                    location.href = "../php/client.html";
+                    location.href = "../php/mevaMusica.php";
                 }
                 else if (select == 2) {
-                    location.href = "../php/admin.html";
+                    location.href = "../php/AdminUsuaris.php";
                 }
             }
         };

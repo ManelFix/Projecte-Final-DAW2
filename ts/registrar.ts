@@ -6,7 +6,6 @@ function enterButton(event:any){
     }
 }
 
-
 function registrar() {
 
     var usuari = document.getElementById("usuari").value;
