@@ -1,4 +1,12 @@
 
+function enterButton(event:any){
+    if (event.keyCode == 13) {
+        event.returnValue = false;
+        document.getElementById("btnRegister")?.click();
+    }
+}
+
+
 function registrar() {
 
     var usuari = document.getElementById("usuari").value;
@@ -11,8 +19,7 @@ function registrar() {
     if (usuari != "" && correu != "" && contrasenya != "" && repContrasenya != "") {
 
         if (contrasenya == repContrasenya) {
-            console.log(contrasenya.length);
-
+            
             if (contrasenya.length > 6) {
 
                 if (usuari.length > 3) {

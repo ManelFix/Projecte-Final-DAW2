@@ -30,7 +30,7 @@
                 <div>
                     <span class='bx bx-lock-alt iconesLoginRegister'></span>
                     <label for="contrasenya" class="amagarLabel"></label>
-                    <input id="contrasenya" type="password" name="passwL" placeholder="Contrasenya" class="css_inputsLogReg">
+                    <input id="contrasenya" type="password" name="passwL" placeholder="Contrasenya" class="css_inputsLogReg" onkeydown="enterButton(event)">
                 </div>
             </div>
             <h2 class="titolNoCompte">No tens un compte creat? <a href="register.php">Registrat</a></h2>
