@@ -45,6 +45,7 @@ function registrar() {
                                         alert("Usuario ya existente");
                                     }
                                     else if (select == 0) {
+                                        alert("Usuario creado");
                                         location.href = "../php/login.php";
                                     }
                                     else {
