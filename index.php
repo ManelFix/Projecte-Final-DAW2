@@ -127,7 +127,7 @@
                         <span class='bx bx-chevron-right iconaVentatges'></span>
                         <p>Monetitza les teves cançons</p>
                     </div>
-                    <button class="botonsIR estilbtnLogin btnPremium">SOLICITAR</button>
+                    <a href="mailto:soundboxdaw2@gmail.com?Subject=Solicitut%20de%20subscripció%20premium"><button class="botonsIR estilbtnLogin btnPremium">SOLICITAR</button><a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -150,7 +150,7 @@
                         <span class='bx bx-chevron-right iconaVentatges'></span>
                         <p>Monetitza les teves cançons</p>
                     </div>
-                    <button class="botonsIR estilbtnLogin btnPremium">SOLICITAR</button>
+                    <a href="mailto:soundboxdaw2@gmail.com?Subject=Solicitut%20de%20subscripció%20premium"><button class="botonsIR estilbtnLogin btnPremium">SOLICITAR</button><a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -222,10 +222,10 @@
     </section>
 
     <footer>
-        <span class='bx bxl-twitter iconesFooter'></span>
-        <span class='bx bxl-facebook-square iconesFooter'></span>
-        <span class='bx bxl-instagram iconesFooter'></span>
-        <span class='bx bxl-gmail iconesFooter'></span>
+        <a href="https://twitter.com/SoundBoxDAW"><span class='bx bxl-twitter iconesFooter'></span></a>
+        <a><span class='bx bxl-facebook-square iconesFooter'></span></a>
+        <a href="https://www.instagram.com/soundboxdaw2/"><span class='bx bxl-instagram iconesFooter'></span></a>
+        <a href="mailto:soundboxdaw2@gmail.com"><span class='bx bxl-gmail iconesFooter'></span></a>
         <p>Copyright &copy; 2022 - <span>SoundBOX</span></p>
     </footer>
     <script>
