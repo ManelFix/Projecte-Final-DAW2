@@ -42,11 +42,11 @@
               <img src="../img/defaultUser.svg" class="colIcona" alt="profile"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="configuracioUser.php">
                 <span class='bx bx-cog text-primary colIcona midaIcones'></span>
                 <p class="txtOpcionsUser">Configuració del compte</p>
               </a>
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="subscripcio.php">
                 <span class='bx bxs-medal text-primary colIcona midaIcones'></span>
                 <p class="txtOpcionsUser">Subscripció</p>
               </a>
@@ -156,7 +156,7 @@
                           <th>Gènere</th>
                           <th>Estat d'ànim</th>
                           <th>Duració</th>
-                          <th>Data d'afegiment</th>
+                          <th>Data d'incorporació</th>
                           <th>Acció</th>
                         </tr>
                       </thead>

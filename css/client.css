@@ -121,27 +121,34 @@
 
 .divTaulaMusica{
     border-radius: 10px;
-
+    background-color: transparent;
 }
 
 .divTaulaMusicaPrin{
     border-radius: 15px;
     border: 1px solid rgba(224, 231, 237, 1);
+    background-color: white;
 }
 
 .tablaMisCanciones thead{
     font-family: 'Inter', sans-serif;
-    background-color: antiquewhite;
+    background-color: #F7AD19;
+    color: white;
 }
 
 .tablaMisCanciones thead tr th{
     font-weight: bold;
 }
 
+.tablaMisCanciones tbody{
+    background-color:#191922;;
+}
+
 .tablaMisCanciones tbody tr td{
     font-family: 'Inter', sans-serif;
     text-align: left;
     font-size: 0.9em;
+    color: white;
 }
 
 .tablaMisCanciones tbody tr td span{
@@ -150,7 +157,7 @@
 }
 
 .iconaAccio{
-    color: #212529;
+    color: white;
     margin-left: 6px;
 }
 
@@ -287,7 +294,6 @@
 .zonaBotonsMusica span{
     font-size: 1.8em;
     cursor: pointer;
-    margin-left: 15px;
     color: white;
     transition: all 0.5s;
 }
@@ -301,17 +307,18 @@
     margin-left: 8px !important;
 }
 
-.aut{
-    background-image: url('../img/provarArtista.svg');
-}
-
 .imatgeArtista{
     border-radius: 10px;
-    padding: 4.4rem !important;
-    background-size: 56%;
-    background-position: center;
-    background-repeat: no-repeat;
+    margin: auto;
+    padding: 0rem !important;
+    padding-right: 3.5rem !important;
+    padding-left: 3.5rem !important;
     border: 1px solid white;
+}
+
+.imatgeArtista img{
+    width: auto;
+    max-width: 156px;
 }
 
 .imatgeArtista h5{
@@ -348,4 +355,135 @@
 .divPlaylist:hover{
     transition: all 0.5s ease-in-out;
     opacity: 0.7;
+}
+
+.btnElimP{
+    background-color: red;
+    border: red;
+}
+
+.btnElimP:hover{
+    background-color: red;
+    color: white;
+}
+
+.divCentrarConfig{
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.divConfig{
+    width: 0px !important;
+    min-width: 0px !important;
+}
+
+.extraClaseFitxer{
+    padding-bottom: 4px !important;
+}
+
+.imatgePerfil{
+    border-radius: 10px;
+    border: 1px solid white;
+    margin: auto !important;
+    position: relative;
+    right: 120px;
+}
+
+.imatgePerfil img{
+    width: 150px;
+}
+
+.contenedor-btn-file input[type="file"] {
+    appearance: none;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+}
+.contenedor-btn-file {
+    display: inline-block;
+    position: relative;
+    background-color: #053F5C;
+    color: #fff;
+    border: 0;
+    padding: 10px 9px;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .15);
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    transition: ease-out 120ms background-color;
+    margin-right: 54px;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+}
+.contenedor-btn-file:hover {
+    background-color: #053F5C;
+}
+.contenedor-btn-file:active {
+    background-color: #053F5C;
+}
+
+.contenedor-btn-file label {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.contenedor-btn-file.bordeado {
+    background-color: #fff;
+    border: 2px solid #053F5C;
+    color: #429EBD;
+}
+.contenedor-btn-file.bordeado:hover {
+    background-color: #053F5C;
+    color: #fff;
+}
+
+.btnPujarImg{
+    font-size: 1.2em !important;
+    display: block;
+    position: relative;
+    right: 13px;
+}
+
+.divCentrarSubscripcio{
+    margin-bottom: 5px !important;
+}
+
+.imatgeSubscripcio{
+    border: none;
+}
+
+.imatgeSubscripcio img{
+    width: 160px;
+}
+
+.divSubscripcio h4{
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3em;
+    margin-right: 39px;
+}
+
+.divSubscripcio span{
+    color: #F7AD19;
+}
+
+.footerFix{
+    position: absolute;
+    bottom: 0px;
+    width: 80%;
+}
+
+.botonDescarrega{
+    margin-left: 11px;
+}
+
+.footerAdminUsuaris{
+    margin-top: 76px;
 }

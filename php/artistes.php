@@ -5,7 +5,8 @@ if (isset($_SESSION['ses_id'])) {
 ?>
     <!DOCTYPE html>
     <html lang="es">
-      
+
+
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,7 +16,6 @@ if (isset($_SESSION['ses_id'])) {
       <link rel="stylesheet" href="../recursosAdmin_Client/datatables.net-bs/dataTables.bootstrap.css">
       <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
       <link rel="stylesheet" href="../css/client.css">
-      <script src="../js/registrar.js"></script>ç
       <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
       <link rel="shortcut icon" href="../img/logo.svg" />
     </head>
@@ -49,11 +49,11 @@ if (isset($_SESSION['ses_id'])) {
                   <img src="../img/defaultUser.svg" class="colIcona" alt="profile" />
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                  <a class="dropdown-item">
+                  <a class="dropdown-item" href="configuracioUser.php">
                     <span class='bx bx-cog text-primary colIcona midaIcones'></span>
                     <p class="txtOpcionsUser">Configuració del compte</p>
                   </a>
-                  <a class="dropdown-item">
+                  <a class="dropdown-item" href="subscripcio.php">
                     <span class='bx bxs-medal text-primary colIcona midaIcones'></span>
                     <p class="txtOpcionsUser">Subscripció</p>
                   </a>
@@ -124,83 +124,211 @@ if (isset($_SESSION['ses_id'])) {
               <div class="row">
                 <div class="col-md-12 grid-margin">
                   <div class="row">
-                    <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                      <h3 id="nomCategoria" class="textIniciClient">Artistes</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12 grid-margin transparent">
-                  <div class="row">
-                    <div class="col-md-12 mb-12 stretch-card transparent">
-                      <div class="card card-tale divPublicitat">
-                        <div class="card-body divTextPubli">
-                          <p class="fs-30 mb-4 text-center font-weight-bold">PUBLICITAT</p>
-                          <p class="mb-2">Vols aparèixer aquí? Envia'ns un correu a ****</p>
+                    <div class="col-md-12 grid-margin">
+                      <div class="row">
+                        <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                          <h3 id="nomCategoria" class="textIniciClient">Artistes</h3>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12 grid-margin modificarGridMargin">
                   <div class="row">
-                    <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                      <h4 id="nomCategoria" class="musicaTexts">Artistes que segueixo</h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row" id="artistas_seguidos">
-                
-              </div>
-              <div class="row">
-                <div class="col-md-12 grid-margin modificarGridMargin">
-                  <div class="row">
-                    <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                      <h4 id="nomCategoria" class="musicaTexts">Tots els artistes</h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row" id="todos_los_artistas">
-              
-              </div>
-              <div class="row">
-                <div class="col-md-12 grid-margin transparent">
-                  <div class="row">
-                    <div class="col-md-12 mb-12 stretch-card transparent">
-                      <div class="card card-tale divPublicitat">
-                        <div class="card-body divTextPubli">
-                          <p class="fs-30 mb-4 text-center font-weight-bold">PUBLICITAT</p>
-                          <p class="mb-2">Vols aparèixer aquí? Envia'ns un correu a ****</p>
+                    <div class="col-md-12 grid-margin transparent">
+                      <div class="row">
+                        <div class="col-md-12 mb-12 stretch-card transparent">
+                          <div class="card card-tale divPublicitat">
+                            <div class="card-body divTextPubli">
+                              <p class="fs-30 mb-4 text-center font-weight-bold">PUBLICITAT</p>
+                              <p class="mb-2">Vols aparèixer aquí? Envia'ns un correu a ****</p>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <footer class="footer">
-                <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                  <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022. <span>SoundBOX</span> - Tots els drets reservats.</span>
-                </div>
-              </footer>
-            </div>
-          </div>
-        </div>
-        <script src="../recursosAdmin_Client/js/vendor.bundle.base.js"></script>
-        <script src="../js/client/template.js"></script>
-        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-        <script src="../js/client/off-canvas.js"></script>
-        <script src="../js/bootstrap.js" crossorigin="anonymous"></script>
+                  <div class="row">
+                    <<<<<<< HEAD <div class="col-md-12 grid-margin modificarGridMargin">
+                      <div class="row">
+                        <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                          <h4 id="nomCategoria" class="musicaTexts">Artistes que segueixo</h4>
+                          =======
+                          <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                            <h4 id="nomCategoria" class="musicaTexts">Artistes que segueixo</h4>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3 grid-margin stretch-card">
+                      <div class="card divCategoria">
+                        <div class="card-body imatgeArtista">
+                          <img src="../img/provarArtista.svg" alt="imatgePerfil">
+                          <h5 class="card-title">Artista</h5>
+                          <div class="media divMedia">
+                            <div class="media-body zonaBotonsMusica">
+                              <span class='bx bx-user-x'></span>
+                              >>>>>>> a51864c36811a667796e4203804691a5f28e502e
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <<<<<<< HEAD <div class="row" id="artistas_seguidos">
+
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12 grid-margin modificarGridMargin">
+                        <div class="row">
+                          <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                            <h4 id="nomCategoria" class="musicaTexts">Tots els artistes</h4>
+                            =======
+                          </div>
+                          <div class="col-md-3 grid-margin stretch-card">
+                            <div class="card divCategoria">
+                              <div class="card-body imatgeArtista">
+                                <img src="../img/provarArtista.svg" alt="imatgePerfil">
+                                <h5 class="card-title">Artista</h5>
+                                <div class="media divMedia">
+                                  <div class="media-body zonaBotonsMusica">
+                                    <span class='bx bx-user-x'></span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-3 grid-margin stretch-card">
+                            <div class="card divCategoria">
+                              <div class="card-body imatgeArtista">
+                                <img src="../img/provarArtista.svg" alt="imatgePerfil">
+                                <h5 class="card-title">Artista</h5>
+                                <div class="media divMedia">
+                                  <div class="media-body zonaBotonsMusica">
+                                    <span class='bx bx-user-x'></span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-3 grid-margin stretch-card">
+                            <div class="card divCategoria">
+                              <div class="card-body imatgeArtista">
+                                <img src="../img/provarArtista.svg" alt="imatgePerfil">
+                                <h5 class="card-title">Artista</h5>
+                                <div class="media divMedia">
+                                  <div class="media-body zonaBotonsMusica">
+                                    <span class='bx bx-user-x'></span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12 grid-margin modificarGridMargin">
+                            <div class="row">
+                              <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                                <h4 id="nomCategoria" class="musicaTexts">Tots els artistes</h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-3 grid-margin stretch-card">
+                            <div class="card divCategoria">
+                              <div class="card-body imatgeArtista">
+                                <img src="../img/provarArtista.svg" alt="imatgePerfil">
+                                <h5 class="card-title">Artista</h5>
+                                <div class="media divMedia">
+                                  <div class="media-body zonaBotonsMusica">
+                                    <span class='bx bx-user-plus'></span>
+                                    >>>>>>> a51864c36811a667796e4203804691a5f28e502e
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <<<<<<< HEAD <div class="row" id="todos_los_artistas">
+
+                          </div>
+                          =======
+                        </div>
+                        <div class="col-md-3 grid-margin stretch-card">
+                          <div class="card divCategoria">
+                            <div class="card-body imatgeArtista">
+                              <img src="../img/provarArtista.svg" alt="imatgePerfil">
+                              <h5 class="card-title">Artista</h5>
+                              <div class="media divMedia">
+                                <div class="media-body zonaBotonsMusica">
+                                  <span class='bx bx-user-plus'></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-3 grid-margin stretch-card">
+                          <div class="card divCategoria">
+                            <div class="card-body imatgeArtista">
+                              <img src="../img/provarArtista.svg" alt="imatgePerfil">
+                              <h5 class="card-title">Artista</h5>
+                              <div class="media divMedia">
+                                <div class="media-body zonaBotonsMusica">
+                                  <span class='bx bx-user-plus'></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-3 grid-margin stretch-card">
+                          <div class="card divCategoria">
+                            <div class="card-body imatgeArtista">
+                              <img src="../img/provarArtista.svg" alt="imatgePerfil">
+                              <h5 class="card-title">Artista</h5>
+                              <div class="media divMedia">
+                                <div class="media-body zonaBotonsMusica">
+                                  <span class='bx bx-user-plus'></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 grid-margin transparent">
+                          >>>>>>> a51864c36811a667796e4203804691a5f28e502e
+                          <div class="row">
+                            <div class="col-md-12 grid-margin transparent">
+                              <div class="row">
+                                <div class="col-md-12 mb-12 stretch-card transparent">
+                                  <div class="card card-tale divPublicitat">
+                                    <div class="card-body divTextPubli">
+                                      <p class="fs-30 mb-4 text-center font-weight-bold">PUBLICITAT</p>
+                                      <p class="mb-2">Vols aparèixer aquí? Envia'ns un correu a ****</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <footer class="footer">
+                            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022. <span>SoundBOX</span> - Tots els drets reservats.</span>
+                            </div>
+                          </footer>
+                        </div>
+                      </div>
+                    </div>
+                    <script src="../recursosAdmin_Client/js/vendor.bundle.base.js"></script>
+                    <script src="../js/client/template.js"></script>
+                    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+                    <script src="../js/client/off-canvas.js"></script>
+                    <script src="../js/bootstrap.js" crossorigin="anonymous"></script>
     </body>
 
     </html>
+
+
 <?php
-  } else {
+
+} else {
     header('Location: .php');
   }
 } else {
