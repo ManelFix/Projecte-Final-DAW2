@@ -47,7 +47,7 @@ function registrar() {
                                     if (select == 1) {
                                         alert("Usuario ya existente");
                                     } else if (select == 0) {
-                                        alert("fino");
+                                        location.href="../php/login.php";
                                     }else{
                                         alert("Email ya utilizado");
                                     }

@@ -9,7 +9,7 @@ $word = explode(",",$_POST["word"]);
 
 $passwrd = md5($word[2]);
 
-$sql="SELECT COUNT(*) as contador FROM usuari WHERE nom_usuari = '$user'";
+$sql="SELECT COUNT(*) as contador FROM usuari WHERE nom_usuari = '$word[0]'";
 
 $res=mysqli_query($connexio, $sql);
 
@@ -36,9 +36,7 @@ if($fila["contador"]==0){
     }else{
         echo 2;
     }
-
-
-}else if($fila["contador"]>0){
+}else {
     echo 1;
 }
 ?>
