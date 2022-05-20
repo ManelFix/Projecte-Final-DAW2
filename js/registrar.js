@@ -1,4 +1,11 @@
 "use strict";
+function enterButton(event) {
+    var _a;
+    if (event.keyCode == 13) {
+        event.returnValue = false;
+        (_a = document.getElementById("btnRegister")) === null || _a === void 0 ? void 0 : _a.click();
+    }
+}
 function registrar() {
     var usuari = document.getElementById("usuari").value;
     var correu = document.getElementById("correu").value;
@@ -7,7 +14,6 @@ function registrar() {
     var user = [usuari, correu, contrasenya];
     if (usuari != "" && correu != "" && contrasenya != "" && repContrasenya != "") {
         if (contrasenya == repContrasenya) {
-            console.log(contrasenya.length);
             if (contrasenya.length > 6) {
                 if (usuari.length > 3) {
                     var espacios = false;

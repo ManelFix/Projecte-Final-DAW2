@@ -1,4 +1,11 @@
 "use strict";
+function enterButton(event) {
+    var _a;
+    if (event.keyCode == 13) {
+        event.returnValue = false;
+        (_a = document.getElementById("btnLogin")) === null || _a === void 0 ? void 0 : _a.click();
+    }
+}
 function iniciar_sesion() {
     var nombre = document.getElementById("usuari").value;
     var contrasenya = document.getElementById("contrasenya").value;
