@@ -1,3 +1,9 @@
+<?php
+  $nomcat = $_GET["cat"];
+  //Sessions controlar.
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,8 +18,12 @@
   <link rel="stylesheet" href="../css/client.css">
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
   <link rel="shortcut icon" href="../img/logo.svg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="../js/noRegistrado.js"></script>
 </head>
-<body>
+<body onload="carregarMusica('<?= $nomcat ?>');">
   <div class="container-scroller">
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row menuFons">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center noFonsColor">
@@ -32,7 +42,7 @@
                   <span class="icon-search colIcona iconaLupa"></span>
                 </span>
               </div>
-              <input type="text" class="form-control inputBuscar" id="navbar-search-input" placeholder="Buscar" aria-label="search" aria-describedby="search">
+              <input type="text" class="form-control inputBuscar" id="buscarNom" placeholder="Buscar cançó" aria-label="search" aria-describedby="search" onkeyup="buscarNomCanço('<?= $nomcat ?>');">
             </div>
           </li>
         </ul>
@@ -52,9 +62,9 @@
       <nav class="sidebar sidebar-offcanvas sidebarColorFons" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link efecteHoverMenu active" href="exploraNoRegistrat.php">
-              <span class='bx bx-book-open estilIcones iconPers'></span>
-              <span class="menu-title textSidebar">Explora</span>
+            <a class="nav-link efecteHoverMenu" href="exploraNoRegistrat.php">
+              <span class='bx bx-left-arrow-alt estilIcones iconPers'></span>
+              <span class="menu-title textSidebar">Tornar</span>
             </a>
           </li>
         </ul>
@@ -65,11 +75,54 @@
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h3 id="nomCategoria" class="textIniciClient">*** Nom Categoria ***</h3>
+                  <h3 id="nomCategoria" class="textIniciClient"><?php echo $nomcat ?></h3>
+                </div>
+                <div class="col-12 col-xl-4">
+                 <div class="justify-content-end d-flex">
+                  <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
+                    <form method="post">
+                      <select name="filtrar" id="filtrarPer" class="css_inputsLogReg selectFiltrar custom-select" onchange="aplicarFiltre('<?= $nomcat ?>');">
+                        <option selected disabled>Estat d'ànim</option>
+                        <option value="alegre">Alegre</option>
+                        <option value="poderos">Poderós</option>
+                        <option value="trist">Trist</option>
+                        <option value="tranquil">Tranquil</option>
+                        <option value="enfadat">Enfadat</option>
+                        <option value="dramatic">Dramàtic</option>
+                        <option value="suspens">Suspens</option>
+                        <option value="epic">Èpic</option>
+                      </select>
+                      <input type="button" value="Eliminar filtre" class="btn btn-sm btn-light btnAfegirC btnFiltrarP" onclick="carregarMusica('<?= $nomcat ?>');">
+                    </form>
+                  </div>
+                 </div>
                 </div>
               </div>
             </div>
           </div>
+          <!-- Reproductor fixed bottom -->
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div id="divAudio" class="audio-player-container">
+              <audio src="" preload="metadata" id="audio-1"></audio>
+              <div class="info-canco">
+                <p id="nomA" class="artista">Artista</p>
+                <span> - </span>
+                <p id="titolM" class="titol">Títol</p>
+              </div>
+              <div class="reproductor">
+                <div class="play-button play" id="play" onclick="play(1)">
+                    <span class="bar bar-1"></span>
+                    <span class="bar bar-2"></span>             
+                </div>
+                <span id="current-time">0:00</span>
+                <input type="range" id="seek-slider" max="100" value="0">
+                <span id="duration">0:00</span>
+                <input type="range" id="volume-slider" max="100" value="50">
+                <button class="mute-button unmuted" id="mute"><span id="iconoAudio" class="fa-solid fa-volume-high mute-icon"></span></button>
+              </div>
+            </div>
+          </div>
+          <!-- FIN Reproductor fixed bottom -->
           <div class="row">
             <div class="col-md-12 grid-margin transparent">
               <div class="row">
@@ -93,54 +146,15 @@
               </div>
             </div>
           </div>
-          <div class="row">
+          <div id="musicaIdTop" class="row">
             <div class="col-md-3 grid-margin stretch-card">
               <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat1">
+                <div class="card-body imatgeMusica">
                   <h5 class="card-title">Cançó 1</h5>
                   <div class="media divMedia">
                     <div class="media-body zonaBotonsMusica">
                       <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download'></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat2">
-                  <h5 class="card-title">Cançó 2</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download'></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat3">
-                  <h5 class="card-title">Cançó 3</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download'></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat4">
-                  <h5 class="card-title">Cançó 4</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download'></span>
+                      <span class='bx bxs-download iconaDescarrega'></span>
                     </div>
                   </div>
                 </div>
@@ -151,59 +165,20 @@
             <div class="col-md-12 grid-margin modificarGridMargin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h4 id="nomCategoria" class="musicaTexts">Cançons premium de *nomCategoria*</h4>
+                  <h4 id="nomCategoria" class="musicaTexts">Cançons premium de <?php echo $nomcat ?></h4>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row">
-          <div class="col-md-3 grid-margin stretch-card">
+          <div id="musicaIdPremium" class="row">
+            <div class="col-md-3 grid-margin stretch-card">
               <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat1">
+                <div class="card-body imatgeMusica">
                   <h5 class="card-title">Cançó 1</h5>
                   <div class="media divMedia">
                     <div class="media-body zonaBotonsMusica">
                       <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download'></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat2">
-                  <h5 class="card-title">Cançó 2</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download'></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat3">
-                  <h5 class="card-title">Cançó 3</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download'></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat4">
-                  <h5 class="card-title">Cançó 4</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download'></span>
+                      <span class='bx bxs-download iconaDescarrega'></span>
                     </div>
                   </div>
                 </div>
@@ -214,59 +189,20 @@
             <div class="col-md-12 grid-margin modificarGridMargin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h4 id="nomCategoria" class="musicaTexts">Totes les cançons de *nomCategoria*</h4>
+                  <h4 id="nomCategoria" class="musicaTexts">Totes les cançons de <?php echo $nomcat ?></h4>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row">
-          <div class="col-md-3 grid-margin stretch-card">
+          <div id="musicaIdTot" class="row">
+            <div class="col-md-3 grid-margin stretch-card">
               <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat1">
+                <div class="card-body imatgeMusica">
                   <h5 class="card-title">Canço 1</h5>
                   <div class="media divMedia">
                     <div class="media-body zonaBotonsMusica">
                       <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download'></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat2">
-                  <h5 class="card-title">Canço 2</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download'></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat3">
-                  <h5 class="card-title">Canço 3</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download'></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat4">
-                  <h5 class="card-title">Canço 4</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download'></span>
+                      <a href="quepaza"><span class='bx bxs-download iconaDescarrega'></span></a>
                     </div>
                   </div>
                 </div>
@@ -300,6 +236,7 @@
   <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
   <script src="../js/client/off-canvas.js"></script>
+  <script type="text/javascript" src="../js/audioplayer.js" crossorigin="anonymous"></script>
   <script src="../js/bootstrap.js" crossorigin="anonymous"></script>
 </body>
 </html>

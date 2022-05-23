@@ -1,3 +1,9 @@
+<?php
+  //Controlar sessió
+  session_start();
+  $idUsuari = $_SESSION["ses_id"];
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,8 +18,9 @@
   <link rel="stylesheet" href="../css/client.css">
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
   <link rel="shortcut icon" href="../img/logo.svg" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
-<body>
+<body onload="agafarImatgeUsuari(<?= $idUsuari ?>);">
   <div class="container-scroller">
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row menuFons">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center noFonsColor">
@@ -24,22 +31,10 @@
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="icon-menu colIcona"></span>
         </button>
-        <ul class="navbar-nav mr-lg-2">
-          <li class="nav-item nav-search d-none d-lg-block">
-            <div class="input-group">
-              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
-                <span class="input-group-text" id="search">
-                  <span class="icon-search colIcona iconaLupa"></span>
-                </span>
-              </div>
-              <input type="text" class="form-control inputBuscar" id="navbar-search-input" placeholder="Buscar" aria-label="search" aria-describedby="search">
-            </div>
-          </li>
-        </ul>
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="../img/defaultUser.svg" class="colIcona" alt="profile"/>
+              <img id="iconaUsuari" src="../img/defaultUser.svg" class="colIcona" alt="profile"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item" href="configuracioUser.php">
@@ -123,7 +118,7 @@
                 <div class="col-12 col-xl-4">
                  <div class="justify-content-end d-flex">
                   <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
-                    <a id="dropdownMenuDate2" href="afegirMusicaNoPremium.php" class="btn btn-sm btn-light btnAfegirC btnElimP">Eliminar perfil</a>
+                    <a id="dropdownMenuDate2" class="btn btn-sm btn-light btnAfegirC btnElimP" onclick="eliminarCompte(<?= $idUsuari ?>);">Eliminar compte</a>
                   </div>
                  </div>
                 </div>
@@ -134,7 +129,7 @@
             <div class="col-md-12 grid-margin stretch-card divCentrarConfig">
               <div class="card divCategoria divConfig">
                 <div class="card-body imatgePerfil">
-                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
+                  <img id="idImgPerfil" src="../img/provarArtista.svg" alt="imatgePerfil">
                 </div>
               </div>
             </div>
@@ -147,9 +142,9 @@
                     <div id="fitxerU" class="contenedor-btn-file bordeado extraClaseFitxer">
                       <p id="textModificar">Selecciona una imatge</p> 
                       <label for="btnNouFitxer"></label>
-                      <input type="file" id="btnNouFitxer" accept="image/*">
+                      <input type="file" id="btnNouFitxer" name="iImatgeP" accept="image/*">
                     </div>
-                    <input type="button" id="modificarI" name="modImatge" value="Modificar imatge" class="btn btn-sm btn-light btnAfegirC btnPujarImg"/>
+                    <input type="submit" id="modificarI" name="modImatge" value="Modificar imatge" class="btn btn-sm btn-light btnAfegirC btnPujarImg"/>
                   </form>
                 </div>
               </div>
@@ -169,8 +164,29 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
   <script src="../js/bootstrap.js" crossorigin="anonymous"></script>
   <script src="../js/client/off-canvas.js"></script>
-  <script src="../js/btnFilePerfil.js" crossorigin="anonymous"></script>
-
+  <script src="../js/configuracioCompte.js"></script>
 </body>
 </html>
+<?php
+  if(!empty($_POST["modImatge"])){
+    require("controlador/BBDD.php");
+    $connexio=sql();
+
+    $imgN = $_FILES["iImatgeP"]["name"];
+    $array = explode('.', $_FILES['iImatgeP']['name']);
+    $ext = end($array);
+
+    $imgN = file_get_contents($_FILES["iImatgeP"]["tmp_name"]);
+    $imgN = $connexio->real_escape_string($imgN);
+
+    $sql ="update usuari SET imatge = '".$imgN."', tipus = '".$ext."' WHERE id_usuari = '".$idUsuari."'";
+
+    $connexio->query($sql);
+ 
+    echo '<script language="javascript">alert("Imatge actualitzada");</script>';
+
+    $connexio->close();
+
+  }
+?>
 

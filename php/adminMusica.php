@@ -1,3 +1,7 @@
+<?php
+  //Sessiones, controlar que un usuario se meta aqui.
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,8 +16,12 @@
   <link rel="stylesheet" href="../css/client.css">
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
   <link rel="shortcut icon" href="../img/logo.svg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="../js/administrador.js"></script>
 </head>
-<body>
+<body onload="carregarCançons();">
   <div class="container-scroller">
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row menuFons">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center noFonsColor">
@@ -32,17 +40,17 @@
                   <span class="icon-search colIcona iconaLupa"></span>
                 </span>
               </div>
-              <input type="text" class="form-control inputBuscar" id="navbar-search-input" placeholder="Buscar" aria-label="search" aria-describedby="search">
+              <input type="text" class="form-control inputBuscar" id="iCançoTot" placeholder="Buscar nom cançó" aria-label="search" aria-describedby="search" onkeyup="buscarCanço();">
             </div>
           </li>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="../img/defaultUser.svg" class="colIcona" alt="profile"/> <!-- Modificar la imatge a una d'administrador !-->
+              <img src="../img/defaultUser.svg" class="colIcona" alt="profile"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
+              <a class="dropdown-item" onclick="tancarSessio();">
                 <span class='bx bx-exit text-primary midaIcones'></span>
                 <p class="txtOpcionsUser">Tancar sessió</p>
               </a>
@@ -88,6 +96,29 @@
               </div>
             </div>
           </div>
+          <!-- Reproductor fixed bottom -->
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div id="divAudio" class="audio-player-container">
+              <audio src="" preload="metadata" id="audio-1"></audio>
+              <div class="info-canco">
+                <p id="nomA" class="artista">Artista</p>
+                <span> - </span>
+                <p id="titolM" class="titol">Títol</p>
+              </div>
+              <div class="reproductor">
+                <div class="play-button play" id="play" onclick="play(1)">
+                    <span class="bar bar-1"></span>
+                    <span class="bar bar-2"></span>             
+                </div>
+                <span id="current-time">0:00</span>
+                <input type="range" id="seek-slider" max="100" value="0">
+                <span id="duration">0:00</span>
+                <input type="range" id="volume-slider" max="100" value="50">
+                <button class="mute-button unmuted" id="mute"><span id="iconoAudio" class="fa-solid fa-volume-high mute-icon"></span></button>
+              </div>
+            </div>
+          </div>
+          <!-- FIN Reproductor fixed bottom -->
           <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card divTaulaMusica">
@@ -105,99 +136,8 @@
                           <th>Acció</th>
                         </tr>
                       </thead>
-                      <tbody>
-                        <tr>
-                          <td class="py-1 font-weight-bold">Enough</td>
-                          <td>Pop</td>
-                          <td>Dramàtic</td>
-                          <td>2:10</td>
-                          <td>16/05/2022</td>
-                          <td>Xavi</td>
-                          <td class="nav-item nav-profile dropdown">
-                            <a href="#" data-toggle="dropdown" id="profileDropdown">
-                              <span class='bx bx-dots-vertical-rounded iconaAccio'></span>
-                            </a>
-                            <div class="dropdown-menu menuAccio">
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Eliminar</p>
-                              </a>
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Reproduïr?</p>
-                              </a>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1 font-weight-bold">Enough</td>
-                          <td>Pop</td>
-                          <td>Dramàtic</td>
-                          <td>2:10</td>
-                          <td>16/05/2022</td>
-                          <td>Josep</td>
-                          <td class="nav-item nav-profile dropdown">
-                            <a href="#" data-toggle="dropdown" id="profileDropdown">
-                              <span class='bx bx-dots-vertical-rounded iconaAccio'></span>
-                            </a>
-                            <div class="dropdown-menu menuAccio">
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Eliminar</p>
-                              </a>
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Reproduïr?</p>
-                              </a>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1 font-weight-bold">Enough</td>
-                          <td>Pop</td>
-                          <td>Dramàtic</td>
-                          <td>2:10</td>
-                          <td>16/05/2022</td>
-                          <td>Manel</td>
-                          <td class="nav-item nav-profile dropdown">
-                            <a href="#" data-toggle="dropdown" id="profileDropdown">
-                              <span class='bx bx-dots-vertical-rounded iconaAccio'></span>
-                            </a>
-                            <div class="dropdown-menu menuAccio">
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Eliminar</p>
-                              </a>
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Reproduïr?</p>
-                              </a>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1 font-weight-bold">Enough</td>
-                          <td>Pop</td>
-                          <td>Dramàtic</td>
-                          <td>2:10</td>
-                          <td>16/05/2022</td>
-                          <td>Iván</td>
-                          <td class="nav-item nav-profile dropdown">
-                              <a href="#" data-toggle="dropdown" id="profileDropdown">
-                                <span class='bx bx-dots-vertical-rounded iconaAccio'></span>
-                              </a>
-                              <div class="dropdown-menu menuAccio">
-                                <a class="dropdown-item opcioMenuAccio">
-                                  <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
-                                  <p class="txtOpcionsUser">Eliminar</p>
-                                </a>
-                                <a class="dropdown-item opcioMenuAccio">
-                                  <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
-                                  <p class="txtOpcionsUser">Reproduïr?</p>
-                                </a>
-                              </div>
-                          </td>
-                        </tr>
+                      <tbody id="contingutTaulaMusica"> 
+                        <!--Durada format: 2:10?-->
                       </tbody>
                     </table>
                   </div>
@@ -218,6 +158,7 @@
   <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
   <script src="../js/bootstrap.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../js/audioplayer.js" crossorigin="anonymous"></script>
   <script src="../js/client/off-canvas.js"></script>
 
 </body>
