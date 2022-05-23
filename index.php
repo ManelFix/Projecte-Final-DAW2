@@ -9,10 +9,11 @@
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/noRegistrado.js"></script>
     <title>SoundBOX</title>
 </head>
 <body class="bodyPrincipal">
@@ -47,11 +48,11 @@
     <!-- Reproductor fixed bottom -->
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="audio-player-container">
-            <audio src="../audio1.mp3" preload="metadata" id="audio-1"></audio>
+            <audio src="uploads/04c344c6cd5d4d72024fccfd731c188b.mp3" preload="metadata" id="audio-1"></audio>
             <div class="info-canco">
                 <p class="artista">Artista</p>
                 <span> - </span>
-                <p class="titol">Título</p>
+                <p class="titol">Títol</p>
             </div>
             <div class="reproductor">
                 <div class="play-button play" id="play" onclick="play(1)">
@@ -62,9 +63,7 @@
                 <input type="range" id="seek-slider" max="100" value="0">
                 <span id="duration">0:00</span>
                 <input type="range" id="volume-slider" max="100" value="50">
-                <button class="mute-button unmuted" id="mute"><i class="fa-solid fa-volume-high mute-icon"></i></button>
-                <button class="like-button"><i class="fa-solid fa-thumbs-up like-icon"></i></button>
-                <button class="add-button"><i class="fa-solid fa-plus add-icon"></i></button>
+                <button class="mute-button unmuted" id="mute"><span id="iconoAudio" class="fa-solid fa-volume-high mute-icon"></span></button>
             </div>
         </div>
     </div>
@@ -127,7 +126,7 @@
                         <span class='bx bx-chevron-right iconaVentatges'></span>
                         <p>Monetitza les teves cançons</p>
                     </div>
-                    <a href="mailto:soundboxdaw2@gmail.com?Subject=Solicitut%20de%20subscripció%20premium"><button class="botonsIR estilbtnLogin btnPremium">SOLICITAR</button><a>
+                    <a href="mailto:soundboxdaw2@gmail.com?Subject=Solicitut%20de%20subscripció%20premium"><button class="botonsIR estilbtnLogin btnPremium">SOLICITAR</button></a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -150,7 +149,7 @@
                         <span class='bx bx-chevron-right iconaVentatges'></span>
                         <p>Monetitza les teves cançons</p>
                     </div>
-                    <a href="mailto:soundboxdaw2@gmail.com?Subject=Solicitut%20de%20subscripció%20premium"><button class="botonsIR estilbtnLogin btnPremium">SOLICITAR</button><a>
+                    <a href="mailto:soundboxdaw2@gmail.com?Subject=Solicitut%20de%20subscripció%20premium"><button class="botonsIR estilbtnLogin btnPremium">SOLICITAR</button></a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">

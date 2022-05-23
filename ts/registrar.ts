@@ -34,7 +34,7 @@ function registrar() {
                     }
 
                     if (espacios) {
-                        alert("La contraseña no puede contener espacios en blanco");
+                        alert("La contrasenya no pot tenir espais en blanc");
                     } else {
                         if (/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(correu)) {
                             var xmlhttp: any;
@@ -51,12 +51,12 @@ function registrar() {
                                     console.log(xmlhttp);
 
                                     if (select == 1) {
-                                        alert("Usuario ya existente");
+                                        alert("Usuari ja existent");
                                     } else if (select == 0) {
-                                        alert("Usuario creado");
+                                        alert("Usuari creat correctament");
                                         location.href="../php/login.php";
                                     }else{
-                                        alert("Email ya utilizado");
+                                        alert("Email ja utilitzat");
                                     }
                                 }
                             };
@@ -64,19 +64,19 @@ function registrar() {
                             xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                             xmlhttp.send("word=" + user);
                         } else {
-                            alert("La dirección de email es invalida.");
+                            alert("La direcció d'email és invàlida.");
                         }
                     }
                 } else {
-                    alert("El usuario no puede tener menos de 3 caracteres");
+                    alert("L'usuari no pot tenir menys de 3 caràcters");
                 }
             } else {
-                alert("La contrasenya no puede tener menos de 6 caracteres");
+                alert("La contrasenya no pot tenir menys de 6 caràcters");
             }
         } else {
-            alert("Las contrasenyas no coinciden");
+            alert("Les contrasenyes no coincideixen");
         }
     } else {
-        alert("No pueden haber campos vacios");
+        alert("No poden haver camps buits");
     }
 }
