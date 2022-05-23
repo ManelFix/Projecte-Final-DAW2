@@ -146,59 +146,8 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeArtista">
-                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
-                  <h5 class="card-title">Artista</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-user-x' ></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeArtista">
-                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
-                  <h5 class="card-title">Artista</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-user-x' ></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeArtista">
-                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
-                  <h5 class="card-title">Artista</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-user-x' ></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeArtista">
-                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
-                  <h5 class="card-title">Artista</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-user-x'></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="row" id="artistas_seguidos">
+            
           </div>
           <div class="row">
             <div class="col-md-12 grid-margin modificarGridMargin">
@@ -209,73 +158,8 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeArtista">
-                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
-                  <h5 class="card-title">Artista</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                    <span class='bx bx-user-plus'></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeArtista">
-                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
-                  <h5 class="card-title">Artista</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                    <span class='bx bx-user-plus'></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeArtista">
-                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
-                  <h5 class="card-title">Artista</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                    <span class='bx bx-user-plus'></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeArtista">
-                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
-                  <h5 class="card-title">Artista</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                    <span class='bx bx-user-plus'></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 grid-margin transparent">
-              <div class="row">
-                <div class="col-md-12 mb-12 stretch-card transparent">
-                  <div class="card card-tale divPublicitat">
-                    <div class="card-body divTextPubli">
-                      <p class="fs-30 mb-4 text-center font-weight-bold">PUBLICITAT</p>
-                      <p class="mb-2">Vols aparèixer aquí? Envia'ns un correu a <span>soundboxdaw2@gmail.com</span></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="row" id="todos_los_artistas">
+            
           </div>
           <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
