@@ -29,6 +29,7 @@
 .iconaLupa{
     font-size: 1.4em;
     margin-right: 5px;
+    cursor: auto;
 }
 
 .estilIcones{
@@ -470,10 +471,6 @@
     margin-right: 39px;
 }
 
-.divSubscripcio span{
-    color: #F7AD19;
-}
-
 .footerFix{
     position: absolute;
     bottom: 0px;
@@ -490,4 +487,290 @@
 
 .divTextPubli span{
     color: #429EBD;
+}
+
+.iconaDescarrega{
+    margin-left: 10px;
+}
+
+.divCatNoR{
+    display: block !important;
+}
+
+.divCatNoR a{
+    text-decoration: none;
+}
+
+.modificarTextCanço{
+    margin: auto !important;
+}
+
+/* AUDIO PLAYER */
+.audio-player-container {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    padding: 10px;
+    background: #053F5C;
+    overflow: hidden;
+    box-shadow: 1px 1px 50px -20px black;
+    color: #fff;
+}
+
+.audio-player-container > .reproductor > * {
+    display: inline-block !important;
+    color: #fff;
+    vertical-align: middle;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.audio-player-container > .reproductor {
+    display: block !important;
+    width: 85%;
+    margin: 0 auto;
+    height: 40px;
+}
+
+.info-canco {
+    display: block !important;
+    width: 71%;
+    margin: 0 auto;
+}
+
+.info-canco > * {
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.info-canco span {
+    margin: 0 5px;
+}
+
+.info-canco p{
+    font-family: 'Inter', sans-serif;
+}
+
+.audio-player-container > span, .audio-player-container > button {
+  margin: 10px;
+}
+
+.play-button {
+    position: relative;
+    width: 38px;
+    height: 40px;
+    cursor: pointer;
+    transition: border 0.1s ease-in-out;
+}
+    
+.bar {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 3px;
+    height: 20px;
+    border-radius: 3px;
+    background-color: white;
+    transform-origin: center;
+    transition: transform 0.4s ease-in-out, background 0.1s ease-in-out;
+}
+    
+.pause > .bar-1 {
+    transform: translateX(13px) translateY(-2px) rotate(0deg);
+}
+
+.pause > .bar-2 {
+    transform: translateX(21px) translateY(-2px) rotate(0deg);
+}
+    
+.play > .bar-1 {
+    transform: translateX(18px) translateY(-6px) rotate(-55deg);
+}
+
+.play > .bar-2 {
+    transform: translateX(18px) translateY(4px) rotate(-125deg);
+}
+
+
+.mute-button, .like-button, .add-button {
+  background: transparent;
+  border: none;
+  margin-left: 5px !important;
+  font-size: 16px;
+}
+
+.mute-button > .mute-icon:hover, .like-button > .like-icon:hover, .add-button > .add-icon:hover {
+  color: #F7AD19;
+}
+
+/* BARRA DURACIÓN / BARRA VOLUMEN */
+#seek-slider {
+  -webkit-appearance: none;
+  width: 64% !important;
+  background: #053F5C;
+  border-radius: 5px;
+}
+
+#volume-slider {
+  -webkit-appearance: none;
+  background: #053F5C;
+  border-radius: 5px;
+  width: 14% !important;
+}
+
+#seek-slider:focus, #seek-slider-chrome:focus, #volume-slider:focus, #volume-slider-chrome:focus {
+  outline: none;
+}
+
+#seek-slider-chrome::-webkit-slider-runnable-track, #volume-slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#seek-slider-chrome::-webkit-slider-thumb, #volume-slider-chrome::-webkit-slider-thumb {
+  height: 8px;
+  width: 0px;
+  border-radius: 25px;
+  background: #000000;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -1.5px;
+}
+
+#seek-slider-chrome {
+    border: none;
+    border-radius: 8px;
+    height: 8px;
+    width:64%;
+    outline: none;
+    transition: background 450ms ease-in;
+    
+    -webkit-appearance: none;
+}
+
+#volume-slider-chrome {
+    background: linear-gradient(to right, #F7AD19 0%, #F7AD19 50%, #fff 50%, #fff 100%);
+    border: none;
+    border-radius: 8px;
+    height: 8px;
+    width: 14%;
+    outline: none;
+    transition: background 450ms ease-in;
+    
+    -webkit-appearance: none;
+}
+
+#seek-slider::-moz-range-track, #volume-slider::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: #fff;
+  border-radius: 5px;
+}
+
+#seek-slider::-moz-range-thumb, #volume-slider::-moz-range-thumb {
+  border: none;
+  height: 8px;
+  width: 0px;
+  border-radius: 25px;
+  background: #F7AD19;
+  cursor: pointer;
+}
+
+#seek-slider::-moz-range-progress, #volume-slider::-moz-range-progress {
+  height: 8px;
+  width: 100%;
+  background-color: #F7AD19; 
+  border-radius: 5px 0 0 5px;
+}
+
+#seek-slider::-ms-track, #volume-slider::-ms-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+#seek-slider::-ms-fill-lower, #volume-slider::-ms-fill-lower {
+  background: #F7AD19;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000000;
+}
+
+#seek-slider::-ms-fill-upper, #volume-slider::-ms-fill-upper {
+  background: #fff;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000000;
+}
+
+#seek-slider::-ms-thumb, #volume-slider::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 8px;
+  width: 0px;
+  border-radius: 50%;
+  background: #000000;
+  cursor: pointer;
+}
+
+#seek-slider:focus::-ms-fill-lower, #volume-slider:focus::-ms-fill-lower {
+  background: #F7AD19;
+}
+
+#seek-slider:focus::-ms-fill-upper, #volume-slider:focus::-ms-fill-upper {
+  background: #fff;
+}
+
+#current-time, #duration{
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9em;
+}
+
+/* FIN BARRA DURACIÓN / BARRA VOLUMEN */
+
+/* FIN AUDIO PLAYER */
+
+.css_inputsLogReg{
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.1em;
+    margin-left: 10px;
+    position: relative;
+    bottom: 6px;
+    font-family: 'Inter', sans-serif;
+}
+
+.css_inputsLogReg::placeholder{
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.css_inputsLogReg option{
+    color: black;
+}
+
+.selectFiltrar{
+    font-size: 1.1em;
+    border: 1px solid #429EBD;
+    width: auto;
+}
+
+.btnFiltrarP{
+    display: inline-block;
+    margin-left: 15px;
+    position: relative;
+    bottom: 7px;
 }

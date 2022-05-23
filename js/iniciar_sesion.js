@@ -23,12 +23,14 @@ function iniciar_sesion() {
                 var select = xmlhttp.responseText;
                 console.log(select);
                 if (select == 0) {
-                    alert("Usuario o contrasenyas incorrectos");
+                    alert("Usuari o contrasenyes incorrectes");
                 }
                 else if (select == 1) {
+                    alert("Benvingut " + nombre);
                     location.href = "../php/mevaMusica.php";
                 }
                 else if (select == 2) {
+                    alert("Benvingut " + nombre);
                     location.href = "../php/AdminUsuaris.php";
                 }
             }
@@ -38,6 +40,6 @@ function iniciar_sesion() {
         xmlhttp.send("word=" + user);
     }
     else {
-        alert("El usuario y contrasenya no pueden estar vacios");
+        alert("L'usuari i contrasenya no poden estar buits");
     }
 }

@@ -1,9 +1,3 @@
-<?php
-session_start();
-
-if (isset($_SESSION['ses_id'])) {
-    if ($_SESSION["ban"] == 0) {
-  ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -15,12 +9,11 @@ if (isset($_SESSION['ses_id'])) {
   <link rel="stylesheet" href="../recursosAdmin_Client/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="../recursosAdmin_Client/datatables.net-bs/dataTables.bootstrap.css">
   <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
-  <script src="../js/artistas_seguidos.js"></script>
   <link rel="stylesheet" href="../css/client.css">
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
   <link rel="shortcut icon" href="../img/logo.svg" />
 </head>
-<body onload=artistas_seguidos(<?php echo $_SESSION['ses_id'] ?>)>
+<body>
   <div class="container-scroller">
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row menuFons">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center noFonsColor">
@@ -153,8 +146,59 @@ if (isset($_SESSION['ses_id'])) {
               </div>
             </div>
           </div>
-          <div class="row" id="artistas_seguidos">
-  
+          <div class="row">
+            <div class="col-md-3 grid-margin stretch-card">
+              <div class="card divCategoria">
+                <div class="card-body imatgeArtista">
+                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
+                  <h5 class="card-title">Artista</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                      <span class='bx bx-user-x' ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card">
+              <div class="card divCategoria">
+                <div class="card-body imatgeArtista">
+                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
+                  <h5 class="card-title">Artista</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                      <span class='bx bx-user-x' ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card">
+              <div class="card divCategoria">
+                <div class="card-body imatgeArtista">
+                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
+                  <h5 class="card-title">Artista</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                      <span class='bx bx-user-x' ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card">
+              <div class="card divCategoria">
+                <div class="card-body imatgeArtista">
+                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
+                  <h5 class="card-title">Artista</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                      <span class='bx bx-user-x'></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="row">
             <div class="col-md-12 grid-margin modificarGridMargin">
@@ -165,8 +209,59 @@ if (isset($_SESSION['ses_id'])) {
               </div>
             </div>
           </div>
-          <div class="row" id="todos_los_artistas">
-
+          <div class="row">
+            <div class="col-md-3 grid-margin stretch-card">
+              <div class="card divCategoria">
+                <div class="card-body imatgeArtista">
+                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
+                  <h5 class="card-title">Artista</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                    <span class='bx bx-user-plus'></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card">
+              <div class="card divCategoria">
+                <div class="card-body imatgeArtista">
+                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
+                  <h5 class="card-title">Artista</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                    <span class='bx bx-user-plus'></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card">
+              <div class="card divCategoria">
+                <div class="card-body imatgeArtista">
+                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
+                  <h5 class="card-title">Artista</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                    <span class='bx bx-user-plus'></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card">
+              <div class="card divCategoria">
+                <div class="card-body imatgeArtista">
+                  <img src="../img/provarArtista.svg" alt="imatgePerfil">
+                  <h5 class="card-title">Artista</h5>
+                  <div class="media divMedia">
+                    <div class="media-body zonaBotonsMusica">
+                    <span class='bx bx-user-plus'></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="row">
             <div class="col-md-12 grid-margin transparent">
@@ -198,11 +293,4 @@ if (isset($_SESSION['ses_id'])) {
   <script src="../js/bootstrap.js" crossorigin="anonymous"></script>
 </body>
 </html>
-<?php
-} else {
-        header('Location: .php');
-    }
-} else {
-    header('Location: ../login.php');
-}
-?>
+

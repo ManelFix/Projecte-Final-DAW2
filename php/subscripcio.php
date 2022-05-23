@@ -1,6 +1,10 @@
+<?php
+  //Controlar sessió
+  session_start();
+  $idUsuari = $_SESSION["ses_id"];
+?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,8 +16,9 @@
   <link rel="stylesheet" href="../css/client.css">
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
   <link rel="shortcut icon" href="../img/logo.svg" />
+  <script src="../js/subscripcio.js"></script>
 </head>
-<body>
+<body onload="veureSubscripcio(<?= $idUsuari ?>);">
   <div class="container-scroller">
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row menuFons">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center noFonsColor">
@@ -24,18 +29,6 @@
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="icon-menu colIcona"></span>
         </button>
-        <ul class="navbar-nav mr-lg-2">
-          <li class="nav-item nav-search d-none d-lg-block">
-            <div class="input-group">
-              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
-                <span class="input-group-text" id="search">
-                  <span class="icon-search colIcona iconaLupa"></span>
-                </span>
-              </div>
-              <input type="text" class="form-control inputBuscar" id="navbar-search-input" placeholder="Buscar" aria-label="search" aria-describedby="search">
-            </div>
-          </li>
-        </ul>
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
@@ -127,7 +120,7 @@
             <div class="col-md-12 grid-margin stretch-card divCentrarConfig divCentrarSubscripcio">
               <div class="card divCategoria divConfig">
                 <div class="card-body imatgePerfil imatgeSubscripcio">
-                  <img src="../img/diamant.png">
+                  <img id="imgSubscripcio" src="">
                 </div>
               </div>
             </div>
@@ -136,7 +129,7 @@
             <div class="col-md-12 stretch-card divCentrarConfig">
               <div class="justify-content-end d-flex">
                 <div class="dropdown flex-md-grow-1 flex-xl-grow-0 divSubscripcio">
-                  <h4>Tipus subscripció: <span>Gratuïta</span></h4>
+                  <h4>Tipus subscripció: <span id="tipusSubs"></span></h4>
                 </div>
               </div>
             </div>
@@ -155,8 +148,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
   <script src="../js/bootstrap.js" crossorigin="anonymous"></script>
   <script src="../js/client/off-canvas.js"></script>
-  <script src="../js/botonFile.js" crossorigin="anonymous"></script>
-
 </body>
 </html>
 

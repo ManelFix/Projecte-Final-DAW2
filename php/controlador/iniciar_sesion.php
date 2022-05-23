@@ -20,7 +20,7 @@ $fila = mysqli_fetch_assoc($res);
 if($fila["contador"]==0){
 echo 0;
 }else if($fila["contador"]==1){
-    $sql="SELECT id_usuari,ban,premium, admin FROM usuari WHERE nom_usuari = '$word[0]' AND contrasenya = '$passwrd'";
+    $sql="SELECT id_usuari,ban,premium,admin FROM usuari WHERE nom_usuari = '$word[0]' AND contrasenya = '$passwrd'";
 
     $res=mysqli_query($connexio, $sql);
 

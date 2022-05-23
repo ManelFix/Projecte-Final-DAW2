@@ -1,3 +1,6 @@
+<?php
+  //Sessiones, controlar que un usuario se meta aqui.
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,6 +15,7 @@
   <link rel="stylesheet" href="../css/client.css">
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
   <link rel="shortcut icon" href="../img/logo.svg" />
+  <script src="../js/noRegistrado.js"></script>
 </head>
 <body>
   <div class="container-scroller">
@@ -24,23 +28,12 @@
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="icon-menu colIcona"></span>
         </button>
-        <ul class="navbar-nav mr-lg-2">
-          <li class="nav-item nav-search d-none d-lg-block">
-            <div class="input-group">
-              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
-                <span class="input-group-text" id="search">
-                  <span class="icon-search colIcona iconaLupa"></span>
-                </span>
-              </div>
-              <input type="text" class="form-control inputBuscar" id="navbar-search-input" placeholder="Buscar" aria-label="search" aria-describedby="search">
-            </div>
-          </li>
-        </ul>
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
               <img src="../img/defaultUser.svg" class="colIcona" alt="profile"/>
             </a>
+          </li>
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
           <span class="icon-menu colIcona"></span>
@@ -54,6 +47,12 @@
             <a class="nav-link efecteHoverMenu active" href="exploraNoRegistrat.php">
               <span class='bx bx-book-open estilIcones iconPers'></span>
               <span class="menu-title textSidebar">Explora</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link efecteHoverMenu" href="../index.php">
+            <span class='bx bx-left-arrow-alt estilIcones iconPers'></span>
+              <span class="menu-title textSidebar">Tornar</span>
             </a>
           </li>
         </ul>
@@ -84,89 +83,111 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusicaNoRegistrat();"> <!--Donar funcionalitat al onclick que redirecciona a musicaNoRegistrat.php-->
-                <div class="card-body imatgeCategoria cat1">
-                  <h4 class="card-title">Pop</h4>
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <a href="musicaNoRegistrat.php?cat=Pop">
+                <div class="card divCategoria">
+                  <div class="card-body imatgeCategoria cat1">
+                    <h4 class="card-title">Pop</h4>
+                  </div>
                 </div>
-              </div>
+              </a>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <a href="musicaNoRegistrat.php?cat=Rock">
+                <div class="card divCategoria">
+                  <div class="card-body imatgeCategoria cat2">
+                    <h4 class="card-title">Rock</h4>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <a href="musicaNoRegistrat.php?cat=Ambient">
+                <div class="card divCategoria">
+                  <div class="card-body imatgeCategoria cat3">
+                    <h4 class="card-title">Ambient</h4>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <a href="musicaNoRegistrat.php?cat=Metal">
+                <div class="card divCategoria">
+                  <div class="card-body imatgeCategoria cat4">
+                    <h4 class="card-title">Metal</h4>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <a href="musicaNoRegistrat.php?cat=Punk">
+                <div class="card divCategoria">
+                  <div class="card-body imatgeCategoria cat5">
+                    <h4 class="card-title">Punk</h4>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <a href="musicaNoRegistrat.php?cat=Soul">
+                <div class="card divCategoria">
+                  <div class="card-body imatgeCategoria cat6">
+                    <h4 class="card-title">Soul</h4>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <a href="musicaNoRegistrat.php?cat=Jazz">
+                <div class="card divCategoria">
+                  <div class="card-body imatgeCategoria cat7">
+                    <h4 class="card-title">Jazz</h4>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <a href="musicaNoRegistrat.php?cat=Clàssica">
+                <div class="card divCategoria">
+                  <div class="card-body imatgeCategoria cat8">
+                    <h4 class="card-title">Clàssica</h4>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <a href="musicaNoRegistrat.php?cat=Electrònica">
+                <div class="card divCategoria">
+                  <div class="card-body imatgeCategoria cat9">
+                    <h4 class="card-title">Electrònica</h4>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <a href="musicaNoRegistrat.php?cat=Indie">
+                <div class="card divCategoria">
+                  <div class="card-body imatgeCategoria cat10">
+                    <h4 class="card-title">Indie</h4>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <a href="musicaNoRegistrat.php?cat=Infantil">
+                <div class="card divCategoria">
+                  <div class="card-body imatgeCategoria cat11">
+                    <h4 class="card-title">Infantil</h4>
+                  </div>
+                </div>
+              </a>
             </div>
             <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusicaNoRegistrat();"> <!--Donar funcionalitat al onclick que redirecciona a musicaNoRegistrat.php-->
-                <div class="card-body imatgeCategoria cat2">
-                  <h4 class="card-title">Rock</h4>
+                <div class="card divCategoria">
+                  <div class="card-body imatgeCategoria cat12">
+                    <h4 class="card-title">Prèmium</h4>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusicaNoRegistrat();"> <!--Donar funcionalitat al onclick que redirecciona a musicaNoRegistrat.php-->
-                <div class="card-body imatgeCategoria cat3">
-                  <h4 class="card-title">Ambient</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusicaNoRegistrat();"> <!--Donar funcionalitat al onclick que redirecciona a musicaNoRegistrat.php-->
-                <div class="card-body imatgeCategoria cat4">
-                  <h4 class="card-title">Metal</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusicaNoRegistrat();"> <!--Donar funcionalitat al onclick que redirecciona a musicaNoRegistrat.php-->
-                <div class="card-body imatgeCategoria cat5">
-                  <h4 class="card-title">Punk</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusicaNoRegistrat();"> <!--Donar funcionalitat al onclick que redirecciona a musicaNoRegistrat.php-->
-                <div class="card-body imatgeCategoria cat6">
-                  <h4 class="card-title">Soul</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusicaNoRegistrat();"> <!--Donar funcionalitat al onclick que redirecciona a musicaNoRegistrat.php-->
-                <div class="card-body imatgeCategoria cat7">
-                  <h4 class="card-title">Jazz</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusicaNoRegistrat();"> <!--Donar funcionalitat al onclick que redirecciona a musicaNoRegistrat.php-->
-                <div class="card-body imatgeCategoria cat8">
-                  <h4 class="card-title">Clàssica</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusicaNoRegistrat();"> <!--Donar funcionalitat al onclick que redirecciona a musicaNoRegistrat.php-->
-                <div class="card-body imatgeCategoria cat9">
-                  <h4 class="card-title">Electrònica</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusicaNoRegistrat();"> <!--Donar funcionalitat al onclick que redirecciona a musicaNoRegistrat.php-->
-                <div class="card-body imatgeCategoria cat10">
-                  <h4 class="card-title">Indie</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusicaNoRegistrat();"> <!--Donar funcionalitat al onclick que redirecciona a musicaNoRegistrat.php-->
-                <div class="card-body imatgeCategoria cat11">
-                  <h4 class="card-title">Infantil</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusicaNoRegistrat();"> <!--Donar funcionalitat al onclick que redirecciona a musicaNoRegistrat.php-->
-                <div class="card-body imatgeCategoria cat12">
-                  <h4 class="card-title">Prèmium</h4>
-                </div>
-              </div>
             </div>
           </div>
           <div class="row">
