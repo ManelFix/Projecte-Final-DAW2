@@ -84,9 +84,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link efecteHoverMenu" href="artistes.php">
+            <a class="nav-link efecteHoverMenu" href="usuaris.php">
               <img src="../img/iconaArtist.svg" class="iconaArtista estilIcones iconPers" alt="iconaArtista">
-              <span class="menu-title textSidebar">Artistes</span>
+              <span class="menu-title textSidebar">Usuaris</span>
             </a>
           </li>
           <li class="nav-item">

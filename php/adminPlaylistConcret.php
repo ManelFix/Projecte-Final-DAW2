@@ -131,102 +131,12 @@
                           <th>Cançó</th>
                           <th>Gènere</th>
                           <th>Estat d'ànim</th>
-                          <th>Duració</th>
                           <th>Data d'incorporació</th>
                           <th>Artista</th>
                           <th>Acció</th>
                         </tr>
                       </thead>
-                      <tbody id="contingutTaulaMusica">
-                        <tr>
-                          <td class="py-1 font-weight-bold">Enough</td>
-                          <td>Pop</td>
-                          <td>Dramàtic</td>
-                          <td>2:10</td>
-                          <td>16/05/2022</td>
-                          <td class="nav-item nav-profile dropdown">
-                            <a href="#" data-toggle="dropdown" id="profileDropdown">
-                              <span class='bx bx-dots-vertical-rounded iconaAccio'></span>
-                            </a>
-                            <div class="dropdown-menu menuAccio">
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Eliminar</p>
-                              </a>                            
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Reproduïr</p>
-                              </a>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1 font-weight-bold">Enough</td>
-                          <td>Pop</td>
-                          <td>Dramàtic</td>
-                          <td>2:10</td>
-                          <td>16/05/2022</td>
-                          <td class="nav-item nav-profile dropdown">
-                            <a href="#" data-toggle="dropdown" id="profileDropdown">
-                              <span class='bx bx-dots-vertical-rounded iconaAccio'></span>
-                            </a>
-                            <div class="dropdown-menu menuAccio">
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Eliminar</p>
-                              </a>                            
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Reproduïr?</p>
-                              </a>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1 font-weight-bold">Enough</td>
-                          <td>Pop</td>
-                          <td>Dramàtic</td>
-                          <td>2:10</td>
-                          <td>16/05/2022</td>
-                          <td class="nav-item nav-profile dropdown">
-                            <a href="#" data-toggle="dropdown" id="profileDropdown">
-                              <span class='bx bx-dots-vertical-rounded iconaAccio'></span>
-                            </a>
-                            <div class="dropdown-menu menuAccio">
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Eliminar</p>
-                              </a>
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Reproduïr</p>
-                              </a>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="py-1 font-weight-bold">Enough</td>
-                          <td>Pop</td>
-                          <td>Dramàtic</td>
-                          <td>2:10</td>
-                          <td>16/05/2022</td>
-                          <td class="nav-item nav-profile dropdown">
-                              <a href="#" data-toggle="dropdown" id="profileDropdown">
-                                <span class='bx bx-dots-vertical-rounded iconaAccio'></span>
-                              </a>
-                              <div class="dropdown-menu menuAccio">
-                                <a class="dropdown-item opcioMenuAccio">
-                                  <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
-                                  <p class="txtOpcionsUser">Eliminar</p>
-                                </a>
-                                <a class="dropdown-item opcioMenuAccio">
-                                  <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
-                                  <p class="txtOpcionsUser">Reproduïr</p>
-                                </a>
-                              </div>
-                          </td>
-                        </tr>
-                      </tbody>
+                      <tbody id="contingutTaulaMusica"></tbody>
                     </table>
                   </div>
                 </div>

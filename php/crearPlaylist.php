@@ -1,3 +1,8 @@
+<?php
+  //Controlar session
+  session_start();
+  $idUsuari = $_SESSION["ses_id"];
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,6 +15,7 @@
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="shortcut icon" href="../img/logo.svg" type="image/x-icon">
     <title>SoundBOX</title>
+    <script src="../js/crearPlaylist.js"></script>
 </head>
 <body>
     <div class="divHome">
@@ -36,13 +42,13 @@
                     <span class='bx bx-world iconesLoginRegister'></span>
                     <label for="descripcio" class="amagarLabel"></label>
                     <select name="estatAnimAfegir" id="iEstatAnim" class="css_inputsLogReg">
-                        <option selected disabled>Selecciona la privacitat de la playlist</option>
-                        <option value="alegre">Públic</option>
-                        <option value="poderos">Privat</option>
+                        <option value="null" selected disabled>Selecciona la privacitat de la playlist</option>
+                        <option value="0">Públic</option>
+                        <option value="1">Privat</option>
                     </select>               
                 </div>
             </div>
-            <input id="btnPlaylist" type="button" value="Crear" name="crearPl" class="ibtnEnviar" onclick="">       
+            <input id="btnPlaylist" type="button" value="Crear" name="crearPl" class="ibtnEnviar" onclick="crearPlaylist(<?= $idUsuari ?>);">       
         </form>
     </section>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>

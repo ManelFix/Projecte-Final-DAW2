@@ -59,7 +59,7 @@
     </nav>
     <div class="container-fluid page-body-wrapper">    
       <nav class="sidebar sidebar-offcanvas sidebarColorFons" id="sidebar">
-        <ul class="nav">
+        <ul id="idNav" class="nav">
           <li class="nav-item">
             <a class="nav-link efecteHoverMenu" href="mevaMusica.php">
               <span class='bx bx-music estilIcones'></span>
@@ -88,21 +88,6 @@
             <a class="nav-link efecteHoverMenu" href="crearPlaylist.php">
               <span class='bx bxs-playlist estilIcones'></span>
               <span class="menu-title textSidebar textNav">Crear playlist</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="linkPlaylist">
-              <p class="textSidebar textNav textPlaylist">Playlist 1</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="linkPlaylist">
-              <p class="textSidebar textNav textPlaylist">Playlist 2</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="linkPlaylist">
-              <p class="textSidebar textNav textPlaylist">Playlist 3</p>
             </a>
           </li>
         </ul>

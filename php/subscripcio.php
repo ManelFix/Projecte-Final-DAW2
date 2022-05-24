@@ -32,7 +32,7 @@
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="../img/defaultUser.svg" class="colIcona" alt="profile"/>
+              <img id="iconaUsuari" src="../img/defaultUser.svg" class="colIcona" alt="profile"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item" href="configuracioUser.php">
@@ -57,7 +57,7 @@
     </nav>
     <div class="container-fluid page-body-wrapper">    
       <nav class="sidebar sidebar-offcanvas sidebarColorFons" id="sidebar">
-        <ul class="nav">
+        <ul id="idNav" class="nav">
           <li class="nav-item">
             <a class="nav-link efecteHoverMenu" href="mevaMusica.php">
               <span class='bx bx-music estilIcones'></span>
@@ -86,21 +86,6 @@
             <a class="nav-link efecteHoverMenu" href="crearPlaylist.php">
               <span class='bx bxs-playlist estilIcones'></span>
               <span class="menu-title textSidebar textNav">Crear playlist</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="linkPlaylist">
-              <p class="textSidebar textNav textPlaylist">Playlist 1</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="linkPlaylist">
-              <p class="textSidebar textNav textPlaylist">Playlist 2</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="linkPlaylist">
-              <p class="textSidebar textNav textPlaylist">Playlist 3</p>
             </a>
           </li>
         </ul>

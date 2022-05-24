@@ -1,3 +1,44 @@
+<?php
+    session_start();
+    $idUsuari = $_SESSION["ses_id"];
+    $premium = $_SESSION["premium"];  
+
+    if(isset($_SESSION['ses_id'])){
+        if($_SESSION["ban"]!=0){
+            header('Location: planaBanejat.php');
+        }
+    }else{
+        header('Location: login.php');
+    }
+    
+    if(!empty($_POST["inserirCanço"])){
+        require("controlador/BBDD.php");
+        $connexio=sql();
+
+        $titol = $_POST["titolAfegir"];
+        $genere = $_POST["genereAfegir"];
+        $estatAnim = $_POST["estatAnimAfegir"];
+        $artista = $_POST["artistaAfegir"];
+        $nomCanço = $_FILES["arxiuAfegir"]["name"];
+        $tipus = explode('.', $_FILES['arxiuAfegir']['name']);
+        $nom_guardat = ""; //Falta aixo
+        $data = date("Y-m-d");
+
+        $sql ="INSERT INTO canço (id_usuari, id_llista, nom_canço, nom_guardat, tipus, artista, data, genere, estat_anim, click, click_mens, premium) 
+               VALUES ('".$idUsuari."','0','".$nomCanço."','".$nom_guardat."','".$tipus."','".$artista."','".$data."','".$genere."','".$estatAnim."','0','0','0') ";
+
+        $connexio->query($sql);
+
+        //Fer el move
+ 
+        echo '<script language="javascript">alert("Cançó afegida");</script>';
+
+        $connexio->close();
+
+    }
+
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,7 +60,7 @@
            <img src="../img/logo.svg" alt="logoSoundBOX">
         </div>
         <h1>Afegir cançó</h1>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <div class="frameSecundari2 extraModificacionsNoPremium">
                 <div class="divUserBorder">
                     <span class='bx bx-album iconesLoginRegister'></span>
@@ -58,12 +99,7 @@
                         <option value="suspens">Suspens</option>
                         <option value="epic">Èpic</option>
                     </select>
-                </div>
-                <div class="divUserBorder">
-                    <span class='bx bx-time-five iconesLoginRegister'></span>
-                    <label for="iDuracio" class="amagarLabel"></label>
-                    <input id="iDuracio" type="text" name="duracioAfegir" placeholder="Duració" class="css_inputsLogReg">
-                </div>
+                </div>                
                 <div class="divUserBorder">
                     <span class='bx bx-user-pin iconesLoginRegister'></span>
                     <label for="iArtista" class="amagarLabel"></label>
@@ -77,7 +113,7 @@
                     <span id="file-chosen">Cap fitxer introduït</span>
                 </div>
             </div>
-            <input id="btnRegister" type="button" value="Afegir" name="ferRegister" class="ibtnEnviar" onclick="">            
+            <input id="btnRegister" type="submit" value="Afegir" name="inserirCanço" class="ibtnEnviar">            
         </form>
     </section>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
@@ -86,15 +122,3 @@
     <script src="../js/botonFile.js" crossorigin="anonymous"></script>
 </body>
 </html>
-<?php
-
-session_start();
-if(isset($_SESSION['ses_id'])){
-    if($_SESSION["ban"]==0){
-}else{
-        header('Location: .php');
-    }
-}else{
-    header('Location: login.php');
-}
-?>

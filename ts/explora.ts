@@ -1,39 +1,6 @@
 var xhttp:any;
 var xmlDoc:any;
 
-function veureSubscripcio(idU:any){
-    if (window.XMLHttpRequest) {
-        xhttp = new XMLHttpRequest();
-    }
-    else if (window.ActiveXObject) {
-        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xhttp.onreadystatechange = introduirSubscripcio;
-    xhttp.open('POST', '../php/controlador/veureSubscripcio.php', true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idU="+idU);
-}
-
-function introduirSubscripcio(){
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-        var tipusSub:any = xhttp.responseText.replace(/\s+/g, '');
-        var arrOpcions:any = tipusSub.split(',');
-
-        if(arrOpcions[0] == 0){
-            document.getElementById("tipusSubs")?.innerHTML = "Gratuïta";
-            document.getElementById("tipusSubs")?.style.color = "#F7AD19";
-            document.getElementById("imgSubscripcio").src = "../img/imgNoPremium.png";
-        }
-        else{
-            document.getElementById("tipusSubs")?.innerHTML = "Prèmium";
-            document.getElementById("tipusSubs")?.style.color = "#429EBD";
-            document.getElementById("imgSubscripcio").src = "../img/imgPremium.png";
-
-        }
-        agafarImatgeUsuari(arrOpcions[1]);
-    }
-}
-
 function agafarImatgeUsuari(idUsuari:any){
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
@@ -50,7 +17,6 @@ function agafarImatgeUsuari(idUsuari:any){
 function mostrarImatgeUsuari(){
     if (xhttp.readyState == 4 && xhttp.status == 200) {
         var rutaImatge:any = xhttp.responseText.replace(/\s+/g, '');
-        console.log(xhttp.responseText);
         if(rutaImatge == 0){
             document.getElementById("iconaUsuari").src = "../img/defaultUser.svg";
         }

@@ -9,6 +9,7 @@
     
     while($fila = mysqli_fetch_assoc($r)){
         echo $fila["premium"];
+        echo ",".$idUsuari;
     }        
     
     mysqli_close($connexio);
