@@ -57,7 +57,7 @@ function mostrarLlistesPropies(){
             var newLi:any = document.createElement("li");
             newLi.classList.add("nav-item");
             var newA:any = document.createElement("a");
-            newA.href = 'playlist.php?idL=' + idLlista; //Revisar
+            newA.href = 'playlist.php?idL=' + idLlista + "&nomL=" + titolLlista ; //Revisar
             newA.classList.add("linkPlaylist");
             var newP:any = document.createElement("p");
             newP.classList.add("textSidebar", "textNav", "textPlaylist");
