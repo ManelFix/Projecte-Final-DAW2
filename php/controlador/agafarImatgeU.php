@@ -1,7 +1,7 @@
 <?php
     include("BBDD.php");  
     $connexio=sql();
-
+ 
     $idUsuari = $_POST["idCompte"];
 
     $sql = "SELECT imatge, tipus FROM usuari WHERE id_usuari = '".$idUsuari."'";
@@ -11,7 +11,7 @@
         if($fila["tipus"] == null && $fila["imatge"] == null){
             echo 0;
         }
-        else{
+        else{ 
             echo "data: ".$fila["tipus"].";base64,".base64_encode($fila["imatge"]);
         }
     }    

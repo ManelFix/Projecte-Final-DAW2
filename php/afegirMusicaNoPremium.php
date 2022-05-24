@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(isset($_SESSION['ses_id'])){
+    if($_SESSION["ban"]==0){
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/estilo.css">
+    <script src="../js/registrar.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="shortcut icon" href="../img/logo.svg" type="image/x-icon">
     <title>SoundBOX</title>
@@ -88,11 +95,8 @@
 </html>
 <?php
 
-session_start();
-if(isset($_SESSION['ses_id'])){
-    if($_SESSION["ban"]==0){
 }else{
-        header('Location: .php');
+        header('Location: planaBanejat.php');
     }
 }else{
     header('Location: login.php');
