@@ -14,6 +14,7 @@
       header('Location: explora.php');
     }
   }
+
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +33,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
   <script src="../js/musica.js"></script>
+
 </head>
 <body onload="agafarImatgeUsuari('<?= $idUsuari ?>','<?= $nomcat ?>','<?= $premium ?>')">
   <div class="container-scroller">
@@ -164,6 +168,30 @@
               </div>
             </div>
           </div>
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content modalPlaylist">
+                <div>
+                  <button type="button" class="close tancarModal" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body cosModal">
+                  <form>
+                    <div class="form-group">
+                      <label for="recipient-name" class="labelModal">Selecciona la playlist:</label>
+                      <input id="idHidden" type="hidden">
+                      <select id="llistatPlaylist" name='playlistS' class='form-control selectModal'></select>
+                    </div>
+                  </form>
+                </div>
+                <hr class="liniaModal">
+                <div class="modal-footer modalFinal">
+                  <button type="button" class="btn btn-primary btnSeleccionarModal" onclick="afegirPlaylist();">Seleccionar</button>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- Reproductor fixed bottom -->
           <div class="col-md-12 col-sm-12 col-xs-12">
             <div id="divAudio" class="audio-player-container">
@@ -210,35 +238,7 @@
               </div>
             </div>
           </div>
-          <div id="musicaIdTop" class="row">
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat1">
-                  <h5 class="card-title">Cançó 1</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download botonDescarrega'></span>
-                      <div class="nav-item nav-profile dropdown">
-                        <a href="#" data-toggle="dropdown" id="profileDropdown">
-                          <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
-                        </a>
-                        <div class="dropdown-menu menuAccio">
-                          <a class="dropdown-item opcioMenuAccio">
-                            <span class='bx bx-like text-primary colIcona midaIcones'></span>
-                            <p class="txtOpcionsUser">M'agrada</p>
-                          </a>
-                          <a class="dropdown-item opcioMenuAccio">
-                            <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
-                            <p class="txtOpcionsUser">Afegir a la playlist</p>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div id="musicaIdTop" class="row">           
           </div>
           <?php
               if($nomcat != "Prèmium"){
@@ -254,34 +254,6 @@
             </div>
           </div>
           <div id="musicaIdPremium" class="row">
-          <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat1">
-                  <h5 class="card-title">Cançó 1</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download botonDescarrega'></span>
-                      <div class="nav-item nav-profile dropdown">
-                        <a href="#" data-toggle="dropdown" id="profileDropdown">
-                          <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
-                        </a>
-                        <div class="dropdown-menu menuAccio">
-                          <a class="dropdown-item opcioMenuAccio">
-                            <span class='bx bx-like text-primary colIcona midaIcones'></span>
-                            <p class="txtOpcionsUser">M'agrada</p>
-                          </a>
-                          <a class="dropdown-item opcioMenuAccio">
-                            <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
-                            <p class="txtOpcionsUser">Afegir a la playlist</p>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
           <?php
               }
@@ -296,34 +268,6 @@
             </div>
           </div>
           <div id="musicaIdTot" class="row">
-          <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat1">
-                  <h5 class="card-title">Canço 1</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download botonDescarrega'></span>
-                      <div class="nav-item nav-profile dropdown">
-                        <a href="#" data-toggle="dropdown" id="profileDropdown">
-                          <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
-                        </a>
-                        <div class="dropdown-menu menuAccio">
-                          <a class="dropdown-item opcioMenuAccio">
-                            <span class='bx bx-like text-primary colIcona midaIcones'></span>
-                            <p class="txtOpcionsUser">M'agrada</p>
-                          </a>
-                          <a class="dropdown-item opcioMenuAccio">
-                            <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
-                            <p class="txtOpcionsUser">Afegir a la playlist</p>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
           <div class="row">
             <div class="col-md-12 grid-margin transparent">
@@ -349,8 +293,6 @@
   </div>
   <script src="../recursosAdmin_Client/js/vendor.bundle.base.js"></script>
   <script src="../js/client/template.js"></script>
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
   <script src="../js/client/off-canvas.js"></script>
   <script type="text/javascript" src="../js/audioplayer.js" crossorigin="anonymous"></script>
   <script src="../js/bootstrap.js" crossorigin="anonymous"></script>

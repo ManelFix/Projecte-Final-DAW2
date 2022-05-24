@@ -11,7 +11,7 @@ function carregarCançons(idLlista:any, idUsuari:any){
     xhttp.onreadystatechange = mostrarTaulaCançons;
     xhttp.open('POST', '../php/controlador/carregarCançonsPlaylist.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idL="+idLlista+"&"+"idU="+idUsuari);
+    xhttp.send("idL="+idLlista);
 }
 
 function mostrarTaulaCançons(){
@@ -234,7 +234,7 @@ function mostrarImatgeUsuari(){
             document.getElementById("iconaUsuari").src = arrOpcions[0];
             document.getElementById("iconaUsuari").style = "height: auto !important; width: 3.5rem !important;"
         }
-        carregarCançons(localStorage.getItem("IDLlistaSoundBox"), localStorage.getItem("idUsuariSoundBox"));
+        carregarCançons(localStorage.getItem("IDLlistaSoundBox"));
     }
 }
 
