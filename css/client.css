@@ -774,3 +774,69 @@
     position: relative;
     bottom: 7px;
 }
+
+.btnEspaiD{
+    margin-right: 20px;
+}
+
+/* Modal */
+
+.modalPlaylist{
+    background-color: #121216;
+    border-color: #121216;
+    border-radius: 10px;
+}
+
+.tancarModal{
+    color: #429EBD !important;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10px;
+    font-size: 2em !important;
+}
+
+.cosModal{
+    padding-bottom: 0px !important;
+}
+
+.labelModal{
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-size: 1.1em !important;
+    margin-bottom: 0.8em !important;
+}
+
+.selectModal{
+    color: #9FE7F5 !important;
+    font-family: 'Inter', sans-serif;
+    font-size: 1em !important;
+    background-color: #191922!important;
+    border: none !important;
+}
+
+.liniaModal{
+    width: 90%;
+    background-color: #053F5C;
+}
+
+.modalFinal{
+    border: none;
+}
+
+.btnTancarModal{
+    background-color: #053F5C !important;
+    border: none !important;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+}
+
+.btnSeleccionarModal{
+    background-color: #F7AD19 !important;
+    font-family: 'Inter', sans-serif !important;
+    border: none !important;
+    font-size: 1em !important;
+}
