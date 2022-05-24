@@ -216,16 +216,9 @@ body{
     height: 100%;
 }
 
-.seccioMostra{
-    margin-left: 190px; 
-   
-}
-
 .divMostra{
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: -20px;
+    margin: 45px auto;
 }
 
 .divMostra h2{
@@ -234,11 +227,44 @@ body{
     font-size: 2.8em;
 }
 
-.divMostra p{
+.divMostra p, .escoltaMes p {
     color: white;
     font-family: 'Inter', sans-serif;
     font-size: 1.1em;
-    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.escoltaMes {
+    padding: 20px;
+    text-align: center;
+}
+
+.divCategoria {
+    position: relative;
+}
+
+.media-body {
+    width: auto;
+}
+
+.btnEscoltaMes {
+    height: 45px;
+    margin: 10px auto 20px auto;
+    padding: 1em;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    background-color: #F7AD19;
+    border-color: #F7AD19;
+    border-style: solid;
+    border-radius: 10px;
+    width: 300px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.mostraRow {
+    padding: 20px;
 }
 
 .btnCatalegPrincipal{
@@ -300,15 +326,11 @@ body{
     margin-left: 10px;
     color: white;
     padding: 0.5em;
-    width: 13.5em;
+    width: fit-content;
     font-weight: bold;
     position: relative;
     top: 10px;
     margin-bottom: 40px;
-}
-
-.textAmplada{
-    width: 15em;
 }
 
 .pla1 h3{
@@ -908,24 +930,7 @@ footer span{
   background: #fff;
 }
 /* FIN BARRA DURACIÓN / BARRA VOLUMEN */
-
 /* FIN AUDIO PLAYER */
-
-.escoltaMes {
-    text-align: center;
-}
-
-.btnEscoltaMes {
-    height: 45px;
-    margin: 10px auto 20px auto;
-    text-transform: uppercase;
-    background-color: #F7AD19;
-    border-color: #F7AD19;
-    border-style: solid;
-    border-radius: 10px;
-    width: 300px;
-    cursor: pointer;
-}
 
 /* Web Afegir Canço */
 
