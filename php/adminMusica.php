@@ -93,6 +93,13 @@
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
                   <h3 class="textIniciClient">Llistat de cançons</h3>
                 </div>
+                <div class="col-12 col-xl-4">
+                 <div class="justify-content-end d-flex">
+                  <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
+                    <a id="dropdownMenuDate2" class="btn btn-sm btn-light btnAfegirC btnElimP btnEspaiD" onclick="reiniciarClickM();">Reiniciar clics mensuals</a>
+                  </div>
+                 </div>
+                </div>
               </div>
             </div>
           </div>
@@ -130,15 +137,12 @@
                           <th>Cançó</th>
                           <th>Gènere</th>
                           <th>Estat d'ànim</th>
-                          <th>Duració</th>
                           <th>Data d'incorporació</th>
                           <th>Artista</th>
                           <th>Acció</th>
                         </tr>
                       </thead>
-                      <tbody id="contingutTaulaMusica"> 
-                        <!--Durada format: 2:10?-->
-                      </tbody>
+                      <tbody id="contingutTaulaMusica"></tbody>
                     </table>
                   </div>
                 </div>

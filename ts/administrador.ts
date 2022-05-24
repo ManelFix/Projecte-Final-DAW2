@@ -199,7 +199,6 @@ function mostrarTaulaCançons(){
             var nomCanço:any = cançons[i].getElementsByTagName("nom_canço")[0].childNodes[0].nodeValue;
             var genereCanço:any = cançons[i].getElementsByTagName("genere")[0].childNodes[0].nodeValue;
             var estatAnimCanço:any = cançons[i].getElementsByTagName("estat_anim")[0].childNodes[0].nodeValue;
-            var duradaCanço:any = cançons[i].getElementsByTagName("durada")[0].childNodes[0].nodeValue;
             var dataCanço:any = cançons[i].getElementsByTagName("data")[0].childNodes[0].nodeValue;
             var artistaCanço:any = cançons[i].getElementsByTagName("artista")[0].childNodes[0].nodeValue;
             var nomConcretCanço:any = cançons[i].getElementsByTagName("nom_guardat")[0].childNodes[0].nodeValue;
@@ -217,17 +216,14 @@ function mostrarTaulaCançons(){
             var textTd3:any = document.createTextNode(estatAnimCanço);
             newTd3.appendChild(textTd3);
             var newTd4:any = document.createElement("td");
-            var textTd4:any = document.createTextNode(duradaCanço); //Durada?
+            var textTd4:any = document.createTextNode(dataCanço);
             newTd4.appendChild(textTd4);
             var newTd5:any = document.createElement("td");
-            var textTd5:any = document.createTextNode(dataCanço);
+            var textTd5:any = document.createTextNode(artistaCanço);
             newTd5.appendChild(textTd5);
-            var newTd6:any = document.createElement("td");
-            var textTd6:any = document.createTextNode(artistaCanço);
-            newTd6.appendChild(textTd6);
 
-            var newTd7:any = document.createElement("td");
-            newTd7.classList.add("nav-item", "nav-profile", "dropdown");
+            var newTd6:any = document.createElement("td");
+            newTd6.classList.add("nav-item", "nav-profile", "dropdown");
             var newA:any = document.createElement("a");
             newA.href="#";
             newA.setAttribute("data-toggle", "dropdown");
@@ -265,8 +261,8 @@ function mostrarTaulaCançons(){
             newDiv.appendChild(newA2);
             newDiv.appendChild(newA3);
             newA.appendChild(newSpan);
-            newTd7.appendChild(newDiv);
-            newTd7.appendChild(newA);
+            newTd6.appendChild(newDiv);
+            newTd6.appendChild(newA);
 
             newTr.appendChild(newTd);
             newTr.appendChild(newTd2);
@@ -274,7 +270,6 @@ function mostrarTaulaCançons(){
             newTr.appendChild(newTd4);
             newTr.appendChild(newTd5);
             newTr.appendChild(newTd6);
-            newTr.appendChild(newTd7);
 
             bodyTaula.appendChild(newTr);
 
@@ -328,6 +323,28 @@ function buscarCanço(){
     xhttp.open('POST', '../php/controlador/buscarCanço.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("nomCanço="+nomC);
+}
+
+function reiniciarClickM(){
+    var opcio:any = confirm("Segur que vols reiniciar els clics mensuals?");
+    if (opcio == true) {
+        if (window.XMLHttpRequest) {
+            xhttp = new XMLHttpRequest();
+        }
+        else if (window.ActiveXObject) {
+            xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhttp.onreadystatechange = clicksReiniciats;
+        xhttp.open('POST', '../php/controlador/reiniciarClickM.php', true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send();
+    }
+}
+
+function clicksReiniciats(){
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+        alert("Clicks mensuals reiniciats");
+    }
 }
 
 /* Web Admin Totes les playlist */

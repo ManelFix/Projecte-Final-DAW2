@@ -67,6 +67,7 @@ function mostrarMusica() {
                 break;
         }
         for (var i = 0; i < cançons.length; i++) {
+            var idCanço = cançons[i].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue;
             var nomCanço = cançons[i].getElementsByTagName("nom_canço")[0].childNodes[0].nodeValue;
             var nomGuardat = cançons[i].getElementsByTagName("nom_guardat")[0].childNodes[0].nodeValue;
             var tipus = cançons[i].getElementsByTagName("tipus")[0].childNodes[0].nodeValue;
@@ -92,7 +93,7 @@ function mostrarMusica() {
             newSpan.value = ruta;
             newSpan.alt = artistaCanço;
             newSpan.required = nomCanço;
-            newSpan.onclick = function () { reproduirCanço(this); };
+            newSpan.onclick = function () { reproduirCanço(this, idCanço); };
             var newA = document.createElement("a");
             newA.href = ruta;
             newA.download = nomCanço;
@@ -118,6 +119,7 @@ function mostrarMusica() {
             }
         }
         for (var y = 0; y < cançons2.length; y++) {
+            var idCanço = cançons2[y].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue;
             var nomCanço = cançons2[y].getElementsByTagName("nom_canço")[0].childNodes[0].nodeValue;
             var nomGuardat = cançons2[y].getElementsByTagName("nom_guardat")[0].childNodes[0].nodeValue;
             var tipus = cançons2[y].getElementsByTagName("tipus")[0].childNodes[0].nodeValue;
@@ -143,7 +145,7 @@ function mostrarMusica() {
             newSpan.value = ruta;
             newSpan.alt = artistaCanço;
             newSpan.required = nomCanço;
-            newSpan.onclick = function () { reproduirCanço(this); };
+            newSpan.onclick = function () { reproduirCanço(this, idCanço); };
             var newA = document.createElement("a");
             newA.href = ruta;
             newA.download = nomCanço;
@@ -165,12 +167,25 @@ function mostrarMusica() {
         }
     }
 }
-function reproduirCanço(ruta) {
+function reproduirCanço(ruta, idCanço) {
     var _a, _b, _c;
     (_a = document.getElementById("nomA")) === null || _a === void 0 ? void 0 : _a.innerHTML = ruta.alt;
     (_b = document.getElementById("titolM")) === null || _b === void 0 ? void 0 : _b.innerHTML = ruta.required;
     document.getElementById("audio-1").src = ruta.value;
     (_c = document.getElementById("play")) === null || _c === void 0 ? void 0 : _c.click();
+    augmentarClicks(idCanço);
+}
+function augmentarClicks(idCanço) {
+    if (window.XMLHttpRequest) {
+        xhttp = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject) {
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhttp.onreadystatechange = carregarMusica;
+    xhttp.open('POST', '../php/controlador/augmentarClicks.php', true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("idC=" + idCanço);
 }
 function aplicarFiltre(nom) {
     var estatA = document.getElementById("filtrarPer").value;

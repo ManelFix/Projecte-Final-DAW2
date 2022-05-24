@@ -3,7 +3,9 @@
     include("BBDD.php");  
     $connexio=sql();
 
-    $sql = "SELECT * FROM canço";
+    $idUsuari = $_POST["idU"];
+
+    $sql = "SELECT * FROM canço WHERE id_usuari = '".$idUsuari."'";
     $r = mysqli_query($connexio,$sql);
     
     while($fila = mysqli_fetch_assoc($r)){

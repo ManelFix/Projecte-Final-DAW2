@@ -202,7 +202,7 @@
                   <div class="media divMedia">
                     <div class="media-body zonaBotonsMusica">
                       <span class='bx bx-play-circle'></span>
-                      <a href="quepaza"><span class='bx bxs-download iconaDescarrega'></span></a>
+                      <a href=""><span class='bx bxs-download iconaDescarrega'></span></a>
                     </div>
                   </div>
                 </div>

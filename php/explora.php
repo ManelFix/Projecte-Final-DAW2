@@ -1,6 +1,12 @@
+<?php
+  //Controlar sessions
+  session_start();
+  $idUsuari = $_SESSION["ses_id"];
+  $premium = $_SESSION["premium"];
+
+?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,8 +18,9 @@
   <link rel="stylesheet" href="../css/client.css">
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
   <link rel="shortcut icon" href="../img/logo.svg" />
+  <script src="../js/explora.js"></script>
 </head>
-<body>
+<body onload="agafarImatgeUsuari(<?= $idUsuari ?>)">
   <div class="container-scroller">
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row menuFons">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center noFonsColor">
@@ -24,22 +31,10 @@
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="icon-menu colIcona"></span>
         </button>
-        <ul class="navbar-nav mr-lg-2">
-          <li class="nav-item nav-search d-none d-lg-block">
-            <div class="input-group">
-              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
-                <span class="input-group-text" id="search">
-                  <span class="icon-search colIcona iconaLupa"></span>
-                </span>
-              </div>
-              <input type="text" class="form-control inputBuscar" id="navbar-search-input" placeholder="Buscar" aria-label="search" aria-describedby="search">
-            </div>
-          </li>
-        </ul>
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="../img/defaultUser.svg" class="colIcona" alt="profile"/>
+              <img id="iconaUsuari" src="../img/defaultUser.svg" class="colIcona" alt="profile"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item" href="configuracioUser.php">
@@ -64,7 +59,7 @@
     </nav>
     <div class="container-fluid page-body-wrapper">    
       <nav class="sidebar sidebar-offcanvas sidebarColorFons" id="sidebar">
-        <ul class="nav">
+        <ul id="idNav" class="nav">
           <li class="nav-item">
             <a class="nav-link efecteHoverMenu" href="mevaMusica.php">
               <span class='bx bx-music estilIcones'></span>
@@ -84,30 +79,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link efecteHoverMenu" href="artistes.php">
+            <a class="nav-link efecteHoverMenu" href="usuaris.php">
               <img src="../img/iconaArtist.svg" class="iconaArtista estilIcones iconPers" alt="iconaArtista">
-              <span class="menu-title textSidebar">Artistes</span>
+              <span class="menu-title textSidebar">Usuaris</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link efecteHoverMenu" href="crearPlaylist.php">
               <span class='bx bxs-playlist estilIcones'></span>
               <span class="menu-title textSidebar textNav">Crear playlist</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="linkPlaylist">
-              <p class="textSidebar textNav textPlaylist">Playlist 1</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="linkPlaylist">
-              <p class="textSidebar textNav textPlaylist">Playlist 2</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="linkPlaylist">
-              <p class="textSidebar textNav textPlaylist">Playlist 3</p>
             </a>
           </li>
         </ul>
@@ -138,89 +118,122 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusica();"> <!--Donar funcionalitat al onclick que redirecciona a musica.php-->
-                <div class="card-body imatgeCategoria cat1">
-                  <h4 class="card-title">Pop</h4>
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <a href="musica.php?cat=Pop">
+                <div class="card divCategoria">
+                  <div class="card-body imatgeCategoria cat1">
+                    <h4 class="card-title">Pop</h4>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusica();"> <!--Donar funcionalitat al onclick que redirecciona a musica.php-->
-                <div class="card-body imatgeCategoria cat2">
-                  <h4 class="card-title">Rock</h4>
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <a href="musica.php?cat=Rock">
+                <div class="card divCategoria">
+                  <div class="card-body imatgeCategoria cat2">
+                    <h4 class="card-title">Rock</h4>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusica();"> <!--Donar funcionalitat al onclick que redirecciona a musica.php-->
-                <div class="card-body imatgeCategoria cat3">
-                  <h4 class="card-title">Ambient</h4>
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <a href="musica.php?cat=Ambient">
+                <div class="card divCategoria"> 
+                  <div class="card-body imatgeCategoria cat3">
+                    <h4 class="card-title">Ambient</h4>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusica();"> <!--Donar funcionalitat al onclick que redirecciona a musica.php-->
-                <div class="card-body imatgeCategoria cat4">
-                  <h4 class="card-title">Metal</h4>
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <a href="musica.php?cat=Metal">
+                <div class="card divCategoria"> 
+                  <div class="card-body imatgeCategoria cat4">
+                    <h4 class="card-title">Metal</h4>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusica();"> <!--Donar funcionalitat al onclick que redirecciona a musica.php-->
-                <div class="card-body imatgeCategoria cat5">
-                  <h4 class="card-title">Punk</h4>
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <a href="musica.php?cat=Punk">
+                <div class="card divCategoria">
+                  <div class="card-body imatgeCategoria cat5">
+                    <h4 class="card-title">Punk</h4>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusica();"> <!--Donar funcionalitat al onclick que redirecciona a musica.php-->
-                <div class="card-body imatgeCategoria cat6">
-                  <h4 class="card-title">Soul</h4>
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <a href="musica.php?cat=Soul">
+                <div class="card divCategoria"> 
+                  <div class="card-body imatgeCategoria cat6">
+                    <h4 class="card-title">Soul</h4>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusica();"> <!--Donar funcionalitat al onclick que redirecciona a musica.php-->
-                <div class="card-body imatgeCategoria cat7">
-                  <h4 class="card-title">Jazz</h4>
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <a href="musica.php?cat=Jazz">
+                <div class="card divCategoria"> 
+                  <div class="card-body imatgeCategoria cat7">
+                    <h4 class="card-title">Jazz</h4>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusica();"> <!--Donar funcionalitat al onclick que redirecciona a musica.php-->
-                <div class="card-body imatgeCategoria cat8">
-                  <h4 class="card-title">Clàssica</h4>
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <a href="musica.php?cat=Clàssica">
+                <div class="card divCategoria"> 
+                  <div class="card-body imatgeCategoria cat8">
+                    <h4 class="card-title">Clàssica</h4>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusica();"> <!--Donar funcionalitat al onclick que redirecciona a musica.php-->
-                <div class="card-body imatgeCategoria cat9">
-                  <h4 class="card-title">Electrònica</h4>
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <a href="musica.php?cat=Electrònica">
+                <div class="card divCategoria"> 
+                  <div class="card-body imatgeCategoria cat9">
+                    <h4 class="card-title">Electrònica</h4>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusica();"> <!--Donar funcionalitat al onclick que redirecciona a musica.php-->
-                <div class="card-body imatgeCategoria cat10">
-                  <h4 class="card-title">Indie</h4>
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <a href="musica.php?cat=Indie">
+                <div class="card divCategoria">
+                  <div class="card-body imatgeCategoria cat10">
+                    <h4 class="card-title">Indie</h4>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusica();"> <!--Donar funcionalitat al onclick que redirecciona a musica.php-->
-                <div class="card-body imatgeCategoria cat11">
-                  <h4 class="card-title">Infantil</h4>
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <a href="musica.php?cat=Infantil">
+                <div class="card divCategoria">
+                  <div class="card-body imatgeCategoria cat11">
+                    <h4 class="card-title">Infantil</h4>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria" onclick="anarAMusica();"> <!--Donar funcionalitat al onclick que redirecciona a musica.php-->
+            <div class="col-md-3 grid-margin stretch-card divCatNoR">
+              <?php
+                if($premium == 1){
+                  echo "<a href='musica.php?cat=Prèmium'>";
+                }
+                else{
+                  echo "<a>";
+                }
+              ?>
+              <div class="card divCategoria">
                 <div class="card-body imatgeCategoria cat12">
                   <h4 class="card-title">Prèmium</h4>
                 </div>
               </div>
+              <?php
+                echo "</a>";
+              ?>
             </div>
           </div>
           <div class="row">

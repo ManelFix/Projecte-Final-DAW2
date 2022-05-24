@@ -1,3 +1,46 @@
+<?php
+    session_start();
+    $idUsuari = $_SESSION["ses_id"];
+    $premium = $_SESSION["premium"];  
+
+    if(isset($_SESSION['ses_id'])){
+        if($_SESSION["ban"]!=0){
+            header('Location: planaBanejat.php');
+        }
+    }else{
+        header('Location: login.php');
+    }
+    
+    if(!empty($_POST["inserirCanço"])){
+        require("controlador/BBDD.php");
+        $connexio=sql();
+
+        $titol = $_POST["titolAfegir"];
+        $genere = $_POST["genereAfegir"];
+        $estatAnim = $_POST["estatAnimAfegir"];
+        $artista = $_POST["artistaAfegir"];
+        $premium = $_POST["premiumAfegir"];
+        $nomCanço = $_FILES["arxiuAfegir"]["name"];
+        $tipus = explode('.', $_FILES['arxiuAfegir']['name']);
+        $nom_guardat = ""; //Falta aixo
+        $data = date("Y-m-d");
+
+        $sql ="INSERT INTO canço (id_usuari, id_llista, nom_canço, nom_guardat, tipus, artista, data, genere, estat_anim, click, click_mens, premium) 
+               VALUES ('".$idUsuari."','0','".$nomCanço."','".$nom_guardat."','".$tipus."','".$artista."','".$data."','".$genere."','".$estatAnim."','0','0','".$premium."') ";
+
+        $connexio->query($sql);
+
+        //Fer el move
+ 
+        echo '<script language="javascript">alert("Cançó afegida");</script>';
+
+        $connexio->close();
+
+    }
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -58,12 +101,7 @@
                         <option value="suspens">Suspens</option>
                         <option value="epic">Èpic</option>
                     </select>                
-                </div>
-                <div class="divUserBorder">
-                    <span class='bx bx-time-five iconesLoginRegister'></span>
-                    <label for="iDuracio" class="amagarLabel"></label>
-                    <input id="iDuracio" type="text" name="duracioAfegir" placeholder="Duració" class="css_inputsLogReg">
-                </div>
+                </div>               
                 <div class="divUserBorder">
                     <span class='bx bx-user-pin iconesLoginRegister'></span>
                     <label for="iArtista" class="amagarLabel"></label>
@@ -74,8 +112,8 @@
                     <label for="iPremium" class="amagarLabel"></label>
                     <select name="premiumAfegir" id="iPremium" class="css_inputsLogReg">
                         <option selected disabled>Selecciona el tipus de cançó</option>
-                        <option value="premium">Prèmium</option>
-                        <option value="noPremium">No prèmium</option>
+                        <option value="1">Prèmium</option>
+                        <option value="0">No prèmium</option>
                     </select>                
                 </div>
                 <div class="divFinal">
