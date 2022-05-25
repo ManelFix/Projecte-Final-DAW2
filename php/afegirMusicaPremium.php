@@ -59,7 +59,7 @@
     </div>
     <section class="framePrincipal2 extraModNoPremium">
         <div class="divLogo">
-           <img src="../img/logo.svg" alt="logoSoundBOX">
+            <img src="../img/logoForms.PNG" alt="logoSoundBOX">
         </div>
         <h1>Afegir cançó</h1>
         <form method="post">

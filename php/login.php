@@ -17,7 +17,7 @@
     </div>
     <section class="framePrincipal">
         <div class="divLogo">
-           <img src="../img/logo.svg" alt="logoSoundBOX">
+            <img src="../img/logoForms.PNG" alt="logoSoundBOX">
         </div>
         <h1>Inicia Sessió</h1>
         <form method="post">

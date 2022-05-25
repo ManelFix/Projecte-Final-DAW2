@@ -6,7 +6,6 @@ if (isset($_SESSION['ses_id'])) {
 ?>
     <!DOCTYPE html>
     <html lang="es">
-
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,13 +19,12 @@ if (isset($_SESSION['ses_id'])) {
       <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
       <link rel="shortcut icon" href="../img/logo.svg" />
     </head>
-
     <body onload="artistas_seguidos(<?php echo $_SESSION['ses_id'] ?>)">
       <div class="container-scroller">
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row menuFons">
           <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center noFonsColor">
-            <a class="navbar-brand brand-logo mr-5"><img src="../img/logo.svg" class="mr-2" alt="logoSoundBOX" /></a>
-            <a class="navbar-brand brand-logo-mini"><img src="../img/logo.svg" alt="logoSoundBOX" /></a>
+          <a class="navbar-brand brand-logo mr-5"><img src="../img/logoAC.PNG" class="mr-2 logoSoundBox" alt="logoSoundBOX"/></a>
+          <a class="navbar-brand brand-logo-mini"><img src="../img/logoMini.PNG" class="logoMiniSoundBox" alt="logoSoundBOX"/></a>
           </div>
           <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end noFonsColor">
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -47,7 +45,7 @@ if (isset($_SESSION['ses_id'])) {
             <ul class="navbar-nav navbar-nav-right">
               <li class="nav-item nav-profile dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                  <img src="../img/defaultUser.svg" class="colIcona" alt="profile" />
+                  <img id="iconaUsuari" src="../img/defaultUser.svg" class="colIcona" alt="profile" />
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                   <a class="dropdown-item" href="configuracioUser.php">
@@ -92,9 +90,9 @@ if (isset($_SESSION['ses_id'])) {
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link efecteHoverMenu active" href="index.html">
+                <a class="nav-link efecteHoverMenu active" href="artistes.php">
                   <img src="../img/iconaArtist.svg" class="iconaArtista estilIcones iconPers" alt="iconaArtista">
-                  <span class="menu-title textSidebar">Artistes</span>
+                  <span class="menu-title textSidebar">Usuaris</span>
                 </a>
               </li>
               <li class="nav-item">
@@ -184,7 +182,6 @@ if (isset($_SESSION['ses_id'])) {
         <script src="../js/client/off-canvas.js"></script>
         <script src="../js/bootstrap.js" crossorigin="anonymous"></script>
     </body>
-
     </html>
 <?php
   } else {

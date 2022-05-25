@@ -17,7 +17,7 @@
     </div>
     <section class="framePrincipal banejatSection">
         <div class="divLogo">
-           <img src="../img/logo.svg" alt="logoSoundBOX">
+            <img src="../img/logoForms.PNG" alt="logoSoundBOX">
         </div>
         <h1 class="titolBanejat">Ho sentim!</h1>
         <h2>El teu compte està bloquejat, així que no pots pujar cançons, si creus que es deu a un error envia'ns un correu a <span class="correuConcret">soundboxdaw2@gmail.com</span></h2>

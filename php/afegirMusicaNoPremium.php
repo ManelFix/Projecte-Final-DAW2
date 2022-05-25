@@ -23,7 +23,7 @@ if(isset($_SESSION['ses_id'])){
     </div>
     <section class="framePrincipal2 extraModNoPremium">
         <div class="divLogo">
-           <img src="../img/logo.svg" alt="logoSoundBOX">
+           <img src="../img/logoForms.PNG" alt="logoSoundBOX">
         </div>
         <h1>Afegir cançó</h1>
         <form action="controlador/guardar_archivos.php" method="post" enctype="multipart/form-data">

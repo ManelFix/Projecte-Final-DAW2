@@ -23,7 +23,7 @@
     </div>
     <section class="framePrincipal espaiPlaylist">
         <div class="divLogo">
-           <img src="../img/logo.svg" alt="logoSoundBOX">
+            <img src="../img/logoForms.PNG" alt="logoSoundBOX">
         </div>
         <h1>Nova Playlist</h1>
         <form method="post">

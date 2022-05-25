@@ -42,8 +42,8 @@
   <div class="container-scroller">
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row menuFons">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center noFonsColor">
-        <a class="navbar-brand brand-logo mr-5"><img src="../img/logo.svg" class="mr-2" alt="logoSoundBOX"/></a>
-        <a class="navbar-brand brand-logo-mini"><img src="../img/logo.svg" alt="logoSoundBOX"/></a>
+        <a class="navbar-brand brand-logo mr-5"><img src="../img/logoAC.PNG" class="mr-2 logoSoundBox" alt="logoSoundBOX"/></a>
+        <a class="navbar-brand brand-logo-mini"><img src="../img/logoMini.PNG" class="logoMiniSoundBox" alt="logoSoundBOX"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end noFonsColor">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -109,7 +109,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link efecteHoverMenu" href="usuaris.php">
+            <a class="nav-link efecteHoverMenu" href="artistes.php">
               <img src="../img/iconaArtist.svg" class="iconaArtista estilIcones iconPers" alt="iconaArtista">
               <span class="menu-title textSidebar">Usuaris</span>
             </a>
@@ -209,7 +209,7 @@
                 <span id="current-time">0:00</span>
                 <input type="range" id="seek-slider" max="100" value="0">
                 <span id="duration">0:00</span>
-                <input type="range" id="volume-slider" max="100" value="50">
+                <input type="range" id="volume-slider" max="100" value="80">
                 <button class="mute-button unmuted" id="mute"><span id="iconoAudio" class="fa-solid fa-volume-high mute-icon"></span></button>
               </div>
             </div>
