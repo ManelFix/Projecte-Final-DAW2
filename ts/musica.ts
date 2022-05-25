@@ -101,7 +101,7 @@ function mostrarMusica(){
                 newSpan.value = ruta;
                 newSpan.alt = artistaCanço;
                 newSpan.required = nomCanço;
-                newSpan.onclick= function(){reproduirCanço(this, idCanço);};
+                newSpan.onclick= function(){reproduirCanço(this);};
                 var newA:any = document.createElement("a");
                 newA.href = ruta;
                 newA.download = nomCanço;
@@ -591,7 +591,7 @@ function llistesCarregades(){
 
 function afegirPlaylist(){
     var idLlista:any = document.getElementById("llistatPlaylist").value;
-    var idCanço:any = document.getElementById("idHidden").value;
+    var idCançoo:any = document.getElementById("idHidden").value;
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -601,7 +601,7 @@ function afegirPlaylist(){
     xhttp.onreadystatechange = cançoAfegidaPlaylist;
     xhttp.open('POST', '../php/controlador/afegirCançoAPlaylist.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idL="+idLlista+"&"+"idC="+idCanço);
+    xhttp.send("idL="+idLlista+"&"+"idC="+idCançoo);
 }
 
 function cançoAfegidaPlaylist(){
@@ -612,7 +612,6 @@ function cançoAfegidaPlaylist(){
         }
         else{
             alert("Cançó afegida a la playlist");
-            
         }
     }
 }
