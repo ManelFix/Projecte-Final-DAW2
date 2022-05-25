@@ -3,33 +3,25 @@ session_start();
  
 if (isset($_SESSION['ses_id'])) {
     if ($_SESSION["ban"] == 0) {
+        
         include("BBDD.php");
 
         $connexio = sql();
 
         header("Content-Type: application/xml");
 
-        $sql = "SELECT usr.id_usuari,usr.nom_usuari,usr.imatge,usr.tipus FROM usuari usr left join seguiment_usuari seg ON (usr.id_usuari = seg.id_seguit) WHERE seg.id_usuari = ".$_SESSION['ses_id']."";
+        $sql = "SELECT can.id_canço,can.nom_canço, can.nom_guardat,can.tipus,can.artista FROM canço can left join valoració_canço val ON (can.id_canço = val.id_canço) WHERE val.id_usuari =".$_SESSION['ses_id']."";
 
         $res = mysqli_query($connexio, $sql);
 
         while ($fila = mysqli_fetch_assoc($res)) {
 
-            $elementos_xml[] = "<seguido><id_usuari>" . $fila['id_usuari'] . "</id_usuari><nom_usuari>" . $fila['nom_usuari'] . "</nom_usuari><imatge>data: ".$fila['tipus'].";base64,".base64_encode($fila["imatge"])."</imatge><tipus>".$fila['tipus']."</tipus></seguido>";
+            $elementos_xml[] = "<seguido><id_canço>".$fila['id_canço']."</id_canço><nom_canço>".$fila['nom_canço']."</nom_canço><nom_guardat>".$fila['nom_guardat']."</nom_guardat><tipus>".$fila['tipus']."</tipus><artista>".$fila['artista']."</artista></seguido>";
 
         }
 
-        $sql = "SELECT usr.id_usuari,usr.nom_usuari,usr.imatge,usr.tipus FROM usuari usr WHERE usr.id_usuari NOT IN ((SELECT usr.id_usuari FROM usuari usr left join seguiment_usuari seg ON (usr.id_usuari = seg.id_seguit) WHERE seg.id_usuari = ".$_SESSION['ses_id']."))";
+        echo "<canciones>\n" . implode("\n", $elementos_xml) . "</canciones>";
 
-        $res = mysqli_query($connexio, $sql);
-
-        while ($fila = mysqli_fetch_assoc($res)) {
-
-            $elementos_xml[] = "<otros><id_usuari>" . $fila['id_usuari'] . "</id_usuari><nom_usuari>" . $fila['nom_usuari'] . "</nom_usuari><imatge>data: ".$fila['tipus'].";base64,".base64_encode($fila["imatge"])."</imatge><tipus>".$fila['tipus']."</tipus></otros>";
-        
-        }
-
-        echo "<usuarios>\n" . implode("\n", $elementos_xml) . "</usuarios>";
     } else {
         header('Location: .php');
     } 

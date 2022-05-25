@@ -8,8 +8,9 @@ if (isset($_SESSION['ses_id'])) {
 
     $connexio = sql();
 
-    $sql="DELETE FROM seguiment_usuari seg WHERE seg.id_usuari =".$_SESSION['ses_id']." AND seg.id_seguit = ".$_POST['word']."";
-    $res = mysqli_query($connexio, $sql); 
+    $sql = "INSERT INTO valoració_canço(id_usuari, id_canço) VALUES (".$_SESSION['ses_id'].",".$_POST["word"].")";
+
+    $res = mysqli_query($connexio, $sql);
 
     echo 1;
   } else {
