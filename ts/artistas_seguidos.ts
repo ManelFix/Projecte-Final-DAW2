@@ -16,7 +16,6 @@ function artistas_seguidos(id: number) {
 
             } else {
                 var select = xmlhttp.responseXML;
-                console.log(select);
 
                 var select2 = select.getElementsByTagName("seguido");
 
@@ -45,6 +44,7 @@ function artistas_seguidos(id: number) {
                 document.getElementById("todos_los_artistas")?.innerHTML = no_seguidos;
 
             }
+            agafarImatgeUsuari(localStorage.getItem("idUsuariSoundBox"));
         }
     };
     xmlhttp.open("GET", "../php/controlador/artistas_seguidos.php", true);
@@ -94,4 +94,34 @@ function dejar_de_seguir(numeros: any) {
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("word=" + numeros);
 
+}
+
+var xhttp:any;
+
+function agafarImatgeUsuari(idUsuari:any){
+    localStorage.setItem("idUsuariSoundBox", idUsuari);
+    if (window.XMLHttpRequest) {
+        xhttp = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject) {
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhttp.onreadystatechange = mostrarImatgeUsuari;
+    xhttp.open('POST', '../php/controlador/agafarImatgeU.php', true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("idCompte="+idUsuari);
+}
+
+function mostrarImatgeUsuari(){
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+        var rutaImatge:any = xhttp.responseText.replace(/\s+/g, '');
+        var arrOpcions:any = rutaImatge.split('.');
+        if(arrOpcions[0] == 0){
+            document.getElementById("iconaUsuari").src = "../img/defaultUser.svg";
+        }
+        else{
+            document.getElementById("iconaUsuari").src = arrOpcions[0];
+            document.getElementById("iconaUsuari")?.classList.add("iconaPerfil");
+        }
+    }
 }

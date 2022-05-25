@@ -101,8 +101,8 @@ function mostrarMusica() {
                 newSpan.value = ruta;
                 newSpan.alt = artistaCanço;
                 newSpan.required = nomCanço;
-                newSpan.onclick = function () { reproduirCanço(this, idCanço); };
-                var newA: any = document.createElement("a");
+                newSpan.onclick= function(){reproduirCanço(this);};
+                var newA:any = document.createElement("a");
                 newA.href = ruta;
                 newA.download = nomCanço;
                 var newSpan2: any = document.createElement("span");
@@ -147,9 +147,12 @@ function mostrarMusica() {
                     var textP3: any = document.createTextNode("M'agrada");
                 }
                 newP3.appendChild(textP3);
-                var newA4: any = document.createElement("a");
+                var newA4:any = document.createElement("a");
+                newA4.setAttribute("data-toggle", "modal");
+                newA4.setAttribute("data-target", "#exampleModal");
                 newA4.classList.add("dropdown-item", "opcioMenuAccio");
-                var newSpan5: any = document.createElement("span");
+                newA4.onclick=function(){carregarSelectPlaylist(this, localStorage.getItem("idUsuariSoundBox"));}
+                var newSpan5:any = document.createElement("span");
                 newSpan5.classList.add("bx", "bx-add-to-queue", "text-primary", "colIcona", "midaIcones");
                 var newP4: any = document.createElement("p");
                 newP4.classList.add("txtOpcionsUser");
@@ -230,9 +233,12 @@ function mostrarMusica() {
                     var textP3: any = document.createTextNode("M'agrada");
                 }
                 newP3.appendChild(textP3);
-                var newA4: any = document.createElement("a");
+                var newA4:any = document.createElement("a");
+                newA4.setAttribute("data-toggle", "modal");
+                newA4.setAttribute("data-target", "#exampleModal");
                 newA4.classList.add("dropdown-item", "opcioMenuAccio");
-                var newSpan5: any = document.createElement("span");
+                newA4.onclick=function(){carregarSelectPlaylist(this, localStorage.getItem("idUsuariSoundBox"));}
+                var newSpan5:any = document.createElement("span");
                 newSpan5.classList.add("bx", "bx-add-to-queue", "text-primary", "colIcona", "midaIcones");
                 var newP4: any = document.createElement("p");
                 newP4.classList.add("txtOpcionsUser");
@@ -348,9 +354,12 @@ function mostrarMusica() {
                     var textP3: any = document.createTextNode("M'agrada");
                 }
                 newP3.appendChild(textP3);
-                var newA4: any = document.createElement("a");
+                var newA4:any = document.createElement("a");
+                newA4.setAttribute("data-toggle", "modal");
+                newA4.setAttribute("data-target", "#exampleModal");
                 newA4.classList.add("dropdown-item", "opcioMenuAccio");
-                var newSpan5: any = document.createElement("span");
+                newA4.onclick=function(){carregarSelectPlaylist(this, localStorage.getItem("idUsuariSoundBox"));}
+                var newSpan5:any = document.createElement("span");
                 newSpan5.classList.add("bx", "bx-add-to-queue", "text-primary", "colIcona", "midaIcones");
                 var newP4: any = document.createElement("p");
                 newP4.classList.add("txtOpcionsUser");
@@ -434,7 +443,12 @@ function mostrarMusica() {
                 newP3.appendChild(textP3);
                 var newA4: any = document.createElement("a");
                 newA4.classList.add("dropdown-item", "opcioMenuAccio");
-                var newSpan5: any = document.createElement("span");
+                newA4.value = idCanço;
+                newA4.setAttribute("data-toggle", "modal");
+                newA4.setAttribute("data-target", "#exampleModal");
+                newA4.onclick=function(){carregarSelectPlaylist(this, localStorage.getItem("idUsuariSoundBox"));}
+
+                var newSpan5:any = document.createElement("span");
                 newSpan5.classList.add("bx", "bx-add-to-queue", "text-primary", "colIcona", "midaIcones");
                 var newP4: any = document.createElement("p");
                 newP4.classList.add("txtOpcionsUser");
@@ -542,9 +556,69 @@ function tincLike() {
     }
 }
 
-function buscarNomCanço(nom: any) {
-    var textBuscar: any = document.getElementById("buscarNom").value;
-    var catMinus: any = nom.toLowerCase();
+function carregarSelectPlaylist(idCanço:any, idUsuari:any){
+    if (window.XMLHttpRequest) {
+        xhttp = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject) {
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhttp.onreadystatechange = llistesCarregades;
+    xhttp.open('POST', '../php/controlador/carregarTotesPlaylist.php', true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("idU="+idUsuari+"&"+"idC="+idCanço.value);
+}
+
+function llistesCarregades(){
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+        xmlDoc = xhttp.responseXML;
+        var divPare:any = document.getElementById("llistatPlaylist");
+        var numP:any = xmlDoc.getElementsByTagName("playlist");
+        for(var i:number = 0; i < numP.length; i++){
+            var idLlista:any = numP[i].getElementsByTagName("id_llista")[0].childNodes[0].nodeValue;
+            var titolLlista:any = numP[i].getElementsByTagName("titol")[0].childNodes[0].nodeValue;
+            var idCanço:any = numP[i].getElementsByTagName("idCanço")[0].childNodes[0].nodeValue;
+            document.getElementById("idHidden").value = idCanço;
+            var newOption:any = document.createElement("option");
+            newOption.value = idLlista;
+            var textOption:any = document.createTextNode(titolLlista);
+            newOption.appendChild(textOption);
+            divPare.appendChild(newOption);
+            
+        }
+    }
+}
+
+function afegirPlaylist(){
+    var idLlista:any = document.getElementById("llistatPlaylist").value;
+    var idCançoo:any = document.getElementById("idHidden").value;
+    if (window.XMLHttpRequest) {
+        xhttp = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject) {
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhttp.onreadystatechange = cançoAfegidaPlaylist;
+    xhttp.open('POST', '../php/controlador/afegirCançoAPlaylist.php', true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("idL="+idLlista+"&"+"idC="+idCançoo);
+}
+
+function cançoAfegidaPlaylist(){
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+        var resultatPlaylist:any = xhttp.responseText;
+        if(resultatPlaylist == -1){
+            alert("Aquesta cançó ja està en la playlist");
+        }
+        else{
+            alert("Cançó afegida a la playlist");
+        }
+    }
+}
+
+function buscarNomCanço(nom:any){
+    var textBuscar:any = document.getElementById("buscarNom").value;
+    var catMinus:any = nom.toLowerCase();
 
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();

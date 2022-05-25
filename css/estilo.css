@@ -37,9 +37,11 @@ body{
 }
 
 .divLogoPrincipal img{
-    width: 5.5em;
-    margin-top: 13px;
+    width: 6.5em;
+    margin-top: -9px;
     margin-left: 20px;
+    position: relative;
+    top: 10px;
 }
 
 .menu ul li{
@@ -216,9 +218,16 @@ body{
     height: 100%;
 }
 
+.seccioMostra{
+    margin-left: 190px; 
+   
+}
+
 .divMostra{
     text-align: center;
-    margin: 45px auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: -20px;
 }
 
 .divMostra h2{
@@ -227,44 +236,11 @@ body{
     font-size: 2.8em;
 }
 
-.divMostra p, .escoltaMes p {
+.divMostra p{
     color: white;
     font-family: 'Inter', sans-serif;
     font-size: 1.1em;
-    margin-top: 20px;
-}
-
-.escoltaMes {
-    padding: 20px;
-    text-align: center;
-}
-
-.divCategoria {
-    position: relative;
-}
-
-.media-body {
-    width: auto;
-}
-
-.btnEscoltaMes {
-    height: 45px;
-    margin: 10px auto 20px auto;
-    padding: 1em;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.2em;
-    text-transform: uppercase;
-    background-color: #F7AD19;
-    border-color: #F7AD19;
-    border-style: solid;
-    border-radius: 10px;
-    width: 300px;
-    cursor: pointer;
-    color: #fff;
-}
-
-.mostraRow {
-    padding: 20px;
+    margin-right: 10px;
 }
 
 .btnCatalegPrincipal{
@@ -326,11 +302,15 @@ body{
     margin-left: 10px;
     color: white;
     padding: 0.5em;
-    width: fit-content;
+    width: 13.5em;
     font-weight: bold;
     position: relative;
     top: 10px;
     margin-bottom: 40px;
+}
+
+.textAmplada{
+    width: 15em;
 }
 
 .pla1 h3{
@@ -569,7 +549,7 @@ footer span{
 .framePrincipal{
     margin: auto;
     width: 36em;
-    height: 38em;
+    height: 39em;
     background: rgba(17, 81, 113, 0.78);
     border-radius: 10px;
     margin-top: 70px;
@@ -580,8 +560,12 @@ footer span{
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    padding-top: 30px;
-    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.divLogo img{
+    height: auto !important;
+    width: 16em !important;
 }
 
 .framePrincipal h1{
@@ -681,7 +665,7 @@ footer span{
 .framePrincipal2{
     margin: auto;
     width: 36em;
-    height: 48em;
+    height: 49em;
     background: rgba(17, 81, 113, 0.78);
     border-radius: 10px;
     margin-top: 25px;
@@ -852,7 +836,7 @@ footer span{
 }
 
 #volume-slider-chrome {
-    background: linear-gradient(to right, #F7AD19 0%, #F7AD19 50%, #fff 50%, #fff 100%);
+    background: linear-gradient(to right, rgb(247, 173, 25) 0%, rgb(247, 173, 25) 92%, rgb(255, 255, 255) 92%, white 100%);    border: none;
     border: none;
     border-radius: 8px;
     height: 8px;
@@ -930,7 +914,24 @@ footer span{
   background: #fff;
 }
 /* FIN BARRA DURACIÓN / BARRA VOLUMEN */
+
 /* FIN AUDIO PLAYER */
+
+.escoltaMes {
+    text-align: center;
+}
+
+.btnEscoltaMes {
+    height: 45px;
+    margin: 10px auto 20px auto;
+    text-transform: uppercase;
+    background-color: #F7AD19;
+    border-color: #F7AD19;
+    border-style: solid;
+    border-radius: 10px;
+    width: 300px;
+    cursor: pointer;
+}
 
 /* Web Afegir Canço */
 

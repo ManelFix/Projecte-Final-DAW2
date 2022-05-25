@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Nunito&family=Open+Sans:wght@500&family=Poppins&display=swap');
 
+
 .menuFons{
     background-color: #121216 !important;
     box-shadow: 0px 5px 6px -5px #2b3147;
@@ -7,6 +8,16 @@
 
 .noFonsColor{
     background: none !important;
+}
+
+.logoSoundBox{
+    height: auto !important;
+    width: 3.5em;
+}
+
+.logoMiniSoundBox{
+    height: auto !important;
+    width: 3.4em !important;
 }
 
 .sidebarColorFons{
@@ -654,8 +665,7 @@
 }
 
 #volume-slider-chrome {
-    background: linear-gradient(to right, #F7AD19 0%, #F7AD19 50%, #fff 50%, #fff 100%);
-    border: none;
+    background: linear-gradient(to right, rgb(247, 173, 25) 0%, rgb(247, 173, 25) 92%, rgb(255, 255, 255) 92%, white 100%);    border: none;
     border-radius: 8px;
     height: 8px;
     width: 14%;
@@ -773,4 +783,83 @@
     margin-left: 15px;
     position: relative;
     bottom: 7px;
+}
+
+.btnEspaiD{
+    margin-right: 20px;
+}
+
+/* Modal */
+
+.modalPlaylist{
+    background-color: #121216;
+    border-color: #121216;
+    border-radius: 10px;
+}
+
+.tancarModal{
+    color: #429EBD !important;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10px;
+    font-size: 2em !important;
+}
+
+.cosModal{
+    padding-bottom: 0px !important;
+}
+
+.labelModal{
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-size: 1.1em !important;
+    margin-bottom: 0.8em !important;
+}
+
+.selectModal{
+    color: #9FE7F5 !important;
+    font-family: 'Inter', sans-serif;
+    font-size: 1em !important;
+    background-color: #191922!important;
+    border: none !important;
+}
+
+.liniaModal{
+    width: 90%;
+    background-color: #053F5C;
+}
+
+.modalFinal{
+    border: none;
+}
+
+.btnTancarModal{
+    background-color: #053F5C !important;
+    border: none !important;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+}
+
+.btnSeleccionarModal{
+    background-color: #F7AD19 !important;
+    font-family: 'Inter', sans-serif !important;
+    border: none !important;
+    font-size: 1em !important;
+}
+
+/*Fi Modal*/
+
+/*Coses extra*/
+
+.extraEspai{
+    padding-bottom: 4.375rem;
+}
+
+.iconaPerfil{
+    height: auto !important; 
+    width: 3.5rem !important;
 }

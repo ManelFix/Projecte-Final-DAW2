@@ -98,7 +98,7 @@ function mostrarMusica() {
                 newSpan.value = ruta;
                 newSpan.alt = artistaCanço;
                 newSpan.required = nomCanço;
-                newSpan.onclick = function () { reproduirCanço(this, idCanço); };
+                newSpan.onclick = function () { reproduirCanço(this); };
                 var newA = document.createElement("a");
                 newA.href = ruta;
                 newA.download = nomCanço;
@@ -144,7 +144,10 @@ function mostrarMusica() {
                 }
                 newP3.appendChild(textP3);
                 var newA4 = document.createElement("a");
+                newA4.setAttribute("data-toggle", "modal");
+                newA4.setAttribute("data-target", "#exampleModal");
                 newA4.classList.add("dropdown-item", "opcioMenuAccio");
+                newA4.onclick = function () { carregarSelectPlaylist(this, localStorage.getItem("idUsuariSoundBox")); };
                 var newSpan5 = document.createElement("span");
                 newSpan5.classList.add("bx", "bx-add-to-queue", "text-primary", "colIcona", "midaIcones");
                 var newP4 = document.createElement("p");
@@ -225,7 +228,10 @@ function mostrarMusica() {
                 }
                 newP3.appendChild(textP3);
                 var newA4 = document.createElement("a");
+                newA4.setAttribute("data-toggle", "modal");
+                newA4.setAttribute("data-target", "#exampleModal");
                 newA4.classList.add("dropdown-item", "opcioMenuAccio");
+                newA4.onclick = function () { carregarSelectPlaylist(this, localStorage.getItem("idUsuariSoundBox")); };
                 var newSpan5 = document.createElement("span");
                 newSpan5.classList.add("bx", "bx-add-to-queue", "text-primary", "colIcona", "midaIcones");
                 var newP4 = document.createElement("p");
@@ -337,7 +343,10 @@ function mostrarMusica() {
                 }
                 newP3.appendChild(textP3);
                 var newA4 = document.createElement("a");
+                newA4.setAttribute("data-toggle", "modal");
+                newA4.setAttribute("data-target", "#exampleModal");
                 newA4.classList.add("dropdown-item", "opcioMenuAccio");
+                newA4.onclick = function () { carregarSelectPlaylist(this, localStorage.getItem("idUsuariSoundBox")); };
                 var newSpan5 = document.createElement("span");
                 newSpan5.classList.add("bx", "bx-add-to-queue", "text-primary", "colIcona", "midaIcones");
                 var newP4 = document.createElement("p");
@@ -418,6 +427,10 @@ function mostrarMusica() {
                 newP3.appendChild(textP3);
                 var newA4 = document.createElement("a");
                 newA4.classList.add("dropdown-item", "opcioMenuAccio");
+                newA4.value = idCanço;
+                newA4.setAttribute("data-toggle", "modal");
+                newA4.setAttribute("data-target", "#exampleModal");
+                newA4.onclick = function () { carregarSelectPlaylist(this, localStorage.getItem("idUsuariSoundBox")); };
                 var newSpan5 = document.createElement("span");
                 newSpan5.classList.add("bx", "bx-add-to-queue", "text-primary", "colIcona", "midaIcones");
                 var newP4 = document.createElement("p");
@@ -510,6 +523,61 @@ function tincLike() {
             (_e = document.getElementById(arrOpcions[0])) === null || _e === void 0 ? void 0 : _e.firstChild.classList.add("bx-dislike");
             (_f = document.getElementById(arrOpcions[0])) === null || _f === void 0 ? void 0 : _f.lastChild.innerHTML = "No m'agrada";
             alert("Cançó afegida a m'agrada");
+        }
+    }
+}
+function carregarSelectPlaylist(idCanço, idUsuari) {
+    if (window.XMLHttpRequest) {
+        xhttp = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject) {
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhttp.onreadystatechange = llistesCarregades;
+    xhttp.open('POST', '../php/controlador/carregarTotesPlaylist.php', true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("idU=" + idUsuari + "&" + "idC=" + idCanço.value);
+}
+function llistesCarregades() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+        xmlDoc = xhttp.responseXML;
+        var divPare = document.getElementById("llistatPlaylist");
+        var numP = xmlDoc.getElementsByTagName("playlist");
+        for (var i = 0; i < numP.length; i++) {
+            var idLlista = numP[i].getElementsByTagName("id_llista")[0].childNodes[0].nodeValue;
+            var titolLlista = numP[i].getElementsByTagName("titol")[0].childNodes[0].nodeValue;
+            var idCanço = numP[i].getElementsByTagName("idCanço")[0].childNodes[0].nodeValue;
+            document.getElementById("idHidden").value = idCanço;
+            var newOption = document.createElement("option");
+            newOption.value = idLlista;
+            var textOption = document.createTextNode(titolLlista);
+            newOption.appendChild(textOption);
+            divPare.appendChild(newOption);
+        }
+    }
+}
+function afegirPlaylist() {
+    var idLlista = document.getElementById("llistatPlaylist").value;
+    var idCançoo = document.getElementById("idHidden").value;
+    if (window.XMLHttpRequest) {
+        xhttp = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject) {
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhttp.onreadystatechange = cançoAfegidaPlaylist;
+    xhttp.open('POST', '../php/controlador/afegirCançoAPlaylist.php', true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("idL=" + idLlista + "&" + "idC=" + idCançoo);
+}
+function cançoAfegidaPlaylist() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+        var resultatPlaylist = xhttp.responseText;
+        if (resultatPlaylist == -1) {
+            alert("Aquesta cançó ja està en la playlist");
+        }
+        else {
+            alert("Cançó afegida a la playlist");
         }
     }
 }

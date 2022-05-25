@@ -5,7 +5,7 @@
 
     $idPlaylist = $_POST["idP"];
 
-    $sql = "SELECT * FROM canço WHERE id_llista = '".$idPlaylist."'";
+    $sql = "SELECT * FROM canço WHERE id_canço IN (SELECT id_canço FROM pertenencia WHERE id_llista = '".$idPlaylist."')";
     $r = mysqli_query($connexio,$sql);
     
     while($fila = mysqli_fetch_assoc($r)){

@@ -4,9 +4,8 @@
     $connexio=sql();
 
     $idLlista = $_POST["idL"];
-    $idUsuari = $_POST["idU"];
 
-    $sql = "SELECT * FROM canço WHERE id_llista = '".$idLlista."' AND id_usuari = '".$idUsuari."'";
+    $sql = "SELECT * FROM canço WHERE id_canço IN (SELECT id_canço FROM pertenencia WHERE id_llista = '".$idLlista."');";
     $r = mysqli_query($connexio,$sql);
     
     while($fila = mysqli_fetch_assoc($r)){

@@ -4,7 +4,13 @@
   $idUsuari = $_SESSION["ses_id"];
   $idLlista = $_GET["idL"];
   $nomLlista = $_GET["nomL"];
-  //Controlar que no es fiqui una altre persona.
+
+  $resultat = include('controlador/controlarPlaylist.php');
+
+  if($resultat == 0){
+    header('Location: mevaMusica.php');
+  }
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -29,8 +35,8 @@
   <div class="container-scroller">
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row menuFons">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center noFonsColor">
-        <a class="navbar-brand brand-logo mr-5"><img src="../img/logo.svg" class="mr-2" alt="logoSoundBOX"/></a>
-        <a class="navbar-brand brand-logo-mini"><img src="../img/logo.svg" alt="logoSoundBOX"/></a>
+        <a class="navbar-brand brand-logo mr-5"><img src="../img/logoAC.PNG" class="mr-2 logoSoundBox" alt="logoSoundBOX"/></a>
+        <a class="navbar-brand brand-logo-mini"><img src="../img/logoMini.PNG" class="logoMiniSoundBox" alt="logoSoundBOX"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end noFonsColor">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -96,7 +102,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link efecteHoverMenu" href="usuaris.php">
+            <a class="nav-link efecteHoverMenu" href="artistes.php">
               <img src="../img/iconaArtist.svg" class="iconaArtista estilIcones iconPers" alt="iconaArtista">
               <span class="menu-title textSidebar">Usuaris</span>
             </a>
@@ -110,7 +116,7 @@
         </ul>
       </nav>
       <div class="main-panel">
-        <div class="content-wrapper mainCFons">
+        <div class="content-wrapper mainCFons extraEspai">
           <div class="row">
             <div class="col-md-12 grid-margin">
               <div class="row">
@@ -179,33 +185,7 @@
                           <th>Acció</th>
                         </tr>
                       </thead>
-                      <tbody id="contingutTaulaMusica">
-                        <tr>
-                          <td class="py-1 font-weight-bold">Enough</td>
-                          <td>Pop</td>
-                          <td>Dramàtic</td>
-                          <td>16/05/2022</td>
-                          <td class="nav-item nav-profile dropdown">
-                            <a href="#" data-toggle="dropdown" id="profileDropdown">
-                              <span class='bx bx-dots-vertical-rounded iconaAccio'></span>
-                            </a>
-                            <div class="dropdown-menu menuAccio">
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-trash text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Eliminar</p>
-                              </a>
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bxs-download text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Descarregar</p>
-                              </a>
-                              <a class="dropdown-item opcioMenuAccio">
-                                <span class='bx bx-play-circle text-primary colIcona midaIcones'></span>
-                                <p class="txtOpcionsUser">Reproduïr</p>
-                              </a>
-                            </div>
-                          </td>
-                        </tr>                                            
-                      </tbody>
+                      <tbody id="contingutTaulaMusica"></tbody>
                     </table>
                   </div>
                 </div>
@@ -243,4 +223,3 @@
   <script src="../js/bootstrap.js" crossorigin="anonymous"></script>
 </body>
 </html>
-
