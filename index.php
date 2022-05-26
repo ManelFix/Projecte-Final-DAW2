@@ -38,7 +38,7 @@
                         <li><a href="#contacte">Contacte</a></li>
                         <div class="divBotonsNav">
                             <a href="php/login.php" class="botonsIR estilbtnLogin">Iniciar sessió</a>
-                            <a href="php/register.php" class="botonsIR btnRegistrat estilbtnLogin2">Registrat ja</a>
+                            <a href="php/register.php" class="botonsIR btnRegistrat estilbtnLogin2">Registra't ja</a>
                         </div>
                     </ul>
                 </div>
