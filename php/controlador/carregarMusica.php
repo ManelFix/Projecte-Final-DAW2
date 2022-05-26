@@ -1,11 +1,15 @@
 <?php
+    session_start();
+    if (isset($_SESSION['ses_id'])) {
+      if ($_SESSION["ban"] == 0) {
+    
     header("Content-Type: application/xml");    
     include("BBDD.php");  
     $connexio=sql();
 
     $categoria = $_POST["cat"];
     $premium = $_POST["tip"];
-    $usuari = $_POST["idU"];
+    $usuari = $_SESSION['ses_id'];
 
     if($premium == 1){
         if($categoria == "prèmium"){
@@ -23,7 +27,7 @@
     }
     
     while($fila = mysqli_fetch_assoc($r)){
-        $elementos_xml[] = "<musica>\n<id_canço>$fila[id_canço]</id_canço>\n<nom_canço>$fila[nom_canço]</nom_canço>\n<nom_guardat>$fila[nom_guardat]</nom_guardat>\n<tipus>$fila[tipus]</tipus>\n<artista>$fila[artista]</artista>\n<click>$fila[click]</click>\n<premium>$fila[premium]</premium>\n</musica>";                                                
+        $elementos_xml[] = "<musica><id_canço>$fila[id_canço]</id_canço><nom_canço>$fila[nom_canço]</nom_canço><nom_guardat>$fila[nom_guardat]</nom_guardat><tipus>$fila[tipus]</tipus><artista>$fila[artista]</artista><click>$fila[click]</click><premium>$fila[premium]</premium></musica>";                                                
     }
     
     if($premium == 1){
@@ -42,7 +46,7 @@
     }
 
     while($fila2 = mysqli_fetch_assoc($r2)){
-        $elementos_xml[] = "<musica2>\n<id_canço>$fila2[id_canço]</id_canço>\n<nom_canço>$fila2[nom_canço]</nom_canço>\n<nom_guardat>$fila2[nom_guardat]</nom_guardat>\n<tipus>$fila2[tipus]</tipus>\n<artista>$fila2[artista]</artista>\n<click>$fila2[click]</click>\n<premium>$fila2[premium]</premium>\n</musica2>";                                                
+        $elementos_xml[] = "<musica2><id_canço>$fila2[id_canço]</id_canço><nom_canço>$fila2[nom_canço]</nom_canço><nom_guardat>$fila2[nom_guardat]</nom_guardat><tipus>$fila2[tipus]</tipus><artista>$fila2[artista]</artista><click>$fila2[click]</click><premium>$fila2[premium]</premium></musica2>";                                                
     }
     
     $sql3 = "SELECT * FROM valoracio_canço WHERE id_usuari = '".$usuari."'";
@@ -55,4 +59,11 @@
     echo "<Cançons>\n".implode("\n", $elementos_xml)."\n</Cançons>";
 
     mysqli_close($connexio);
+} else {
+    header('Location: .php');
+} 
+} else {
+header('Location: ../login.php');
+}
+
 ?>

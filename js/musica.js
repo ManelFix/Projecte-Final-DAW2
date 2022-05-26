@@ -14,7 +14,7 @@ function carregarMusica(nom) {
     xhttp.onreadystatechange = mostrarMusica;
     xhttp.open('POST', '../php/controlador/carregarMusica.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("cat=" + catMinus + "&" + "tip=" + tipusUsuari + "&" + "idU=" + localStorage.getItem("idUsuariSoundBox"));
+    xhttp.send("cat=" + catMinus + "&" + "tip=" + tipusUsuari + "&");
 }
 function mostrarMusica() {
     var _a;
@@ -123,24 +123,25 @@ function mostrarMusica() {
                 var newP3 = document.createElement("p");
                 newP3.classList.add("txtOpcionsUser");
                 //var textP3:any = document.createTextNode("M'agrada");
-                var arrayID = new Array();
+                var likeado = 0;
                 for (var z = 0; z < like.length; z++) {
-                    var id_canço = like[z].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue;
-                    arrayID.push(id_canço);
-                }
-                if (arrayID[0] == idCanço) {
-                    if (newSpan4.classList.contains("bx-like")) {
-                        newSpan4.classList.remove("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                    if (like[z].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue == idCanço) {
+                        if (newSpan4.classList.contains("bx-like")) {
+                            newSpan4.classList.remove("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                        }
+                        newSpan4.classList.add("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
+                        var textP3 = document.createTextNode("No m'agrada");
+                        z = like.length;
+                        likeado++;
                     }
-                    newSpan4.classList.add("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
-                    var textP3 = document.createTextNode("No m'agrada");
                 }
-                else {
+                if (likeado == 0) {
                     if (newSpan4.classList.contains("bx-dislike")) {
                         newSpan4.classList.remove("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
                     }
                     newSpan4.classList.add("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
                     var textP3 = document.createTextNode("M'agrada");
+                    z = like.length;
                 }
                 newP3.appendChild(textP3);
                 var newA4 = document.createElement("a");
@@ -207,24 +208,25 @@ function mostrarMusica() {
                 var newP3 = document.createElement("p");
                 newP3.classList.add("txtOpcionsUser");
                 //var textP3:any = document.createTextNode("M'agrada");
-                var arrayID = new Array();
+                var likeado = 0;
                 for (var z = 0; z < like.length; z++) {
-                    var id_canço = like[z].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue;
-                    arrayID.push(id_canço);
-                }
-                if (arrayID[0] == idCanço) {
-                    if (newSpan4.classList.contains("bx-like")) {
-                        newSpan4.classList.remove("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                    if (like[z].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue == idCanço) {
+                        if (newSpan4.classList.contains("bx-like")) {
+                            newSpan4.classList.remove("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                        }
+                        newSpan4.classList.add("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
+                        var textP3 = document.createTextNode("No m'agrada");
+                        z = like.length;
+                        likeado++;
                     }
-                    newSpan4.classList.add("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
-                    var textP3 = document.createTextNode("No m'agrada");
                 }
-                else {
+                if (likeado == 0) {
                     if (newSpan4.classList.contains("bx-dislike")) {
                         newSpan4.classList.remove("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
                     }
                     newSpan4.classList.add("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
                     var textP3 = document.createTextNode("M'agrada");
+                    z = like.length;
                 }
                 newP3.appendChild(textP3);
                 var newA4 = document.createElement("a");
@@ -322,24 +324,25 @@ function mostrarMusica() {
                 var newP3 = document.createElement("p");
                 newP3.classList.add("txtOpcionsUser");
                 //var textP3:any = document.createTextNode("M'agrada");
-                var arrayID = new Array();
+                var likeado = 0;
                 for (var z = 0; z < like.length; z++) {
-                    var id_canço = like[z].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue;
-                    arrayID.push(id_canço);
-                }
-                if (arrayID[0] == idCanço) {
-                    if (newSpan4.classList.contains("bx-like")) {
-                        newSpan4.classList.remove("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                    if (like[z].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue == idCanço) {
+                        if (newSpan4.classList.contains("bx-like")) {
+                            newSpan4.classList.remove("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                        }
+                        newSpan4.classList.add("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
+                        var textP3 = document.createTextNode("No m'agrada");
+                        z = like.length;
+                        likeado++;
                     }
-                    newSpan4.classList.add("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
-                    var textP3 = document.createTextNode("No m'agrada");
                 }
-                else {
+                if (likeado == 0) {
                     if (newSpan4.classList.contains("bx-dislike")) {
                         newSpan4.classList.remove("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
                     }
                     newSpan4.classList.add("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
                     var textP3 = document.createTextNode("M'agrada");
+                    z = like.length;
                 }
                 newP3.appendChild(textP3);
                 var newA4 = document.createElement("a");
@@ -406,23 +409,25 @@ function mostrarMusica() {
                 newP3.classList.add("txtOpcionsUser");
                 // var textP3:any = document.createTextNode("M'agrada");
                 var arrayID = new Array();
+                var likeado = 0;
                 for (var z = 0; z < like.length; z++) {
-                    var id_canço = like[z].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue;
-                    arrayID.push(id_canço);
-                }
-                if (arrayID[0] == idCanço) {
-                    if (newSpan4.classList.contains("bx-like")) {
-                        newSpan4.classList.remove("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                    if (like[z].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue == idCanço) {
+                        if (newSpan4.classList.contains("bx-like")) {
+                            newSpan4.classList.remove("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                        }
+                        newSpan4.classList.add("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
+                        var textP3 = document.createTextNode("No m'agrada");
+                        z = like.length;
+                        likeado++;
                     }
-                    newSpan4.classList.add("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
-                    var textP3 = document.createTextNode("No m'agrada");
                 }
-                else {
+                if (likeado == 0) {
                     if (newSpan4.classList.contains("bx-dislike")) {
                         newSpan4.classList.remove("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
                     }
                     newSpan4.classList.add("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
                     var textP3 = document.createTextNode("M'agrada");
+                    z = like.length;
                 }
                 newP3.appendChild(textP3);
                 var newA4 = document.createElement("a");

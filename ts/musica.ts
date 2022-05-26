@@ -14,7 +14,7 @@ function carregarMusica(nom: any) {
     xhttp.onreadystatechange = mostrarMusica;
     xhttp.open('POST', '../php/controlador/carregarMusica.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("cat=" + catMinus + "&" + "tip=" + tipusUsuari + "&" + "idU=" + localStorage.getItem("idUsuariSoundBox"));
+    xhttp.send("cat=" + catMinus + "&" + "tip=" + tipusUsuari + "&");
 }
 
 function mostrarMusica() {
@@ -101,8 +101,8 @@ function mostrarMusica() {
                 newSpan.value = ruta;
                 newSpan.alt = artistaCanço;
                 newSpan.required = nomCanço;
-                newSpan.onclick= function(){reproduirCanço(this);};
-                var newA:any = document.createElement("a");
+                newSpan.onclick = function () { reproduirCanço(this); };
+                var newA: any = document.createElement("a");
                 newA.href = ruta;
                 newA.download = nomCanço;
                 var newSpan2: any = document.createElement("span");
@@ -127,32 +127,40 @@ function mostrarMusica() {
                 var newP3: any = document.createElement("p");
                 newP3.classList.add("txtOpcionsUser");
                 //var textP3:any = document.createTextNode("M'agrada");
-                var arrayID: any = new Array();
+
+                var likeado = 0;
                 for (var z: number = 0; z < like.length; z++) {
-                    var id_canço: any = like[z].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue;
-                    arrayID.push(id_canço);
-                }
-                if (arrayID[0] == idCanço) {
-                    if (newSpan4.classList.contains("bx-like")) {
-                        newSpan4.classList.remove("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                    if (like[z].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue == idCanço) {
+                        if (newSpan4.classList.contains("bx-like")) {
+                            newSpan4.classList.remove("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                        }
+                        newSpan4.classList.add("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
+                        var textP3: any = document.createTextNode("No m'agrada");
+                        z = like.length
+                        likeado++;
                     }
-                    newSpan4.classList.add("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
-                    var textP3: any = document.createTextNode("No m'agrada");
                 }
-                else {
+                if (likeado == 0) {
                     if (newSpan4.classList.contains("bx-dislike")) {
                         newSpan4.classList.remove("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
                     }
                     newSpan4.classList.add("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
                     var textP3: any = document.createTextNode("M'agrada");
+                    z = like.length
+
                 }
+
+
+
+
+
                 newP3.appendChild(textP3);
-                var newA4:any = document.createElement("a");
+                var newA4: any = document.createElement("a");
                 newA4.setAttribute("data-toggle", "modal");
                 newA4.setAttribute("data-target", "#exampleModal");
                 newA4.classList.add("dropdown-item", "opcioMenuAccio");
-                newA4.onclick=function(){carregarSelectPlaylist(this, localStorage.getItem("idUsuariSoundBox"));}
-                var newSpan5:any = document.createElement("span");
+                newA4.onclick = function () { carregarSelectPlaylist(this, localStorage.getItem("idUsuariSoundBox")); }
+                var newSpan5: any = document.createElement("span");
                 newSpan5.classList.add("bx", "bx-add-to-queue", "text-primary", "colIcona", "midaIcones");
                 var newP4: any = document.createElement("p");
                 newP4.classList.add("txtOpcionsUser");
@@ -213,32 +221,36 @@ function mostrarMusica() {
                 var newP3: any = document.createElement("p");
                 newP3.classList.add("txtOpcionsUser");
                 //var textP3:any = document.createTextNode("M'agrada");
-                var arrayID: any = new Array();
+
+                var likeado = 0;
                 for (var z: number = 0; z < like.length; z++) {
-                    var id_canço: any = like[z].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue;
-                    arrayID.push(id_canço);
-                }
-                if (arrayID[0] == idCanço) {
-                    if (newSpan4.classList.contains("bx-like")) {
-                        newSpan4.classList.remove("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                    if (like[z].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue == idCanço) {
+                        if (newSpan4.classList.contains("bx-like")) {
+                            newSpan4.classList.remove("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                        }
+                        newSpan4.classList.add("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
+                        var textP3: any = document.createTextNode("No m'agrada");
+                        z = like.length
+                        likeado++;
                     }
-                    newSpan4.classList.add("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
-                    var textP3: any = document.createTextNode("No m'agrada");
                 }
-                else {
+                if (likeado == 0) {
                     if (newSpan4.classList.contains("bx-dislike")) {
                         newSpan4.classList.remove("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
                     }
                     newSpan4.classList.add("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
                     var textP3: any = document.createTextNode("M'agrada");
+                    z = like.length
+
                 }
+
                 newP3.appendChild(textP3);
-                var newA4:any = document.createElement("a");
+                var newA4: any = document.createElement("a");
                 newA4.setAttribute("data-toggle", "modal");
                 newA4.setAttribute("data-target", "#exampleModal");
                 newA4.classList.add("dropdown-item", "opcioMenuAccio");
-                newA4.onclick=function(){carregarSelectPlaylist(this, localStorage.getItem("idUsuariSoundBox"));}
-                var newSpan5:any = document.createElement("span");
+                newA4.onclick = function () { carregarSelectPlaylist(this, localStorage.getItem("idUsuariSoundBox")); }
+                var newSpan5: any = document.createElement("span");
                 newSpan5.classList.add("bx", "bx-add-to-queue", "text-primary", "colIcona", "midaIcones");
                 var newP4: any = document.createElement("p");
                 newP4.classList.add("txtOpcionsUser");
@@ -334,32 +346,34 @@ function mostrarMusica() {
                 var newP3: any = document.createElement("p");
                 newP3.classList.add("txtOpcionsUser");
                 //var textP3:any = document.createTextNode("M'agrada");
-                var arrayID: any = new Array();
+                var likeado = 0;
                 for (var z: number = 0; z < like.length; z++) {
-                    var id_canço: any = like[z].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue;
-                    arrayID.push(id_canço);
-                }
-                if (arrayID[0] == idCanço) {
-                    if (newSpan4.classList.contains("bx-like")) {
-                        newSpan4.classList.remove("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                    if (like[z].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue == idCanço) {
+                        if (newSpan4.classList.contains("bx-like")) {
+                            newSpan4.classList.remove("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                        }
+                        newSpan4.classList.add("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
+                        var textP3: any = document.createTextNode("No m'agrada");
+                        z = like.length
+                        likeado++;
                     }
-                    newSpan4.classList.add("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
-                    var textP3: any = document.createTextNode("No m'agrada");
                 }
-                else {
+                if (likeado == 0) {
                     if (newSpan4.classList.contains("bx-dislike")) {
                         newSpan4.classList.remove("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
                     }
                     newSpan4.classList.add("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
                     var textP3: any = document.createTextNode("M'agrada");
+                    z = like.length
+
                 }
                 newP3.appendChild(textP3);
-                var newA4:any = document.createElement("a");
+                var newA4: any = document.createElement("a");
                 newA4.setAttribute("data-toggle", "modal");
                 newA4.setAttribute("data-target", "#exampleModal");
                 newA4.classList.add("dropdown-item", "opcioMenuAccio");
-                newA4.onclick=function(){carregarSelectPlaylist(this, localStorage.getItem("idUsuariSoundBox"));}
-                var newSpan5:any = document.createElement("span");
+                newA4.onclick = function () { carregarSelectPlaylist(this, localStorage.getItem("idUsuariSoundBox")); }
+                var newSpan5: any = document.createElement("span");
                 newSpan5.classList.add("bx", "bx-add-to-queue", "text-primary", "colIcona", "midaIcones");
                 var newP4: any = document.createElement("p");
                 newP4.classList.add("txtOpcionsUser");
@@ -420,24 +434,26 @@ function mostrarMusica() {
                 newP3.classList.add("txtOpcionsUser");
                 // var textP3:any = document.createTextNode("M'agrada");
                 var arrayID: any = new Array();
+                var likeado = 0;
                 for (var z: number = 0; z < like.length; z++) {
-                    var id_canço: any = like[z].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue;
-                    arrayID.push(id_canço);
-                }
-
-                if (arrayID[0] == idCanço) {
-                    if (newSpan4.classList.contains("bx-like")) {
-                        newSpan4.classList.remove("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                    if (like[z].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue == idCanço) {
+                        if (newSpan4.classList.contains("bx-like")) {
+                            newSpan4.classList.remove("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                        }
+                        newSpan4.classList.add("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
+                        var textP3: any = document.createTextNode("No m'agrada");
+                        z = like.length
+                        likeado++;
                     }
-                    newSpan4.classList.add("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
-                    var textP3: any = document.createTextNode("No m'agrada");
                 }
-                else {
+                if (likeado == 0) {
                     if (newSpan4.classList.contains("bx-dislike")) {
                         newSpan4.classList.remove("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
                     }
                     newSpan4.classList.add("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
                     var textP3: any = document.createTextNode("M'agrada");
+                    z = like.length
+
                 }
 
                 newP3.appendChild(textP3);
@@ -446,9 +462,9 @@ function mostrarMusica() {
                 newA4.value = idCanço;
                 newA4.setAttribute("data-toggle", "modal");
                 newA4.setAttribute("data-target", "#exampleModal");
-                newA4.onclick=function(){carregarSelectPlaylist(this, localStorage.getItem("idUsuariSoundBox"));}
+                newA4.onclick = function () { carregarSelectPlaylist(this, localStorage.getItem("idUsuariSoundBox")); }
 
-                var newSpan5:any = document.createElement("span");
+                var newSpan5: any = document.createElement("span");
                 newSpan5.classList.add("bx", "bx-add-to-queue", "text-primary", "colIcona", "midaIcones");
                 var newP4: any = document.createElement("p");
                 newP4.classList.add("txtOpcionsUser");
@@ -556,7 +572,7 @@ function tincLike() {
     }
 }
 
-function carregarSelectPlaylist(idCanço:any, idUsuari:any){
+function carregarSelectPlaylist(idCanço: any, idUsuari: any) {
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -566,32 +582,32 @@ function carregarSelectPlaylist(idCanço:any, idUsuari:any){
     xhttp.onreadystatechange = llistesCarregades;
     xhttp.open('POST', '../php/controlador/carregarTotesPlaylist.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idU="+idUsuari+"&"+"idC="+idCanço.value);
+    xhttp.send("idU=" + idUsuari + "&" + "idC=" + idCanço.value);
 }
 
-function llistesCarregades(){
+function llistesCarregades() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
         xmlDoc = xhttp.responseXML;
-        var divPare:any = document.getElementById("llistatPlaylist");
-        var numP:any = xmlDoc.getElementsByTagName("playlist");
-        for(var i:number = 0; i < numP.length; i++){
-            var idLlista:any = numP[i].getElementsByTagName("id_llista")[0].childNodes[0].nodeValue;
-            var titolLlista:any = numP[i].getElementsByTagName("titol")[0].childNodes[0].nodeValue;
-            var idCanço:any = numP[i].getElementsByTagName("idCanço")[0].childNodes[0].nodeValue;
+        var divPare: any = document.getElementById("llistatPlaylist");
+        var numP: any = xmlDoc.getElementsByTagName("playlist");
+        for (var i: number = 0; i < numP.length; i++) {
+            var idLlista: any = numP[i].getElementsByTagName("id_llista")[0].childNodes[0].nodeValue;
+            var titolLlista: any = numP[i].getElementsByTagName("titol")[0].childNodes[0].nodeValue;
+            var idCanço: any = numP[i].getElementsByTagName("idCanço")[0].childNodes[0].nodeValue;
             document.getElementById("idHidden").value = idCanço;
-            var newOption:any = document.createElement("option");
+            var newOption: any = document.createElement("option");
             newOption.value = idLlista;
-            var textOption:any = document.createTextNode(titolLlista);
+            var textOption: any = document.createTextNode(titolLlista);
             newOption.appendChild(textOption);
             divPare.appendChild(newOption);
-            
+
         }
     }
 }
 
-function afegirPlaylist(){
-    var idLlista:any = document.getElementById("llistatPlaylist").value;
-    var idCançoo:any = document.getElementById("idHidden").value;
+function afegirPlaylist() {
+    var idLlista: any = document.getElementById("llistatPlaylist").value;
+    var idCançoo: any = document.getElementById("idHidden").value;
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -601,24 +617,24 @@ function afegirPlaylist(){
     xhttp.onreadystatechange = cançoAfegidaPlaylist;
     xhttp.open('POST', '../php/controlador/afegirCançoAPlaylist.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idL="+idLlista+"&"+"idC="+idCançoo);
+    xhttp.send("idL=" + idLlista + "&" + "idC=" + idCançoo);
 }
 
-function cançoAfegidaPlaylist(){
+function cançoAfegidaPlaylist() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        var resultatPlaylist:any = xhttp.responseText;
-        if(resultatPlaylist == -1){
+        var resultatPlaylist: any = xhttp.responseText;
+        if (resultatPlaylist == -1) {
             alert("Aquesta cançó ja està en la playlist");
         }
-        else{
+        else {
             alert("Cançó afegida a la playlist");
         }
     }
 }
 
-function buscarNomCanço(nom:any){
-    var textBuscar:any = document.getElementById("buscarNom").value;
-    var catMinus:any = nom.toLowerCase();
+function buscarNomCanço(nom: any) {
+    var textBuscar: any = document.getElementById("buscarNom").value;
+    var catMinus: any = nom.toLowerCase();
 
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
@@ -672,113 +688,113 @@ function mostrar_like_canciones() {
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
             var select = xmlhttp.responseXML;
-            
+
 
             var cançons = select.getElementsByTagName("seguido");
 
-            
-                var divPareTot: any = document.getElementById("cançons");
-                for (var i = 0; i < cançons.length; i++) {
-                    var idCanço: any = cançons[i].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue;
-                    var nomCanço: any = cançons[i].getElementsByTagName("nom_canço")[0].childNodes[0].nodeValue;
-                    var nomGuardat: any = cançons[i].getElementsByTagName("nom_guardat")[0].childNodes[0].nodeValue;
-                    var tipus: any = cançons[i].getElementsByTagName("tipus")[0].childNodes[0].nodeValue;
-                    var artistaCanço: any = cançons[i].getElementsByTagName("artista")[0].childNodes[0].nodeValue;
 
-                    var ruta: any = "../uploads/" + nomGuardat + "." + tipus;
-                    var newDiv: any = document.createElement("div");
-                    newDiv.classList.add("col-md-3", "grid-margin", "stretch-card");
-                    var newDiv2: any = document.createElement("div");
-                    newDiv2.classList.add("card", "divCategoria");
-                    var newDiv3: any = document.createElement("div");
-                    newDiv3.classList.add("card-body", "imatgeMusica");
-                    var newH5: any = document.createElement("h5");
-                    newH5.classList.add("card-title", "modificarTextCanço");
-                    var textH5: any = document.createTextNode(nomCanço);
-                    newH5.appendChild(textH5);
-                    var newDiv4: any = document.createElement("div");
-                    newDiv4.classList.add("media", "divMedia");
-                    var newDiv5: any = document.createElement("div");
-                    newDiv5.classList.add("media-body", "zonaBotonsMusica");
-                    var newSpan: any = document.createElement("span");
-                    newSpan.classList.add("bx", "bx-play-circle");
-                    newSpan.value = ruta;
-                    newSpan.alt = artistaCanço;
-                    newSpan.required = nomCanço;
-                    newSpan.onclick = function () { reproduirCanço(this); };
-                    var newA: any = document.createElement("a");
-                    newA.href = ruta;
-                    newA.download = nomCanço;
-                    var newSpan2: any = document.createElement("span");
-                    newSpan2.classList.add("bx", "bxs-download", "iconaDescarrega");
+            var divPareTot: any = document.getElementById("cançons");
+            for (var i = 0; i < cançons.length; i++) {
+                var idCanço: any = cançons[i].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue;
+                var nomCanço: any = cançons[i].getElementsByTagName("nom_canço")[0].childNodes[0].nodeValue;
+                var nomGuardat: any = cançons[i].getElementsByTagName("nom_guardat")[0].childNodes[0].nodeValue;
+                var tipus: any = cançons[i].getElementsByTagName("tipus")[0].childNodes[0].nodeValue;
+                var artistaCanço: any = cançons[i].getElementsByTagName("artista")[0].childNodes[0].nodeValue;
 
-                    var newDiv6: any = document.createElement("div");
-                    newDiv6.classList.add("nav-item", "nav-profile", "dropdown");
-                    var newA2: any = document.createElement("a");
-                    newA2.href = "#";
-                    newA2.setAttribute("data-toggle", "dropdown");
-                    var newSpan3: any = document.createElement("span");
-                    newSpan3.classList.add("bx", "bx-dots-vertical-rounded", "iconaExtrMusic");
-                    var newDiv7: any = document.createElement("div");
-                    newDiv7.classList.add("dropdown-menu", "menuAccio");
-                    var newA3: any = document.createElement("a");
-                    newA3.id = idCanço;
-                    newA3.classList.add("dropdown-item", "opcioMenuAccio");
-                    newA3.value = idCanço;
-                    newA3.onclick = function () { afegirLike(this); };
-                    var newSpan4: any = document.createElement("span");
-                    newSpan4.classList.add("bx", "text-primary", "colIcona", "midaIcones");
-                    var newP3: any = document.createElement("p");
-                    newP3.classList.add("txtOpcionsUser");
-                    var textP3: any = document.createTextNode("No m'agrada");
+                var ruta: any = "../uploads/" + nomGuardat + "." + tipus;
+                var newDiv: any = document.createElement("div");
+                newDiv.classList.add("col-md-3", "grid-margin", "stretch-card");
+                var newDiv2: any = document.createElement("div");
+                newDiv2.classList.add("card", "divCategoria");
+                var newDiv3: any = document.createElement("div");
+                newDiv3.classList.add("card-body", "imatgeMusica");
+                var newH5: any = document.createElement("h5");
+                newH5.classList.add("card-title", "modificarTextCanço");
+                var textH5: any = document.createTextNode(nomCanço);
+                newH5.appendChild(textH5);
+                var newDiv4: any = document.createElement("div");
+                newDiv4.classList.add("media", "divMedia");
+                var newDiv5: any = document.createElement("div");
+                newDiv5.classList.add("media-body", "zonaBotonsMusica");
+                var newSpan: any = document.createElement("span");
+                newSpan.classList.add("bx", "bx-play-circle");
+                newSpan.value = ruta;
+                newSpan.alt = artistaCanço;
+                newSpan.required = nomCanço;
+                newSpan.onclick = function () { reproduirCanço(this); };
+                var newA: any = document.createElement("a");
+                newA.href = ruta;
+                newA.download = nomCanço;
+                var newSpan2: any = document.createElement("span");
+                newSpan2.classList.add("bx", "bxs-download", "iconaDescarrega");
 
-                    newP3.appendChild(textP3);
-                    var newA4: any = document.createElement("a");
-                    newA4.setAttribute("data-toggle", "modal");
-                    newA4.setAttribute("data-target", "#exampleModal");
-                    newA4.classList.add("dropdown-item", "opcioMenuAccio");
-                    newA4.onclick = function () { carregarSelectPlaylist(this, localStorage.getItem("idUsuariSoundBox")); }
-                    var newSpan5: any = document.createElement("span");
-                    newSpan5.classList.add("bx", "bx-add-to-queue", "text-primary", "colIcona", "midaIcones");
-                    var newP4: any = document.createElement("p");
-                    newP4.classList.add("txtOpcionsUser");
-                    var textP4: any = document.createTextNode("Afegir a la playlist");
+                var newDiv6: any = document.createElement("div");
+                newDiv6.classList.add("nav-item", "nav-profile", "dropdown");
+                var newA2: any = document.createElement("a");
+                newA2.href = "#";
+                newA2.setAttribute("data-toggle", "dropdown");
+                var newSpan3: any = document.createElement("span");
+                newSpan3.classList.add("bx", "bx-dots-vertical-rounded", "iconaExtrMusic");
+                var newDiv7: any = document.createElement("div");
+                newDiv7.classList.add("dropdown-menu", "menuAccio");
+                var newA3: any = document.createElement("a");
+                newA3.id = idCanço;
+                newA3.classList.add("dropdown-item", "opcioMenuAccio");
+                newA3.value = idCanço;
+                newA3.onclick = function () { afegirLike(this); };
+                var newSpan4: any = document.createElement("span");
+                newSpan4.classList.add("bx", "text-primary", "colIcona", "midaIcones");
+                var newP3: any = document.createElement("p");
+                newP3.classList.add("txtOpcionsUser");
+                var textP3: any = document.createTextNode("No m'agrada");
 
-                    newP4.appendChild(textP4);
+                newP3.appendChild(textP3);
+                var newA4: any = document.createElement("a");
+                newA4.setAttribute("data-toggle", "modal");
+                newA4.setAttribute("data-target", "#exampleModal");
+                newA4.classList.add("dropdown-item", "opcioMenuAccio");
+                newA4.onclick = function () { carregarSelectPlaylist(this, localStorage.getItem("idUsuariSoundBox")); }
+                var newSpan5: any = document.createElement("span");
+                newSpan5.classList.add("bx", "bx-add-to-queue", "text-primary", "colIcona", "midaIcones");
+                var newP4: any = document.createElement("p");
+                newP4.classList.add("txtOpcionsUser");
+                var textP4: any = document.createTextNode("Afegir a la playlist");
 
-                    newA4.appendChild(newSpan5);
-                    newA4.appendChild(newP4);
-                    newA3.appendChild(newSpan4);
-                    newA3.appendChild(newP3);
-                    newDiv7.appendChild(newA3);
-                    newDiv7.appendChild(newA4);
-                    newA2.appendChild(newSpan3);
-                    newDiv6.appendChild(newA2);
-                    newDiv6.appendChild(newDiv7);
-                    newDiv5.appendChild(newSpan);
-                    newA.appendChild(newSpan2)
-                    newDiv5.appendChild(newA);
-                    newDiv5.appendChild(newDiv6);
-                    newDiv4.appendChild(newDiv5);
-                    newDiv3.appendChild(newH5);
-                    newDiv3.appendChild(newDiv4);
-                    newDiv2.appendChild(newDiv3);
-                    newDiv.appendChild(newDiv2);
-                    console.log("b");
+                newP4.appendChild(textP4);
 
-                    divPareTot.appendChild(newDiv);
+                newA4.appendChild(newSpan5);
+                newA4.appendChild(newP4);
+                newA3.appendChild(newSpan4);
+                newA3.appendChild(newP3);
+                newDiv7.appendChild(newA3);
+                newDiv7.appendChild(newA4);
+                newA2.appendChild(newSpan3);
+                newDiv6.appendChild(newA2);
+                newDiv6.appendChild(newDiv7);
+                newDiv5.appendChild(newSpan);
+                newA.appendChild(newSpan2)
+                newDiv5.appendChild(newA);
+                newDiv5.appendChild(newDiv6);
+                newDiv4.appendChild(newDiv5);
+                newDiv3.appendChild(newH5);
+                newDiv3.appendChild(newDiv4);
+                newDiv2.appendChild(newDiv3);
+                newDiv.appendChild(newDiv2);
+                console.log("b");
 
-                    
+                divPareTot.appendChild(newDiv);
 
-                    function reproduirCanço(ruta: any) {
-                        document.getElementById("nomA")?.innerHTML = ruta.alt;
-                        document.getElementById("titolM")?.innerHTML = ruta.required;
 
-                        document.getElementById("audio-1").src = ruta.value;
-                        document.getElementById("play")?.click();
-                    }
+
+                function reproduirCanço(ruta: any) {
+                    document.getElementById("nomA")?.innerHTML = ruta.alt;
+                    document.getElementById("titolM")?.innerHTML = ruta.required;
+
+                    document.getElementById("audio-1").src = ruta.value;
+                    document.getElementById("play")?.click();
                 }
-            
+            }
+
         };
     }
     xmlhttp.open("GET", "../php/controlador/canciones_seguidas.php", true);
