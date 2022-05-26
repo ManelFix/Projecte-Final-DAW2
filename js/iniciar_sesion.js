@@ -40,6 +40,6 @@ function iniciar_sesion() {
         xmlhttp.send("word=" + user);
     }
     else {
-        alert("L'usuari i contrasenya no poden estar buits");
+        alert("L'usuari i la contrasenya no poden estar buits");
     }
 }

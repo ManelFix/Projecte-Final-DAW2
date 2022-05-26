@@ -1,7 +1,7 @@
 "use strict";
 var xhttp;
 var xmlDoc;
-function veureSubscripcio(idU) {
+function veureSubscripcio() {
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -11,14 +11,13 @@ function veureSubscripcio(idU) {
     xhttp.onreadystatechange = introduirSubscripcio;
     xhttp.open('POST', '../php/controlador/veureSubscripcio.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idU=" + idU);
+    xhttp.send();
 }
 function introduirSubscripcio() {
     var _a, _b, _c, _d;
     if (xhttp.readyState == 4 && xhttp.status == 200) {
         var tipusSub = xhttp.responseText.replace(/\s+/g, '');
-        var arrOpcions = tipusSub.split(',');
-        if (arrOpcions[0] == 0) {
+        if (tipusSub == 0) {
             (_a = document.getElementById("tipusSubs")) === null || _a === void 0 ? void 0 : _a.innerHTML = "Gratuïta";
             (_b = document.getElementById("tipusSubs")) === null || _b === void 0 ? void 0 : _b.style.color = "#F7AD19";
             document.getElementById("imgSubscripcio").src = "../img/imgNoPremium.png";
@@ -28,10 +27,10 @@ function introduirSubscripcio() {
             (_d = document.getElementById("tipusSubs")) === null || _d === void 0 ? void 0 : _d.style.color = "#429EBD";
             document.getElementById("imgSubscripcio").src = "../img/imgPremium.png";
         }
-        agafarImatgeUsuari(arrOpcions[1]);
+        agafarImatgeUsuari();
     }
 }
-function agafarImatgeUsuari(idUsuari) {
+function agafarImatgeUsuari() {
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -41,9 +40,10 @@ function agafarImatgeUsuari(idUsuari) {
     xhttp.onreadystatechange = mostrarImatgeUsuari;
     xhttp.open('POST', '../php/controlador/agafarImatgeU.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idCompte=" + idUsuari);
+    xhttp.send();
 }
 function mostrarImatgeUsuari() {
+    var _a;
     if (xhttp.readyState == 4 && xhttp.status == 200) {
         var rutaImatge = xhttp.responseText.replace(/\s+/g, '');
         console.log(xhttp.responseText);
@@ -52,12 +52,12 @@ function mostrarImatgeUsuari() {
         }
         else {
             document.getElementById("iconaUsuari").src = rutaImatge;
-            document.getElementById("iconaUsuari").style = "height: auto !important; width: 3.5rem !important;";
+            (_a = document.getElementById("iconaUsuari")) === null || _a === void 0 ? void 0 : _a.classList.add("iconaPerfil");
         }
-        carregarLlistesPropies(localStorage.getItem("idUsuariSoundBox"));
+        carregarLlistesPropies();
     }
 }
-function carregarLlistesPropies(idUsuari) {
+function carregarLlistesPropies() {
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -67,7 +67,7 @@ function carregarLlistesPropies(idUsuari) {
     xhttp.onreadystatechange = mostrarLlistesPropies;
     xhttp.open('POST', '../php/controlador/carregarLlistesP.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idU=" + idUsuari);
+    xhttp.send();
 }
 function mostrarLlistesPropies() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
@@ -82,7 +82,7 @@ function mostrarLlistesPropies() {
             var newLi = document.createElement("li");
             newLi.classList.add("nav-item");
             var newA = document.createElement("a");
-            newA.href = 'playlist.php?idL=' + idLlista + "&nomL=" + titolLlista; //Revisar
+            newA.href = 'playlist.php?idL=' + idLlista + "&nomL=" + titolLlista;
             newA.classList.add("linkPlaylist");
             var newP = document.createElement("p");
             newP.classList.add("textSidebar", "textNav", "textPlaylist");

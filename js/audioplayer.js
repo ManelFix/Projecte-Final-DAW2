@@ -113,10 +113,14 @@ function play(id) {
             audio.muted = false;
             $(this).removeClass('muted');
             $(this).addClass('unmuted');
+            $(this.firstChild).removeClass('fa-volume-xmark');
+            $(this.firstChild).addClass('fa-volume-high');
         } else {
             audio.muted = true;
             $(this).removeClass('unmuted');
             $(this).addClass('muted');
+            $(this.firstChild).addClass('fa-volume-xmark');
+            $(this.firstChild).removeClass('fa-volume-high');
         }
     });
 

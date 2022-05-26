@@ -1,7 +1,7 @@
 "use strict";
 var xhttp;
 var xmlDoc;
-function carregarCançons(idLlista, idUsuari) {
+function carregarCançons(idLlista) {
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -125,9 +125,7 @@ function eliminarCanço(idEliminar) {
 }
 function cançoEliminada() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        var nomC = xhttp.responseText.replace(/\s+/g, '');
-        alert("Cançó " + nomC + " eliminat/da de la playlist");
-        carregarCançons(localStorage.getItem("IDLlistaSoundBox"), localStorage.getItem("idUsuariSoundBox"));
+        carregarCançons(localStorage.getItem("IDLlistaSoundBox"));
     }
 }
 function escoltarCanço(nomCançoConc) {
@@ -149,9 +147,9 @@ function buscarCanço() {
     xhttp.onreadystatechange = mostrarTaulaCançons;
     xhttp.open('POST', '../php/controlador/buscarCançoLlista.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("nomCanço=" + nomC + "&" + "codiU=" + localStorage.getItem("idUsuariSoundBox") + "&" + "idL=" + idLlista);
+    xhttp.send("nomCanço=" + nomC + "&idL=" + idLlista);
 }
-function carregarLlistesPropies(idUsuari, idLlista) {
+function carregarLlistesPropies(idLlista) {
     localStorage.setItem("IDLlistaSoundBox", idLlista);
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
@@ -162,7 +160,7 @@ function carregarLlistesPropies(idUsuari, idLlista) {
     xhttp.onreadystatechange = mostrarLlistesPropies;
     xhttp.open('POST', '../php/controlador/carregarLlistesP.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idU=" + idUsuari);
+    xhttp.send();
 }
 function mostrarLlistesPropies() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
@@ -177,7 +175,7 @@ function mostrarLlistesPropies() {
             var newLi = document.createElement("li");
             newLi.classList.add("nav-item");
             var newA = document.createElement("a");
-            newA.href = 'playlist.php?idL=' + idLlista + "&nomL=" + titolLlista; //Revisar
+            newA.href = 'playlist.php?idL=' + idLlista + "&nomL=" + titolLlista;
             newA.classList.add("linkPlaylist");
             var newP = document.createElement("p");
             newP.classList.add("textSidebar", "textNav", "textPlaylist");
@@ -187,11 +185,10 @@ function mostrarLlistesPropies() {
             newLi.appendChild(newA);
             navMenu.appendChild(newLi);
         }
-        agafarImatgeUsuari(localStorage.getItem("idUsuariSoundBox"));
+        agafarImatgeUsuari();
     }
 }
-function agafarImatgeUsuari(idUsuari) {
-    localStorage.setItem("idUsuariSoundBox", idUsuari);
+function agafarImatgeUsuari() {
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -201,9 +198,10 @@ function agafarImatgeUsuari(idUsuari) {
     xhttp.onreadystatechange = mostrarImatgeUsuari;
     xhttp.open('POST', '../php/controlador/agafarImatgeU.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idCompte=" + idUsuari);
+    xhttp.send();
 }
 function mostrarImatgeUsuari() {
+    var _a;
     if (xhttp.readyState == 4 && xhttp.status == 200) {
         var rutaImatge = xhttp.responseText.replace(/\s+/g, '');
         var arrOpcions = rutaImatge.split('.');
@@ -212,7 +210,7 @@ function mostrarImatgeUsuari() {
         }
         else {
             document.getElementById("iconaUsuari").src = arrOpcions[0];
-            document.getElementById("iconaUsuari").style = "height: auto !important; width: 3.5rem !important;";
+            (_a = document.getElementById("iconaUsuari")) === null || _a === void 0 ? void 0 : _a.classList.add("iconaPerfil");
         }
         carregarCançons(localStorage.getItem("IDLlistaSoundBox"));
     }
@@ -234,8 +232,6 @@ function eliminarPlaylist(idLlista) {
 }
 function playlistEliminada() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        var nomP = xhttp.responseText.replace(/\s+/g, '');
-        alert("Playlist " + nomP + " eliminat/da");
         history.go(-1);
     }
 }
