@@ -2,6 +2,8 @@
 var xhttp;
 var xmlDoc;
 function carregarMusica(nom) {
+    document.getElementById("filtrarPer").value = "none";
+    var tipusUsuari = localStorage.getItem("TipusUsuariSoundBox");
     var catMinus = nom.toLowerCase();
     localStorage.setItem("categoriaSoundBox", catMinus);
     if (window.XMLHttpRequest) {
@@ -13,17 +15,20 @@ function carregarMusica(nom) {
     xhttp.onreadystatechange = mostrarMusica;
     xhttp.open('POST', '../php/controlador/carregarMusica.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("cat=" + catMinus);
+    xhttp.send("cat=" + catMinus + "&" + "tip=" + tipusUsuari);
 }
 function mostrarMusica() {
     var _a;
     if (xhttp.readyState == 4 && xhttp.status == 200) {
         document.getElementById("musicaIdTot").innerHTML = "";
-        document.getElementById("musicaIdPremium").innerHTML = "";
+        if (localStorage.getItem("categoriaSoundBox") != "prèmium") {
+            document.getElementById("musicaIdPremium").innerHTML = "";
+        }
         document.getElementById("musicaIdTop").innerHTML = "";
         xmlDoc = xhttp.responseXML;
         var cançons = xmlDoc.getElementsByTagName("musica");
         var cançons2 = xmlDoc.getElementsByTagName("musica2");
+        var like = xmlDoc.getElementsByTagName("magrada");
         var divPareTot = document.getElementById("musicaIdTot");
         var divParePremium = document.getElementById("musicaIdPremium");
         var divPareTop = document.getElementById("musicaIdTop");
@@ -62,6 +67,8 @@ function mostrarMusica() {
                 break;
             case "Infantil":
                 catAtribut = "cat11";
+            case "Prèmium":
+                catAtribut = "cat12";
                 break;
         }
         for (var i = 0; i < cançons.length; i++) {
@@ -92,7 +99,7 @@ function mostrarMusica() {
                 newSpan.value = ruta;
                 newSpan.alt = artistaCanço;
                 newSpan.required = nomCanço;
-                newSpan.onclick = function () { reproduirCanço(this, idCanço); };
+                newSpan.onclick = function () { reproduirCanço(this); };
                 var newA = document.createElement("a");
                 newA.href = ruta;
                 newA.download = nomCanço;
@@ -108,17 +115,41 @@ function mostrarMusica() {
                 var newDiv7 = document.createElement("div");
                 newDiv7.classList.add("dropdown-menu", "menuAccio");
                 var newA3 = document.createElement("a");
+                newA3.id = idCanço;
                 newA3.classList.add("dropdown-item", "opcioMenuAccio");
                 newA3.value = idCanço;
                 newA3.onclick = function () { afegirLike(this); };
                 var newSpan4 = document.createElement("span");
-                newSpan4.classList.add("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                newSpan4.classList.add("bx", "text-primary", "colIcona", "midaIcones");
                 var newP3 = document.createElement("p");
                 newP3.classList.add("txtOpcionsUser");
-                var textP3 = document.createTextNode("M'agrada");
+                //var textP3:any = document.createTextNode("M'agrada");
+                var likeado = 0;
+                for (var z = 0; z < like.length; z++) {
+                    if (like[z].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue == idCanço) {
+                        if (newSpan4.classList.contains("bx-like")) {
+                            newSpan4.classList.remove("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                        }
+                        newSpan4.classList.add("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
+                        var textP3 = document.createTextNode("No m'agrada");
+                        z = like.length;
+                        likeado++;
+                    }
+                }
+                if (likeado == 0) {
+                    if (newSpan4.classList.contains("bx-dislike")) {
+                        newSpan4.classList.remove("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
+                    }
+                    newSpan4.classList.add("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                    var textP3 = document.createTextNode("M'agrada");
+                    z = like.length;
+                }
                 newP3.appendChild(textP3);
                 var newA4 = document.createElement("a");
+                newA4.setAttribute("data-toggle", "modal");
+                newA4.setAttribute("data-target", "#exampleModal");
                 newA4.classList.add("dropdown-item", "opcioMenuAccio");
+                newA4.onclick = function () { carregarSelectPlaylist(this); };
                 var newSpan5 = document.createElement("span");
                 newSpan5.classList.add("bx", "bx-add-to-queue", "text-primary", "colIcona", "midaIcones");
                 var newP4 = document.createElement("p");
@@ -169,6 +200,7 @@ function mostrarMusica() {
                 var newDiv7 = document.createElement("div");
                 newDiv7.classList.add("dropdown-menu", "menuAccio");
                 var newA3 = document.createElement("a");
+                newA3.id = idCanço;
                 newA3.classList.add("dropdown-item", "opcioMenuAccio");
                 newA3.value = idCanço;
                 newA3.onclick = function () { afegirLike(this); };
@@ -176,10 +208,33 @@ function mostrarMusica() {
                 newSpan4.classList.add("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
                 var newP3 = document.createElement("p");
                 newP3.classList.add("txtOpcionsUser");
-                var textP3 = document.createTextNode("M'agrada");
+                //var textP3:any = document.createTextNode("M'agrada");
+                var likeado = 0;
+                for (var z = 0; z < like.length; z++) {
+                    if (like[z].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue == idCanço) {
+                        if (newSpan4.classList.contains("bx-like")) {
+                            newSpan4.classList.remove("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                        }
+                        newSpan4.classList.add("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
+                        var textP3 = document.createTextNode("No m'agrada");
+                        z = like.length;
+                        likeado++;
+                    }
+                }
+                if (likeado == 0) {
+                    if (newSpan4.classList.contains("bx-dislike")) {
+                        newSpan4.classList.remove("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
+                    }
+                    newSpan4.classList.add("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                    var textP3 = document.createTextNode("M'agrada");
+                    z = like.length;
+                }
                 newP3.appendChild(textP3);
                 var newA4 = document.createElement("a");
+                newA4.setAttribute("data-toggle", "modal");
+                newA4.setAttribute("data-target", "#exampleModal");
                 newA4.classList.add("dropdown-item", "opcioMenuAccio");
+                newA4.onclick = function () { carregarSelectPlaylist(this); };
                 var newSpan5 = document.createElement("span");
                 newSpan5.classList.add("bx", "bx-add-to-queue", "text-primary", "colIcona", "midaIcones");
                 var newP4 = document.createElement("p");
@@ -205,11 +260,16 @@ function mostrarMusica() {
             newDiv3.appendChild(newDiv4);
             newDiv2.appendChild(newDiv3);
             newDiv.appendChild(newDiv2);
+            if (localStorage.getItem("categoriaSoundBox") == "prèmium") {
+                divPareTot.appendChild(newDiv);
+            }
             if (tipusCanço == 0) {
                 divPareTot.appendChild(newDiv);
             }
             if (tipusCanço == 1) {
-                divParePremium.appendChild(newDiv);
+                if (localStorage.getItem("categoriaSoundBox") != "prèmium") {
+                    divParePremium.appendChild(newDiv);
+                }
             }
         }
         for (var y = 0; y < cançons2.length; y++) {
@@ -256,6 +316,7 @@ function mostrarMusica() {
                 var newDiv7 = document.createElement("div");
                 newDiv7.classList.add("dropdown-menu", "menuAccio");
                 var newA3 = document.createElement("a");
+                newA3.id = idCanço;
                 newA3.classList.add("dropdown-item", "opcioMenuAccio");
                 newA3.value = idCanço;
                 newA3.onclick = function () { afegirLike(this); };
@@ -263,10 +324,33 @@ function mostrarMusica() {
                 newSpan4.classList.add("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
                 var newP3 = document.createElement("p");
                 newP3.classList.add("txtOpcionsUser");
-                var textP3 = document.createTextNode("M'agrada");
+                //var textP3:any = document.createTextNode("M'agrada");
+                var likeado = 0;
+                for (var z = 0; z < like.length; z++) {
+                    if (like[z].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue == idCanço) {
+                        if (newSpan4.classList.contains("bx-like")) {
+                            newSpan4.classList.remove("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                        }
+                        newSpan4.classList.add("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
+                        var textP3 = document.createTextNode("No m'agrada");
+                        z = like.length;
+                        likeado++;
+                    }
+                }
+                if (likeado == 0) {
+                    if (newSpan4.classList.contains("bx-dislike")) {
+                        newSpan4.classList.remove("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
+                    }
+                    newSpan4.classList.add("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                    var textP3 = document.createTextNode("M'agrada");
+                    z = like.length;
+                }
                 newP3.appendChild(textP3);
                 var newA4 = document.createElement("a");
+                newA4.setAttribute("data-toggle", "modal");
+                newA4.setAttribute("data-target", "#exampleModal");
                 newA4.classList.add("dropdown-item", "opcioMenuAccio");
+                newA4.onclick = function () { carregarSelectPlaylist(this); };
                 var newSpan5 = document.createElement("span");
                 newSpan5.classList.add("bx", "bx-add-to-queue", "text-primary", "colIcona", "midaIcones");
                 var newP4 = document.createElement("p");
@@ -316,6 +400,7 @@ function mostrarMusica() {
                 var newDiv7 = document.createElement("div");
                 newDiv7.classList.add("dropdown-menu", "menuAccio");
                 var newA3 = document.createElement("a");
+                newA3.id = idCanço;
                 newA3.classList.add("dropdown-item", "opcioMenuAccio");
                 newA3.value = idCanço;
                 newA3.onclick = function () { afegirLike(this); };
@@ -323,10 +408,35 @@ function mostrarMusica() {
                 newSpan4.classList.add("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
                 var newP3 = document.createElement("p");
                 newP3.classList.add("txtOpcionsUser");
-                var textP3 = document.createTextNode("M'agrada");
+                // var textP3:any = document.createTextNode("M'agrada");
+                var arrayID = new Array();
+                var likeado = 0;
+                for (var z = 0; z < like.length; z++) {
+                    if (like[z].getElementsByTagName("id_canço")[0].childNodes[0].nodeValue == idCanço) {
+                        if (newSpan4.classList.contains("bx-like")) {
+                            newSpan4.classList.remove("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                        }
+                        newSpan4.classList.add("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
+                        var textP3 = document.createTextNode("No m'agrada");
+                        z = like.length;
+                        likeado++;
+                    }
+                }
+                if (likeado == 0) {
+                    if (newSpan4.classList.contains("bx-dislike")) {
+                        newSpan4.classList.remove("bx", "bx-dislike", "text-primary", "colIcona", "midaIcones");
+                    }
+                    newSpan4.classList.add("bx", "bx-like", "text-primary", "colIcona", "midaIcones");
+                    var textP3 = document.createTextNode("M'agrada");
+                    z = like.length;
+                }
                 newP3.appendChild(textP3);
                 var newA4 = document.createElement("a");
                 newA4.classList.add("dropdown-item", "opcioMenuAccio");
+                newA4.value = idCanço;
+                newA4.setAttribute("data-toggle", "modal");
+                newA4.setAttribute("data-target", "#exampleModal");
+                newA4.onclick = function () { carregarSelectPlaylist(this); };
                 var newSpan5 = document.createElement("span");
                 newSpan5.classList.add("bx", "bx-add-to-queue", "text-primary", "colIcona", "midaIcones");
                 var newP4 = document.createElement("p");
@@ -391,7 +501,6 @@ function aplicarFiltre(nom) {
     xhttp.send("estatAnim=" + estatA + "&" + "cat=" + catMinus);
 }
 function afegirLike(idCanço) {
-    var id_Usuari = localStorage.getItem("idUsuariSoundBox");
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -401,11 +510,81 @@ function afegirLike(idCanço) {
     xhttp.onreadystatechange = tincLike;
     xhttp.open('POST', '../php/controlador/afegirLike.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idC=" + idCanço.value + "&" + "idU=" + id_Usuari);
+    xhttp.send("idC=" + idCanço.value);
 }
 function tincLike() {
+    var _a, _b, _c, _d, _e, _f;
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        alert("Cançó afegida a m'agrada");
+        var controlarLike = xhttp.responseText.replace(/\s+/g, '');
+        var arrOpcions = controlarLike.split('.');
+        if (arrOpcions[1] == "-1") {
+            (_a = document.getElementById(arrOpcions[0])) === null || _a === void 0 ? void 0 : _a.firstChild.classList.remove("bx-dislike");
+            (_b = document.getElementById(arrOpcions[0])) === null || _b === void 0 ? void 0 : _b.firstChild.classList.add("bx-like");
+            (_c = document.getElementById(arrOpcions[0])) === null || _c === void 0 ? void 0 : _c.lastChild.innerHTML = "M'agrada";
+        }
+        else {
+            (_d = document.getElementById(arrOpcions[0])) === null || _d === void 0 ? void 0 : _d.firstChild.classList.remove("bx-like");
+            (_e = document.getElementById(arrOpcions[0])) === null || _e === void 0 ? void 0 : _e.firstChild.classList.add("bx-dislike");
+            (_f = document.getElementById(arrOpcions[0])) === null || _f === void 0 ? void 0 : _f.lastChild.innerHTML = "No m'agrada";
+        }
+    }
+}
+function carregarSelectPlaylist(idCanço) {
+    if (window.XMLHttpRequest) {
+        xhttp = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject) {
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhttp.onreadystatechange = llistesCarregades;
+    xhttp.open('POST', '../php/controlador/carregarTotesPlaylist.php', true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("idC=" + idCanço.value);
+}
+function llistesCarregades() {
+    var _a;
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+        (_a = document.getElementById("llistatPlaylist")) === null || _a === void 0 ? void 0 : _a.innerHTML = "";
+        xmlDoc = xhttp.responseXML;
+        var divPare = document.getElementById("llistatPlaylist");
+        var numP = xmlDoc.getElementsByTagName("playlist");
+        for (var i = 0; i < numP.length; i++) {
+            var idLlista = numP[i].getElementsByTagName("id_llista")[0].childNodes[0].nodeValue;
+            var titolLlista = numP[i].getElementsByTagName("titol")[0].childNodes[0].nodeValue;
+            var idCanço = numP[i].getElementsByTagName("idCanço")[0].childNodes[0].nodeValue;
+            document.getElementById("idHidden").value = idCanço;
+            var newOption = document.createElement("option");
+            newOption.value = idLlista;
+            var textOption = document.createTextNode(titolLlista);
+            newOption.appendChild(textOption);
+            divPare.appendChild(newOption);
+        }
+    }
+}
+function afegirPlaylist() {
+    var idLlista = document.getElementById("llistatPlaylist").value;
+    var idCançoo = document.getElementById("idHidden").value;
+    if (window.XMLHttpRequest) {
+        xhttp = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject) {
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhttp.onreadystatechange = cançoAfegidaPlaylist;
+    xhttp.open('POST', '../php/controlador/afegirCançoAPlaylist.php', true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("idL=" + idLlista + "&" + "idC=" + idCançoo);
+}
+function cançoAfegidaPlaylist() {
+    var _a;
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+        var resultatPlaylist = xhttp.responseText;
+        if (resultatPlaylist == -1) {
+            alert("Aquesta cançó ja està en la playlist");
+        }
+        else {
+            (_a = document.getElementById("btnCerrarModal")) === null || _a === void 0 ? void 0 : _a.click();
+        }
     }
 }
 function buscarNomCanço(nom) {
@@ -422,7 +601,7 @@ function buscarNomCanço(nom) {
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("textB=" + textBuscar + "&" + "cat=" + catMinus);
 }
-function agafarImatgeUsuari(idUsuari, tipusCat, premium) {
+function agafarImatgeUsuari(tipusCat, premium) {
     localStorage.setItem("TipusUsuariSoundBox", premium);
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
@@ -433,9 +612,10 @@ function agafarImatgeUsuari(idUsuari, tipusCat, premium) {
     xhttp.onreadystatechange = mostrarImatgeUsuari;
     xhttp.open('POST', '../php/controlador/agafarImatgeU.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idCompte=" + idUsuari + "&" + "cat=" + tipusCat);
+    xhttp.send("cat=" + tipusCat);
 }
 function mostrarImatgeUsuari() {
+    var _a;
     if (xhttp.readyState == 4 && xhttp.status == 200) {
         var rutaImatge = xhttp.responseText.replace(/\s+/g, '');
         var arrOpcions = rutaImatge.split('.');
@@ -444,8 +624,47 @@ function mostrarImatgeUsuari() {
         }
         else {
             document.getElementById("iconaUsuari").src = arrOpcions[0];
-            document.getElementById("iconaUsuari").style = "height: auto !important; width: 3.5rem !important;";
+            (_a = document.getElementById("iconaUsuari")) === null || _a === void 0 ? void 0 : _a.classList.add("iconaPerfil");
         }
-        carregarMusica(arrOpcions[1]);
+        carregarLlistesPropies(arrOpcions[1]);
+    }
+}
+function carregarLlistesPropies(cat) {
+    if (window.XMLHttpRequest) {
+        xhttp = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject) {
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhttp.onreadystatechange = mostrarLlistesPropies;
+    xhttp.open('POST', '../php/controlador/carregarLlistesP.php', true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("cat=" + cat);
+}
+function mostrarLlistesPropies() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+        xmlDoc = xhttp.responseXML;
+        var llistes = xmlDoc.getElementsByTagName("llista");
+        var navMenu = document.getElementById("idNav");
+        for (var i = 0; i < llistes.length; i++) {
+            var idLlista = llistes[i].getElementsByTagName("id_llista")[0].childNodes[0].nodeValue;
+            var titolLlista = llistes[i].getElementsByTagName("titol")[0].childNodes[0].nodeValue;
+            var categoria = llistes[i].getElementsByTagName("categoria")[0].childNodes[0].nodeValue;
+            var descLlista = llistes[i].getElementsByTagName("descripcio")[0].childNodes[0].nodeValue;
+            var tipusLlista = llistes[i].getElementsByTagName("privat")[0].childNodes[0].nodeValue;
+            var newLi = document.createElement("li");
+            newLi.classList.add("nav-item");
+            var newA = document.createElement("a");
+            newA.href = 'playlist.php?idL=' + idLlista + "&nomL=" + titolLlista;
+            newA.classList.add("linkPlaylist");
+            var newP = document.createElement("p");
+            newP.classList.add("textSidebar", "textNav", "textPlaylist");
+            var textP = document.createTextNode(titolLlista);
+            newP.appendChild(textP);
+            newA.appendChild(newP);
+            newLi.appendChild(newA);
+            navMenu.appendChild(newLi);
+        }
+        carregarMusica(categoria);
     }
 }

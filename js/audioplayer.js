@@ -95,7 +95,6 @@ function play(id) {
         audio.volume = value / 100;
     });
 
-    audio.volume = volumeSlider.value/100;
 
     if (audio.readyState > 0) {
         displayDuration();
@@ -110,16 +109,18 @@ function play(id) {
     // Mutear
     $('body').on('click', '#mute', function(e){
         e.preventDefault();
-        if ($(this).hasClass('muted') ) {
+        if ( $(this).hasClass('muted') ) {
             audio.muted = false;
-            $(this).children('.mute-icon').replaceWith('<span class="fa-solid fa-volume-high mute-icon"></span>');
             $(this).removeClass('muted');
             $(this).addClass('unmuted');
+            $(this.firstChild).removeClass('fa-volume-xmark');
+            $(this.firstChild).addClass('fa-volume-high');
         } else {
             audio.muted = true;
-            $(this).children('.mute-icon').replaceWith('<span class="fa-solid fa-volume-xmark mute-icon"></span>');
             $(this).removeClass('unmuted');
             $(this).addClass('muted');
+            $(this.firstChild).addClass('fa-volume-xmark');
+            $(this.firstChild).removeClass('fa-volume-high');
         }
     });
 

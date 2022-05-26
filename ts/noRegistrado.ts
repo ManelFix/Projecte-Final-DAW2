@@ -5,6 +5,27 @@ function anarCatalegNoRegistrat(){
     location.href = "php/exploraNoRegistrat.php";
 }
 
+function escoltarCanço(num:number){
+    switch(num){
+        case 1:
+            document.getElementById("nomA")?.innerHTML = "Brad Sucks";
+            document.getElementById("titolM")?.innerHTML = "Total Breakdown";
+            document.getElementById("audio-1").src = "uploads/provaa1.mp3";
+            break;
+        case 2:
+            document.getElementById("nomA")?.innerHTML = "Breathe";
+            document.getElementById("titolM")?.innerHTML = "George Capon";
+            document.getElementById("audio-1").src = "uploads/prova2.mp3";
+            break;
+        case 3:
+            document.getElementById("nomA")?.innerHTML = "Kevin MacLeod";
+            document.getElementById("titolM")?.innerHTML = "Aurea";
+            document.getElementById("audio-1").src = "uploads/prova3.mp3";
+            break;
+    }
+
+}
+
 function carregarMusica(nom:any){
     var catMinus:any = nom.toLowerCase();
 

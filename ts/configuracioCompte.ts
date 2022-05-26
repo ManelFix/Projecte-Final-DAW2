@@ -16,12 +16,11 @@ function readURL(input) {
     }
   }
 
-// El listener va asignado al input
 $("#btnNouFitxer").change(function() {
     readURL(this);
 });
 
-function eliminarCompte(idEliminar:any){
+function eliminarCompte(){
     var opcio:any = confirm("Segur que vols eliminar el teu compte?");
     if (opcio == true) {
         if (window.XMLHttpRequest) {
@@ -33,19 +32,18 @@ function eliminarCompte(idEliminar:any){
         xhttp.onreadystatechange = compteEliminada;
         xhttp.open('POST', '../php/controlador/eliminarCompte.php', true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("idCompte="+idEliminar);
+        xhttp.send();
 	}
 }
 
 function compteEliminada(){
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        alert("Compte eliminada");
         //Eliminar sessió en el php eliminarCompte.php
         location.href="login.php";
     }
 }
 
-function agafarImatgeUsuari(idUsuari:any){
+function agafarImatgeUsuari(){
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -55,7 +53,7 @@ function agafarImatgeUsuari(idUsuari:any){
     xhttp.onreadystatechange = mostrarImatgeUsuari;
     xhttp.open('POST', '../php/controlador/agafarImatgeU.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idCompte="+idUsuari);
+    xhttp.send();
 }
 
 function mostrarImatgeUsuari(){
@@ -68,13 +66,13 @@ function mostrarImatgeUsuari(){
         else{
             document.getElementById("idImgPerfil").src = rutaImatge;
             document.getElementById("iconaUsuari").src = rutaImatge;
-            document.getElementById("iconaUsuari").style = "height: auto !important; width: 3.5rem !important;"
+            document.getElementById("iconaUsuari")?.classList.add("iconaPerfil");
         }
-        carregarLlistesPropies(localStorage.getItem("idUsuariSoundBox"));
+        carregarLlistesPropies();
     }
 }
 
-function carregarLlistesPropies(idUsuari:any){
+function carregarLlistesPropies(){
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -84,7 +82,7 @@ function carregarLlistesPropies(idUsuari:any){
     xhttp.onreadystatechange = mostrarLlistesPropies;
     xhttp.open('POST', '../php/controlador/carregarLlistesP.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idU="+idUsuari);
+    xhttp.send();
 }
 
 function mostrarLlistesPropies(){
@@ -103,7 +101,7 @@ function mostrarLlistesPropies(){
             var newLi:any = document.createElement("li");
             newLi.classList.add("nav-item");
             var newA:any = document.createElement("a");
-            newA.href = 'playlist.php?idL=' + idLlista; //Revisar
+            newA.href = 'playlist.php?idL=' + idLlista;
             newA.classList.add("linkPlaylist");
             var newP:any = document.createElement("p");
             newP.classList.add("textSidebar", "textNav", "textPlaylist");

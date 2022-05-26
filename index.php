@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/client.css">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -28,7 +29,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <img src="img/logo.svg" alt="logoSoundBox">
+                    <img src="img/logo.svg" alt="logoSoundBOX">
                 </div>
                 <div class="collapse navbar-collapse navbar-right menu" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
@@ -37,7 +38,7 @@
                         <li><a href="#contacte">Contacte</a></li>
                         <div class="divBotonsNav">
                             <a href="php/login.php" class="botonsIR estilbtnLogin">Iniciar sessió</a>
-                            <a href="php/register.php" class="botonsIR btnRegistrat estilbtnLogin2">Registrat ja</a>
+                            <a href="php/register.php" class="botonsIR btnRegistrat estilbtnLogin2">Registra't ja</a>
                         </div>
                     </ul>
                 </div>
@@ -48,11 +49,11 @@
     <!-- Reproductor fixed bottom -->
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="audio-player-container">
-            <audio src="uploads/04c344c6cd5d4d72024fccfd731c188b.mp3" preload="metadata" id="audio-1"></audio>
+            <audio src="" preload="metadata" id="audio-1"></audio>
             <div class="info-canco">
-                <p class="artista">Artista</p>
+                <p id="nomA" class="artista">Artista</p>
                 <span> - </span>
-                <p class="titol">Títol</p>
+                <p id="titolM" class="titol">Títol</p>
             </div>
             <div class="reproductor">
                 <div class="play-button play" id="play" onclick="play(1)">
@@ -85,14 +86,46 @@
                 <h2>Mostra del Catàleg</h2>
                 <p>Aquí una mostra d'algunes de les cançons que disposem en el nostre cataleg</p>
             </div>
-            <div class="col-md-4 col-sm-12 col-xs-12">
-                <!-- Musica -->
-            </div>
-            <div class="col-md-4 col-sm-12 col-xs-12">
-                <!-- Musica -->
-            </div>
-            <div class="col-md-4 col-sm-12 col-xs-12">
-                <!-- Musica -->
+            <div class="row mostraRow">
+                <div class="col-md-4 grid-margin stretch-card">
+                    <div class="card divCategoria">
+                        <div class="card-body cat1 divMusicaInici">
+                            <h5 class="card-title">Total Breakdown</h5>
+                            <div class="media divMedia">
+                                <div class="media-body zonaBotonsMusica">
+                                    <span class='bx bx-play-circle play' id="play" onclick="escoltarCanço(1);"></span>
+                                    <a href="uploads/provaa1.mp3" download="prova1.mp3"><span class='bx bxs-download botonDescarrega'></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 grid-margin stretch-card">
+                    <div class="card divCategoria">
+                    <div class="card-body cat2 divMusicaInici">
+                            <h5 class="card-title">Breathe</h5>
+                            <div class="media divMedia">
+                                <div class="media-body zonaBotonsMusica">
+                                    <span class='bx bx-play-circle' id="play" onclick="escoltarCanço(2);"></span>
+                                    <a href="uploads/prova2.mp3" download="prova2.mp3"><span class='bx bxs-download botonDescarrega'></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 grid-margin stretch-card">
+                    <div class="card divCategoria">
+                        <div class="card-body cat3 divMusicaInici">
+                            <h5 class="card-title">Aurea</h5>
+                            <div class="media divMedia">
+                                <div class="media-body zonaBotonsMusica">
+                                    <span class='bx bx-play-circle' id="play" onclick="escoltarCanço(3);"></span>
+                                    <a href="uploads/prova3.mp3" download="uploads/prova3.mp3"><span class='bx bxs-download botonDescarrega'></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <button class="botonsIR estilbtnLogin btnPremium btnCatalegPrincipal" onclick="anarCatalegNoRegistrat();">Explora més cançons</button>

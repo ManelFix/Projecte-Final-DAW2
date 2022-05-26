@@ -2,7 +2,6 @@ var xhttp:any;
 var xmlDoc:any;
 
 function tancarSessio(){
-    alert("Sessió tancada");
     location.href="login.php";
 }
 
@@ -143,16 +142,12 @@ function desbanejarUsuari(usuariBan:any){
 
 function usuariBanejat(){
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        var usuariN:any = xhttp.responseText.replace(/\s+/g, '');
-        alert("Usuari " + usuariN + " banejat");
         carregarUsuaris();
     }
 }
 
 function usuariDesbanejat(){
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        var usuariN:any = xhttp.responseText.replace(/\s+/g, '');
-        alert("Usuari " + usuariN + " desbanejat");
         carregarUsuaris();
     }
 }
@@ -296,8 +291,6 @@ function eliminarCanço(idEliminar:any){
 
 function cançoEliminada(){
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        var nomC:any = xhttp.responseText.replace(/\s+/g, '');
-        alert("Cançó " + nomC + " eliminat/da");
         carregarCançons();
     }
 }
@@ -468,8 +461,6 @@ function eliminarPlaylist(IDLlista:any){
 
 function playlistEliminada(){
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        var nomP:any = xhttp.responseText.replace(/\s+/g, '');
-        alert("Playlist " + nomP + " eliminat/da");
         carregarPlaylists();
     }
 }

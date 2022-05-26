@@ -1,7 +1,7 @@
 "use strict";
 var xhttp;
 var xmlDoc;
-function carregarCançons(idLlista, idUsuari) {
+function carregarCançons(idLlista) {
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -11,14 +11,13 @@ function carregarCançons(idLlista, idUsuari) {
     xhttp.onreadystatechange = mostrarTaulaCançons;
     xhttp.open('POST', '../php/controlador/carregarCançonsPlaylist.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idL=" + idLlista + "&" + "idU=" + idUsuari);
+    xhttp.send("idL=" + idLlista);
 }
 function mostrarTaulaCançons() {
     var _a;
     if (xhttp.readyState == 4 && xhttp.status == 200) {
         (_a = document.getElementById("contingutTaulaMusica")) === null || _a === void 0 ? void 0 : _a.innerHTML = "";
         xmlDoc = xhttp.responseXML;
-        console.log(xmlDoc);
         if (xmlDoc.getElementsByTagName("musica") != null) {
             var cançons = xmlDoc.getElementsByTagName("musica");
         }
@@ -107,11 +106,10 @@ function mostrarTaulaCançons() {
             newTr.appendChild(newTd5);
             bodyTaula.appendChild(newTr);
         }
-        agafarImatgeUsuari(localStorage.getItem("idUsuariSoundBox"));
     }
 }
 function eliminarCanço(idEliminar) {
-    var opcio = confirm("Segur que vols eliminar aquesta cançó?");
+    var opcio = confirm("Segur que vols eliminar aquesta cançó de la playlist?");
     if (opcio == true) {
         if (window.XMLHttpRequest) {
             xhttp = new XMLHttpRequest();
@@ -120,16 +118,14 @@ function eliminarCanço(idEliminar) {
             xhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
         xhttp.onreadystatechange = cançoEliminada;
-        xhttp.open('POST', '../php/controlador/eliminarCanço.php', true);
+        xhttp.open('POST', '../php/controlador/eliminarCançoPlaylist.php', true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("idC=" + idEliminar.value);
+        xhttp.send("idC=" + idEliminar.value + "&" + "idL=" + localStorage.getItem("IDLlistaSoundBox"));
     }
 }
 function cançoEliminada() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        var nomC = xhttp.responseText.replace(/\s+/g, '');
-        alert("Cançó " + nomC + " eliminat/da");
-        carregarCançons(localStorage.getItem("idUsuariSoundBox"));
+        carregarCançons(localStorage.getItem("IDLlistaSoundBox"));
     }
 }
 function escoltarCanço(nomCançoConc) {
@@ -151,9 +147,9 @@ function buscarCanço() {
     xhttp.onreadystatechange = mostrarTaulaCançons;
     xhttp.open('POST', '../php/controlador/buscarCançoLlista.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("nomCanço=" + nomC + "&" + "codiU=" + localStorage.getItem("idUsuariSoundBox") + "&" + "idL=" + idLlista);
+    xhttp.send("nomCanço=" + nomC + "&idL=" + idLlista);
 }
-function carregarLlistesPropies(idUsuari, idLlista) {
+function carregarLlistesPropies(idLlista) {
     localStorage.setItem("IDLlistaSoundBox", idLlista);
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
@@ -164,7 +160,7 @@ function carregarLlistesPropies(idUsuari, idLlista) {
     xhttp.onreadystatechange = mostrarLlistesPropies;
     xhttp.open('POST', '../php/controlador/carregarLlistesP.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idU=" + idUsuari);
+    xhttp.send();
 }
 function mostrarLlistesPropies() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
@@ -179,7 +175,7 @@ function mostrarLlistesPropies() {
             var newLi = document.createElement("li");
             newLi.classList.add("nav-item");
             var newA = document.createElement("a");
-            newA.href = 'playlist.php?idL=' + idLlista + "&nomL=" + titolLlista; //Revisar
+            newA.href = 'playlist.php?idL=' + idLlista + "&nomL=" + titolLlista;
             newA.classList.add("linkPlaylist");
             var newP = document.createElement("p");
             newP.classList.add("textSidebar", "textNav", "textPlaylist");
@@ -189,11 +185,10 @@ function mostrarLlistesPropies() {
             newLi.appendChild(newA);
             navMenu.appendChild(newLi);
         }
-        carregarCançons(localStorage.getItem("IDLlistaSoundBox"), localStorage.getItem("idUsuariSoundBox"));
+        agafarImatgeUsuari();
     }
 }
-function agafarImatgeUsuari(idUsuari) {
-    localStorage.setItem("idUsuariSoundBox", idUsuari);
+function agafarImatgeUsuari() {
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -203,9 +198,10 @@ function agafarImatgeUsuari(idUsuari) {
     xhttp.onreadystatechange = mostrarImatgeUsuari;
     xhttp.open('POST', '../php/controlador/agafarImatgeU.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idCompte=" + idUsuari);
+    xhttp.send();
 }
 function mostrarImatgeUsuari() {
+    var _a;
     if (xhttp.readyState == 4 && xhttp.status == 200) {
         var rutaImatge = xhttp.responseText.replace(/\s+/g, '');
         var arrOpcions = rutaImatge.split('.');
@@ -214,9 +210,28 @@ function mostrarImatgeUsuari() {
         }
         else {
             document.getElementById("iconaUsuari").src = arrOpcions[0];
-            document.getElementById("iconaUsuari").style = "height: auto !important; width: 3.5rem !important;";
+            (_a = document.getElementById("iconaUsuari")) === null || _a === void 0 ? void 0 : _a.classList.add("iconaPerfil");
         }
+        carregarCançons(localStorage.getItem("IDLlistaSoundBox"));
     }
 }
-function eliminarPlaylist() {
+function eliminarPlaylist(idLlista) {
+    var opcio = confirm("Segur que vols eliminar la playlist?");
+    if (opcio == true) {
+        if (window.XMLHttpRequest) {
+            xhttp = new XMLHttpRequest();
+        }
+        else if (window.ActiveXObject) {
+            xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhttp.onreadystatechange = playlistEliminada;
+        xhttp.open('POST', '../php/controlador/eliminarPlaylist.php', true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("idP=" + idLlista);
+    }
+}
+function playlistEliminada() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+        history.go(-1);
+    }
 }

@@ -1,8 +1,7 @@
 "use strict";
 var xhttp;
 var xmlDoc;
-function agafarImatgeUsuari(idUsuari) {
-    localStorage.setItem("idUsuariSoundBox", idUsuari);
+function agafarImatgeUsuari() {
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -12,9 +11,10 @@ function agafarImatgeUsuari(idUsuari) {
     xhttp.onreadystatechange = mostrarImatgeUsuari;
     xhttp.open('POST', '../php/controlador/agafarImatgeU.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idCompte=" + idUsuari);
+    xhttp.send();
 }
 function mostrarImatgeUsuari() {
+    var _a;
     if (xhttp.readyState == 4 && xhttp.status == 200) {
         var rutaImatge = xhttp.responseText.replace(/\s+/g, '');
         var arrOpcions = rutaImatge.split('.');
@@ -23,12 +23,12 @@ function mostrarImatgeUsuari() {
         }
         else {
             document.getElementById("iconaUsuari").src = arrOpcions[0];
-            document.getElementById("iconaUsuari").style = "height: auto !important; width: 3.5rem !important;";
+            (_a = document.getElementById("iconaUsuari")) === null || _a === void 0 ? void 0 : _a.classList.add("iconaPerfil");
         }
-        carregarCançons(localStorage.getItem("idUsuariSoundBox"));
+        carregarCançons();
     }
 }
-function carregarCançons(idUsuari) {
+function carregarCançons() {
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -38,7 +38,7 @@ function carregarCançons(idUsuari) {
     xhttp.onreadystatechange = mostrarTaulaCançons;
     xhttp.open('POST', '../php/controlador/carregarCançonsPropies.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idU=" + idUsuari);
+    xhttp.send();
 }
 function mostrarTaulaCançons() {
     var _a;
@@ -131,7 +131,7 @@ function mostrarTaulaCançons() {
             newTr.appendChild(newTd5);
             bodyTaula.appendChild(newTr);
         }
-        carregarLlistesPropies(localStorage.getItem("idUsuariSoundBox"));
+        carregarLlistesPropies();
     }
 }
 function eliminarCanço(idEliminar) {
@@ -151,9 +151,7 @@ function eliminarCanço(idEliminar) {
 }
 function cançoEliminada() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        var nomC = xhttp.responseText.replace(/\s+/g, '');
-        alert("Cançó " + nomC + " eliminat/da");
-        carregarCançons(localStorage.getItem("idUsuariSoundBox"));
+        carregarCançons();
     }
 }
 function escoltarCanço(nomCançoConc) {
@@ -174,9 +172,9 @@ function buscarCanço() {
     xhttp.onreadystatechange = mostrarTaulaCançons;
     xhttp.open('POST', '../php/controlador/buscarCançoPropia.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("nomCanço=" + nomC + "&" + "codiU=" + localStorage.getItem("idUsuariSoundBox"));
+    xhttp.send("nomCanço=" + nomC);
 }
-function carregarLlistesPropies(idUsuari) {
+function carregarLlistesPropies() {
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -186,7 +184,7 @@ function carregarLlistesPropies(idUsuari) {
     xhttp.onreadystatechange = mostrarLlistesPropies;
     xhttp.open('POST', '../php/controlador/carregarLlistesP.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idU=" + idUsuari);
+    xhttp.send();
 }
 function mostrarLlistesPropies() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
@@ -201,7 +199,7 @@ function mostrarLlistesPropies() {
             var newLi = document.createElement("li");
             newLi.classList.add("nav-item");
             var newA = document.createElement("a");
-            newA.href = 'playlist.php?idL=' + idLlista + "&nomL=" + titolLlista; //Revisar
+            newA.href = 'playlist.php?idL=' + idLlista + "&nomL=" + titolLlista;
             newA.classList.add("linkPlaylist");
             var newP = document.createElement("p");
             newP.classList.add("textSidebar", "textNav", "textPlaylist");

@@ -1,7 +1,7 @@
 var xhttp:any;
 var xmlDoc:any;
 
-function veureSubscripcio(idU:any){
+function veureSubscripcio(){
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -11,15 +11,14 @@ function veureSubscripcio(idU:any){
     xhttp.onreadystatechange = introduirSubscripcio;
     xhttp.open('POST', '../php/controlador/veureSubscripcio.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idU="+idU);
+    xhttp.send();
 }
 
 function introduirSubscripcio(){
     if (xhttp.readyState == 4 && xhttp.status == 200) {
         var tipusSub:any = xhttp.responseText.replace(/\s+/g, '');
-        var arrOpcions:any = tipusSub.split(',');
 
-        if(arrOpcions[0] == 0){
+        if(tipusSub == 0){
             document.getElementById("tipusSubs")?.innerHTML = "Gratuïta";
             document.getElementById("tipusSubs")?.style.color = "#F7AD19";
             document.getElementById("imgSubscripcio").src = "../img/imgNoPremium.png";
@@ -30,11 +29,11 @@ function introduirSubscripcio(){
             document.getElementById("imgSubscripcio").src = "../img/imgPremium.png";
 
         }
-        agafarImatgeUsuari(arrOpcions[1]);
+        agafarImatgeUsuari();
     }
 }
 
-function agafarImatgeUsuari(idUsuari:any){
+function agafarImatgeUsuari(){
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -44,7 +43,7 @@ function agafarImatgeUsuari(idUsuari:any){
     xhttp.onreadystatechange = mostrarImatgeUsuari;
     xhttp.open('POST', '../php/controlador/agafarImatgeU.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idCompte="+idUsuari);
+    xhttp.send();
 }
 
 function mostrarImatgeUsuari(){
@@ -56,13 +55,13 @@ function mostrarImatgeUsuari(){
         }
         else{
             document.getElementById("iconaUsuari").src = rutaImatge;
-            document.getElementById("iconaUsuari").style = "height: auto !important; width: 3.5rem !important;"
+            document.getElementById("iconaUsuari")?.classList.add("iconaPerfil");
         }
-        carregarLlistesPropies(localStorage.getItem("idUsuariSoundBox"));
+        carregarLlistesPropies();
     }
 }
 
-function carregarLlistesPropies(idUsuari:any){
+function carregarLlistesPropies(){
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -72,7 +71,7 @@ function carregarLlistesPropies(idUsuari:any){
     xhttp.onreadystatechange = mostrarLlistesPropies;
     xhttp.open('POST', '../php/controlador/carregarLlistesP.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idU="+idUsuari);
+    xhttp.send();
 }
 
 function mostrarLlistesPropies(){
@@ -91,7 +90,7 @@ function mostrarLlistesPropies(){
             var newLi:any = document.createElement("li");
             newLi.classList.add("nav-item");
             var newA:any = document.createElement("a");
-            newA.href = 'playlist.php?idL=' + idLlista; //Revisar
+            newA.href = 'playlist.php?idL=' + idLlista + "&nomL=" + titolLlista;
             newA.classList.add("linkPlaylist");
             var newP:any = document.createElement("p");
             newP.classList.add("textSidebar", "textNav", "textPlaylist");
