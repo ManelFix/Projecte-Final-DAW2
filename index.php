@@ -49,11 +49,11 @@
     <!-- Reproductor fixed bottom -->
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="audio-player-container">
-            <audio src="uploads/04c344c6cd5d4d72024fccfd731c188b.mp3" preload="metadata" id="audio-1"></audio>
+            <audio src="" preload="metadata" id="audio-1"></audio>
             <div class="info-canco">
-                <p class="artista">Artista</p>
+                <p id="nomA" class="artista">Artista</p>
                 <span> - </span>
-                <p class="titol">Títol</p>
+                <p id="titolM" class="titol">Títol</p>
             </div>
             <div class="reproductor">
                 <div class="play-button play" id="play" onclick="play(1)">
@@ -89,13 +89,12 @@
             <div class="row mostraRow">
                 <div class="col-md-4 grid-margin stretch-card">
                     <div class="card divCategoria">
-                        <div class="card-body imatgeMusica cat1">
-                            <h5 class="card-title">Cançó 1</h5>
-                            <audio src="uploads/2a63edcb4f7bd958e2921c1eb6ec0b26.mp3" preload="metadata" id="audio-1"></audio>
+                        <div class="card-body cat1 divMusicaInici">
+                            <h5 class="card-title">Total Breakdown</h5>
                             <div class="media divMedia">
                                 <div class="media-body zonaBotonsMusica">
-                                    <span class='bx bx-play-circle play' id="play" onclick="play(1)"></span>
-                                    <a href="uploads/2a63edcb4f7bd958e2921c1eb6ec0b26.mp3" download="uploads/2a63edcb4f7bd958e2921c1eb6ec0b26.mp3"><span class='bx bxs-download botonDescarrega'></span></a>
+                                    <span class='bx bx-play-circle play' id="play" onclick="escoltarCanço(1);"></span>
+                                    <a href="uploads/provaa1.mp3" download="prova1.mp3"><span class='bx bxs-download botonDescarrega'></span></a>
                                 </div>
                             </div>
                         </div>
@@ -103,13 +102,12 @@
                 </div>
                 <div class="col-md-4 grid-margin stretch-card">
                     <div class="card divCategoria">
-                        <div class="card-body imatgeMusica cat2">
-                            <h5 class="card-title">Cançó 2</h5>
-                            <audio src="uploads/3e09a854d25a5a11a97854c757e4fcb3.mp3" preload="metadata" id="audio-2"></audio> <!-- audio-id Donde id sea el id de la canción inserido mediante query -->
+                    <div class="card-body cat2 divMusicaInici">
+                            <h5 class="card-title">Breathe</h5>
                             <div class="media divMedia">
                                 <div class="media-body zonaBotonsMusica">
-                                    <span class='bx bx-play-circle' id="play" onclick="play(2)"></span>
-                                    <a href="uploads/3e09a854d25a5a11a97854c757e4fcb3.mp3" download="uploads/3e09a854d25a5a11a97854c757e4fcb3.mp3"><span class='bx bxs-download botonDescarrega'></span></a>
+                                    <span class='bx bx-play-circle' id="play" onclick="escoltarCanço(2);"></span>
+                                    <a href="uploads/prova2.mp3" download="prova2.mp3"><span class='bx bxs-download botonDescarrega'></span></a>
                                 </div>
                             </div>
                         </div>
@@ -117,13 +115,12 @@
                 </div>
                 <div class="col-md-4 grid-margin stretch-card">
                     <div class="card divCategoria">
-                        <div class="card-body imatgeMusica cat3">
-                            <h5 class="card-title">Cançó 3</h5>
-                            <audio src="uploads/6fda887deb0981bd7922e28b0c3947cd.mp3" preload="metadata" id="audio-3"></audio>
+                        <div class="card-body cat3 divMusicaInici">
+                            <h5 class="card-title">Aurea</h5>
                             <div class="media divMedia">
                                 <div class="media-body zonaBotonsMusica">
-                                    <span class='bx bx-play-circle' id="play" onclick="play(3)"></span>
-                                    <a href="uploads/6fda887deb0981bd7922e28b0c3947cd.mp3" download="uploads/6fda887deb0981bd7922e28b0c3947cd.mp3"><span class='bx bxs-download botonDescarrega'></span></a>
+                                    <span class='bx bx-play-circle' id="play" onclick="escoltarCanço(3);"></span>
+                                    <a href="uploads/prova3.mp3" download="uploads/prova3.mp3"><span class='bx bxs-download botonDescarrega'></span></a>
                                 </div>
                             </div>
                         </div>

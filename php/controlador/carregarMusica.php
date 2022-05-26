@@ -9,7 +9,6 @@
 
     $categoria = $_POST["cat"];
     $premium = $_POST["tip"];
-    $usuari = $_SESSION['ses_id'];
 
     if($premium == 1){
         if($categoria == "prèmium"){
@@ -49,7 +48,7 @@
         $elementos_xml[] = "<musica2><id_canço>$fila2[id_canço]</id_canço><nom_canço>$fila2[nom_canço]</nom_canço><nom_guardat>$fila2[nom_guardat]</nom_guardat><tipus>$fila2[tipus]</tipus><artista>$fila2[artista]</artista><click>$fila2[click]</click><premium>$fila2[premium]</premium></musica2>";                                                
     }
     
-    $sql3 = "SELECT * FROM valoracio_canço WHERE id_usuari = '".$usuari."'";
+    $sql3 = "SELECT * FROM valoracio_canço WHERE id_usuari = '".$_SESSION['ses_id']."'";
     $r3 = mysqli_query($connexio,$sql3);
 
     while($fila3 = mysqli_fetch_assoc($r3)){

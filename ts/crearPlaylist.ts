@@ -1,7 +1,7 @@
 var xhttp:any;
 var xmlDoc:any;
 
-function crearPlaylist(idUsuari:any){
+function crearPlaylist(){
     var nomP:any = document.getElementById("nomPlaylist").value;
     var descP:any = document.getElementById("descripcio").value;
     var tipusP:any = document.getElementById("iEstatAnim").value;
@@ -19,13 +19,12 @@ function crearPlaylist(idUsuari:any){
         xhttp.onreadystatechange = playlistCreada;
         xhttp.open('POST', '../php/controlador/crearPlaylist.php', true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("idU="+idUsuari+"&"+"nomP="+nomP+"&"+"descP="+descP+"&"+"tipusP="+tipusP);
+        xhttp.send("nomP="+nomP+"&"+"descP="+descP+"&"+"tipusP="+tipusP);
     }
 }
 
 function playlistCreada(){
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        alert("Llista creada correctament");
         history.go(-1);
     }
 }

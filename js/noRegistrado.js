@@ -4,6 +4,26 @@ var xmlDoc;
 function anarCatalegNoRegistrat() {
     location.href = "php/exploraNoRegistrat.php";
 }
+function escoltarCanço(num) {
+    var _a, _b, _c, _d, _e, _f;
+    switch (num) {
+        case 1:
+            (_a = document.getElementById("nomA")) === null || _a === void 0 ? void 0 : _a.innerHTML = "Brad Sucks";
+            (_b = document.getElementById("titolM")) === null || _b === void 0 ? void 0 : _b.innerHTML = "Total Breakdown";
+            document.getElementById("audio-1").src = "uploads/provaa1.mp3";
+            break;
+        case 2:
+            (_c = document.getElementById("nomA")) === null || _c === void 0 ? void 0 : _c.innerHTML = "Breathe";
+            (_d = document.getElementById("titolM")) === null || _d === void 0 ? void 0 : _d.innerHTML = "George Capon";
+            document.getElementById("audio-1").src = "uploads/prova2.mp3";
+            break;
+        case 3:
+            (_e = document.getElementById("nomA")) === null || _e === void 0 ? void 0 : _e.innerHTML = "Kevin MacLeod";
+            (_f = document.getElementById("titolM")) === null || _f === void 0 ? void 0 : _f.innerHTML = "Aurea";
+            document.getElementById("audio-1").src = "uploads/prova3.mp3";
+            break;
+    }
+}
 function carregarMusica(nom) {
     var catMinus = nom.toLowerCase();
     if (window.XMLHttpRequest) {

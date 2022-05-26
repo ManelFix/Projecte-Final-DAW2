@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
   <link rel="stylesheet" href="../css/client.css">
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="shortcut icon" href="../img/logo.svg" />
+  <link rel="shortcut icon" href="../img/favicon.png" />
   <script src="../js/noRegistrado.js"></script>
 </head>
 <body>

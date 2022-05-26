@@ -1,15 +1,13 @@
 <?php
+    session_start();
     include("BBDD.php");  
     $connexio=sql();
 
-    $idUsuari = $_POST["idU"];
-
-    $sql = "SELECT premium FROM usuari WHERE id_usuari = '".$idUsuari."'";
+    $sql = "SELECT premium FROM usuari WHERE id_usuari = '".$_SESSION['ses_id']."'";
     $r = mysqli_query($connexio,$sql);
     
     while($fila = mysqli_fetch_assoc($r)){
         echo $fila["premium"];
-        echo ",".$idUsuari;
     }        
     
     mysqli_close($connexio);

@@ -5,12 +5,11 @@ if (isset($_SESSION['ses_id'])) {
     if ($_SESSION["ban"] == 0) {
         
         include("BBDD.php");
-
         $connexio = sql();
 
         header("Content-Type: application/xml");
 
-        $sql = "SELECT can.id_canço,can.nom_canço, can.nom_guardat,can.tipus,can.artista FROM canço can left join valoració_canço val ON (can.id_canço = val.id_canço) WHERE val.id_usuari =".$_SESSION['ses_id']."";
+        $sql = "SELECT can.id_canço,can.nom_canço, can.nom_guardat,can.tipus,can.artista FROM canço can left join valoracio_canço val ON (can.id_canço = val.id_canço) WHERE val.id_usuari =".$_SESSION['ses_id']."";
 
         $res = mysqli_query($connexio, $sql);
 

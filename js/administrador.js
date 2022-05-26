@@ -2,7 +2,6 @@
 var xhttp;
 var xmlDoc;
 function tancarSessio() {
-    alert("Sessió tancada");
     location.href = "login.php";
 }
 /* Web Admin Usuaris */
@@ -128,15 +127,11 @@ function desbanejarUsuari(usuariBan) {
 }
 function usuariBanejat() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        var usuariN = xhttp.responseText.replace(/\s+/g, '');
-        alert("Usuari " + usuariN + " banejat");
         carregarUsuaris();
     }
 }
 function usuariDesbanejat() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        var usuariN = xhttp.responseText.replace(/\s+/g, '');
-        alert("Usuari " + usuariN + " desbanejat");
         carregarUsuaris();
     }
 }
@@ -266,8 +261,6 @@ function eliminarCanço(idEliminar) {
 }
 function cançoEliminada() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        var nomC = xhttp.responseText.replace(/\s+/g, '');
-        alert("Cançó " + nomC + " eliminat/da");
         carregarCançons();
     }
 }
@@ -421,8 +414,6 @@ function eliminarPlaylist(IDLlista) {
 }
 function playlistEliminada() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        var nomP = xhttp.responseText.replace(/\s+/g, '');
-        alert("Playlist " + nomP + " eliminat/da");
         carregarPlaylists();
     }
 }
