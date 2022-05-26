@@ -218,6 +218,23 @@ body{
     height: 100%;
 }
 
+.divMusicaInici{
+    border-radius: 10px;
+    padding: 5.1rem !important;
+    background-size: 101%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.5s ease-in-out;
+}
+
+.divMusicaInici h5{
+    font-weight: bold !important;
+    color: white !important;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.6em !important;
+    text-align: center;
+}
+
 .divMostra{
     text-align: center;
     margin: 45px auto;
@@ -563,7 +580,6 @@ footer p{
 footer span{
     color: #429EBD;
 }
-
 
 /* Web Login */
 
