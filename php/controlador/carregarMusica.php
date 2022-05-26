@@ -1,11 +1,11 @@
 <?php
+    session_start();
     header("Content-Type: application/xml");    
     include("BBDD.php");  
     $connexio=sql();
 
     $categoria = $_POST["cat"];
     $premium = $_POST["tip"];
-    $usuari = $_POST["idU"];
 
     if($premium == 1){
         if($categoria == "prèmium"){
@@ -45,7 +45,7 @@
         $elementos_xml[] = "<musica2>\n<id_canço>$fila2[id_canço]</id_canço>\n<nom_canço>$fila2[nom_canço]</nom_canço>\n<nom_guardat>$fila2[nom_guardat]</nom_guardat>\n<tipus>$fila2[tipus]</tipus>\n<artista>$fila2[artista]</artista>\n<click>$fila2[click]</click>\n<premium>$fila2[premium]</premium>\n</musica2>";                                                
     }
     
-    $sql3 = "SELECT * FROM valoracio_canço WHERE id_usuari = '".$usuari."'";
+    $sql3 = "SELECT * FROM valoracio_canço WHERE id_usuari = '".$_SESSION['ses_id']."'";
     $r3 = mysqli_query($connexio,$sql3);
 
     while($fila3 = mysqli_fetch_assoc($r3)){

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../css/estilo.css">
     <script src="../js/iniciar_sesion.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="../img/logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/favicon.png" />
     <title>SoundBOX</title>
     <script src="../js/crearPlaylist.js"></script>
 </head>
@@ -48,7 +48,7 @@
                     </select>               
                 </div>
             </div>
-            <input id="btnPlaylist" type="button" value="Crear" name="crearPl" class="ibtnEnviar" onclick="crearPlaylist(<?= $idUsuari ?>);">       
+            <input id="btnPlaylist" type="button" value="Crear" name="crearPl" class="ibtnEnviar" onclick="crearPlaylist();">       
         </form>
     </section>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>

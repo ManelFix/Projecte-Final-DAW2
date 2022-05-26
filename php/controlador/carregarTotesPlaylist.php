@@ -1,12 +1,12 @@
 <?php
+    session_start();
     header("Content-Type: application/xml");    
     include("BBDD.php");  
     $connexio=sql();
 
-    $idUsuari = $_POST["idU"];
     $idCanço = $_POST["idC"];
 
-    $sql = "SELECT * FROM llista WHERE id_usuari = '".$idUsuari."'";
+    $sql = "SELECT * FROM llista WHERE id_usuari = '".$_SESSION['ses_id']."'";
     $r = mysqli_query($connexio,$sql);
     
     while($fila = mysqli_fetch_assoc($r)){

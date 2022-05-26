@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/estilo.css">
     <script src="../js/registrar.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="../img/logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/favicon.png" />
     <title>SoundBOX</title>
 </head>
 <body>

@@ -17,14 +17,14 @@ if (isset($_SESSION['ses_id'])) {
       <link rel="stylesheet" href="../css/client.css">
       <script src="../js/artistas_seguidos.js"></script>
       <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-      <link rel="shortcut icon" href="../img/logo.svg" />
+      <link rel="shortcut icon" href="../img/favicon.png" />
     </head>
-    <body onload="artistas_seguidos(<?php echo $_SESSION['ses_id'] ?>)">
+    <body onload="agafarImatgeUsuari()">
       <div class="container-scroller">
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row menuFons">
           <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center noFonsColor">
-          <a class="navbar-brand brand-logo mr-5"><img src="../img/logoAC.PNG" class="mr-2 logoSoundBox" alt="logoSoundBOX"/></a>
-          <a class="navbar-brand brand-logo-mini"><img src="../img/logoMini.PNG" class="logoMiniSoundBox" alt="logoSoundBOX"/></a>
+            <a class="navbar-brand brand-logo mr-5"><img src="../img/logoAC.PNG" class="mr-2 logoSoundBox" alt="logoSoundBOX"/></a>
+            <a class="navbar-brand brand-logo-mini"><img src="../img/logoMini.PNG" class="logoMiniSoundBox" alt="logoSoundBOX"/></a>
           </div>
           <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end noFonsColor">
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -38,7 +38,7 @@ if (isset($_SESSION['ses_id'])) {
                       <span class="icon-search colIcona iconaLupa"></span>
                     </span>
                   </div>
-                  <input type="text" class="form-control inputBuscar" id="navbar-search-input" placeholder="Buscar" aria-label="search" aria-describedby="search">
+                  <input type="text" class="form-control inputBuscar" id="iUsuariTot" placeholder="Buscar usuari" aria-label="search" aria-describedby="search" onkeyup="buscarUsuari();">
                 </div>
               </li>
             </ul>
@@ -70,7 +70,7 @@ if (isset($_SESSION['ses_id'])) {
         </nav>
         <div class="container-fluid page-body-wrapper">
           <nav class="sidebar sidebar-offcanvas sidebarColorFons" id="sidebar">
-            <ul class="nav">
+            <ul id="idNav" class="nav">
               <li class="nav-item">
                 <a class="nav-link efecteHoverMenu" href="mevaMusica.php">
                   <span class='bx bx-music estilIcones'></span>
@@ -101,21 +101,6 @@ if (isset($_SESSION['ses_id'])) {
                   <span class="menu-title textSidebar textNav">Crear playlist</span>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="" class="linkPlaylist">
-                  <p class="textSidebar textNav textPlaylist">Playlist 1</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="linkPlaylist">
-                  <p class="textSidebar textNav textPlaylist">Playlist 2</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="linkPlaylist">
-                  <p class="textSidebar textNav textPlaylist">Playlist 3</p>
-                </a>
-              </li>
             </ul>
           </nav>
           <div class="main-panel">
@@ -124,7 +109,7 @@ if (isset($_SESSION['ses_id'])) {
                 <div class="col-md-12 grid-margin">
                   <div class="row">
                     <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                      <h3 id="nomCategoria" class="textIniciClient">Artistes</h3>
+                      <h3 id="nomCategoria" class="textIniciClient">Usuaris</h3>
                     </div>
                   </div>
                 </div>
@@ -147,7 +132,7 @@ if (isset($_SESSION['ses_id'])) {
                 <div class="col-md-12 grid-margin modificarGridMargin">
                   <div class="row">
                     <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                      <h4 id="nomCategoria" class="musicaTexts">Artistes que segueixo</h4>
+                      <h4 id="nomCategoria" class="musicaTexts">Usuaris que segueixo</h4>
                     </div>
                   </div>
                 </div>
@@ -159,7 +144,7 @@ if (isset($_SESSION['ses_id'])) {
                 <div class="col-md-12 grid-margin modificarGridMargin">
                   <div class="row">
                     <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                      <h4 id="nomCategoria" class="musicaTexts">Tots els artistes</h4>
+                      <h4 id="nomCategoria" class="musicaTexts">Tots els usuaris</h4>
                     </div>
                   </div>
                 </div>
