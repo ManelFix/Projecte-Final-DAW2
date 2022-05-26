@@ -1,44 +1,9 @@
 <?php
-    session_start();
-    $idUsuari = $_SESSION["ses_id"];
-    $premium = $_SESSION["premium"];  
-
-    if(isset($_SESSION['ses_id'])){
-        if($_SESSION["ban"]!=0){
-            header('Location: planaBanejat.php');
-        }
-    }else{
-        header('Location: login.php');
-    }
-    
-    if(!empty($_POST["inserirCanço"])){
-        require("controlador/BBDD.php");
-        $connexio=sql();
-
-        $titol = $_POST["titolAfegir"];
-        $genere = $_POST["genereAfegir"];
-        $estatAnim = $_POST["estatAnimAfegir"];
-        $artista = $_POST["artistaAfegir"];
-        $nomCanço = $_FILES["arxiuAfegir"]["name"];
-        $tipus = explode('.', $_FILES['arxiuAfegir']['name']);
-        $nom_guardat = ""; //Falta aixo
-        $data = date("Y-m-d");
-
-        $sql ="INSERT INTO canço (id_usuari, id_llista, nom_canço, nom_guardat, tipus, artista, data, genere, estat_anim, click, click_mens, premium) 
-               VALUES ('".$idUsuari."','0','".$nomCanço."','".$nom_guardat."','".$tipus."','".$artista."','".$data."','".$genere."','".$estatAnim."','0','0','0') ";
-
-        $connexio->query($sql);
-
-        //Fer el move
- 
-        echo '<script language="javascript">alert("Cançó afegida");</script>';
-
-        $connexio->close();
-
-    }
-
-
+session_start();
+if(isset($_SESSION['ses_id'])){
+    if($_SESSION["ban"]==0){
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -47,8 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/estilo.css">
+    <script src="../js/registrar.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="../img/logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/favicon.png" />
     <title>SoundBOX</title>
 </head>
 <body>
@@ -57,10 +23,10 @@
     </div>
     <section class="framePrincipal2 extraModNoPremium">
         <div class="divLogo">
-           <img src="../img/logo.svg" alt="logoSoundBOX">
+           <img src="../img/logoForms.PNG" alt="logoSoundBOX">
         </div>
         <h1>Afegir cançó</h1>
-        <form method="post" enctype="multipart/form-data">
+        <form action="controlador/guardar_archivos.php" method="post" enctype="multipart/form-data">
             <div class="frameSecundari2 extraModificacionsNoPremium">
                 <div class="divUserBorder">
                     <span class='bx bx-album iconesLoginRegister'></span>
@@ -122,3 +88,12 @@
     <script src="../js/botonFile.js" crossorigin="anonymous"></script>
 </body>
 </html>
+<?php
+
+}else{
+        header('Location: planaBanejat.php');
+    }
+}else{
+    header('Location: login.php');
+}
+?>

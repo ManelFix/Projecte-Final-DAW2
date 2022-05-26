@@ -50,7 +50,7 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/estilo.css">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="../img/logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/favicon.png" />
     <title>SoundBOX</title>
 </head>
 <body>
@@ -59,7 +59,7 @@
     </div>
     <section class="framePrincipal2 extraModNoPremium">
         <div class="divLogo">
-           <img src="../img/logo.svg" alt="logoSoundBOX">
+            <img src="../img/logoForms.PNG" alt="logoSoundBOX">
         </div>
         <h1>Afegir cançó</h1>
         <form method="post">
@@ -85,7 +85,6 @@
                         <option value="electronica">Electrònica</option>
                         <option value="indie">Indie</option>
                         <option value="infantil">Infantil</option>
-                        <option value="premium">Prèmium</option>
                     </select>
                 </div>
                 <div class="divUserBorder">

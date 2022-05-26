@@ -14,6 +14,7 @@
       header('Location: explora.php');
     }
   }
+
 ?>
 
 <!DOCTYPE html>
@@ -28,18 +29,21 @@
   <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
   <link rel="stylesheet" href="../css/client.css">
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="shortcut icon" href="../img/logo.svg" />
+  <link rel="shortcut icon" href="../img/favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
   <script src="../js/musica.js"></script>
+
 </head>
-<body onload="agafarImatgeUsuari('<?= $idUsuari ?>','<?= $nomcat ?>','<?= $premium ?>')">
+<body onload="agafarImatgeUsuari('<?= $nomcat ?>','<?= $premium ?>')">
   <div class="container-scroller">
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row menuFons">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center noFonsColor">
-        <a class="navbar-brand brand-logo mr-5"><img src="../img/logo.svg" class="mr-2" alt="logoSoundBOX"/></a>
-        <a class="navbar-brand brand-logo-mini"><img src="../img/logo.svg" alt="logoSoundBOX"/></a>
+        <a class="navbar-brand brand-logo mr-5"><img src="../img/logoAC.PNG" class="mr-2 logoSoundBox" alt="logoSoundBOX"/></a>
+        <a class="navbar-brand brand-logo-mini"><img src="../img/logoMini.PNG" class="logoMiniSoundBox" alt="logoSoundBOX"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end noFonsColor">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -85,7 +89,7 @@
     </nav>
     <div class="container-fluid page-body-wrapper">    
       <nav class="sidebar sidebar-offcanvas sidebarColorFons" id="sidebar">
-        <ul class="nav">
+        <ul id="idNav" class="nav">
           <li class="nav-item">
             <a class="nav-link efecteHoverMenu" href="mevaMusica.php">
               <span class='bx bx-music estilIcones'></span>
@@ -105,7 +109,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link efecteHoverMenu" href="usuaris.php">
+            <a class="nav-link efecteHoverMenu" href="artistes.php">
               <img src="../img/iconaArtist.svg" class="iconaArtista estilIcones iconPers" alt="iconaArtista">
               <span class="menu-title textSidebar">Usuaris</span>
             </a>
@@ -115,26 +119,11 @@
               <span class='bx bxs-playlist estilIcones'></span>
               <span class="menu-title textSidebar textNav">Crear playlist</span>
             </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="linkPlaylist">
-              <p class="textSidebar textNav textPlaylist">Playlist 1</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="linkPlaylist">
-              <p class="textSidebar textNav textPlaylist">Playlist 2</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="linkPlaylist">
-              <p class="textSidebar textNav textPlaylist">Playlist 3</p>
-            </a>
-          </li>
+          </li>         
         </ul>
       </nav>
       <div class="main-panel">
-        <div class="content-wrapper mainCFons">
+        <div class="content-wrapper mainCFons extraEspai">
           <div class="row">
             <div class="col-md-12 grid-margin">
               <div class="row">
@@ -146,7 +135,7 @@
                   <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
                     <form method="post">
                       <select name="filtrar" id="filtrarPer" class="css_inputsLogReg selectFiltrar custom-select" onchange="aplicarFiltre('<?= $nomcat ?>');">
-                        <option selected disabled>Estat d'ànim</option>
+                        <option value="none" selected disabled>Estat d'ànim</option>
                         <option value="alegre">Alegre</option>
                         <option value="poderos">Poderós</option>
                         <option value="trist">Trist</option>
@@ -160,6 +149,30 @@
                     </form>
                   </div>
                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content modalPlaylist">
+                <div>
+                  <button id="btnCerrarModal" type="button" class="close tancarModal" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body cosModal">
+                  <form>
+                    <div class="form-group">
+                      <label for="recipient-name" class="labelModal">Selecciona la playlist:</label>
+                      <input id="idHidden" type="hidden">
+                      <select id="llistatPlaylist" name='playlistS' class='form-control selectModal'></select>
+                    </div>
+                  </form>
+                </div>
+                <hr class="liniaModal">
+                <div class="modal-footer modalFinal">
+                  <button type="button" class="btn btn-primary btnSeleccionarModal" onclick="afegirPlaylist();">Seleccionar</button>
                 </div>
               </div>
             </div>
@@ -181,7 +194,7 @@
                 <span id="current-time">0:00</span>
                 <input type="range" id="seek-slider" max="100" value="0">
                 <span id="duration">0:00</span>
-                <input type="range" id="volume-slider" max="100" value="50">
+                <input type="range" id="volume-slider" max="100" value="80">
                 <button class="mute-button unmuted" id="mute"><span id="iconoAudio" class="fa-solid fa-volume-high mute-icon"></span></button>
               </div>
             </div>
@@ -210,36 +223,12 @@
               </div>
             </div>
           </div>
-          <div id="musicaIdTop" class="row">
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat1">
-                  <h5 class="card-title">Cançó 1</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download botonDescarrega'></span>
-                      <div class="nav-item nav-profile dropdown">
-                        <a href="#" data-toggle="dropdown" id="profileDropdown">
-                          <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
-                        </a>
-                        <div class="dropdown-menu menuAccio">
-                          <a class="dropdown-item opcioMenuAccio">
-                            <span class='bx bx-like text-primary colIcona midaIcones'></span>
-                            <p class="txtOpcionsUser">M'agrada</p>
-                          </a>
-                          <a class="dropdown-item opcioMenuAccio">
-                            <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
-                            <p class="txtOpcionsUser">Afegir a la playlist</p>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div id="musicaIdTop" class="row">           
           </div>
+          <?php
+              if($nomcat != "Prèmium"){
+
+          ?>
           <div class="row">
             <div class="col-md-12 grid-margin modificarGridMargin">
               <div class="row">
@@ -250,35 +239,10 @@
             </div>
           </div>
           <div id="musicaIdPremium" class="row">
-          <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat1">
-                  <h5 class="card-title">Cançó 1</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download botonDescarrega'></span>
-                      <div class="nav-item nav-profile dropdown">
-                        <a href="#" data-toggle="dropdown" id="profileDropdown">
-                          <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
-                        </a>
-                        <div class="dropdown-menu menuAccio">
-                          <a class="dropdown-item opcioMenuAccio">
-                            <span class='bx bx-like text-primary colIcona midaIcones'></span>
-                            <p class="txtOpcionsUser">M'agrada</p>
-                          </a>
-                          <a class="dropdown-item opcioMenuAccio">
-                            <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
-                            <p class="txtOpcionsUser">Afegir a la playlist</p>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
+          <?php
+              }
+          ?>
           <div class="row">
             <div class="col-md-12 grid-margin modificarGridMargin">
               <div class="row">
@@ -289,34 +253,6 @@
             </div>
           </div>
           <div id="musicaIdTot" class="row">
-          <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica cat1">
-                  <h5 class="card-title">Canço 1</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download botonDescarrega'></span>
-                      <div class="nav-item nav-profile dropdown">
-                        <a href="#" data-toggle="dropdown" id="profileDropdown">
-                          <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
-                        </a>
-                        <div class="dropdown-menu menuAccio">
-                          <a class="dropdown-item opcioMenuAccio">
-                            <span class='bx bx-like text-primary colIcona midaIcones'></span>
-                            <p class="txtOpcionsUser">M'agrada</p>
-                          </a>
-                          <a class="dropdown-item opcioMenuAccio">
-                            <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
-                            <p class="txtOpcionsUser">Afegir a la playlist</p>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
           <div class="row">
             <div class="col-md-12 grid-margin transparent">
@@ -342,8 +278,6 @@
   </div>
   <script src="../recursosAdmin_Client/js/vendor.bundle.base.js"></script>
   <script src="../js/client/template.js"></script>
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
   <script src="../js/client/off-canvas.js"></script>
   <script type="text/javascript" src="../js/audioplayer.js" crossorigin="anonymous"></script>
   <script src="../js/bootstrap.js" crossorigin="anonymous"></script>

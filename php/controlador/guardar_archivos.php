@@ -8,7 +8,6 @@ if(isset($_SESSION['ses_id'])){
       include("BBDD.php");
       
       $connexio=sql();
-      print_r($_FILES);
       $nombre = md5(date(DATE_RFC2822).basename($_FILES["fileToUpload"]["name"]));
       
       $target_dir = "../../uploads/";
@@ -39,15 +38,11 @@ if(isset($_SESSION['ses_id'])){
           $sql = "INSERT INTO canço(id_usuari,nom_canço, artista, data, durada, genere, estat_anim, click, click_mens, premium) VALUES 
           (".$_SESSION['ses_id'].",".$_POST['titolAfegir'].",".$_POST['artista'].",currentdate,)";
       
-          echo "fino";
       
         } else {
-          echo "Sorry, there was an error uploading your file.";
+          
         }
       }
     }
 }
-
-
-
 ?>

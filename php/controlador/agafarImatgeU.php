@@ -1,13 +1,13 @@
 <?php
+    session_start();
     include("BBDD.php");  
     $connexio=sql();
-
-    $idUsuari = $_POST["idCompte"];
+ 
     if(!empty($_POST["cat"])){
         $categoria = $_POST["cat"];
     }
 
-    $sql = "SELECT imatge, tipus FROM usuari WHERE id_usuari = '".$idUsuari."'";
+    $sql = "SELECT imatge, tipus FROM usuari WHERE id_usuari = '".$_SESSION['ses_id']."'";
     $r = mysqli_query($connexio,$sql);
     
     while($fila = mysqli_fetch_assoc($r)){
@@ -18,7 +18,7 @@
                 echo ".".$categoria;
             }
         }
-        else{
+        else{ 
             echo "data: ".$fila["tipus"].";base64,".base64_encode($fila["imatge"]);
             if(!empty($_POST["cat"])){
                 echo "\n";

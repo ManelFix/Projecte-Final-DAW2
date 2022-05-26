@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/estilo.css">
     <script src="../js/iniciar_sesion.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="../img/logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/favicon.png" />
     <title>SoundBOX</title>
 </head>
 <body>
@@ -17,7 +17,7 @@
     </div>
     <section class="framePrincipal banejatSection">
         <div class="divLogo">
-           <img src="../img/logo.svg" alt="logoSoundBOX">
+            <img src="../img/logoForms.PNG" alt="logoSoundBOX">
         </div>
         <h1 class="titolBanejat">Ho sentim!</h1>
         <h2>El teu compte està bloquejat, així que no pots pujar cançons, si creus que es deu a un error envia'ns un correu a <span class="correuConcret">soundboxdaw2@gmail.com</span></h2>
