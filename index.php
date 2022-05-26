@@ -96,21 +96,6 @@
                                 <div class="media-body zonaBotonsMusica">
                                     <span class='bx bx-play-circle play' id="play" onclick="play(1)"></span>
                                     <a href="uploads/2a63edcb4f7bd958e2921c1eb6ec0b26.mp3" download="uploads/2a63edcb4f7bd958e2921c1eb6ec0b26.mp3"><span class='bx bxs-download botonDescarrega'></span></a>
-                                    <div class="nav-item nav-profile dropdown">
-                                        <a href="" data-toggle="dropdown" id="profileDropdown">
-                                            <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
-                                        </a>
-                                        <div class="dropdown-menu menuAccio">
-                                            <a class="dropdown-item opcioMenuAccio">
-                                                <span class='bx bx-like text-primary colIcona midaIcones'></span>
-                                                <p class="txtOpcionsUser">M'agrada</p>
-                                            </a>
-                                            <a class="dropdown-item opcioMenuAccio">
-                                                <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
-                                                <p class="txtOpcionsUser">Afegir a la playlist</p>
-                                            </a>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -125,21 +110,6 @@
                                 <div class="media-body zonaBotonsMusica">
                                     <span class='bx bx-play-circle' id="play" onclick="play(2)"></span>
                                     <a href="uploads/3e09a854d25a5a11a97854c757e4fcb3.mp3" download="uploads/3e09a854d25a5a11a97854c757e4fcb3.mp3"><span class='bx bxs-download botonDescarrega'></span></a>
-                                    <div class="nav-item nav-profile dropdown">
-                                        <a href="#" data-toggle="dropdown" id="profileDropdown">
-                                            <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
-                                        </a>
-                                        <div class="dropdown-menu menuAccio">
-                                            <a class="dropdown-item opcioMenuAccio">
-                                                <span class='bx bx-like text-primary colIcona midaIcones'></span>
-                                                <p class="txtOpcionsUser">M'agrada</p>
-                                            </a>
-                                            <a class="dropdown-item opcioMenuAccio">
-                                                <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
-                                                <p class="txtOpcionsUser">Afegir a la playlist</p>
-                                            </a>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -154,21 +124,6 @@
                                 <div class="media-body zonaBotonsMusica">
                                     <span class='bx bx-play-circle' id="play" onclick="play(3)"></span>
                                     <a href="uploads/6fda887deb0981bd7922e28b0c3947cd.mp3" download="uploads/6fda887deb0981bd7922e28b0c3947cd.mp3"><span class='bx bxs-download botonDescarrega'></span></a>
-                                    <div class="nav-item nav-profile dropdown">
-                                        <a href="#" data-toggle="dropdown" id="profileDropdown">
-                                            <span class='bx bx-dots-vertical-rounded iconaExtrMusic'></span>
-                                        </a>
-                                        <div class="dropdown-menu menuAccio">
-                                            <a class="dropdown-item opcioMenuAccio">
-                                                <span class='bx bx-like text-primary colIcona midaIcones'></span>
-                                                <p class="txtOpcionsUser">M'agrada</p>
-                                            </a>
-                                            <a class="dropdown-item opcioMenuAccio">
-                                                <span class='bx bx-add-to-queue text-primary colIcona midaIcones'></span>
-                                                <p class="txtOpcionsUser">Afegir a la playlist</p>
-                                            </a>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
