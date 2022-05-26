@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/client.css">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -37,7 +38,7 @@
                         <li><a href="#contacte">Contacte</a></li>
                         <div class="divBotonsNav">
                             <a href="php/login.php" class="botonsIR estilbtnLogin">Iniciar sessió</a>
-                            <a href="php/register.php" class="botonsIR btnRegistrat estilbtnLogin2">Registrat ja</a>
+                            <a href="php/register.php" class="botonsIR btnRegistrat estilbtnLogin2">Registra't ja</a>
                         </div>
                     </ul>
                 </div>
@@ -85,14 +86,49 @@
                 <h2>Mostra del Catàleg</h2>
                 <p>Aquí una mostra d'algunes de les cançons que disposem en el nostre cataleg</p>
             </div>
-            <div class="col-md-4 col-sm-12 col-xs-12">
-                <!-- Musica -->
-            </div>
-            <div class="col-md-4 col-sm-12 col-xs-12">
-                <!-- Musica -->
-            </div>
-            <div class="col-md-4 col-sm-12 col-xs-12">
-                <!-- Musica -->
+            <div class="row mostraRow">
+                <div class="col-md-4 grid-margin stretch-card">
+                    <div class="card divCategoria">
+                        <div class="card-body imatgeMusica cat1">
+                            <h5 class="card-title">Cançó 1</h5>
+                            <audio src="uploads/2a63edcb4f7bd958e2921c1eb6ec0b26.mp3" preload="metadata" id="audio-1"></audio>
+                            <div class="media divMedia">
+                                <div class="media-body zonaBotonsMusica">
+                                    <span class='bx bx-play-circle play' id="play" onclick="play(1)"></span>
+                                    <a href="uploads/2a63edcb4f7bd958e2921c1eb6ec0b26.mp3" download="uploads/2a63edcb4f7bd958e2921c1eb6ec0b26.mp3"><span class='bx bxs-download botonDescarrega'></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 grid-margin stretch-card">
+                    <div class="card divCategoria">
+                        <div class="card-body imatgeMusica cat2">
+                            <h5 class="card-title">Cançó 2</h5>
+                            <audio src="uploads/3e09a854d25a5a11a97854c757e4fcb3.mp3" preload="metadata" id="audio-2"></audio> <!-- audio-id Donde id sea el id de la canción inserido mediante query -->
+                            <div class="media divMedia">
+                                <div class="media-body zonaBotonsMusica">
+                                    <span class='bx bx-play-circle' id="play" onclick="play(2)"></span>
+                                    <a href="uploads/3e09a854d25a5a11a97854c757e4fcb3.mp3" download="uploads/3e09a854d25a5a11a97854c757e4fcb3.mp3"><span class='bx bxs-download botonDescarrega'></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 grid-margin stretch-card">
+                    <div class="card divCategoria">
+                        <div class="card-body imatgeMusica cat3">
+                            <h5 class="card-title">Cançó 3</h5>
+                            <audio src="uploads/6fda887deb0981bd7922e28b0c3947cd.mp3" preload="metadata" id="audio-3"></audio>
+                            <div class="media divMedia">
+                                <div class="media-body zonaBotonsMusica">
+                                    <span class='bx bx-play-circle' id="play" onclick="play(3)"></span>
+                                    <a href="uploads/6fda887deb0981bd7922e28b0c3947cd.mp3" download="uploads/6fda887deb0981bd7922e28b0c3947cd.mp3"><span class='bx bxs-download botonDescarrega'></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <button class="botonsIR estilbtnLogin btnPremium btnCatalegPrincipal" onclick="anarCatalegNoRegistrat();">Explora més cançons</button>
