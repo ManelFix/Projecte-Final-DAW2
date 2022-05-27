@@ -61,7 +61,7 @@
                 <span class='bx bxs-medal text-primary colIcona midaIcones'></span>
                 <p class="txtOpcionsUser">Subscripció</p>
               </a>
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="controlador/cerrar_sesion.php">
                 <span class='bx bx-exit text-primary midaIcones'></span>
                 <p class="txtOpcionsUser">Tancar sessió</p>
               </a>

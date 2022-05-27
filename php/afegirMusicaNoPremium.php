@@ -19,7 +19,7 @@ if(isset($_SESSION['ses_id'])){
 </head>
 <body>
     <div class="divHome">
-        <a class="btn btn-primary" href="javascript: history.go(-1)"><span class='bx bx-home'></span>Tornar enrere</a>
+        <a class="btn btn-primary" href="mevaMusica.php"><span class='bx bx-home'></span>Tornar enrere</a>
     </div>
     <section class="framePrincipal2 extraModNoPremium">
         <div class="divLogo">
