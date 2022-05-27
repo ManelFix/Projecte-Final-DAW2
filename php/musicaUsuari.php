@@ -1,24 +1,21 @@
 <?php
+  //Controlar session
   session_start();
-  $nomcat = $_GET["cat"];
-  //Sessions controlar.
-  $idUsuari = $_SESSION["ses_id"];  
-  $premium = $_SESSION["premium"];
+  $idUsuari = $_SESSION["ses_id"];
+  $idUsuariConcret = $_GET["idU"];
+  $nomArtista = $_GET["nomA"];
+  $tipusUsuariConcret = $_GET["tipU"];
 
-  if($nomcat != "Rock" && $nomcat != "Pop" && $nomcat != "Ambient" && $nomcat != "Metal" && $nomcat != "Punk" && $nomcat != "Soul" && $nomcat != "Jazz" && $nomcat != "Clàssica" && $nomcat != "Electrònica" && $nomcat != "Indie" && $nomcat != "Infantil" && $nomcat != "Prèmium"){
-    header('Location: explora.php');
-  }
+  $resultat = include('controlador/controlarUsuari.php');
 
-  if($nomcat == "Prèmium"){
-    if($premium != 1){
-      header('Location: explora.php');
-    }
+  if($resultat == 0){
+    header('Location: artistes.php');
   }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,12 +30,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-  <script src="../js/musica.js"></script>
-
+  <script src="../js/usuariSeleccionat.js"></script>
 </head>
-<body onload="agafarImatgeUsuari('<?= $nomcat ?>','<?= $premium ?>')">
+<body onload="agafarImatgeUsuari('<?= $tipusUsuari ?>','<?= $idUsuariConcret ?>')">
   <div class="container-scroller">
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row menuFons">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center noFonsColor">
@@ -57,7 +51,7 @@
                   <span class="icon-search colIcona iconaLupa"></span>
                 </span>
               </div>
-              <input type="text" class="form-control inputBuscar" id="buscarNom" placeholder="Buscar cançó" aria-label="search" aria-describedby="search" onkeyup="buscarNomCanço('<?= $nomcat ?>');">
+              <input type="text" class="form-control inputBuscar" id="iCançoTot" placeholder="Buscar nom cançó" aria-label="search" aria-describedby="search" onkeyup="buscarCanço();">
             </div>
           </li>
         </ul>
@@ -97,7 +91,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link efecteHoverMenu active" href="explora.php">
+            <a class="nav-link efecteHoverMenu" href="explora.php">
               <span class='bx bx-book-open estilIcones iconPers'></span>
               <span class="menu-title textSidebar">Explora</span>
             </a>
@@ -109,7 +103,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link efecteHoverMenu" href="artistes.php">
+            <a class="nav-link efecteHoverMenu active" href="artistes.php">
               <img src="../img/iconaArtist.svg" class="iconaArtista estilIcones iconPers" alt="iconaArtista">
               <span class="menu-title textSidebar">Usuaris</span>
             </a>
@@ -119,7 +113,7 @@
               <span class='bx bxs-playlist estilIcones'></span>
               <span class="menu-title textSidebar textNav">Crear playlist</span>
             </a>
-          </li>         
+          </li>
         </ul>
       </nav>
       <div class="main-panel">
@@ -128,51 +122,7 @@
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h3 id="nomCategoria" class="textIniciClient"><?php echo $nomcat ?></h3>
-                </div>
-                <div class="col-12 col-xl-4">
-                 <div class="justify-content-end d-flex">
-                  <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
-                    <form method="post">
-                      <select name="filtrar" id="filtrarPer" class="css_inputsLogReg selectFiltrar custom-select" onchange="aplicarFiltre('<?= $nomcat ?>');">
-                        <option value="none" selected disabled>Estat d'ànim</option>
-                        <option value="alegre">Alegre</option>
-                        <option value="poderos">Poderós</option>
-                        <option value="trist">Trist</option>
-                        <option value="tranquil">Tranquil</option>
-                        <option value="enfadat">Enfadat</option>
-                        <option value="dramatic">Dramàtic</option>
-                        <option value="suspens">Suspens</option>
-                        <option value="epic">Èpic</option>
-                      </select>
-                      <input type="button" value="Eliminar filtre" class="btn btn-sm btn-light btnAfegirC btnFiltrarP" onclick="carregarMusica('<?= $nomcat ?>');">
-                    </form>
-                  </div>
-                 </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content modalPlaylist">
-                <div>
-                  <button id="btnCerrarModal" type="button" class="close tancarModal" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body cosModal">
-                  <form>
-                    <div class="form-group">
-                      <label for="recipient-name" class="labelModal">Selecciona la playlist:</label>
-                      <input id="idHidden" type="hidden">
-                      <select id="llistatPlaylist" name='playlistS' class='form-control selectModal'></select>
-                    </div>
-                  </form>
-                </div>
-                <hr class="liniaModal">
-                <div class="modal-footer modalFinal">
-                  <button type="button" class="btn btn-primary btnSeleccionarModal" onclick="afegirPlaylist();">Seleccionar</button>
+                  <h3 class="textIniciClient"><?= $_GET["nomA"] ?></h3>
                 </div>
               </div>
             </div>
@@ -194,7 +144,7 @@
                 <span id="current-time">0:00</span>
                 <input type="range" id="seek-slider" max="100" value="0">
                 <span id="duration">0:00</span>
-                <input type="range" id="volume-slider" max="100" value="80">
+                <input type="range" id="volume-slider" max="100" value="50">
                 <button class="mute-button unmuted" id="mute"><span id="iconoAudio" class="fa-solid fa-volume-high mute-icon"></span></button>
               </div>
             </div>
@@ -215,55 +165,26 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-12 grid-margin modificarGridMargin">
-              <div class="row">
-                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h4 id="nomCategoria" class="musicaTexts">Cançons més escoltades des de sempre</h4>
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card divTaulaMusica">
+                <div class="card-body">
+                  <div class="table-responsive divTaulaMusicaPrin">
+                    <table class="table tablaMisCanciones">
+                      <thead>
+                        <tr>
+                          <th>Cançó</th>
+                          <th>Gènere</th>
+                          <th>Estat d'ànim</th>
+                          <th>Data d'incorporació</th>
+                          <th>Acció</th>
+                        </tr>
+                      </thead>
+                      <tbody id="contingutTaulaMusica"></tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div id="musicaIdTop" class="row">           
-          </div>
-          <div class="row">
-            <div class="col-md-12 grid-margin modificarGridMargin">
-              <div class="row">
-                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h4 id="nomCategoria" class="musicaTexts">Cançons més escoltades d'aquest mes</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="musicaIdTopM" class="row">           
-          </div>
-          <?php
-              if($nomcat != "Prèmium"){
-
-          ?>
-          <div class="row">
-            <div class="col-md-12 grid-margin modificarGridMargin">
-              <div class="row">
-                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h4 id="nomCategoria" class="musicaTexts">Cançons premium de <?php echo $nomcat ?></h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="musicaIdPremium" class="row">
-          </div>
-          <?php
-              }
-          ?>
-          <div class="row">
-            <div class="col-md-12 grid-margin modificarGridMargin">
-              <div class="row">
-                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h4 id="nomCategoria" class="musicaTexts">Totes les cançons de <?php echo $nomcat ?></h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="musicaIdTot" class="row">
           </div>
           <div class="row">
             <div class="col-md-12 grid-margin transparent">
@@ -289,9 +210,12 @@
   </div>
   <script src="../recursosAdmin_Client/js/vendor.bundle.base.js"></script>
   <script src="../js/client/template.js"></script>
-  <script src="../js/client/off-canvas.js"></script>
-  <script type="text/javascript" src="../js/audioplayer.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
   <script src="../js/bootstrap.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../js/audioplayer.js" crossorigin="anonymous"></script>
+  <script src="../js/client/off-canvas.js"></script>
+
 </body>
 </html>
 

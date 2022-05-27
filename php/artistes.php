@@ -152,6 +152,20 @@ if (isset($_SESSION['ses_id'])) {
               <div class="row" id="todos_los_artistas">
 
               </div>
+              <div class="row">
+                <div class="col-md-12 grid-margin transparent">
+                  <div class="row">
+                    <div class="col-md-12 mb-12 stretch-card transparent">
+                      <div class="card card-tale divPublicitat">
+                        <div class="card-body divTextPubli">
+                          <p class="fs-30 mb-4 text-center font-weight-bold">PUBLICITAT</p>
+                          <p class="mb-2">Vols aparèixer aquí? Envia'ns un correu a <span>soundboxdaw2@gmail.com</span></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <footer class="footer">
                 <div class="d-sm-flex justify-content-center justify-content-sm-between">
                   <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022. <span>SoundBOX</span> - Tots els drets reservats.</span>

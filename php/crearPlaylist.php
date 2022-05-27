@@ -19,7 +19,7 @@
 </head>
 <body>
     <div class="divHome">
-        <a class="btn btn-primary" href="javascript: history.go(-1)"><span class='bx bx-home'></span>Tornar enrere</a>
+        <a class="btn btn-primary" href="mevaMusica.php"><span class='bx bx-home'></span>Tornar enrere</a>
     </div>
     <section class="framePrincipal espaiPlaylist">
         <div class="divLogo">
@@ -41,8 +41,8 @@
                 <div>
                     <span class='bx bx-world iconesLoginRegister'></span>
                     <label for="descripcio" class="amagarLabel"></label>
-                    <select name="estatAnimAfegir" id="iEstatAnim" class="css_inputsLogReg">
-                        <option value="null" selected disabled>Selecciona la privacitat de la playlist</option>
+                    <select name="estatAnimAfegir" id="iEstatAnim" class="css_inputsLogReg form-control css_selectC">
+                        <option value="null" selected disabled>Selecciona la privacitat</option>
                         <option value="0">Públic</option>
                         <option value="1">Privat</option>
                     </select>               

@@ -8,7 +8,7 @@
     $r = mysqli_query($connexio,$sql);
 
     $res = mysqli_num_rows($r);
-
+    
     if($res != 0){
         while($fila = mysqli_fetch_assoc($r)){
             if(!empty($_POST["cat"])){
@@ -23,6 +23,9 @@
     }
     else{
         echo 0;
+        if(!empty($_POST["cat"])){
+            echo ".".$_POST["cat"];
+        }
     }
 
     

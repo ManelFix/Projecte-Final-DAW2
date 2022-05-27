@@ -9,28 +9,27 @@ if (isset($_SESSION['ses_id'])) {
 
         header("Content-Type: application/xml");
         
-        echo $_SESSION['ses_id'];
-        // $sql = "SELECT usr.id_usuari,usr.nom_usuari,usr.imatge,usr.tipus FROM usuari usr left join seguiment_usuari seg ON (usr.id_usuari = seg.id_seguit) WHERE seg.id_usuari = ".$_SESSION['ses_id']." AND usr.admin = '0' AND usr.id_usuari != ".$_SESSION['ses_id']."";
+        $sql = "SELECT usr.id_usuari,usr.nom_usuari,usr.imatge,usr.tipus,usr.premium FROM usuari usr left join seguiment_usuari seg ON (usr.id_usuari = seg.id_seguit) WHERE seg.id_usuari = ".$_SESSION['ses_id']." AND usr.admin = '0' AND usr.id_usuari != ".$_SESSION['ses_id']."";
 
-        // $res = mysqli_query($connexio, $sql);
+        $res = mysqli_query($connexio, $sql);
 
-        // while ($fila = mysqli_fetch_assoc($res)) {
+        while ($fila = mysqli_fetch_assoc($res)) {
 
-        //     $elementos_xml[] = "<seguido><id_usuari>" . $fila['id_usuari'] . "</id_usuari><nom_usuari>" . $fila['nom_usuari'] . "</nom_usuari><imatge>data: ".$fila["tipus"].";base64,".base64_encode($fila["imatge"])."</imatge></seguido>";
+            $elementos_xml[] = "<seguido><id_usuari>" . $fila['id_usuari'] . "</id_usuari><nom_usuari>" . $fila['nom_usuari'] . "</nom_usuari><imatge>data: ".$fila["tipus"].";base64,".base64_encode($fila["imatge"])."</imatge><premium>".$fila['premium']."</premium></seguido>";
 
-        // }
+        }
 
-        // $sql = "SELECT usr.id_usuari,usr.nom_usuari,usr.imatge,usr.tipus FROM usuari usr WHERE usr.id_usuari NOT IN ((SELECT usr.id_usuari FROM usuari usr left join seguiment_usuari seg ON (usr.id_usuari = seg.id_seguit) WHERE seg.id_usuari = ".$_SESSION['ses_id'].")) AND usr.admin = '0' AND usr.id_usuari != ".$_SESSION['ses_id']."";
+        $sql = "SELECT usr.id_usuari,usr.nom_usuari,usr.imatge,usr.tipus,usr.premium FROM usuari usr WHERE usr.id_usuari NOT IN ((SELECT usr.id_usuari FROM usuari usr left join seguiment_usuari seg ON (usr.id_usuari = seg.id_seguit) WHERE seg.id_usuari = ".$_SESSION['ses_id'].")) AND usr.admin = '0' AND usr.id_usuari != ".$_SESSION['ses_id']."";
 
-        // $res = mysqli_query($connexio, $sql);
+        $res = mysqli_query($connexio, $sql);
 
-        // while ($fila = mysqli_fetch_assoc($res)) {
+        while ($fila = mysqli_fetch_assoc($res)) {
 
-        //     $elementos_xml[] = "<otros><id_usuari>" . $fila['id_usuari'] . "</id_usuari><nom_usuari>" . $fila['nom_usuari'] . "</nom_usuari><imatge>data: ".$fila["tipus"].";base64,".base64_encode($fila["imatge"])."</imatge></otros>";
+            $elementos_xml[] = "<otros><id_usuari>" . $fila['id_usuari'] . "</id_usuari><nom_usuari>" . $fila['nom_usuari'] . "</nom_usuari><imatge>data: ".$fila["tipus"].";base64,".base64_encode($fila["imatge"])."</imatge><premium>".$fila['premium']."</premium></otros>";
         
-        // }
+        }
 
-        // echo "<usuarios>\n" . implode("\n", $elementos_xml) . "</usuarios>";
+        echo "<usuarios>\n" . implode("\n", $elementos_xml) . "</usuarios>";
     } else {
         header('Location: .php');
     } 

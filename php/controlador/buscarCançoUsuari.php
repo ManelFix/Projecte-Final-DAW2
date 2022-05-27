@@ -1,13 +1,12 @@
 <?php
-    session_start();
     header("Content-Type: application/xml");
     include("BBDD.php");  
     $connexio=sql();
 
     $cançoNom = $_POST["nomCanço"];
-    $codiLlista = $_POST["idL"];
+    $idUsuari = $_POST["idU"];
 
-    $sql = "SELECT * FROM canço WHERE id_canço IN (SELECT id_canço FROM pertenencia WHERE id_llista = '".$codiLlista."') AND nom_canço LIKE '%$cançoNom%';";
+    $sql = "SELECT * FROM canço WHERE id_usuari = '".$idUsuari."' AND  nom_canço LIKE '%$cançoNom%'";
     $r = mysqli_query($connexio,$sql);
 
     while($fila = mysqli_fetch_assoc($r)){
