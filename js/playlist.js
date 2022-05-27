@@ -17,6 +17,7 @@ function mostrarTaulaCançons() {
     var _a;
     if (xhttp.readyState == 4 && xhttp.status == 200) {
         (_a = document.getElementById("contingutTaulaMusica")) === null || _a === void 0 ? void 0 : _a.innerHTML = "";
+        console.log(xhttp.responseText);
         xmlDoc = xhttp.responseXML;
         if (xmlDoc.getElementsByTagName("musica") != null) {
             var cançons = xmlDoc.getElementsByTagName("musica");
@@ -80,6 +81,7 @@ function mostrarTaulaCançons() {
             newA4.value = nomConcretCanço + "." + tipusCanço;
             newA4.alt = artistaCanço;
             newA4.required = nomCanço;
+            newA4.data = idCanço;
             newA4.onclick = function () { escoltarCanço(this); };
             var newSpan4 = document.createElement("span");
             newSpan4.classList.add("bx", "bx-play-circle", "text-primary", "colIcona", "midaIcones");
@@ -134,7 +136,21 @@ function escoltarCanço(nomCançoConc) {
     (_b = document.getElementById("titolM")) === null || _b === void 0 ? void 0 : _b.innerHTML = nomCançoConc.required;
     document.getElementById("audio-1").src = "../uploads/" + nomCançoConc.value;
     (_c = document.getElementById("play")) === null || _c === void 0 ? void 0 : _c.click();
+    augmentarClicks(nomCançoConc.data);
 }
+function augmentarClicks(idCanço) {
+    if (window.XMLHttpRequest) {
+        xhttp = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject) {
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhttp.onreadystatechange = clicksAugmentats;
+    xhttp.open('POST', '../php/controlador/augmentarClicks.php', true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("idC=" + idCanço);
+}
+function clicksAugmentats() { }
 function buscarCanço() {
     var nomC = document.getElementById("iCançoTot").value;
     var idLlista = localStorage.getItem("IDLlistaSoundBox");

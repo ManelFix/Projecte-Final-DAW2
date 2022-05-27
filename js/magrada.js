@@ -46,6 +46,7 @@ function mostrarCançons() {
             newSpan.value = ruta;
             newSpan.alt = artistaCanço;
             newSpan.required = nomCanço;
+            newSpan.data = idCanço;
             newSpan.onclick = function () { reproduirCanço(this); };
             var newA = document.createElement("a");
             newA.href = ruta;
@@ -103,17 +104,31 @@ function mostrarCançons() {
             newDiv2.appendChild(newDiv3);
             newDiv.appendChild(newDiv2);
             divPareTot.appendChild(newDiv);
-            function reproduirCanço(ruta) {
-                var _a, _b, _c;
-                (_a = document.getElementById("nomA")) === null || _a === void 0 ? void 0 : _a.innerHTML = ruta.alt;
-                (_b = document.getElementById("titolM")) === null || _b === void 0 ? void 0 : _b.innerHTML = ruta.required;
-                document.getElementById("audio-1").src = ruta.value;
-                (_c = document.getElementById("play")) === null || _c === void 0 ? void 0 : _c.click();
-            }
         }
         agafarImatgeUsuari();
     }
 }
+function reproduirCanço(ruta) {
+    var _a, _b, _c;
+    (_a = document.getElementById("nomA")) === null || _a === void 0 ? void 0 : _a.innerHTML = ruta.alt;
+    (_b = document.getElementById("titolM")) === null || _b === void 0 ? void 0 : _b.innerHTML = ruta.required;
+    document.getElementById("audio-1").src = ruta.value;
+    (_c = document.getElementById("play")) === null || _c === void 0 ? void 0 : _c.click();
+    augmentarClicks(ruta.data);
+}
+function augmentarClicks(idCanço) {
+    if (window.XMLHttpRequest) {
+        xhttp = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject) {
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhttp.onreadystatechange = clicksAugmentats;
+    xhttp.open('POST', '../php/controlador/augmentarClicks.php', true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("idC=" + idCanço);
+}
+function clicksAugmentats() { }
 function treureLike(idCanço) {
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
@@ -171,26 +186,30 @@ function carregarLlistesPropies() {
 }
 function mostrarLlistesPropies() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        xmlDoc = xhttp.responseXML;
-        var llistes = xmlDoc.getElementsByTagName("llista");
-        var navMenu = document.getElementById("idNav");
-        for (var i = 0; i < llistes.length; i++) {
-            var idLlista = llistes[i].getElementsByTagName("id_llista")[0].childNodes[0].nodeValue;
-            var titolLlista = llistes[i].getElementsByTagName("titol")[0].childNodes[0].nodeValue;
-            var descLlista = llistes[i].getElementsByTagName("descripcio")[0].childNodes[0].nodeValue;
-            var tipusLlista = llistes[i].getElementsByTagName("privat")[0].childNodes[0].nodeValue;
-            var newLi = document.createElement("li");
-            newLi.classList.add("nav-item");
-            var newA = document.createElement("a");
-            newA.href = 'playlist.php?idL=' + idLlista + "&nomL=" + titolLlista;
-            newA.classList.add("linkPlaylist");
-            var newP = document.createElement("p");
-            newP.classList.add("textSidebar", "textNav", "textPlaylist");
-            var textP = document.createTextNode(titolLlista);
-            newP.appendChild(textP);
-            newA.appendChild(newP);
-            newLi.appendChild(newA);
-            navMenu.appendChild(newLi);
+        var resultatLlistes = xhttp.responseText.replace(/\s+/g, '');
+        var arrOpcions = resultatLlistes.split('.');
+        if (arrOpcions[0] != 0) {
+            xmlDoc = xhttp.responseXML;
+            var llistes = xmlDoc.getElementsByTagName("llista");
+            var navMenu = document.getElementById("idNav");
+            for (var i = 0; i < llistes.length; i++) {
+                var idLlista = llistes[i].getElementsByTagName("id_llista")[0].childNodes[0].nodeValue;
+                var titolLlista = llistes[i].getElementsByTagName("titol")[0].childNodes[0].nodeValue;
+                var descLlista = llistes[i].getElementsByTagName("descripcio")[0].childNodes[0].nodeValue;
+                var tipusLlista = llistes[i].getElementsByTagName("privat")[0].childNodes[0].nodeValue;
+                var newLi = document.createElement("li");
+                newLi.classList.add("nav-item");
+                var newA = document.createElement("a");
+                newA.href = 'playlist.php?idL=' + idLlista + "&nomL=" + titolLlista;
+                newA.classList.add("linkPlaylist");
+                var newP = document.createElement("p");
+                newP.classList.add("textSidebar", "textNav", "textPlaylist");
+                var textP = document.createTextNode(titolLlista);
+                newP.appendChild(textP);
+                newA.appendChild(newP);
+                newLi.appendChild(newA);
+                navMenu.appendChild(newLi);
+            }
         }
         mostrar_like_canciones();
     }

@@ -82,7 +82,6 @@ function carregarLlistesPropies() {
 function mostrarLlistesPropies() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
         xmlDoc = xhttp.responseXML;
-        console.log(xhttp.responseText);
         var llistes = xmlDoc.getElementsByTagName("llista");
         var navMenu = document.getElementById("idNav");
         for (var i = 0; i < llistes.length; i++) {
