@@ -26,6 +26,7 @@ function escoltarCanço(num) {
 }
 function carregarMusica(nom) {
     var catMinus = nom.toLowerCase();
+    document.getElementById("filtrarPer").value = "none";
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -33,7 +34,7 @@ function carregarMusica(nom) {
         xhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
     xhttp.onreadystatechange = mostrarMusica;
-    xhttp.open('POST', '../php/controlador/carregarMusica.php', true);
+    xhttp.open('POST', '../php/controlador/carregarMusicaNoRegistrat.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("cat=" + catMinus);
 }
@@ -43,12 +44,15 @@ function mostrarMusica() {
         document.getElementById("musicaIdTot").innerHTML = "";
         document.getElementById("musicaIdPremium").innerHTML = "";
         document.getElementById("musicaIdTop").innerHTML = "";
+        document.getElementById("musicaIdTopM").innerHTML = "";
         xmlDoc = xhttp.responseXML;
         var cançons = xmlDoc.getElementsByTagName("musica");
         var cançons2 = xmlDoc.getElementsByTagName("musica2");
+        var cançonsTopM = xmlDoc.getElementsByTagName("musicaTopM");
         var divPareTot = document.getElementById("musicaIdTot");
         var divParePremium = document.getElementById("musicaIdPremium");
         var divPareTop = document.getElementById("musicaIdTop");
+        var divPareTopM = document.getElementById("musicaIdTopM");
         var tipusGenere = (_a = document.getElementById("nomCategoria")) === null || _a === void 0 ? void 0 : _a.innerHTML;
         var catAtribut = "";
         switch (tipusGenere) {
@@ -113,7 +117,7 @@ function mostrarMusica() {
             newSpan.value = ruta;
             newSpan.alt = artistaCanço;
             newSpan.required = nomCanço;
-            newSpan.onclick = function () { reproduirCanço(this, idCanço); };
+            newSpan.onclick = function () { reproduirCanço(this); };
             var newA = document.createElement("a");
             newA.href = ruta;
             newA.download = nomCanço;
@@ -165,7 +169,7 @@ function mostrarMusica() {
             newSpan.value = ruta;
             newSpan.alt = artistaCanço;
             newSpan.required = nomCanço;
-            newSpan.onclick = function () { reproduirCanço(this, idCanço); };
+            newSpan.onclick = function () { reproduirCanço(this); };
             var newA = document.createElement("a");
             newA.href = ruta;
             newA.download = nomCanço;
@@ -185,27 +189,60 @@ function mostrarMusica() {
             newDiv.appendChild(newDiv2);
             divPareTop.appendChild(newDiv);
         }
+        for (var c = 0; c < cançonsTopM.length; c++) {
+            var nomCanço = cançonsTopM[c].getElementsByTagName("nom_canço")[0].childNodes[0].nodeValue;
+            var nomGuardat = cançonsTopM[c].getElementsByTagName("nom_guardat")[0].childNodes[0].nodeValue;
+            var tipus = cançonsTopM[c].getElementsByTagName("tipus")[0].childNodes[0].nodeValue;
+            var tipusCanço = cançonsTopM[c].getElementsByTagName("premium")[0].childNodes[0].nodeValue;
+            var artistaCanço = cançonsTopM[c].getElementsByTagName("artista")[0].childNodes[0].nodeValue;
+            var ruta = "../uploads/" + nomGuardat + "." + tipus;
+            var newDiv = document.createElement("div");
+            newDiv.classList.add("col-md-3", "grid-margin", "stretch-card");
+            var newDiv2 = document.createElement("div");
+            newDiv2.classList.add("card", "divCategoria");
+            var newDiv3 = document.createElement("div");
+            newDiv3.classList.add("card-body", "imatgeMusica", catAtribut);
+            var newH5 = document.createElement("h5");
+            newH5.classList.add("card-title", "modificarTextCanço");
+            var textH5 = document.createTextNode(nomCanço);
+            newH5.appendChild(textH5);
+            var newDiv4 = document.createElement("div");
+            newDiv4.classList.add("media", "divMedia");
+            var newDiv5 = document.createElement("div");
+            newDiv5.classList.add("media-body", "zonaBotonsMusica");
+            var newSpan = document.createElement("span");
+            newSpan.classList.add("bx", "bx-play-circle");
+            newSpan.value = ruta;
+            newSpan.alt = artistaCanço;
+            newSpan.required = nomCanço;
+            newSpan.onclick = function () { reproduirCanço(this); };
+            var newA = document.createElement("a");
+            newA.href = ruta;
+            newA.download = nomCanço;
+            var newSpan2 = document.createElement("span");
+            newSpan2.classList.add("bx", "bxs-download", "iconaDescarrega");
+            if (tipusCanço == 1) {
+                newSpan.style = "pointer-events: none;";
+                newA.style = "pointer-events: none;";
+            }
+            newDiv5.appendChild(newSpan);
+            newA.appendChild(newSpan2);
+            newDiv5.appendChild(newA);
+            newDiv4.appendChild(newDiv5);
+            newDiv3.appendChild(newH5);
+            newDiv3.appendChild(newDiv4);
+            newDiv2.appendChild(newDiv3);
+            newDiv.appendChild(newDiv2);
+            divPareTopM.appendChild(newDiv);
+        }
     }
 }
-function reproduirCanço(ruta, idCanço) {
+function reproduirCanço(ruta) {
     var _a, _b, _c;
     (_a = document.getElementById("nomA")) === null || _a === void 0 ? void 0 : _a.innerHTML = ruta.alt;
     (_b = document.getElementById("titolM")) === null || _b === void 0 ? void 0 : _b.innerHTML = ruta.required;
     document.getElementById("audio-1").src = ruta.value;
     (_c = document.getElementById("play")) === null || _c === void 0 ? void 0 : _c.click();
-    augmentarClicks(idCanço);
-}
-function augmentarClicks(idCanço) {
-    if (window.XMLHttpRequest) {
-        xhttp = new XMLHttpRequest();
-    }
-    else if (window.ActiveXObject) {
-        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xhttp.onreadystatechange = carregarMusica;
-    xhttp.open('POST', '../php/controlador/augmentarClicks.php', true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idC=" + idCanço);
 }
 function aplicarFiltre(nom) {
     var estatA = document.getElementById("filtrarPer").value;

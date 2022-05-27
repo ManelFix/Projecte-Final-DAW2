@@ -72,7 +72,7 @@
                 <div class="divUserBorder">
                     <span class='bx bx-radio iconesLoginRegister'></span>
                     <label for="iGenere" class="amagarLabel"></label>
-                    <select name="genereAfegir" id="iGenere" class="css_inputsLogReg">
+                    <select name="genereAfegir" id="iGenere" class="css_inputsLogReg form-control css_selectC">
                         <option selected disabled>Selecciona el Gènere</option>
                         <option value="pop">Pop</option>
                         <option value="rock">Rock</option>
@@ -90,7 +90,7 @@
                 <div class="divUserBorder">
                     <span class='bx bx-happy iconesLoginRegister'></span>
                     <label for="iEstatAnim" class="amagarLabel"></label>
-                    <select name="estatAnimAfegir" id="iEstatAnim" class="css_inputsLogReg">
+                    <select name="estatAnimAfegir" id="iEstatAnim" class="css_inputsLogReg form-control css_selectC">
                         <option selected disabled>Selecciona l'Estat d'ànim</option>
                         <option value="alegre">Alegre</option>
                         <option value="poderos">Poderós</option>
@@ -110,7 +110,7 @@
                 <div class="divUserBorder">
                     <span class='bx bx-crown iconesLoginRegister'></span>
                     <label for="iPremium" class="amagarLabel"></label>
-                    <select name="premiumAfegir" id="iPremium" class="css_inputsLogReg">
+                    <select name="premiumAfegir" id="iPremium" class="css_inputsLogReg form-control css_selectC">
                         <option selected disabled>Selecciona el tipus de cançó</option>
                         <option value="1">Prèmium</option>
                         <option value="0">No prèmium</option>

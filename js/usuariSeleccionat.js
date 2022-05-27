@@ -1,7 +1,9 @@
 "use strict";
 var xhttp;
 var xmlDoc;
-function agafarImatgeUsuari() {
+function agafarImatgeUsuari(tipusU, idUsuari) {
+    localStorage.setItem("tipusUsuariConcretSoundBox", tipusU);
+    localStorage.setItem("idUsuariConcretSoundBox", idUsuari);
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -36,9 +38,9 @@ function carregarCançons() {
         xhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
     xhttp.onreadystatechange = mostrarTaulaCançons;
-    xhttp.open('POST', '../php/controlador/carregarCançonsPropies.php', true);
+    xhttp.open('POST', '../php/controlador/carregarCançonsUsuari.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send();
+    xhttp.send("idU=" + localStorage.getItem("idUsuariConcretSoundBox"));
 }
 function mostrarTaulaCançons() {
     var _a;
@@ -56,6 +58,7 @@ function mostrarTaulaCançons() {
             var dataCanço = cançons[i].getElementsByTagName("data")[0].childNodes[0].nodeValue;
             var nomConcretCanço = cançons[i].getElementsByTagName("nom_guardat")[0].childNodes[0].nodeValue;
             var tipusCanço = cançons[i].getElementsByTagName("tipus")[0].childNodes[0].nodeValue;
+            var tipusUsuari = cançons[i].getElementsByTagName("tipusUsuariC")[0].childNodes[0].nodeValue;
             var ruta = "../uploads/" + nomConcretCanço + "." + tipusCanço;
             var newTr = document.createElement("tr");
             var newTd = document.createElement("td");
@@ -74,22 +77,15 @@ function mostrarTaulaCançons() {
             var newTd5 = document.createElement("td");
             newTd5.classList.add("nav-item", "nav-profile", "dropdown");
             var newA = document.createElement("a");
-            newA.href = "#";
             newA.setAttribute("data-toggle", "dropdown");
             var newSpan = document.createElement("span");
             newSpan.classList.add("bx", "bx-dots-vertical-rounded", "iconaAccio");
             var newDiv = document.createElement("div");
             newDiv.classList.add("dropdown-menu", "menuAccio");
-            var newA2 = document.createElement("a");
-            newA2.classList.add("dropdown-item", "opcioMenuAccio");
-            newA2.value = idCanço;
-            newA2.onclick = function () { eliminarCanço(this); };
             var newSpan2 = document.createElement("span");
             newSpan2.classList.add("bx", "bxs-trash", "text-primary", "colIcona", "midaIcones");
             var newP = document.createElement("p");
             newP.classList.add("txtOpcionsUser");
-            var textP = document.createTextNode("Eliminar");
-            newP.appendChild(textP);
             var newA3 = document.createElement("a");
             newA3.classList.add("dropdown-item", "opcioMenuAccio");
             newA3.href = ruta;
@@ -105,6 +101,7 @@ function mostrarTaulaCançons() {
             newA4.value = nomConcretCanço + "." + tipusCanço;
             newA4.alt = artistaCanço;
             newA4.required = nomCanço;
+            newA4.data = idCanço;
             newA4.onclick = function () { escoltarCanço(this); };
             var newSpan4 = document.createElement("span");
             newSpan4.classList.add("bx", "bx-play-circle", "text-primary", "colIcona", "midaIcones");
@@ -112,13 +109,16 @@ function mostrarTaulaCançons() {
             newP3.classList.add("txtOpcionsUser");
             var textP3 = document.createTextNode("Reproduïr");
             newP3.appendChild(textP3);
+            if (tipusUsuari == 0) {
+                if (localStorage.getItem("tipusUsuariConcretSoundBox") == 1) {
+                    newSpan.style = "pointer-events: none;";
+                    newA.style = "pointer-events: none;";
+                }
+            }
             newA4.appendChild(newSpan4);
             newA4.appendChild(newP3);
             newA3.appendChild(newSpan3);
             newA3.appendChild(newP2);
-            newA2.appendChild(newSpan2);
-            newA2.appendChild(newP);
-            newDiv.appendChild(newA2);
             newDiv.appendChild(newA3);
             newDiv.appendChild(newA4);
             newA.appendChild(newSpan);
@@ -133,33 +133,27 @@ function mostrarTaulaCançons() {
         }
     }
 }
-function eliminarCanço(idEliminar) {
-    var opcio = confirm("Segur que vols eliminar aquesta cançó?");
-    if (opcio == true) {
-        if (window.XMLHttpRequest) {
-            xhttp = new XMLHttpRequest();
-        }
-        else if (window.ActiveXObject) {
-            xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xhttp.onreadystatechange = cançoEliminada;
-        xhttp.open('POST', '../php/controlador/eliminarCanço.php', true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("idC=" + idEliminar.value);
-    }
-}
-function cançoEliminada() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-        carregarCançons();
-    }
-}
 function escoltarCanço(nomCançoConc) {
     var _a, _b, _c;
     (_a = document.getElementById("nomA")) === null || _a === void 0 ? void 0 : _a.innerHTML = nomCançoConc.alt;
     (_b = document.getElementById("titolM")) === null || _b === void 0 ? void 0 : _b.innerHTML = nomCançoConc.required;
     document.getElementById("audio-1").src = "../uploads/" + nomCançoConc.value;
     (_c = document.getElementById("play")) === null || _c === void 0 ? void 0 : _c.click();
+    augmentarClicks(nomCançoConc.data);
 }
+function augmentarClicks(idCanço) {
+    if (window.XMLHttpRequest) {
+        xhttp = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject) {
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhttp.onreadystatechange = clicksAugmentats;
+    xhttp.open('POST', '../php/controlador/augmentarClicks.php', true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("idC=" + idCanço);
+}
+function clicksAugmentats() { }
 function buscarCanço() {
     var nomC = document.getElementById("iCançoTot").value;
     if (window.XMLHttpRequest) {
@@ -169,9 +163,9 @@ function buscarCanço() {
         xhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
     xhttp.onreadystatechange = mostrarTaulaCançons;
-    xhttp.open('POST', '../php/controlador/buscarCançoPropia.php', true);
+    xhttp.open('POST', '../php/controlador/buscarCançoUsuari.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("nomCanço=" + nomC);
+    xhttp.send("nomCanço=" + nomC + "&" + "idU=" + localStorage.getItem("idUsuariConcretSoundBox"));
 }
 function carregarLlistesPropies() {
     if (window.XMLHttpRequest) {

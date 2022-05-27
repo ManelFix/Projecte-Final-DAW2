@@ -16,7 +16,6 @@ function carregarArtistes(){
     if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
         document.getElementById("artistas_seguidos")?.innerHTML = "";
         document.getElementById("todos_los_artistas")?.innerHTML = "";
-        console.log(xmlhttp.responseText);
         var select = xmlhttp.responseText;
         if (select == 0) {
 
@@ -43,12 +42,18 @@ function carregarArtistes(){
                     newDiv4.classList.add("media", "divMedia");
                     var newDiv5:any = document.createElement("div");
                     newDiv5.classList.add("media-body", "zonaBotonsMusica");
+                    var newA:any = document.createElement("a");
+                    newA.href = "musicaUsuari.php?idU="+select2[i].getElementsByTagName("id_usuari")[0].childNodes[0].nodeValue+"&nomA="+select2[i].getElementsByTagName("nom_usuari")[0].childNodes[0].nodeValue+"&tipU="+select2[i].getElementsByTagName("premium")[0].childNodes[0].nodeValue;
                     var newSpan:any = document.createElement("span");
-                    newSpan.classList.add("bx", "bx-user-x");
-                    newSpan.value = select2[i].getElementsByTagName("id_usuari")[0].childNodes[0].nodeValue)
-                    newSpan.onclick = function(){dejar_de_seguir(this)}
+                    newSpan.classList.add("bx", "bx-show", "iconaUll");
+                    var newSpan2:any = document.createElement("span");
+                    newSpan2.classList.add("bx", "bx-user-x");
+                    newSpan2.value = select2[i].getElementsByTagName("id_usuari")[0].childNodes[0].nodeValue;
+                    newSpan2.onclick = function(){dejar_de_seguir(this)}
 
-                    newDiv5.appendChild(newSpan);
+                    newA.appendChild(newSpan);
+                    newDiv5.appendChild(newA);
+                    newDiv5.appendChild(newSpan2);
                     newDiv4.appendChild(newDiv5);
                     newDiv3.appendChild(newDiv4);
                     newDiv3.appendChild(newH5);
@@ -76,12 +81,18 @@ function carregarArtistes(){
                     newDiv4.classList.add("media", "divMedia");
                     var newDiv5:any = document.createElement("div");
                     newDiv5.classList.add("media-body", "zonaBotonsMusica");
+                    var newA:any = document.createElement("a");
+                    newA.href = "musicaUsuari.php?idU="+select2[i].getElementsByTagName("id_usuari")[0].childNodes[0].nodeValue+"&nomA="+select2[i].getElementsByTagName("nom_usuari")[0].childNodes[0].nodeValue+"&tipU="+select2[i].getElementsByTagName("premium")[0].childNodes[0].nodeValue;
                     var newSpan:any = document.createElement("span");
-                    newSpan.classList.add("bx", "bx-user-x");
-                    newSpan.value = select2[i].getElementsByTagName("id_usuari")[0].childNodes[0].nodeValue)
-                    newSpan.onclick = function(){dejar_de_seguir(this)}
+                    newSpan.classList.add("bx", "bx-show", "iconaUll");
+                    var newSpan2:any = document.createElement("span");
+                    newSpan2.classList.add("bx", "bx-user-x");
+                    newSpan2.value = select2[i].getElementsByTagName("id_usuari")[0].childNodes[0].nodeValue;
+                    newSpan2.onclick = function(){dejar_de_seguir(this)}
 
-                    newDiv5.appendChild(newSpan);
+                    newA.appendChild(newSpan);
+                    newDiv5.appendChild(newA);
+                    newDiv5.appendChild(newSpan2);
                     newDiv4.appendChild(newDiv5);
                     newDiv3.appendChild(newDiv4);
                     newDiv3.appendChild(newH5);
@@ -115,12 +126,18 @@ function carregarArtistes(){
                     newDiv4.classList.add("media", "divMedia");
                     var newDiv5:any = document.createElement("div");
                     newDiv5.classList.add("media-body", "zonaBotonsMusica");
+                    var newA:any = document.createElement("a");
+                    newA.href = "musicaUsuari.php?idU="+select2[i].getElementsByTagName("id_usuari")[0].childNodes[0].nodeValue+"&nomA="+select2[i].getElementsByTagName("nom_usuari")[0].childNodes[0].nodeValue+"&tipU="+select2[i].getElementsByTagName("premium")[0].childNodes[0].nodeValue;
                     var newSpan:any = document.createElement("span");
-                    newSpan.classList.add("bx", "bx-user-plus");
-                    newSpan.value = select2[i].getElementsByTagName("id_usuari")[0].childNodes[0].nodeValue)
-                    newSpan.onclick = function(){seguir(this)}
+                    newSpan.classList.add("bx", "bx-show", "iconaUll");
+                    var newSpan2:any = document.createElement("span");
+                    newSpan2.classList.add("bx", "bx-user-plus");
+                    newSpan2.value = select2[i].getElementsByTagName("id_usuari")[0].childNodes[0].nodeValue;
+                    newSpan2.onclick = function(){seguir(this)}
 
-                    newDiv5.appendChild(newSpan);
+                    newA.appendChild(newSpan);
+                    newDiv5.appendChild(newA);
+                    newDiv5.appendChild(newSpan2);
                     newDiv4.appendChild(newDiv5);
                     newDiv3.appendChild(newDiv4);
                     newDiv3.appendChild(newH5);
@@ -148,12 +165,18 @@ function carregarArtistes(){
                     newDiv4.classList.add("media", "divMedia");
                     var newDiv5:any = document.createElement("div");
                     newDiv5.classList.add("media-body", "zonaBotonsMusica");
+                    var newA:any = document.createElement("a");
+                    newA.href = "musicaUsuari.php?idU="+select2[i].getElementsByTagName("id_usuari")[0].childNodes[0].nodeValue+"&nomA="+select2[i].getElementsByTagName("nom_usuari")[0].childNodes[0].nodeValue+"&tipU="+select2[i].getElementsByTagName("premium")[0].childNodes[0].nodeValue;
                     var newSpan:any = document.createElement("span");
-                    newSpan.classList.add("bx", "bx-user-plus");
-                    newSpan.value = select2[i].getElementsByTagName("id_usuari")[0].childNodes[0].nodeValue)
-                    newSpan.onclick = function(){seguir(this)}
-
-                    newDiv5.appendChild(newSpan);
+                    newSpan.classList.add("bx", "bx-show", "iconaUll");
+                    var newSpan2:any = document.createElement("span");
+                    newSpan2.classList.add("bx", "bx-user-plus");
+                    newSpan2.value = select2[i].getElementsByTagName("id_usuari")[0].childNodes[0].nodeValue;
+                    newSpan2.onclick = function(){seguir(this)}
+                    
+                    newA.appendChild(newSpan)
+                    newDiv5.appendChild(newA);
+                    newDiv5.appendChild(newSpan2);
                     newDiv4.appendChild(newDiv5);
                     newDiv3.appendChild(newDiv4);
                     newDiv3.appendChild(newH5);
@@ -253,14 +276,13 @@ function carregarLlistesPropies(){
 
 function mostrarLlistesPropies(){
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        var senseLlistes:any = xhttp.responseText.replace(/\s+/g, '');
-        console.log(senseLlistes);
-        if(senseLlistes != 0){
+        var resultatLlistes: any = xhttp.responseText.replace(/\s+/g, '');
+        var arrOpcions: any = resultatLlistes.split('.');
+
+        if(arrOpcions[0] != 0){
             xmlDoc = xhttp.responseXML;
-    
             var llistes:any = xmlDoc.getElementsByTagName("llista");
             var navMenu:any = document.getElementById("idNav");
-    
             for(var i:number = 0; i < llistes.length; i++){
                 var idLlista:any = llistes[i].getElementsByTagName("id_llista")[0].childNodes[0].nodeValue;
                 var titolLlista:any = llistes[i].getElementsByTagName("titol")[0].childNodes[0].nodeValue;
@@ -270,7 +292,7 @@ function mostrarLlistesPropies(){
                 var newLi:any = document.createElement("li");
                 newLi.classList.add("nav-item");
                 var newA:any = document.createElement("a");
-                newA.href = 'playlist.php?idL=' + idLlista + "&nomL=" + titolLlista ;
+                newA.href = 'playlist.php?idL=' + idLlista + "&nomL=" + titolLlista;
                 newA.classList.add("linkPlaylist");
                 var newP:any = document.createElement("p");
                 newP.classList.add("textSidebar", "textNav", "textPlaylist");
@@ -280,9 +302,11 @@ function mostrarLlistesPropies(){
                 newA.appendChild(newP);
                 newLi.appendChild(newA);
                 navMenu.appendChild(newLi);
+    
             }
-            artistas_seguidos();
         }
+        artistas_seguidos();
+
     }
 }
 

@@ -13,6 +13,7 @@
 .logoSoundBox{
     height: auto !important;
     width: 3.5em;
+    margin-left: 45px;
 }
 
 .logoMiniSoundBox{
@@ -187,6 +188,9 @@
 
 .divCategoria{
     background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .imatgeCategoria{
@@ -331,6 +335,7 @@
 .imatgeArtista img{
     width: auto;
     max-width: 156px;
+    padding-right: 10px;
 }
 
 .imatgeArtista h5{
@@ -761,6 +766,7 @@
     position: relative;
     bottom: 6px;
     font-family: 'Inter', sans-serif;
+    
 }
 
 .css_inputsLogReg::placeholder{
@@ -862,4 +868,8 @@
 .iconaPerfil{
     height: auto !important; 
     width: 3.5rem !important;
+}
+
+.iconaUll{
+    margin-right: 10px;
 }

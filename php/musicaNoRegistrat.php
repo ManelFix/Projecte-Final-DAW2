@@ -70,7 +70,7 @@
         </ul>
       </nav>
       <div class="main-panel">
-        <div class="content-wrapper mainCFons">
+        <div class="content-wrapper mainCFons extraEspai">
           <div class="row">
             <div class="col-md-12 grid-margin">
               <div class="row">
@@ -82,7 +82,7 @@
                   <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
                     <form method="post">
                       <select name="filtrar" id="filtrarPer" class="css_inputsLogReg selectFiltrar custom-select" onchange="aplicarFiltre('<?= $nomcat ?>');">
-                        <option selected disabled>Estat d'ànim</option>
+                        <option value="none" selected disabled>Estat d'ànim</option>
                         <option value="alegre">Alegre</option>
                         <option value="poderos">Poderós</option>
                         <option value="trist">Trist</option>
@@ -141,25 +141,23 @@
             <div class="col-md-12 grid-margin modificarGridMargin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h4 id="nomCategoria" class="musicaTexts">Cançons més valorades</h4>
+                  <h4 id="nomCategoria" class="musicaTexts">Cançons més escoltades des de sempre</h4>
                 </div>
               </div>
             </div>
           </div>
           <div id="musicaIdTop" class="row">
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica">
-                  <h5 class="card-title">Cançó 1</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download iconaDescarrega'></span>
-                    </div>
-                  </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 grid-margin modificarGridMargin">
+              <div class="row">
+                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                  <h4 id="nomCategoria" class="musicaTexts">Cançons més escoltades d'aquest mes</h4>
                 </div>
               </div>
             </div>
+          </div>
+          <div id="musicaIdTopM" class="row">           
           </div>
           <div class="row">
             <div class="col-md-12 grid-margin modificarGridMargin">
@@ -171,19 +169,6 @@
             </div>
           </div>
           <div id="musicaIdPremium" class="row">
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica">
-                  <h5 class="card-title">Cançó 1</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-play-circle'></span>
-                      <span class='bx bxs-download iconaDescarrega'></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
           <div class="row">
             <div class="col-md-12 grid-margin modificarGridMargin">
@@ -195,19 +180,6 @@
             </div>
           </div>
           <div id="musicaIdTot" class="row">
-            <div class="col-md-3 grid-margin stretch-card">
-              <div class="card divCategoria">
-                <div class="card-body imatgeMusica">
-                  <h5 class="card-title">Canço 1</h5>
-                  <div class="media divMedia">
-                    <div class="media-body zonaBotonsMusica">
-                      <span class='bx bx-play-circle'></span>
-                      <a href=""><span class='bx bxs-download iconaDescarrega'></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
           <div class="row">
             <div class="col-md-12 grid-margin transparent">

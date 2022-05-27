@@ -654,11 +654,16 @@ footer span{
     position: relative;
     bottom: 6px;
     font-family: 'Inter', sans-serif;
+    width: auto;
 }
 
 .css_inputsLogReg::placeholder{
     color: white;
     font-family: 'Inter', sans-serif;
+}
+
+.css_selectC{
+    border: 1px solid #968282;
 }
 
 .titolNoCompte{
