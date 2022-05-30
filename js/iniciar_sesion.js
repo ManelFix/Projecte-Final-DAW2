@@ -26,11 +26,9 @@ function iniciar_sesion() {
                     alert("Usuari o contrasenyes incorrectes");
                 }
                 else if (select == 1) {
-                    alert("Benvingut " + nombre);
                     location.href = "../php/mevaMusica.php";
                 }
                 else if (select == 2) {
-                    alert("Benvingut " + nombre);
                     location.href = "../php/AdminUsuaris.php";
                 }
             }
