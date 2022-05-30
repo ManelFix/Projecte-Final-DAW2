@@ -1,7 +1,6 @@
 <?php
     session_start();
     if (isset($_SESSION['ses_id'])) {
-      if ($_SESSION["ban"] == 0) {
     
     header("Content-Type: application/xml");    
     include("BBDD.php");  
@@ -77,11 +76,9 @@
     echo "<Cançons>\n".implode("\n", $elementos_xml)."\n</Cançons>";
 
     mysqli_close($connexio);
+
 } else {
-    header('Location: .php');
-} 
-} else {
-header('Location: ../login.php');
+header('Location: login.php');
 }
 
 ?>

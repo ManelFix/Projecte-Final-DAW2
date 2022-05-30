@@ -1,5 +1,8 @@
 <?php
-  //Sessiones, controlar que un usuario se meta aqui.
+session_start();
+if (isset($_SESSION['ses_id'])) {
+  header('Location: explora.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">

@@ -16,4 +16,8 @@ if (ini_get("session.use_cookies")) {
 }
 
 session_destroy();
+
 ?>
+<script>
+location.href="../../index.php"
+</script>

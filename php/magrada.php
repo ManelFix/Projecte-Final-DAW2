@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['ses_id'])) {
-  if ($_SESSION["ban"] == 0) {
+  
 ?>
     <!DOCTYPE html>
     <html lang="es">
@@ -62,10 +62,10 @@ if (isset($_SESSION['ses_id'])) {
                     <span class='bx bxs-medal text-primary colIcona midaIcones'></span>
                     <p class="txtOpcionsUser">Subscripció</p>
                   </a>
-                  <a class="dropdown-item">
-                    <span class='bx bx-exit text-primary midaIcones'></span>
-                    <p class="txtOpcionsUser">Tancar sessió</p>
-                  </a>
+                  <a class="dropdown-item" href="controlador/cerrarsesion.php">
+                  <span class='bx bx-exit text-primary midaIcones'></span>
+                  <p class="txtOpcionsUser">Tancar sessió</p>
+                </a>
                 </div>
               </li>
             </ul>
@@ -246,10 +246,8 @@ if (isset($_SESSION['ses_id'])) {
 
 <?php
 
-  } else {
-    header('Location: planaBanejat.php');
-  }
+
 } else {
   header('Location: login.php');
 }
-?>
+?> 

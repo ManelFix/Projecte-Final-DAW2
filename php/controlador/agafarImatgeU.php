@@ -4,7 +4,7 @@
     $connexio=sql();
  
     if(!empty($_POST["cat"])){
-        $categoria = $_POST["cat"];
+        $categoria = $_POST["cat"]; 
     }
 
     $sql = "SELECT imatge, tipus FROM usuari WHERE id_usuari = '".$_SESSION['ses_id']."'";
