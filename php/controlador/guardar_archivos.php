@@ -22,7 +22,7 @@ if (isset($_SESSION['ses_id'])) {
 ?>
         <script>
           alert("Error: L'archiu ya existeix")
-          location.href = "../login.php";
+          location.href = "../afegirMusicaPremium.php";
         </script>
       <?php
       }
@@ -32,7 +32,7 @@ if (isset($_SESSION['ses_id'])) {
       ?>
         <script>
           alert("Error: L'arxiu pesa mes de 20 MB")
-          location.href = "../login.php";
+          location.href = "../afegirMusicaPremium.php";
         </script>
       <?php
       }
@@ -58,14 +58,14 @@ if (isset($_SESSION['ses_id'])) {
       ?>
       <script>
         alert("Archiu pujat correctament")
-        location.href = "../login.php";
+        location.href = "../mevaMusica.php";
       </script>
     <?php
     } else {
     ?>
       <script>
         alert("No se ha puesto el archivo")
-        location.href = "../login.php";
+        location.href = "../afegirMusicaPremium.php";
       </script>
     <?php
     }

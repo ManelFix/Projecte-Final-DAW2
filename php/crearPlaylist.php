@@ -41,7 +41,7 @@ if (isset($_SESSION['ses_id'])) {
                         <input id="descripcio" type="text" name="descP" placeholder="Descripció" class="css_inputsLogReg">
                     </div>
                 </div>
-                <input id="btnPlaylist" type="button" value="Crear" name="crearPl" class="ibtnEnviar" onclick="crearPlaylist();">
+                <input id="btnPlaylist" type="button" value="Crear" name="crearPl" class="ibtnEnviar" onclick="crearPlaylist()">
             </form>
         </section>
         <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>

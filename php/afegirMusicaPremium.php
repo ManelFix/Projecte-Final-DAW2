@@ -2,7 +2,7 @@
 session_start();
 if (isset($_SESSION['ses_id'])) {
     if ($_SESSION["ban"] == 0) {
-        if ($_SESSION["premium"] == 0) {
+        if ($_SESSION["premium"] == 1) {
 
 ?>
 

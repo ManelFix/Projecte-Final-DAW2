@@ -21,7 +21,7 @@ if (isset($_SESSION['ses_id'])) {
     <link rel="shortcut icon" href="../img/favicon.png" />
   </head>
 
-  <body onload="agafarImatgeUsuari()">
+  <body onload="agafarImatgeUsuari()"> 
     <div class="container-scroller">
       <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row menuFons">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center noFonsColor">

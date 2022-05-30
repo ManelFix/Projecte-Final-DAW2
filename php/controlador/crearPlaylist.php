@@ -5,9 +5,8 @@
 
     $nomLlista = $_POST["nomP"];
     $descLlista = $_POST["descP"];
-    $tipusLlista = $_POST["tipusP"];
 
-    $sql = "INSERT INTO llista (id_usuari, titol, descripcio, privat) VALUES ('".$_SESSION['ses_id']."','".$nomLlista."','".$descLlista."','".$tipusLlista."')";
+    $sql = "INSERT INTO llista (id_usuari, titol, descripcio) VALUES ('".$_SESSION['ses_id']."','".$nomLlista."','".$descLlista."')";
     mysqli_query($connexio,$sql);
     
     mysqli_close($connexio);

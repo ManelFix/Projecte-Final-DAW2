@@ -21,8 +21,10 @@ function carregarArtistes() {
         }
         else {
             var select = xmlhttp.responseXML;
+            console.log(select);
             var select2 = select.getElementsByTagName("seguido");
             for (var i = 0; i < select2.length; i++) {
+                console.log(select2.length);
                 if (select2[i].getElementsByTagName("imatge")[0].childNodes[0].nodeValue == "data: ;base64,") {
                     var newDiv = document.createElement("div");
                     newDiv.classList.add("col-md-3", "grid-margin", "stretch-card");

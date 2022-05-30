@@ -26,7 +26,6 @@ function mostrarMusica() {
         }
         document.getElementById("musicaIdTop").innerHTML = "";
         document.getElementById("musicaIdTopM").innerHTML = "";
-        console.log(xhttp.responseText);
         xmlDoc = xhttp.responseXML;
         var cançons = xmlDoc.getElementsByTagName("musica");
         var cançons2 = xmlDoc.getElementsByTagName("musica2");
