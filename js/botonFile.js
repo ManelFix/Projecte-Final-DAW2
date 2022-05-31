@@ -1,6 +1,6 @@
-const actualBtn = document.getElementById('iFitxer');
+var actualBtn = document.getElementById('iFitxer');
 
-const fileChosen = document.getElementById('file-chosen');
+var fileChosen = document.getElementById('file-chosen');
 
 actualBtn.addEventListener('change', function(){
   if(this.files[0] == null){

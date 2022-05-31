@@ -87,7 +87,7 @@
                 <p>Aquí una mostra d'algunes de les cançons que disposem en el nostre cataleg</p>
             </div>
             <div class="row mostraRow">
-                <div class="col-md-4 grid-margin stretch-card">
+                <div class="col-md-4 col-sm-12 col-xs-12 grid-margin stretch-card">
                     <div class="card divCategoria">
                         <div class="card-body cat1 divMusicaInici">
                             <h5 class="card-title">Total Breakdown</h5>
@@ -100,7 +100,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 grid-margin stretch-card">
+                <div class="col-md-4 col-sm-12 col-xs-12 grid-margin stretch-card">
                     <div class="card divCategoria">
                     <div class="card-body cat2 divMusicaInici">
                             <h5 class="card-title">Breathe</h5>
@@ -113,7 +113,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 grid-margin stretch-card">
+                <div class="col-md-4 col-sm-12 col-xs-12 grid-margin stretch-card">
                     <div class="card divCategoria">
                         <div class="card-body cat3 divMusicaInici">
                             <h5 class="card-title">Aurea</h5>
@@ -139,7 +139,7 @@
                 <h2>Tipus de plans</h2>
                 <p>Gaudeix de la música a través dels nostres tipus de plans que tenim preparats per a tu</p>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 divPlansResponsive">
                 <div class="pla1 colPla1">
                     <p class="textProva">Prova gratuïta de 30 dies</p>
                     <h3>Pla Prèmium Mensual</h3>
@@ -162,7 +162,7 @@
                     <a href="mailto:soundboxdaw2@gmail.com?Subject=Solicitut%20de%20subscripció%20premium"><button class="botonsIR estilbtnLogin btnPremium">SOLICITAR</button></a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 divPlansResponsive">
                 <div class="pla1 colPla2">
                     <p class="textProva">Prova gratuïta de 30 dies</p>
                     <h3>Pla Prèmium Anual</h3>
@@ -185,7 +185,7 @@
                     <a href="mailto:soundboxdaw2@gmail.com?Subject=Solicitut%20de%20subscripció%20premium"><button class="botonsIR estilbtnLogin btnPremium">SOLICITAR</button></a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 divPlansResponsive">
                 <div class="pla1">
                     <p class="textProva textAmplada">Gaudeix del contingut gratuït</p>
                     <h3>Pla Gratuït</h3>

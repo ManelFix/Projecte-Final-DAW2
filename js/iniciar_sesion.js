@@ -21,7 +21,6 @@ function iniciar_sesion() {
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
                 var select = xmlhttp.responseText;
-                console.log(select);
                 if (select == 0) {
                     alert("Usuari o contrasenyes incorrectes");
                 }

@@ -2,6 +2,19 @@ var xhttp:any;
 var xmlDoc:any;
 
 function tancarSessio(){
+    if (window.XMLHttpRequest) {
+        xhttp = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject) {
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhttp.onreadystatechange = sessioTancada;
+    xhttp.open('POST', '../php/controlador/sessioTancadaAdmin.php', true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send();
+}
+
+function sessioTancada(){
     location.href="login.php";
 }
 
@@ -229,6 +242,7 @@ function mostrarTaulaCançons(){
             var newA2:any = document.createElement("a");
             newA2.classList.add("dropdown-item", "opcioMenuAccio");
             newA2.value = idCanço
+            newA2.alt = nomConcretCanço + "." + tipusCanço;
             newA2.onclick= function(){eliminarCanço(this);};
             var newSpan2:any = document.createElement("span");
             newSpan2.classList.add("bx", "bxs-trash", "text-primary", "colIcona", "midaIcones");
@@ -285,7 +299,7 @@ function eliminarCanço(idEliminar:any){
         xhttp.onreadystatechange = cançoEliminada;
         xhttp.open('POST', '../php/controlador/eliminarCanço.php', true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("idC="+idEliminar.value);
+        xhttp.send("idC="+idEliminar.value+"&nomC="+idEliminar.alt);
 	}
 }
 
@@ -336,7 +350,8 @@ function reiniciarClickM(){
 
 function clicksReiniciats(){
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        alert("Clicks mensuals reiniciats");
+        alert("Clics mensuals reiniciats");
+        //swal("Clics Reiniciats", "Clics mensuals reiniciats", "success");
     }
 }
 
@@ -368,7 +383,6 @@ function mostrarTaulaPlaylists(){
             var nomUsuari:any = playlists[i].getElementsByTagName("nom_usuari")[0].childNodes[0].nodeValue;
             var titolLlista:any = playlists[i].getElementsByTagName("titol")[0].childNodes[0].nodeValue;
             var descLlista:any = playlists[i].getElementsByTagName("descripcio")[0].childNodes[0].nodeValue;
-            var tipusLlista:any = playlists[i].getElementsByTagName("privat")[0].childNodes[0].nodeValue;
 
             var newTr:any = document.createElement("tr");
             var newTd:any = document.createElement("td");
@@ -378,21 +392,13 @@ function mostrarTaulaPlaylists(){
             var newTd2:any = document.createElement("td");
             var textTd2:any = document.createTextNode(descLlista);
             newTd2.appendChild(textTd2);
-            var newTd3:any = document.createElement("td");
-            if(tipusLlista == 1){
-                nomTPlaylist = "Privat";
-            }
-            else{
-                nomTPlaylist = "Públic";
-            }
-            var textTd3:any = document.createTextNode(nomTPlaylist);
-            newTd3.appendChild(textTd3);
-            var newTd4:any = document.createElement("td");
-            var textTd4:any = document.createTextNode(nomUsuari);
-            newTd4.appendChild(textTd4);
 
-            var newTd5:any = document.createElement("td");
-            newTd5.classList.add("nav-item", "nav-profile", "dropdown");
+            var newTd3:any = document.createElement("td");
+            var textTd3:any = document.createTextNode(nomUsuari);
+            newTd3.appendChild(textTd3);
+
+            var newTd4:any = document.createElement("td");
+            newTd4.classList.add("nav-item", "nav-profile", "dropdown");
             var newA:any = document.createElement("a");
             newA.href="#";
             newA.setAttribute("data-toggle", "dropdown");
@@ -427,14 +433,13 @@ function mostrarTaulaPlaylists(){
             newDiv.appendChild(newA2);
             newDiv.appendChild(newA3);
             newA.appendChild(newSpan);
-            newTd5.appendChild(newDiv);
-            newTd5.appendChild(newA);
+            newTd4.appendChild(newDiv);
+            newTd4.appendChild(newA);
 
             newTr.appendChild(newTd);
             newTr.appendChild(newTd2);
             newTr.appendChild(newTd3);
             newTr.appendChild(newTd4);
-            newTr.appendChild(newTd5);
 
             bodyTaula.appendChild(newTr);
 
@@ -493,4 +498,19 @@ function carregarPlaylist(idPlaylist:any){
     xhttp.open('POST', '../php/controlador/carregarPlaylistConcret.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("idP="+idPlaylist);
+}
+
+function buscarCançoPlaylist(idLlista:any){
+    var nomCanço:any = document.getElementById("iBuscarCanço").value;
+
+    if (window.XMLHttpRequest) {
+        xhttp = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject) {
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhttp.onreadystatechange = mostrarTaulaCançons;
+    xhttp.open('POST', '../php/controlador/buscarCançoPlaylistConcret.php', true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("nomC="+nomCanço+"&idL="+idLlista);
 }

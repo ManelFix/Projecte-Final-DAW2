@@ -1,4 +1,3 @@
-
 function enterButton(event:any){
     if (event.keyCode == 13) {
         event.returnValue = false;
@@ -47,8 +46,6 @@ function registrar() {
                             xmlhttp.onreadystatechange = function () {
                                 if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
                                     var select = xmlhttp.responseText;
-                                    console.log(select);
-                                    console.log(xmlhttp);
 
                                     if (select == 1) {
                                         alert("Usuari ja existent");

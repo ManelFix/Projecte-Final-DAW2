@@ -140,7 +140,6 @@
 .divTaulaMusicaPrin{
     border-radius: 15px;
     border: 1px solid rgba(224, 231, 237, 1);
-    background-color: white;
 }
 
 .tablaMisCanciones thead{
@@ -169,9 +168,23 @@
     cursor: pointer;
 }
 
+.css_seccioAccio{
+    width: 200px;
+}
+
 .iconaAccio{
     color: white;
     margin-left: 6px;
+    transition: all 0.5s ease-in;
+}
+
+.iconaAccio:hover{
+    transition: all 0.5s ease-in;
+    color: #053F5C;
+}
+
+.iconaMevaMEspai{
+    margin-right: 15px;
 }
 
 .menuAccio{
@@ -275,7 +288,7 @@
 }
 
 .imatgeMusica{
-    border-radius: 10px;
+    border-radius: 2px;
     padding: 3.1rem !important;
     background-size: 101%;
     background-position: center;
@@ -872,4 +885,42 @@
 
 .iconaUll{
     margin-right: 10px;
+}
+
+.textNomUsuari{
+    width: 81px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bugTransparent{
+    background-color: transparent !important;
+}
+
+.bugTransparent:hover{
+    background-color: #0a323f !important;
+}
+
+.swal-text, .swal-title, .swal-button{
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* Media querys */
+
+@media (max-width: 1200px) {
+    .footerFix {
+      position: inherit;
+    }
+}
+@media (max-width: 536px) {
+    .divPublicitat {
+      height: auto;
+    }
+}
+@media (max-width: 368px) {
+    .selectFiltrar {
+      margin-bottom: 20px;
+      margin-left: 15px;
+    }
 }

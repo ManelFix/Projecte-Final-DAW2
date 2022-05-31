@@ -38,7 +38,6 @@ function eliminarCompte(){
 
 function compteEliminada(){
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        //Eliminar sessió en el php eliminarCompte.php
         location.href="login.php";
     }
 }
@@ -95,7 +94,6 @@ function mostrarLlistesPropies(){
             var idLlista:any = llistes[i].getElementsByTagName("id_llista")[0].childNodes[0].nodeValue;
             var titolLlista:any = llistes[i].getElementsByTagName("titol")[0].childNodes[0].nodeValue;
             var descLlista:any = llistes[i].getElementsByTagName("descripcio")[0].childNodes[0].nodeValue;
-            var tipusLlista:any = llistes[i].getElementsByTagName("privat")[0].childNodes[0].nodeValue;
 
             var newLi:any = document.createElement("li");
             newLi.classList.add("nav-item");

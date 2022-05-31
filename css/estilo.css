@@ -260,6 +260,7 @@ body{
 
 .divCategoria {
     position: relative;
+    display: block !important;
 }
 
 .media-body {
@@ -403,7 +404,7 @@ body{
 .btnPremium{
     display: block;
     margin: auto;
-    padding: 0.5em;
+    padding: 0.8em;
     padding-right: 5em;
     padding-left: 5em;
     border-radius: 45px;
@@ -1078,4 +1079,51 @@ footer span{
 
 .correuConcret{
     color: #F7AD19;
+}
+
+/* Media querys */
+
+@media (max-width: 1200px){
+    .pla1{
+        height: auto;
+    }
+}
+
+@media (max-width: 1066px) {
+    .imatgeFons {
+        width: max-content;
+    }
+}
+
+@media (max-width: 992px){
+    .divMusicaInici{
+        margin-left: 50px;
+    }
+    .divCategoria{
+        margin-bottom: 20px;
+    }
+    .pla1{
+        margin-bottom: 20px;
+        height: auto;
+    }
+    .divPlansResponsive{
+        width: 70%;
+        margin-left: 50px;
+    }
+}
+
+@media (max-width: 446px){
+    .divPlansResponsive{
+        width: auto;
+    }
+    .divPlans{
+        margin-left: 70px;
+    }
+}
+
+@media (max-width: 320px){
+    .btnPremium{
+        margin-left: 65px;
+        width: inherit;
+    }
 }
