@@ -44,7 +44,7 @@ if (isset($_SESSION['ses_id'])) {
                       <span class="icon-search colIcona iconaLupa"></span>
                     </span>
                   </div>
-                  <input type="text" class="form-control inputBuscar" id="iBuscarMusica" placeholder="Buscar cançó" aria-label="search" aria-describedby="search">
+                  <input type="text" class="form-control inputBuscar" id="iBuscarCanço" placeholder="Buscar cançó" aria-label="search" aria-describedby="search" onkeyup="buscarCançoPlaylist(<?= $idLlista ?>);">
                 </div>
               </li>
             </ul>

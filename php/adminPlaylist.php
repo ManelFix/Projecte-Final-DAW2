@@ -105,7 +105,6 @@ if (isset($_SESSION['ses_id'])) {
                             <tr>
                               <th>Títol</th>
                               <th>Descripció</th>
-                              <th>Tipus</th>
                               <th>Creada per</th>
                               <th>Acció</th>
                             </tr>

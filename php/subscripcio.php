@@ -17,6 +17,7 @@ if (isset($_SESSION['ses_id'])) {
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="shortcut icon" href="../img/favicon.png" />
     <script src="../js/subscripcio.js"></script>
+    <script src="../js/carregarInfo.js"></script>
   </head>
 
   <body onload="veureSubscripcio();">

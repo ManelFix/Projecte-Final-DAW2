@@ -12,10 +12,10 @@
     if($res != 0){
         while($fila = mysqli_fetch_assoc($r)){
             if(!empty($_POST["cat"])){
-                $elementos_xml[] = "<llista>\n<id_llista>$fila[id_llista]</id_llista>\n<titol>$fila[titol]</titol>\n<descripcio>$fila[descripcio]</descripcio>\n<privat>$fila[privat]</privat>\n<categoria>$_POST[cat]</categoria>\n</llista>";                                                
+                $elementos_xml[] = "<llista>\n<id_llista>$fila[id_llista]</id_llista>\n<titol>$fila[titol]</titol>\n<descripcio>$fila[descripcio]</descripcio>\n<categoria>$_POST[cat]</categoria>\n</llista>";                                                
             }
             else{
-                $elementos_xml[] = "<llista>\n<id_llista>$fila[id_llista]</id_llista>\n<titol>$fila[titol]</titol>\n<descripcio>$fila[descripcio]</descripcio>\n<privat>$fila[privat]</privat>\n</llista>";                                                
+                $elementos_xml[] = "<llista>\n<id_llista>$fila[id_llista]</id_llista>\n<titol>$fila[titol]</titol>\n<descripcio>$fila[descripcio]</descripcio>\n</llista>";                                                
             }
         }        
         

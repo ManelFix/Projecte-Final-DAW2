@@ -35,7 +35,7 @@ if (isset($_SESSION['ses_id'])) {
                         <label for="nomPlaylist" class="amagarLabel"></label>
                         <input id="nomPlaylist" type="text" name="nomP" placeholder="Nom" class="css_inputsLogReg">
                     </div>
-                    <div class="divUserBorder">
+                    <div>
                         <span class='bx bx-detail iconesLoginRegister'></span>
                         <label for="descripcio" class="amagarLabel"></label>
                         <input id="descripcio" type="text" name="descP" placeholder="Descripció" class="css_inputsLogReg">

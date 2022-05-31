@@ -16,12 +16,13 @@ if (isset($_SESSION['ses_id'])) {
     <link rel="stylesheet" href="../recursosAdmin_Client/datatables.net-bs/dataTables.bootstrap.css">
     <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
     <link rel="stylesheet" href="../css/client.css">
-    <script src="../js/artistas_seguidos.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="shortcut icon" href="../img/favicon.png" />
+    <script src="../js/artistas_seguidos.js"></script>
+    <script src="../js/carregarInfo.js"></script>
   </head>
 
-  <body onload="agafarImatgeUsuari()"> 
+  <body onload="artistas_seguidos();"> 
     <div class="container-scroller">
       <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row menuFons">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center noFonsColor">

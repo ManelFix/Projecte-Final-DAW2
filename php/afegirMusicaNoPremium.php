@@ -73,9 +73,9 @@ if(isset($_SESSION['ses_id'])){
                 </div>
                 <div class="divFinal">
                     <img src="../img/iconaCarpetaMusica.svg" alt="iconaCarpetaMusica" class="iconesLoginRegister iconaImatge">
-                    <label for="fileToUpload" class="amagarLabel"></label>
-                    <input type="file" id="fileToUpload" name="fileToUpload" accept="audio/*" class="hidden"/>
-                    <label for="fileToUpload" class="labelFile">Escolleix el fitxer</label>
+                    <label for="iFitxer" class="amagarLabel"></label>
+                    <input type="file" id="iFitxer" name="fileToUpload" accept="audio/*" class="hidden"/>
+                    <label for="iFitxer" class="labelFile">Escolleix el fitxer</label>
                     <span id="file-chosen">Cap fitxer introduït</span>
                 </div>
             </div>

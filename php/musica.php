@@ -19,7 +19,6 @@ if (isset($_SESSION['ses_id'])) {
   }
 
 ?>
-
   <!DOCTYPE html>
   <html lang="es">
 
@@ -40,10 +39,9 @@ if (isset($_SESSION['ses_id'])) {
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <script src="../js/musica.js"></script>
-
+    <script src="../js/carregarInfo.js"></script>
   </head>
-
-  <body onload="agafarImatgeUsuari('<?= $nomcat ?>','<?= $premium ?>')">
+  <body onload="carregarMusica('<?= $nomcat ?>','<?= $premium ?>')">
     <div class="container-scroller">
       <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row menuFons">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center noFonsColor">

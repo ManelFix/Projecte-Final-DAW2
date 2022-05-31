@@ -18,7 +18,6 @@ if (isset($_SESSION['ses_id'])) {
       <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
       <link rel="shortcut icon" href="../img/logo.svg" />
     </head>
-
     <body>
       <div class="container-scroller">
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row menuFons">

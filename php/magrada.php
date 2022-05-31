@@ -15,7 +15,6 @@ if (isset($_SESSION['ses_id'])) {
       <link rel="stylesheet" href="../recursosAdmin_Client/datatables.net-bs/dataTables.bootstrap.css">
       <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
       <link rel="stylesheet" href="../css/client.css">
-      <script src="../js/magrada.js"></script>
       <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
       <link rel="shortcut icon" href="../img/favicon.png" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -23,9 +22,10 @@ if (isset($_SESSION['ses_id'])) {
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+      <script src="../js/magrada.js"></script>
+      <script src="../js/carregarInfo.js"></script>
     </head>
-
-    <body onload="carregarLlistesPropies()">
+    <body onload="mostrar_like_canciones()">
       <div class="container-scroller">
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row menuFons">
           <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center noFonsColor">
