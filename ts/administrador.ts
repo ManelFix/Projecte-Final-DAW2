@@ -91,6 +91,7 @@ function mostrarTaulaUsuaris(){
             newA2.classList.add("dropdown-item", "opcioMenuAccio");
             newA2.value = idUsuari
             var newSpan2:any = document.createElement("span");
+            
             if(banUsuari == 0){
                 newSpan2.classList.add("bx", "bxs-shield-x", "text-primary", "colIcona", "midaIcones");
                 newA2.onclick= function(){banejarUsuari(this);};
@@ -350,8 +351,7 @@ function reiniciarClickM(){
 
 function clicksReiniciats(){
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        alert("Clics mensuals reiniciats");
-        //swal("Clics Reiniciats", "Clics mensuals reiniciats", "success");
+        swal("Clics Reiniciats", "Clics mensuals reiniciats", "success");
     }
 }
 

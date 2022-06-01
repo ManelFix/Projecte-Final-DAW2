@@ -173,6 +173,6 @@ function eliminarPlaylist(idLlista:any){
 
 function playlistEliminada(){
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        history.go(-1);
+        location.href="mevaMusica.php";
     }
 }

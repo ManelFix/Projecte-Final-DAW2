@@ -50,8 +50,18 @@ function registrar() {
                                     if (select == 1) {
                                         alert("Usuari ja existent");
                                     } else if (select == 0) {
-                                        alert("Usuari creat correctament");
-                                        location.href="../php/login.php";
+                                        setTimeout(function () { 
+                                            swal({
+                                              title: "Usuari creat correctament",
+                                              text: "",
+                                              type: "success",
+                                              confirmButtonText: "OK"
+                                            },
+                                            function(isConfirm:any){
+                                              if (isConfirm) {
+                                                location.href="../php/login.php";
+                                              }
+                                            }); }, 0);
                                     }else{
                                         alert("Email ja utilitzat");
                                     }

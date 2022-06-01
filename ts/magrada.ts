@@ -214,23 +214,28 @@ function afegirPlaylist(){
     var idLlista:any = document.getElementById("llistatPlaylist").value;
     var idCançoo:any = document.getElementById("idHiddenn").value;
 
-    if (window.XMLHttpRequest) {
-        xhttp = new XMLHttpRequest();
+    if(idLlista == ""){
+        swal("Error", "No tens cap playlist creada", "error");
     }
-    else if (window.ActiveXObject) {
-        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    else{
+        if (window.XMLHttpRequest) {
+            xhttp = new XMLHttpRequest();
+        }
+        else if (window.ActiveXObject) {
+            xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhttp.onreadystatechange = cançoAfegidaPlaylist;
+        xhttp.open('POST', '../php/controlador/afegirCançoAPlaylist.php', true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("idL="+idLlista+"&"+"idC="+idCançoo);
     }
-    xhttp.onreadystatechange = cançoAfegidaPlaylist;
-    xhttp.open('POST', '../php/controlador/afegirCançoAPlaylist.php', true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idL="+idLlista+"&"+"idC="+idCançoo);
 }
 
 function cançoAfegidaPlaylist(){
     if (xhttp.readyState == 4 && xhttp.status == 200) {
         var resultatPlaylist:any = xhttp.responseText;
         if(resultatPlaylist == -1){
-            alert("Aquesta cançó ja està en la playlist");
+            swal("Cançó ja guardada", "Aquesta cançó ja està en la playlist", "info");
         }
         else{
            document.getElementById("btnCerrarModal")?.click();

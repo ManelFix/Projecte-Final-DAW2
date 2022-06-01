@@ -5,6 +5,7 @@ function carregarMusica(nom: any, tipusUsuari:any) {
     document.getElementById("filtrarPer").value = "none"; 
     var catMinus: any = nom.toLowerCase();
     localStorage.setItem("categoriaSoundBox", catMinus);
+    localStorage.setItem("TipusUsuariSoundBox", tipusUsuari);
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -83,7 +84,7 @@ function mostrarMusica() {
             var tipusCanço: any = cançons[i].getElementsByTagName("premium")[0].childNodes[0].nodeValue;
             var artistaCanço: any = cançons[i].getElementsByTagName("artista")[0].childNodes[0].nodeValue;
             var ruta: any = "../uploads/" + nomGuardat + "." + tipus;
-
+            
             if (tipusCanço == 1) {
                 var newDiv: any = document.createElement("div");
                 newDiv.classList.add("col-md-3", "grid-margin", "stretch-card");
@@ -163,11 +164,11 @@ function mostrarMusica() {
                 newP4.classList.add("txtOpcionsUser");
                 var textP4: any = document.createTextNode("Afegir a la playlist");
                 newP4.appendChild(textP4);
-
                 var tipusUsuari: any = localStorage.getItem("TipusUsuariSoundBox");
                 if (tipusUsuari == 0) {
                     newSpan.style = "pointer-events: none;";
                     newA.style = "pointer-events: none;";
+                    newA.href = "";
                     newA2.style = "pointer-events: none;";
                 }
             }
@@ -381,6 +382,7 @@ function mostrarMusica() {
                 if (tipusUsuari == 0) {
                     newSpan.style = "pointer-events: none;";
                     newA.style = "pointer-events: none;";
+                    newA.href = "";
                     newA2.style = "pointer-events: none;";
                 }
             }
@@ -585,6 +587,7 @@ function mostrarMusica() {
                 if (tipusUsuari == 0) {
                     newSpan.style = "pointer-events: none;";
                     newA.style = "pointer-events: none;";
+                    newA.href = "";
                     newA2.style = "pointer-events: none;";
                 }
             }
@@ -807,23 +810,29 @@ function llistesCarregades() {
 function afegirPlaylist() {
     var idLlista: any = document.getElementById("llistatPlaylist").value;
     var idCançoo: any = document.getElementById("idHidden").value;
-    if (window.XMLHttpRequest) {
-        xhttp = new XMLHttpRequest();
+
+    if(idLlista == ""){
+        swal("Error", "No tens cap playlist creada", "error");
     }
-    else if (window.ActiveXObject) {
-        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    else{
+        if (window.XMLHttpRequest) {
+            xhttp = new XMLHttpRequest();
+        }
+        else if (window.ActiveXObject) {
+            xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhttp.onreadystatechange = cançoAfegidaPlaylist;
+        xhttp.open('POST', '../php/controlador/afegirCançoAPlaylist.php', true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("idL=" + idLlista + "&" + "idC=" + idCançoo);
     }
-    xhttp.onreadystatechange = cançoAfegidaPlaylist;
-    xhttp.open('POST', '../php/controlador/afegirCançoAPlaylist.php', true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idL=" + idLlista + "&" + "idC=" + idCançoo);
 }
 
 function cançoAfegidaPlaylist() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
         var resultatPlaylist: any = xhttp.responseText;
         if (resultatPlaylist == -1) {
-            alert("Aquesta cançó ja està en la playlist");
+            swal("Cançó ja guardada", "Aquesta cançó ja està en la playlist", "info");
         }
         else{
             document.getElementById("btnCerrarModal")?.click();

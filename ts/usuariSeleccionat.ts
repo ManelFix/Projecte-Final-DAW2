@@ -1,37 +1,8 @@
 var xhttp:any;
 var xmlDoc:any;
 
-function agafarImatgeUsuari(tipusU:any, idUsuari:any){
-    localStorage.setItem("tipusUsuariConcretSoundBox", tipusU);
-    localStorage.setItem("idUsuariConcretSoundBox", idUsuari);
-    if (window.XMLHttpRequest) {
-        xhttp = new XMLHttpRequest();
-    }
-    else if (window.ActiveXObject) {
-        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xhttp.onreadystatechange = mostrarImatgeUsuari;
-    xhttp.open('POST', '../php/controlador/agafarImatgeU.php', true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send();
-}
-
-function mostrarImatgeUsuari(){
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-        var rutaImatge:any = xhttp.responseText.replace(/\s+/g, '');
-        var arrOpcions:any = rutaImatge.split('.');
-        if(arrOpcions[0] == 0){
-            document.getElementById("iconaUsuari").src = "../img/defaultUser.svg";
-        }
-        else{
-            document.getElementById("iconaUsuari").src = arrOpcions[0];
-            document.getElementById("iconaUsuari")?.classList.add("iconaPerfil");
-        }
-        carregarLlistesPropies();
-    }
-}
-
-function carregarCançons(){
+function carregarCançons(premium:any, idU:any){
+    localStorage.setItem("tipusUsuariConcretSoundBox", premium);
     if (window.XMLHttpRequest) {
         xhttp = new XMLHttpRequest();
     }
@@ -41,7 +12,7 @@ function carregarCançons(){
     xhttp.onreadystatechange = mostrarTaulaCançons;
     xhttp.open('POST', '../php/controlador/carregarCançonsUsuari.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("idU="+localStorage.getItem("idUsuariConcretSoundBox"));
+    xhttp.send("idU="+idU);
 }
 
 function mostrarTaulaCançons(){
@@ -79,57 +50,34 @@ function mostrarTaulaCançons(){
             newTd4.appendChild(textTd4);
 
             var newTd5:any = document.createElement("td");
-            newTd5.classList.add("nav-item", "nav-profile", "dropdown");
-            var newA:any = document.createElement("a");
-            newA.setAttribute("data-toggle", "dropdown");
+            newTd5.classList.add("css_seccioAccio");
+
             var newSpan:any = document.createElement("span");
-            newSpan.classList.add("bx", "bx-dots-vertical-rounded", "iconaAccio");
-            var newDiv:any = document.createElement("div");            
-            newDiv.classList.add("dropdown-menu", "menuAccio");
-            var newSpan2: any = document.createElement("span");
-            newSpan2.classList.add("bx", "bxs-trash", "text-primary", "colIcona", "midaIcones");
-            var newP: any = document.createElement("p");
-            newP.classList.add("txtOpcionsUser");
-            var newA3: any = document.createElement("a");
-            newA3.classList.add("dropdown-item", "opcioMenuAccio");
-            newA3.href = ruta;
-            newA3.download = nomCanço;
-            var newSpan3: any = document.createElement("span");
-            newSpan3.classList.add("bx", "bxs-download", "text-primary", "colIcona", "midaIcones");
-            var newP2: any = document.createElement("p");
-            newP2.classList.add("txtOpcionsUser");
-            var textP2: any = document.createTextNode("Descarregar");
-            newP2.appendChild(textP2);
-            var newA4: any = document.createElement("a");
-            newA4.classList.add("dropdown-item", "opcioMenuAccio");
-            newA4.value = nomConcretCanço + "." + tipusCanço
-            newA4.alt = artistaCanço;
-            newA4.required = nomCanço;
-            newA4.data = idCanço;
-            newA4.onclick = function () { escoltarCanço(this); };
-            var newSpan4: any = document.createElement("span");
-            newSpan4.classList.add("bx", "bx-play-circle", "text-primary", "colIcona", "midaIcones");
-            var newP3: any = document.createElement("p");
-            newP3.classList.add("txtOpcionsUser");
-            var textP3: any = document.createTextNode("Reproduïr");
-            newP3.appendChild(textP3);
+            newSpan.classList.add("bx", "bx-play-circle", "iconaAccio", "iconaMevaMEspai");
+            newSpan.title = "Reproduir";
+            newSpan.value = nomConcretCanço + "." + tipusCanço;
+            newSpan.alt = artistaCanço;
+            newSpan.required = nomCanço;
+            newSpan.data = idCanço;
+            newSpan.onclick= function(){escoltarCanço(this);}
+
+            var newA:any = document.createElement("a");
+            newA.href = ruta;
+            newA.download = nomCanço;
+            var newSpan2:any = document.createElement("span");
+            newSpan2.classList.add("bx", "bx-download", "iconaAccio", "iconaMevaMEspai");
+            newSpan2.title = "Descarregar";
 
             if(tipusUsuari == 0){
                 if(localStorage.getItem("tipusUsuariConcretSoundBox") == 1){
                     newSpan.style = "pointer-events: none;";
                     newA.style = "pointer-events: none;";
+                    newA.href = "";
                 }
             }           
 
-            newA4.appendChild(newSpan4);
-            newA4.appendChild(newP3);
-            newA3.appendChild(newSpan3);
-            newA3.appendChild(newP2);
-
-            newDiv.appendChild(newA3);
-            newDiv.appendChild(newA4); 
-            newA.appendChild(newSpan);
-            newTd5.appendChild(newDiv);
+            newA.appendChild(newSpan2);
+            newTd5.appendChild(newSpan);
             newTd5.appendChild(newA);
 
             newTr.appendChild(newTd);
@@ -170,7 +118,7 @@ function augmentarClicks(idCanço: any) {
 
 function clicksAugmentats(){}
 
-function buscarCanço(){
+function buscarCanço(idU:any){
     var nomC:any = document.getElementById("iCançoTot").value;
 
     if (window.XMLHttpRequest) {
@@ -182,54 +130,5 @@ function buscarCanço(){
     xhttp.onreadystatechange = mostrarTaulaCançons;
     xhttp.open('POST', '../php/controlador/buscarCançoUsuari.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("nomCanço="+nomC+"&"+"idU="+localStorage.getItem("idUsuariConcretSoundBox"));
-}
-
-function carregarLlistesPropies(){
-    if (window.XMLHttpRequest) {
-        xhttp = new XMLHttpRequest();
-    }
-    else if (window.ActiveXObject) {
-        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xhttp.onreadystatechange = mostrarLlistesPropies;
-    xhttp.open('POST', '../php/controlador/carregarLlistesP.php', true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send();
-}
-
-function mostrarLlistesPropies(){
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-        var resultatLlistes: any = xhttp.responseText.replace(/\s+/g, '');
-        var arrOpcions: any = resultatLlistes.split('.');
-
-        if(arrOpcions[0] != 0){
-            xmlDoc = xhttp.responseXML;
-            var llistes:any = xmlDoc.getElementsByTagName("llista");
-            var navMenu:any = document.getElementById("idNav");
-    
-            for(var i:number = 0; i < llistes.length; i++){
-                var idLlista:any = llistes[i].getElementsByTagName("id_llista")[0].childNodes[0].nodeValue;
-                var titolLlista:any = llistes[i].getElementsByTagName("titol")[0].childNodes[0].nodeValue;
-                var descLlista:any = llistes[i].getElementsByTagName("descripcio")[0].childNodes[0].nodeValue;
-                var tipusLlista:any = llistes[i].getElementsByTagName("privat")[0].childNodes[0].nodeValue;
-    
-                var newLi:any = document.createElement("li");
-                newLi.classList.add("nav-item");
-                var newA:any = document.createElement("a");
-                newA.href = 'playlist.php?idL=' + idLlista + "&nomL=" + titolLlista ;
-                newA.classList.add("linkPlaylist");
-                var newP:any = document.createElement("p");
-                newP.classList.add("textSidebar", "textNav", "textPlaylist");
-                var textP:any = document.createTextNode(titolLlista);
-                newP.appendChild(textP);
-    
-                newA.appendChild(newP);
-                newLi.appendChild(newA);
-                navMenu.appendChild(newLi);
-    
-            }
-        }
-        carregarCançons();
-    }
+    xhttp.send("nomCanço="+nomC+"&"+"idU="+idU);
 }
