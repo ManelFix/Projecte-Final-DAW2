@@ -1058,6 +1058,11 @@ footer span{
     padding-bottom: 20px;
 }
 
+.banejatSection h2{
+    padding-right: 15px;
+    padding-left: 14px;
+}
+
 .framePrincipal h2{
     color: white;
     font-size: 1.2em;
@@ -1080,6 +1085,38 @@ footer span{
 .correuConcret{
     color: #F7AD19;
 }
+
+/* Swal Alert*/
+
+.sweet-alert{
+    background-color: #053F5C !important;
+}
+
+.sweet-alert .sa-icon.sa-success::before{
+    background-color: #053F5C !important;
+
+}
+
+.sweet-alert .sa-icon.sa-success::after{
+    background-color: #053F5C !important;
+}
+
+.sweet-alert h2, .sweet-alert p{
+    font-family: 'Inter', sans-serif !important;
+    color: white !important;
+}
+
+.sweet-alert .sa-icon.sa-success .sa-fix{
+    background-color: #053F5C !important;
+    width: 6px !important;
+}
+
+.sweet-alert button{
+    font-family: 'Inter', sans-serif !important;
+}
+
+
+
 
 /* Media querys */
 

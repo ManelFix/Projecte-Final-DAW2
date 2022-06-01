@@ -314,8 +314,7 @@ function reiniciarClickM() {
 }
 function clicksReiniciats() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-        alert("Clics mensuals reiniciats");
-        //swal("Clics Reiniciats", "Clics mensuals reiniciats", "success");
+        swal("Clics Reiniciats", "Clics mensuals reiniciats", "success");
     }
 }
 /* Web Admin Totes les playlist */

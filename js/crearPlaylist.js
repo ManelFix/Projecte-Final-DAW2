@@ -4,7 +4,6 @@ var xmlDoc;
 function crearPlaylist() {
     var nomP = document.getElementById("nomPlaylist").value;
     var descP = document.getElementById("descripcio").value;
-    console.log(nomP, descP);
     if (nomP == "" || descP == "") {
         alert("No poden haver-hi camps buits");
     }
