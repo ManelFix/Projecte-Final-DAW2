@@ -30,9 +30,10 @@ if (isset($_SESSION['ses_id'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../js/usuariSeleccionat.js"></script>
+    <script src="../js/carregarInfo.js"></script>
   </head>
 
-  <body onload="agafarImatgeUsuari('<?= $tipusUsuari ?>','<?= $idUsuariConcret ?>')">
+  <body onload="carregarCançons('<?= $tipusUsuari ?>','<?= $idUsuariConcret ?>')">
     <div class="container-scroller">
       <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row menuFons">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center noFonsColor">
@@ -51,7 +52,7 @@ if (isset($_SESSION['ses_id'])) {
                     <span class="icon-search colIcona iconaLupa"></span>
                   </span>
                 </div>
-                <input type="text" class="form-control inputBuscar" id="iCançoTot" placeholder="Buscar nom cançó" aria-label="search" aria-describedby="search" onkeyup="buscarCanço();">
+                <input type="text" class="form-control inputBuscar" id="iCançoTot" placeholder="Buscar nom cançó" aria-label="search" aria-describedby="search" onkeyup="buscarCanço(<?= $idUsuariConcret ?>);">
               </div>
             </li>
           </ul>

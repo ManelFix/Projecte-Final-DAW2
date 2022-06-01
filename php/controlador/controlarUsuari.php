@@ -7,7 +7,7 @@
     $tipusUsuari = $_GET["tipU"];
     $idUsuariConectat = $_SESSION["ses_id"];
 
-    $sql = "SELECT * FROM usuari WHERE id_usuari = '".$idUsuari."' AND nom_usuari = '".$nomArtista."' AND premium = '".$tipusUsuari."' AND id_usuari != '".$idUsuariConectat."'";
+    $sql = "SELECT * FROM usuari WHERE id_usuari = '".$idUsuari."' AND nom_usuari = '".$nomArtista."' AND premium = '".$tipusUsuari."' AND id_usuari != '".$idUsuariConectat."' AND admin != '1'";
     $r = mysqli_query($connexio,$sql);
     
     $fila = mysqli_num_rows($r);

@@ -2,7 +2,6 @@
 session_start();
  
 if (isset($_SESSION['ses_id'])) {
-    if ($_SESSION["ban"] == 0) {
         include("BBDD.php");
 
         $connexio = sql();
@@ -30,9 +29,6 @@ if (isset($_SESSION['ses_id'])) {
         }
 
         echo "<usuarios>\n" . implode("\n", $elementos_xml) . "</usuarios>";
-    } else {
-        header('Location: .php');
-    } 
 } else {
     header('Location: ../login.php');
 }

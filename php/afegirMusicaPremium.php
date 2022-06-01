@@ -5,7 +5,6 @@ if (isset($_SESSION['ses_id'])) {
         if ($_SESSION["premium"] == 1) {
 
 ?>
-
             <!DOCTYPE html>
             <html lang="es">
 
@@ -29,7 +28,7 @@ if (isset($_SESSION['ses_id'])) {
                         <img src="../img/logoForms.PNG" alt="logoSoundBOX">
                     </div>
                     <h1>Afegir cançó</h1>
-                    <form method="post">
+                    <form action="controlador/guardar_archivos.php" method="post" enctype="multipart/form-data">
                         <div class="frameSecundari2 extraModificacionsNoPremium">
                             <div class="divUserBorder">
                                 <span class='bx bx-album iconesLoginRegister'></span>
@@ -86,12 +85,12 @@ if (isset($_SESSION['ses_id'])) {
                             <div class="divFinal">
                                 <img src="../img/iconaCarpetaMusica.svg" alt="iconaCarpetaMusica" class="iconesLoginRegister iconaImatge">
                                 <label for="iFitxer" class="amagarLabel"></label>
-                                <input type="file" id="iFitxer" name="arxiuAfegir" accept="audio/*" class="hidden" />
+                                <input type="file" id="iFitxer" name="fileToUpload" accept="audio/*" class="hidden" />
                                 <label for="iFitxer" class="labelFile">Escolleix el fitxer</label>
                                 <span id="file-chosen">Cap fitxer introduït</span>
                             </div>
                         </div>
-                        <input id="btnRegister" type="button" value="Afegir" name="ferRegister" class="ibtnEnviar" onclick="registrar()">
+                        <input id="btnRegister" type="submit" value="Afegir" name="ferRegister" class="ibtnEnviar">
                     </form>
                 </section>
                 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>

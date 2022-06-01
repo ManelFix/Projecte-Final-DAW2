@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/estilo.css">
-    <script src="../js/registrar.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="shortcut icon" href="../img/favicon.png" />
     <title>SoundBOX</title>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">    
+    <script src="../js/registrar.js"></script>
 </head>
 <body>
     <div class="divHome">
@@ -44,7 +47,7 @@
                 </div>
             </div>
             <h2 class="titolNoCompte">Ja tens un compte creat? <a href="login.php">Inicia sessió</a></h2>
-            <input id="btnRegister" type="button" value="Registrarse" name="ferRegister" class="ibtnEnviar" onclick="registrar()">            
+            <input id="btnRegister" type="button" value="Registrar-se" name="ferRegister" class="ibtnEnviar" onclick="registrar()">            
         </form>
     </section>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
